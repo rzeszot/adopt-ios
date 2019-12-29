@@ -13,6 +13,7 @@
 		2DD6B26A23B84AD70006D873 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD6B26923B84AD70006D873 /* Assets.xcassets */; };
 		2DD6B26D23B84AD70006D873 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD6B26C23B84AD70006D873 /* Preview Assets.xcassets */; };
 		2DD6B27023B84AD70006D873 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD6B26E23B84AD70006D873 /* LaunchScreen.storyboard */; };
+		2DD6B27C23B84BF70006D873 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6B27B23B84BF70006D873 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2DD6B26C23B84AD70006D873 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2DD6B26F23B84AD70006D873 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DD6B27123B84AD70006D873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DD6B27B23B84BF70006D873 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		2DD6B26223B84AD60006D873 /* Adopt */ = {
 			isa = PBXGroup;
 			children = (
+				2DD6B27723B84B640006D873 /* Sign up */,
 				2DD6B26323B84AD60006D873 /* AppDelegate.swift */,
 				2DD6B26523B84AD60006D873 /* SceneDelegate.swift */,
 				2DD6B26723B84AD60006D873 /* ContentView.swift */,
@@ -73,6 +76,14 @@
 				2DD6B26C23B84AD70006D873 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2DD6B27723B84B640006D873 /* Sign up */ = {
+			isa = PBXGroup;
+			children = (
+				2DD6B27B23B84BF70006D873 /* SignUpView.swift */,
+			);
+			path = "Sign up";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DD6B27C23B84BF70006D873 /* SignUpView.swift in Sources */,
 				2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */,
 				2DD6B26623B84AD60006D873 /* SceneDelegate.swift in Sources */,
 				2DD6B26823B84AD60006D873 /* ContentView.swift in Sources */,
