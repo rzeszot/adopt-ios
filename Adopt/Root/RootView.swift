@@ -15,7 +15,7 @@ struct RootView: View {
 
     var body: some View {
         if let user = session.user {
-            return AnyView(Text("logged"))
+            return AnyView(DashboardView().environmentObject(user))
         } else {
             return AnyView(SignInView(action: { data in
                 self.session.login(data)

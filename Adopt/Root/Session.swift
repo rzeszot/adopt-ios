@@ -13,16 +13,16 @@ class Session: ObservableObject {
     @Published
     private(set) var token: String?
 
-    struct User {
+    class User: ObservableObject {
+        let token: String
 
+        init(token: String) {
+            self.token = token
+        }
     }
 
     var user: User? {
-        if token == nil {
-            return nil
-        } else {
-            return User()
-        }
+        return token.map { User(token: $0) }
     }
 
     func login(_ data: SignIn.Data) {
