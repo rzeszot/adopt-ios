@@ -19,9 +19,7 @@ struct RootView: View {
                 self.session.logout()
             }).environmentObject(user))
         } else {
-            return AnyView(SignInView(action: { data in
-                self.session.login(data)
-            }))
+            return AnyView(WelcomeView())
         }
     }
 

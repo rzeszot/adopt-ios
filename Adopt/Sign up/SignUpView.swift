@@ -9,9 +9,7 @@
 import SwiftUI
 import UIKit
 
-struct User {
 
-}
 
 struct SignUp {
     struct Request: Codable {
@@ -33,12 +31,15 @@ struct SignUp {
         case unknown
     }
 
+    struct Data {
+        let token: String
+    }
 }
 
 
 
 struct SignUpView: View {
-    var action: (User) -> Void = { _ in }
+    var action: (SignUp.Data) -> Void
 
     @State
     var email: String = "damian.rzeszot+1@gmail.com"
@@ -55,9 +56,9 @@ struct SignUpView: View {
                     print("register | \(result)")
 
                     switch result {
-                    case .success:
+                    case .success(let success):
                         DispatchQueue.main.async {
-                            self.action(User())
+                            self.action(SignUp.Data(token: success.token))
                         }
                         break
                     case .failure:
@@ -109,6 +110,6 @@ struct SignUpView: View {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView()
+        SignUpView(action: { _ in })
     }
 }
