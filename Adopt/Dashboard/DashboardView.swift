@@ -10,17 +10,27 @@ import SwiftUI
 
 struct DashboardView: View {
 
+    var action: () -> Void
+
     @EnvironmentObject
     var user: Session.User
 
     var body: some View {
-        Text("Hello, \(user.token)!")
+        VStack {
+            Text("Hello, \(user.token)!")
+
+            Button(action: {
+                self.action()
+            }, label: {
+                Text("logout")
+            })
+        }
     }
 
 }
 
 struct DashboardView_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardView()
+        DashboardView(action: {})
     }
 }
