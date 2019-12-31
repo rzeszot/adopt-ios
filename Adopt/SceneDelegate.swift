@@ -9,16 +9,15 @@
 import UIKit
 import SwiftUI
 
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        let view = SignUpView(action: { _ in
-            self.window?.rootViewController = UIHostingController(rootView: ContentView())
-        })
+        let session = Session()
 
-
+        let view = RootView().environmentObject(session)
         let vc = UIHostingController(rootView: view)
 
         if let windowScene = scene as? UIWindowScene {
