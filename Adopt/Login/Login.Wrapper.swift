@@ -11,6 +11,7 @@ extension Login {
 
     struct Wrapper: UIViewControllerRepresentable {
         var login: (Coordinator.Output) -> Void
+        var close: () -> Void
 
         func makeUIViewController(context: UIViewControllerRepresentableContext<Wrapper>) -> LoginViewController {
             let vc = LoginViewController()
@@ -23,7 +24,7 @@ extension Login {
         }
 
         func makeCoordinator() -> Coordinator {
-            return Coordinator(login: login)
+            return Coordinator(login: login, close: close)
         }
     }
 

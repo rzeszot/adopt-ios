@@ -11,9 +11,11 @@ extension Login {
 
     class Coordinator: LoginViewControllerDelegate {
         let login: (Coordinator.Output) -> Void
+        let close: () -> Void
 
-        init(login: @escaping (Coordinator.Output) -> Void) {
+        init(login: @escaping (Coordinator.Output) -> Void, close: @escaping () -> Void) {
             self.login = login
+            self.close = close
         }
 
         struct Request: Codable {
@@ -93,10 +95,8 @@ extension Login {
         }
 
         func loginDidClose(_ vc: LoginViewController) {
-
+            close()
         }
 
     }
 }
-
-

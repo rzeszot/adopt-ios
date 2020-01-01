@@ -10,14 +10,11 @@ import SwiftUI
 extension Login {
 
     struct RootView: View {
-        var action: (Coordinator.Output) -> Void
+        var finish: (Coordinator.Output) -> Void
+        var close: () -> Void
 
         var body: some View {
-            Wrapper(login: { output in
-                print("output \(output)")
-
-                self.action(output)
-            })
+            Wrapper(login: finish, close: close)
         }
     }
 
@@ -25,6 +22,6 @@ extension Login {
 
 struct Login_RootView_Previews: PreviewProvider {
     static var previews: some View {
-        Login.RootView(action: { _ in })
+        Login.RootView(finish: { _ in }, close: { })
     }
 }
