@@ -11,10 +11,11 @@ extension Login {
 
     struct RootView: View {
         var finish: (Output) -> Void
-        var close: () -> Void
+        var move: (Coordinator.Target) -> Void
 
         var body: some View {
-            Wrapper(login: finish, close: close)
+            Wrapper(login: finish, move: move)
+                .edgesIgnoringSafeArea(.all)
         }
     }
 
@@ -22,6 +23,6 @@ extension Login {
 
 struct Login_RootView_Previews: PreviewProvider {
     static var previews: some View {
-        Login.RootView(finish: { _ in }, close: { })
+        Login.RootView(finish: { _ in }, move: { _ in })
     }
 }

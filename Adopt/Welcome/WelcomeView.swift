@@ -25,6 +25,9 @@ struct WelcomeView: View {
     @State
     var modal: Modal?
 
+    @State
+    var forget: Bool = false
+
     var body: some View {
         VStack(spacing: 10) {
             Spacer()
@@ -58,19 +61,32 @@ struct WelcomeView: View {
         .sheet(item: $modal, content: { (id: Modal) -> AnyView in
             switch id {
             case .login:
-                return AnyView(Login.RootView(finish: { output in
-                    self.session.login(Session.Credential(email: output.email, token: output.token))
-                }, close: {
-                    withAnimation {
-                        self.modal = nil
-                    }
-                }))
+                return AnyView(self.login)
             case .register:
                 return AnyView(SignUpView(action: { data in
                     self.session.login(Session.Credential(email: data.email,token: data.token))
                 }))
             }
         })
+    }
+
+    var login: some View {
+            if forget {
+                return AnyView(Forget.RootView(back: { self.forget = false }))
+            } else {
+                return AnyView(Login.RootView(finish: { output in
+                    self.session.login(Session.Credential(email: output.email, token: output.token))
+                }, move: { target in
+                    if target == .close {
+                        withAnimation {
+                            self.modal = nil
+                        }
+                    } else if target == .forget {
+                        self.forget = true
+                    }
+                }))
+            }
+      
     }
 
 }

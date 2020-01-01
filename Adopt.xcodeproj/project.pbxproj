@@ -11,6 +11,8 @@
 		2D3FCF5623BB6FF6001E3704 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D3FCF5523BB6FF6001E3704 /* LoginViewController.xib */; };
 		2D443B2323BCF5C2007BFEEE /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B2223BCF5C2007BFEEE /* Login.swift */; };
 		2D443B2523BCF792007BFEEE /* Login.Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B2423BCF792007BFEEE /* Login.Service.swift */; };
+		2D443B2823BD3E4A007BFEEE /* Forget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B2723BD3E4A007BFEEE /* Forget.swift */; };
+		2D443B2A23BD3E57007BFEEE /* Forget.RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B2923BD3E57007BFEEE /* Forget.RootView.swift */; };
 		2D443B3523BD403F007BFEEE /* fontlog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B2F23BD403F007BFEEE /* fontlog.txt */; };
 		2D443B3623BD403F007BFEEE /* ofl.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B3023BD403F007BFEEE /* ofl.txt */; };
 		2D443B3723BD403F007BFEEE /* offside.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B3223BD403F007BFEEE /* offside.jpg */; };
@@ -36,6 +38,8 @@
 		2D3FCF5523BB6FF6001E3704 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		2D443B2223BCF5C2007BFEEE /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		2D443B2423BCF792007BFEEE /* Login.Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.Service.swift; sourceTree = "<group>"; };
+		2D443B2723BD3E4A007BFEEE /* Forget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.swift; sourceTree = "<group>"; };
+		2D443B2923BD3E57007BFEEE /* Forget.RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.RootView.swift; sourceTree = "<group>"; };
 		2D443B2F23BD403F007BFEEE /* fontlog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fontlog.txt; sourceTree = "<group>"; };
 		2D443B3023BD403F007BFEEE /* ofl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ofl.txt; sourceTree = "<group>"; };
 		2D443B3223BD403F007BFEEE /* offside.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = offside.jpg; sourceTree = "<group>"; };
@@ -69,6 +73,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D443B2623BD3E3B007BFEEE /* Forget */ = {
+			isa = PBXGroup;
+			children = (
+				2D443B2723BD3E4A007BFEEE /* Forget.swift */,
+				2D443B2923BD3E57007BFEEE /* Forget.RootView.swift */,
+			);
+			path = Forget;
+			sourceTree = "<group>";
+		};
 		2D443B2B23BD4032007BFEEE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +195,7 @@
 				2D7A386023BAD4020094BAB2 /* Root */,
 				2D7A386323BAD5B70094BAB2 /* Welcome */,
 				2D7A385823BACE3B0094BAB2 /* Login */,
+				2D443B2623BD3E3B007BFEEE /* Forget */,
 				2DD6B27723B84B640006D873 /* Sign up */,
 				2D7A385F23BAD3FA0094BAB2 /* Dashboard */,
 				2DD6B26323B84AD60006D873 /* AppDelegate.swift */,
@@ -291,9 +305,11 @@
 				2DD6B27C23B84BF70006D873 /* SignUpView.swift in Sources */,
 				2D443B2323BCF5C2007BFEEE /* Login.swift in Sources */,
 				2D7A386223BAD4AD0094BAB2 /* DashboardView.swift in Sources */,
+				2D443B2A23BD3E57007BFEEE /* Forget.RootView.swift in Sources */,
 				2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */,
 				2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */,
 				2D443B2523BCF792007BFEEE /* Login.Service.swift in Sources */,
+				2D443B2823BD3E4A007BFEEE /* Forget.swift in Sources */,
 				2D49165023BBC3BC005969F3 /* Login.Wrapper.swift in Sources */,
 				2D7A386523BAD5C40094BAB2 /* WelcomeView.swift in Sources */,
 				2DD6B26623B84AD60006D873 /* SceneDelegate.swift in Sources */,

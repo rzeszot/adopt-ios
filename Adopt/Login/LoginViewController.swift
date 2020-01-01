@@ -12,6 +12,7 @@ import SwiftUI
 protocol LoginViewControllerDelegate: class {
     func login(_ vc: LoginViewController, didLoginWith email: String, and password: String)
     func loginDidClose(_ vc: LoginViewController)
+    func loginDidForget(_ vc: LoginViewController)
 }
 
 
@@ -40,6 +41,11 @@ class LoginViewController: UIViewController {
     @IBAction
     func closeAction() {
         delegate?.loginDidClose(self)
+    }
+
+    @IBAction
+    func forgotAction() {
+        delegate?.loginDidForget(self)
     }
 
     // MARK: -

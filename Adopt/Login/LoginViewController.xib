@@ -68,6 +68,13 @@
                         <action selector="loginAction" destination="-1" eventType="touchUpInside" id="Pux-5s-Cx7"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iip-TE-VfD">
+                    <rect key="frame" x="249" y="505" width="145" height="30"/>
+                    <state key="normal" title="Forgotten password?"/>
+                    <connections>
+                        <action selector="forgotAction" destination="-1" eventType="touchUpInside" id="9bR-lm-Uux"/>
+                    </connections>
+                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adopt!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRT-8k-wGk">
                     <rect key="frame" x="141" y="298.5" width="132" height="50.5"/>
                     <fontDescription key="fontDescription" name="Offside-Regular" family="Offside" pointSize="40"/>
@@ -84,8 +91,11 @@
                 <constraint firstItem="ecU-z6-fBf" firstAttribute="leading" secondItem="1er-zu-gvY" secondAttribute="leading" id="ImB-Yl-lLd"/>
                 <constraint firstItem="jRT-8k-wGk" firstAttribute="centerX" secondItem="wiy-Hw-ZJn" secondAttribute="centerX" id="NxF-Zl-o6i"/>
                 <constraint firstItem="ecU-z6-fBf" firstAttribute="trailing" secondItem="1er-zu-gvY" secondAttribute="trailing" id="ZeB-j7-C2C"/>
+                <constraint firstItem="Iip-TE-VfD" firstAttribute="trailing" secondItem="ecU-z6-fBf" secondAttribute="trailing" id="ebo-T1-Gwf"/>
+                <constraint firstItem="Iip-TE-VfD" firstAttribute="top" secondItem="Um0-Zy-8cF" secondAttribute="bottom" constant="8" id="j2P-gv-iue"/>
                 <constraint firstItem="Um0-Zy-8cF" firstAttribute="leading" secondItem="S7S-bC-a58" secondAttribute="leading" constant="10" id="lsB-YT-7RI"/>
                 <constraint firstItem="7re-xG-YvR" firstAttribute="top" secondItem="S7S-bC-a58" secondAttribute="top" constant="10" id="uSP-Bx-7SA"/>
+                <constraint firstItem="ecU-z6-fBf" firstAttribute="top" secondItem="Iip-TE-VfD" secondAttribute="bottom" constant="8" id="yd2-0Q-XP7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="S7S-bC-a58"/>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>

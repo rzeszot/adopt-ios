@@ -15,14 +15,19 @@ extension Login {
     }
 
     class Coordinator: LoginViewControllerDelegate {
+        enum Target {
+            case close
+            case forget
+        }
+
         let login: (Output) -> Void
-        let close: () -> Void
+        let move: (Target) -> Void
 
         var service: Service
 
-        init(login: @escaping (Output) -> Void, close: @escaping () -> Void, service: Service = .init()) {
+        init(login: @escaping (Output) -> Void, move: @escaping (Target) -> Void, service: Service = .init()) {
             self.login = login
-            self.close = close
+            self.move = move
             self.service = service
         }
 
@@ -44,8 +49,11 @@ extension Login {
         }
 
         func loginDidClose(_ vc: LoginViewController) {
-            close()
+            move(.close)
         }
 
+        func loginDidForget(_ vc: LoginViewController) {
+            move(.forget)
+        }
     }
 }
