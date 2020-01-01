@@ -10,8 +10,21 @@ import Foundation
 
 class Session: ObservableObject {
 
+    struct Credential {
+        let token: String
+    }
+
     @Published
     private(set) var token: String?
+
+    func login(_ credential: Credential) {
+        token = credential.token
+    }
+
+    func logout() {
+        token = nil
+    }
+
 
     class User: ObservableObject {
         let token: String
@@ -23,14 +36,6 @@ class Session: ObservableObject {
 
     var user: User? {
         return token.map { User(token: $0) }
-    }
-
-    func login(_ data: SignIn.Data) {
-        token = data.token
-    }
-
-    func logout() {
-        token = nil
     }
 
 }
