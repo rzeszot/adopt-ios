@@ -1,5 +1,4 @@
 //
-//  SignInViewController.swift
 //  Adopt
 //
 //  Created by Damian Rzeszot on 31/12/2019.
@@ -10,15 +9,15 @@ import UIKit
 import SwiftUI
 
 
-protocol SignInViewControllerDelegate: class {
-    func signIn(_ vc: SignInViewController, didLoginWith email: String, and password: String)
-    func signInDidClose(_ vc: SignInViewController)
+protocol LoginViewControllerDelegate: class {
+    func login(_ vc: LoginViewController, didLoginWith email: String, and password: String)
+    func loginDidClose(_ vc: LoginViewController)
 }
 
 
-class SignInViewController: UIViewController {
+class LoginViewController: UIViewController {
 
-    weak var delegate: SignInViewControllerDelegate?
+    weak var delegate: LoginViewControllerDelegate?
 
     // MARK: -
 
@@ -35,12 +34,12 @@ class SignInViewController: UIViewController {
         let email = emailTextField.text ?? ""
         let password = passwordTextField.text ?? ""
 
-        delegate?.signIn(self, didLoginWith: email, and: password)
+        delegate?.login(self, didLoginWith: email, and: password)
     }
 
     @IBAction
     func closeAction() {
-        delegate?.signInDidClose(self)
+        delegate?.loginDidClose(self)
     }
 
     // MARK: -

@@ -1,5 +1,4 @@
 //
-//  SignInView.Coordinator.swift
 //  Adopt
 //
 //  Created by Damian Rzeszot on 31/12/2019.
@@ -8,10 +7,10 @@
 
 import Foundation
 
-extension SignInView {
-    class Coordinator: SignInViewControllerDelegate {
+extension Login {
 
-        var login: (Coordinator.Output) -> Void
+    class Coordinator: LoginViewControllerDelegate {
+        let login: (Coordinator.Output) -> Void
 
         init(login: @escaping (Coordinator.Output) -> Void) {
             self.login = login
@@ -75,9 +74,9 @@ extension SignInView {
             task.resume()
         }
 
-        // MARK: - SignInViewControllerDelegate
+        // MARK: - LoginViewControllerDelegate
 
-        func signIn(_ vc: SignInViewController, didLoginWith email: String, and password: String) {
+        func login(_ vc: LoginViewController, didLoginWith email: String, and password: String) {
             login(email: email, password: password) { response in
                 switch response {
                 case .success(let success):
@@ -93,7 +92,7 @@ extension SignInView {
             }
         }
 
-        func signInDidClose(_ vc: SignInViewController) {
+        func loginDidClose(_ vc: LoginViewController) {
 
         }
 

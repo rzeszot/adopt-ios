@@ -58,7 +58,7 @@ struct WelcomeView: View {
         .sheet(item: $modal, content: { (id: Modal) -> AnyView in
             switch id {
             case .login:
-                return AnyView(SignInView(action: { output in
+                return AnyView(Login.RootView(action: { output in
                     self.session.login(Session.Credential(token: output.token))
                 }))
             case .register:

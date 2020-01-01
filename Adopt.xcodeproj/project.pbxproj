@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D3FCF5423BB6F47001E3704 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3FCF5323BB6F47001E3704 /* SignInViewController.swift */; };
-		2D3FCF5623BB6FF6001E3704 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D3FCF5523BB6FF6001E3704 /* SignInViewController.xib */; };
-		2D49164E23BBC39B005969F3 /* SignInView.Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49164D23BBC39B005969F3 /* SignInView.Coordinator.swift */; };
-		2D49165023BBC3BC005969F3 /* SignInView.Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49164F23BBC3BC005969F3 /* SignInView.Wrapper.swift */; };
-		2D7A385A23BACE580094BAB2 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385923BACE580094BAB2 /* SignInView.swift */; };
+		2D3FCF5423BB6F47001E3704 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3FCF5323BB6F47001E3704 /* LoginViewController.swift */; };
+		2D3FCF5623BB6FF6001E3704 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D3FCF5523BB6FF6001E3704 /* LoginViewController.xib */; };
+		2D443B2323BCF5C2007BFEEE /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B2223BCF5C2007BFEEE /* Login.swift */; };
+		2D49164E23BBC39B005969F3 /* Login.Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49164D23BBC39B005969F3 /* Login.Coordinator.swift */; };
+		2D49165023BBC3BC005969F3 /* Login.Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49164F23BBC3BC005969F3 /* Login.Wrapper.swift */; };
+		2D7A385A23BACE580094BAB2 /* Login.RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385923BACE580094BAB2 /* Login.RootView.swift */; };
 		2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385B23BAD03C0094BAB2 /* Session.swift */; };
 		2D7A385E23BAD1E00094BAB2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385D23BAD1E00094BAB2 /* RootView.swift */; };
 		2D7A386223BAD4AD0094BAB2 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386123BAD4AD0094BAB2 /* DashboardView.swift */; };
@@ -26,11 +27,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2D3FCF5323BB6F47001E3704 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		2D3FCF5523BB6FF6001E3704 /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
-		2D49164D23BBC39B005969F3 /* SignInView.Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.Coordinator.swift; sourceTree = "<group>"; };
-		2D49164F23BBC3BC005969F3 /* SignInView.Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.Wrapper.swift; sourceTree = "<group>"; };
-		2D7A385923BACE580094BAB2 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		2D3FCF5323BB6F47001E3704 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2D3FCF5523BB6FF6001E3704 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		2D443B2223BCF5C2007BFEEE /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		2D49164D23BBC39B005969F3 /* Login.Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.Coordinator.swift; sourceTree = "<group>"; };
+		2D49164F23BBC3BC005969F3 /* Login.Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.Wrapper.swift; sourceTree = "<group>"; };
+		2D7A385923BACE580094BAB2 /* Login.RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.RootView.swift; sourceTree = "<group>"; };
 		2D7A385B23BAD03C0094BAB2 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		2D7A385D23BAD1E00094BAB2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		2D7A386123BAD4AD0094BAB2 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
@@ -57,16 +59,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D7A385823BACE3B0094BAB2 /* Sign in */ = {
+		2D7A385823BACE3B0094BAB2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				2D7A385923BACE580094BAB2 /* SignInView.swift */,
-				2D49164D23BBC39B005969F3 /* SignInView.Coordinator.swift */,
-				2D49164F23BBC3BC005969F3 /* SignInView.Wrapper.swift */,
-				2D3FCF5323BB6F47001E3704 /* SignInViewController.swift */,
-				2D3FCF5523BB6FF6001E3704 /* SignInViewController.xib */,
+				2D443B2223BCF5C2007BFEEE /* Login.swift */,
+				2D7A385923BACE580094BAB2 /* Login.RootView.swift */,
+				2D49164D23BBC39B005969F3 /* Login.Coordinator.swift */,
+				2D49164F23BBC3BC005969F3 /* Login.Wrapper.swift */,
+				2D3FCF5323BB6F47001E3704 /* LoginViewController.swift */,
+				2D3FCF5523BB6FF6001E3704 /* LoginViewController.xib */,
 			);
-			path = "Sign in";
+			path = Login;
 			sourceTree = "<group>";
 		};
 		2D7A385F23BAD3FA0094BAB2 /* Dashboard */ = {
@@ -115,7 +118,7 @@
 			children = (
 				2D7A386023BAD4020094BAB2 /* Root */,
 				2D7A386323BAD5B70094BAB2 /* Welcome */,
-				2D7A385823BACE3B0094BAB2 /* Sign in */,
+				2D7A385823BACE3B0094BAB2 /* Login */,
 				2DD6B27723B84B640006D873 /* Sign up */,
 				2D7A385F23BAD3FA0094BAB2 /* Dashboard */,
 				2DD6B26323B84AD60006D873 /* AppDelegate.swift */,
@@ -203,7 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D3FCF5623BB6FF6001E3704 /* SignInViewController.xib in Resources */,
+				2D3FCF5623BB6FF6001E3704 /* LoginViewController.xib in Resources */,
 				2DD6B27023B84AD70006D873 /* LaunchScreen.storyboard in Resources */,
 				2DD6B26D23B84AD70006D873 /* Preview Assets.xcassets in Resources */,
 				2DD6B26A23B84AD70006D873 /* Assets.xcassets in Resources */,
@@ -217,18 +220,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D49164E23BBC39B005969F3 /* SignInView.Coordinator.swift in Sources */,
+				2D49164E23BBC39B005969F3 /* Login.Coordinator.swift in Sources */,
 				2DD6B27C23B84BF70006D873 /* SignUpView.swift in Sources */,
+				2D443B2323BCF5C2007BFEEE /* Login.swift in Sources */,
 				2D7A386223BAD4AD0094BAB2 /* DashboardView.swift in Sources */,
 				2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */,
 				2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */,
-				2D49165023BBC3BC005969F3 /* SignInView.Wrapper.swift in Sources */,
+				2D49165023BBC3BC005969F3 /* Login.Wrapper.swift in Sources */,
 				2D7A386523BAD5C40094BAB2 /* WelcomeView.swift in Sources */,
 				2DD6B26623B84AD60006D873 /* SceneDelegate.swift in Sources */,
 				2D7A385E23BAD1E00094BAB2 /* RootView.swift in Sources */,
 				2DD6B26823B84AD60006D873 /* ContentView.swift in Sources */,
-				2D3FCF5423BB6F47001E3704 /* SignInViewController.swift in Sources */,
-				2D7A385A23BACE580094BAB2 /* SignInView.swift in Sources */,
+				2D3FCF5423BB6F47001E3704 /* LoginViewController.swift in Sources */,
+				2D7A385A23BACE580094BAB2 /* Login.RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

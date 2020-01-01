@@ -1,5 +1,4 @@
 //
-//  SignInView.Wrapper.swift
 //  Adopt
 //
 //  Created by Damian Rzeszot on 31/12/2019.
@@ -8,17 +7,18 @@
 
 import SwiftUI
 
-extension SignInView {
+extension Login {
+
     struct Wrapper: UIViewControllerRepresentable {
         var login: (Coordinator.Output) -> Void
 
-        func makeUIViewController(context: UIViewControllerRepresentableContext<Wrapper>) -> SignInViewController {
-            let vc = SignInViewController()
+        func makeUIViewController(context: UIViewControllerRepresentableContext<Wrapper>) -> LoginViewController {
+            let vc = LoginViewController()
             vc.delegate = context.coordinator
             return vc
         }
 
-        func updateUIViewController(_ vc: SignInViewController, context: UIViewControllerRepresentableContext<Wrapper>) {
+        func updateUIViewController(_ vc: LoginViewController, context: UIViewControllerRepresentableContext<Wrapper>) {
 
         }
 
@@ -26,4 +26,5 @@ extension SignInView {
             return Coordinator(login: login)
         }
     }
+
 }
