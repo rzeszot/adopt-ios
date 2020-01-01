@@ -36,10 +36,8 @@ extension Login {
         // MARK: -
 
         func perform(_ input: Input, completion: @escaping (Output) -> Void) {
-            var request = URLRequest(url: URL(string: "https://adopt.rzeszot.pro/api/auth/sign_in")!)
-            request.httpMethod = "POST"
-            request.httpBody = try! JSONEncoder().encode(["user":["email": input.email, "password": input.password]])
-            request.allHTTPHeaderFields?["Content-Type"] = "application/json"
+            var request = URLRequest.post("https://adopt.rzeszot.pro/api/auth/sign_in")
+            try! request.set(json: ["user":["email": input.email, "password": input.password]])
 
             let session = URLSession.shared
             let task = session.dataTask(with: request) { (data, response, error) in
@@ -69,3 +67,32 @@ extension Login {
     }
 
 }
+
+extension URL: ExpressibleByStringLiteral {
+
+    // MARK: - ExpressibleByStringLiteral
+
+    public init(stringLiteral value: String) {
+        self = URL(string: value)!
+    }
+
+}
+
+extension URLRequest {
+
+    static func post(_ url: URL) -> URLRequest {
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        return request
+    }
+
+    mutating func set<T: Encodable>(json: T) throws {
+        let encoder = JSONEncoder()
+        let data = try encoder.encode(json)
+
+        httpBody = data
+        allHTTPHeaderFields?["Content-Type"] = "application/json"
+    }
+
+}
+
