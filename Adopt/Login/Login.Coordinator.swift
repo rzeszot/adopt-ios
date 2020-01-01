@@ -20,32 +20,18 @@ extension Login {
             case forget
         }
 
-        let login: (Output) -> Void
+        let perform: (Service.Input) -> Void
         let move: (Target) -> Void
 
-        var service: Service
-
-        init(login: @escaping (Output) -> Void, move: @escaping (Target) -> Void, service: Service = .init()) {
-            self.login = login
+        init(perform: @escaping (Service.Input) -> Void, move: @escaping (Target) -> Void) {
+            self.perform = perform
             self.move = move
-            self.service = service
         }
 
         // MARK: - LoginViewControllerDelegate
 
         func login(_ vc: LoginViewController, didLoginWith email: String, and password: String) {
-            service.perform(.init(email: email, password: password)) { result in
-                switch result {
-                case .success(let success):
-                    DispatchQueue.main.async {
-                        self.login(Output(email: email, token: success.token))
-                    }
-                    break
-                case .failure:
-                    print("failure")
-                    break
-                }
-            }
+            perform(Service.Input(email: email, password: password))
         }
 
         func loginDidClose(_ vc: LoginViewController) {
