@@ -32,6 +32,7 @@ struct SignUp {
     }
 
     struct Data {
+        let email: String
         let token: String
     }
 }
@@ -58,7 +59,7 @@ struct SignUpView: View {
                     switch result {
                     case .success(let success):
                         DispatchQueue.main.async {
-                            self.action(SignUp.Data(token: success.token))
+                            self.action(SignUp.Data(email: self.email, token: success.token))
                         }
                         break
                     case .failure:

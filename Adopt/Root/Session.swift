@@ -10,32 +10,25 @@ import Foundation
 
 class Session: ObservableObject {
 
-    struct Credential {
-        let token: String
-    }
-
-    @Published
-    private(set) var token: String?
-
-    func login(_ credential: Credential) {
-        token = credential.token
-    }
-
-    func logout() {
-        token = nil
-    }
-
-
-    class User: ObservableObject {
+    class Credential: ObservableObject {
+        let email: String
         let token: String
 
-        init(token: String) {
+        init(email: String, token: String) {
+            self.email = email
             self.token = token
         }
     }
 
-    var user: User? {
-        return token.map { User(token: $0) }
+    @Published
+    private(set) var credential: Credential?
+
+    func login(_ credential: Credential) {
+        self.credential = credential
+    }
+
+    func logout() {
+        credential = nil
     }
 
 }

@@ -59,7 +59,7 @@ struct WelcomeView: View {
             switch id {
             case .login:
                 return AnyView(Login.RootView(finish: { output in
-                    self.session.login(Session.Credential(token: output.token))
+                    self.session.login(Session.Credential(email: output.email, token: output.token))
                 }, close: {
                     withAnimation {
                         self.modal = nil
@@ -67,7 +67,7 @@ struct WelcomeView: View {
                 }))
             case .register:
                 return AnyView(SignUpView(action: { data in
-                    self.session.login(Session.Credential(token: data.token))
+                    self.session.login(Session.Credential(email: data.email,token: data.token))
                 }))
             }
         })

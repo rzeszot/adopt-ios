@@ -9,7 +9,10 @@ import Foundation
 
 extension Login {
 
-    typealias Output = Service.Success
+    struct Output {
+        let email: String
+        let token: String
+    }
 
     class Coordinator: LoginViewControllerDelegate {
         let login: (Output) -> Void
@@ -30,7 +33,7 @@ extension Login {
                 switch result {
                 case .success(let success):
                     DispatchQueue.main.async {
-                        self.login(success)
+                        self.login(Output(email: email, token: success.token))
                     }
                     break
                 case .failure:

@@ -14,10 +14,10 @@ struct RootView: View {
     var session: Session
 
     var body: some View {
-        if let user = session.user {
+        if let credential = session.credential {
             return AnyView(DashboardView(action: {
                 self.session.logout()
-            }).environmentObject(user))
+            }).environmentObject(credential))
         } else {
             return AnyView(WelcomeView())
         }

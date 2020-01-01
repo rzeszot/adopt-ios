@@ -13,11 +13,11 @@ struct DashboardView: View {
     var action: () -> Void
 
     @EnvironmentObject
-    var user: Session.User
+    var credential: Session.Credential
 
     var body: some View {
         VStack {
-            Text("Hello, \(user.token)!")
+            Text("Hello, \(credential.email)!")
 
             Button(action: {
                 self.action()
