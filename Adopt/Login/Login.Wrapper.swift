@@ -10,7 +10,7 @@ import SwiftUI
 extension Login {
 
     struct Wrapper: UIViewControllerRepresentable {
-        var login: (Coordinator.Output) -> Void
+        var login: (Output) -> Void
         var close: () -> Void
 
         func makeUIViewController(context: UIViewControllerRepresentableContext<Wrapper>) -> LoginViewController {

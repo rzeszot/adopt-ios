@@ -10,7 +10,7 @@ import SwiftUI
 extension Login {
 
     struct RootView: View {
-        var finish: (Coordinator.Output) -> Void
+        var finish: (Output) -> Void
         var close: () -> Void
 
         var body: some View {
