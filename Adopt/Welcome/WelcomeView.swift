@@ -61,7 +61,9 @@ struct WelcomeView: View {
                 return AnyView(Login.RootView(finish: { output in
                     self.session.login(Session.Credential(token: output.token))
                 }, close: {
-                    self.modal = nil
+                    withAnimation {
+                        self.modal = nil
+                    }
                 }))
             case .register:
                 return AnyView(SignUpView(action: { data in
