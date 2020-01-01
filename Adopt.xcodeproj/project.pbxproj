@@ -17,6 +17,8 @@
 		2D443B3623BD403F007BFEEE /* ofl.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B3023BD403F007BFEEE /* ofl.txt */; };
 		2D443B3723BD403F007BFEEE /* offside.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B3223BD403F007BFEEE /* offside.jpg */; };
 		2D443B3823BD403F007BFEEE /* offside-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B3423BD403F007BFEEE /* offside-regular.ttf */; };
+		2D443B3A23BD4134007BFEEE /* Forget.EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B3923BD4134007BFEEE /* Forget.EmailView.swift */; };
+		2D443B3C23BD418A007BFEEE /* Forget.CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B3B23BD418A007BFEEE /* Forget.CodeView.swift */; };
 		2D49164E23BBC39B005969F3 /* Login.Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49164D23BBC39B005969F3 /* Login.Coordinator.swift */; };
 		2D49165023BBC3BC005969F3 /* Login.Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49164F23BBC3BC005969F3 /* Login.Wrapper.swift */; };
 		2D7A385A23BACE580094BAB2 /* Login.RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385923BACE580094BAB2 /* Login.RootView.swift */; };
@@ -44,6 +46,8 @@
 		2D443B3023BD403F007BFEEE /* ofl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ofl.txt; sourceTree = "<group>"; };
 		2D443B3223BD403F007BFEEE /* offside.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = offside.jpg; sourceTree = "<group>"; };
 		2D443B3423BD403F007BFEEE /* offside-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "offside-regular.ttf"; sourceTree = "<group>"; };
+		2D443B3923BD4134007BFEEE /* Forget.EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.EmailView.swift; sourceTree = "<group>"; };
+		2D443B3B23BD418A007BFEEE /* Forget.CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.CodeView.swift; sourceTree = "<group>"; };
 		2D49164D23BBC39B005969F3 /* Login.Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.Coordinator.swift; sourceTree = "<group>"; };
 		2D49164F23BBC3BC005969F3 /* Login.Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.Wrapper.swift; sourceTree = "<group>"; };
 		2D7A385923BACE580094BAB2 /* Login.RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.RootView.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 			children = (
 				2D443B2723BD3E4A007BFEEE /* Forget.swift */,
 				2D443B2923BD3E57007BFEEE /* Forget.RootView.swift */,
+				2D443B3923BD4134007BFEEE /* Forget.EmailView.swift */,
+				2D443B3B23BD418A007BFEEE /* Forget.CodeView.swift */,
 			);
 			path = Forget;
 			sourceTree = "<group>";
@@ -302,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D49164E23BBC39B005969F3 /* Login.Coordinator.swift in Sources */,
+				2D443B3C23BD418A007BFEEE /* Forget.CodeView.swift in Sources */,
 				2DD6B27C23B84BF70006D873 /* SignUpView.swift in Sources */,
 				2D443B2323BCF5C2007BFEEE /* Login.swift in Sources */,
 				2D7A386223BAD4AD0094BAB2 /* DashboardView.swift in Sources */,
@@ -311,6 +318,7 @@
 				2D443B2523BCF792007BFEEE /* Login.Service.swift in Sources */,
 				2D443B2823BD3E4A007BFEEE /* Forget.swift in Sources */,
 				2D49165023BBC3BC005969F3 /* Login.Wrapper.swift in Sources */,
+				2D443B3A23BD4134007BFEEE /* Forget.EmailView.swift in Sources */,
 				2D7A386523BAD5C40094BAB2 /* WelcomeView.swift in Sources */,
 				2DD6B26623B84AD60006D873 /* SceneDelegate.swift in Sources */,
 				2D7A385E23BAD1E00094BAB2 /* RootView.swift in Sources */,

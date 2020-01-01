@@ -12,12 +12,14 @@ extension Forget {
     struct RootView: View {
         var back: () -> Void
 
+        @State
+        var code: Bool = false
+
         var body: some View {
-            VStack {
-                Spacer()
-                Text("Hello, World!")
-                Spacer()
-                Button(action: back, label: { Text("Back to Login") })
+            if code {
+                return AnyView(CodeView())
+            } else {
+                return AnyView(EmailView(back: back))
             }
         }
     }
