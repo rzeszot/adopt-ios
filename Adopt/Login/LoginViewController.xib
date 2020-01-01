@@ -6,11 +6,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="offside-regular.ttf">
-            <string>Offside-Regular</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Adopt" customModuleProvider="target">
             <connections>
@@ -75,21 +70,13 @@
                         <action selector="forgotAction" destination="-1" eventType="touchUpInside" id="9bR-lm-Uux"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adopt!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRT-8k-wGk">
-                    <rect key="frame" x="141" y="298.5" width="132" height="50.5"/>
-                    <fontDescription key="fontDescription" name="Offside-Regular" family="Offside" pointSize="40"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="S7S-bC-a58" firstAttribute="trailing" secondItem="Um0-Zy-8cF" secondAttribute="trailing" constant="10" id="5kG-aR-Mo9"/>
                 <constraint firstItem="7re-xG-YvR" firstAttribute="leading" secondItem="S7S-bC-a58" secondAttribute="leading" constant="10" id="6mO-vb-mqv"/>
-                <constraint firstItem="Um0-Zy-8cF" firstAttribute="top" secondItem="jRT-8k-wGk" secondAttribute="bottom" constant="50" id="Cko-XW-lKe"/>
                 <constraint firstItem="Um0-Zy-8cF" firstAttribute="centerY" secondItem="wiy-Hw-ZJn" secondAttribute="centerY" id="Ex9-0O-g73"/>
                 <constraint firstItem="ecU-z6-fBf" firstAttribute="leading" secondItem="1er-zu-gvY" secondAttribute="leading" id="ImB-Yl-lLd"/>
-                <constraint firstItem="jRT-8k-wGk" firstAttribute="centerX" secondItem="wiy-Hw-ZJn" secondAttribute="centerX" id="NxF-Zl-o6i"/>
                 <constraint firstItem="ecU-z6-fBf" firstAttribute="trailing" secondItem="1er-zu-gvY" secondAttribute="trailing" id="ZeB-j7-C2C"/>
                 <constraint firstItem="Iip-TE-VfD" firstAttribute="trailing" secondItem="ecU-z6-fBf" secondAttribute="trailing" id="ebo-T1-Gwf"/>
                 <constraint firstItem="Iip-TE-VfD" firstAttribute="top" secondItem="Um0-Zy-8cF" secondAttribute="bottom" constant="8" id="j2P-gv-iue"/>

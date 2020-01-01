@@ -30,7 +30,6 @@ struct Welcome {
 
         var body: some View {
             IntroView(action: { self.modal = $0 })
-            .padding(.horizontal, 20)
             .sheet(item: $modal, content: { (id: Modal) -> AnyView in
                 switch id {
                 case .login:

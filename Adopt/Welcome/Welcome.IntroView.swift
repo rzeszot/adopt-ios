@@ -1,11 +1,11 @@
 //
-//  Welcome.IntroView.swift
 //  Adopt
 //
 //  Created by Damian Rzeszot on 01/01/2020.
 //  Copyright © 2020 Damian Rzeszot. All rights reserved.
 //
 
+import AVFoundation
 import SwiftUI
 
 extension Welcome {
@@ -14,6 +14,14 @@ extension Welcome {
 
         var body: some View {
             VStack(spacing: 10) {
+                Spacer()
+
+                Text("Adopt!")
+                    .font(Font.custom("offside-regular", size: 40))
+                    .padding()
+
+                    .cornerRadius(15.0)
+
                 Spacer()
 
                 Button(action: {
@@ -41,6 +49,7 @@ extension Welcome {
                     .padding(14)
                 })
             }
+            .padding(.horizontal, 20)
         }
     }
 }
