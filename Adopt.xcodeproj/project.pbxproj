@@ -11,6 +11,10 @@
 		2D3FCF5623BB6FF6001E3704 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D3FCF5523BB6FF6001E3704 /* LoginViewController.xib */; };
 		2D443B2323BCF5C2007BFEEE /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B2223BCF5C2007BFEEE /* Login.swift */; };
 		2D443B2523BCF792007BFEEE /* Login.Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B2423BCF792007BFEEE /* Login.Service.swift */; };
+		2D443B3523BD403F007BFEEE /* fontlog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B2F23BD403F007BFEEE /* fontlog.txt */; };
+		2D443B3623BD403F007BFEEE /* ofl.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B3023BD403F007BFEEE /* ofl.txt */; };
+		2D443B3723BD403F007BFEEE /* offside.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B3223BD403F007BFEEE /* offside.jpg */; };
+		2D443B3823BD403F007BFEEE /* offside-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B3423BD403F007BFEEE /* offside-regular.ttf */; };
 		2D49164E23BBC39B005969F3 /* Login.Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49164D23BBC39B005969F3 /* Login.Coordinator.swift */; };
 		2D49165023BBC3BC005969F3 /* Login.Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49164F23BBC3BC005969F3 /* Login.Wrapper.swift */; };
 		2D7A385A23BACE580094BAB2 /* Login.RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385923BACE580094BAB2 /* Login.RootView.swift */; };
@@ -32,6 +36,10 @@
 		2D3FCF5523BB6FF6001E3704 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		2D443B2223BCF5C2007BFEEE /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		2D443B2423BCF792007BFEEE /* Login.Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.Service.swift; sourceTree = "<group>"; };
+		2D443B2F23BD403F007BFEEE /* fontlog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fontlog.txt; sourceTree = "<group>"; };
+		2D443B3023BD403F007BFEEE /* ofl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ofl.txt; sourceTree = "<group>"; };
+		2D443B3223BD403F007BFEEE /* offside.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = offside.jpg; sourceTree = "<group>"; };
+		2D443B3423BD403F007BFEEE /* offside-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "offside-regular.ttf"; sourceTree = "<group>"; };
 		2D49164D23BBC39B005969F3 /* Login.Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.Coordinator.swift; sourceTree = "<group>"; };
 		2D49164F23BBC3BC005969F3 /* Login.Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.Wrapper.swift; sourceTree = "<group>"; };
 		2D7A385923BACE580094BAB2 /* Login.RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.RootView.swift; sourceTree = "<group>"; };
@@ -61,6 +69,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D443B2B23BD4032007BFEEE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2D443B2C23BD403F007BFEEE /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2D443B2C23BD403F007BFEEE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2D443B2D23BD403F007BFEEE /* Offside */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2D443B2D23BD403F007BFEEE /* Offside */ = {
+			isa = PBXGroup;
+			children = (
+				2D443B2E23BD403F007BFEEE /* Document */,
+				2D443B3123BD403F007BFEEE /* Image */,
+				2D443B3323BD403F007BFEEE /* Fonts */,
+			);
+			path = Offside;
+			sourceTree = "<group>";
+		};
+		2D443B2E23BD403F007BFEEE /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				2D443B2F23BD403F007BFEEE /* fontlog.txt */,
+				2D443B3023BD403F007BFEEE /* ofl.txt */,
+			);
+			path = Document;
+			sourceTree = "<group>";
+		};
+		2D443B3123BD403F007BFEEE /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				2D443B3223BD403F007BFEEE /* offside.jpg */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		2D443B3323BD403F007BFEEE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2D443B3423BD403F007BFEEE /* offside-regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		2D7A385823BACE3B0094BAB2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +178,7 @@
 		2DD6B26223B84AD60006D873 /* Adopt */ = {
 			isa = PBXGroup;
 			children = (
+				2D443B2B23BD4032007BFEEE /* Resources */,
 				2D7A386023BAD4020094BAB2 /* Root */,
 				2D7A386323BAD5B70094BAB2 /* Welcome */,
 				2D7A385823BACE3B0094BAB2 /* Login */,
@@ -209,10 +269,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D443B3623BD403F007BFEEE /* ofl.txt in Resources */,
 				2D3FCF5623BB6FF6001E3704 /* LoginViewController.xib in Resources */,
 				2DD6B27023B84AD70006D873 /* LaunchScreen.storyboard in Resources */,
 				2DD6B26D23B84AD70006D873 /* Preview Assets.xcassets in Resources */,
 				2DD6B26A23B84AD70006D873 /* Assets.xcassets in Resources */,
+				2D443B3523BD403F007BFEEE /* fontlog.txt in Resources */,
+				2D443B3823BD403F007BFEEE /* offside-regular.ttf in Resources */,
+				2D443B3723BD403F007BFEEE /* offside.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

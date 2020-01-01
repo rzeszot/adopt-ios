@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="offside-regular.ttf">
+            <string>Offside-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Adopt" customModuleProvider="target">
             <connections>
@@ -53,7 +58,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecU-z6-fBf">
-                    <rect key="frame" x="20" y="507" width="374" height="38"/>
+                    <rect key="frame" x="20" y="543" width="374" height="38"/>
                     <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                     <state key="normal" title="Log in">
@@ -63,14 +68,21 @@
                         <action selector="loginAction" destination="-1" eventType="touchUpInside" id="Pux-5s-Cx7"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adopt!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRT-8k-wGk">
+                    <rect key="frame" x="141" y="298.5" width="132" height="50.5"/>
+                    <fontDescription key="fontDescription" name="Offside-Regular" family="Offside" pointSize="40"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="ecU-z6-fBf" firstAttribute="top" secondItem="Um0-Zy-8cF" secondAttribute="bottom" constant="10" id="3mU-hh-Ysf"/>
                 <constraint firstItem="S7S-bC-a58" firstAttribute="trailing" secondItem="Um0-Zy-8cF" secondAttribute="trailing" constant="10" id="5kG-aR-Mo9"/>
                 <constraint firstItem="7re-xG-YvR" firstAttribute="leading" secondItem="S7S-bC-a58" secondAttribute="leading" constant="10" id="6mO-vb-mqv"/>
+                <constraint firstItem="Um0-Zy-8cF" firstAttribute="top" secondItem="jRT-8k-wGk" secondAttribute="bottom" constant="50" id="Cko-XW-lKe"/>
                 <constraint firstItem="Um0-Zy-8cF" firstAttribute="centerY" secondItem="wiy-Hw-ZJn" secondAttribute="centerY" id="Ex9-0O-g73"/>
                 <constraint firstItem="ecU-z6-fBf" firstAttribute="leading" secondItem="1er-zu-gvY" secondAttribute="leading" id="ImB-Yl-lLd"/>
+                <constraint firstItem="jRT-8k-wGk" firstAttribute="centerX" secondItem="wiy-Hw-ZJn" secondAttribute="centerX" id="NxF-Zl-o6i"/>
                 <constraint firstItem="ecU-z6-fBf" firstAttribute="trailing" secondItem="1er-zu-gvY" secondAttribute="trailing" id="ZeB-j7-C2C"/>
                 <constraint firstItem="Um0-Zy-8cF" firstAttribute="leading" secondItem="S7S-bC-a58" secondAttribute="leading" constant="10" id="lsB-YT-7RI"/>
                 <constraint firstItem="7re-xG-YvR" firstAttribute="top" secondItem="S7S-bC-a58" secondAttribute="top" constant="10" id="uSP-Bx-7SA"/>
