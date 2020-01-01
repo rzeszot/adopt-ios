@@ -19,13 +19,14 @@
 		2D443B3823BD403F007BFEEE /* offside-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B3423BD403F007BFEEE /* offside-regular.ttf */; };
 		2D443B3A23BD4134007BFEEE /* Forget.EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B3923BD4134007BFEEE /* Forget.EmailView.swift */; };
 		2D443B3C23BD418A007BFEEE /* Forget.CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B3B23BD418A007BFEEE /* Forget.CodeView.swift */; };
+		2D443B3E23BD456D007BFEEE /* Welcome.IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B3D23BD456D007BFEEE /* Welcome.IntroView.swift */; };
 		2D49164E23BBC39B005969F3 /* Login.Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49164D23BBC39B005969F3 /* Login.Coordinator.swift */; };
 		2D49165023BBC3BC005969F3 /* Login.Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49164F23BBC3BC005969F3 /* Login.Wrapper.swift */; };
 		2D7A385A23BACE580094BAB2 /* Login.RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385923BACE580094BAB2 /* Login.RootView.swift */; };
 		2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385B23BAD03C0094BAB2 /* Session.swift */; };
 		2D7A385E23BAD1E00094BAB2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385D23BAD1E00094BAB2 /* RootView.swift */; };
 		2D7A386223BAD4AD0094BAB2 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386123BAD4AD0094BAB2 /* DashboardView.swift */; };
-		2D7A386523BAD5C40094BAB2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386423BAD5C40094BAB2 /* WelcomeView.swift */; };
+		2D7A386523BAD5C40094BAB2 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386423BAD5C40094BAB2 /* Welcome.swift */; };
 		2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6B26323B84AD60006D873 /* AppDelegate.swift */; };
 		2DD6B26623B84AD60006D873 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6B26523B84AD60006D873 /* SceneDelegate.swift */; };
 		2DD6B26823B84AD60006D873 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6B26723B84AD60006D873 /* ContentView.swift */; };
@@ -48,13 +49,14 @@
 		2D443B3423BD403F007BFEEE /* offside-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "offside-regular.ttf"; sourceTree = "<group>"; };
 		2D443B3923BD4134007BFEEE /* Forget.EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.EmailView.swift; sourceTree = "<group>"; };
 		2D443B3B23BD418A007BFEEE /* Forget.CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.CodeView.swift; sourceTree = "<group>"; };
+		2D443B3D23BD456D007BFEEE /* Welcome.IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.IntroView.swift; sourceTree = "<group>"; };
 		2D49164D23BBC39B005969F3 /* Login.Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.Coordinator.swift; sourceTree = "<group>"; };
 		2D49164F23BBC3BC005969F3 /* Login.Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.Wrapper.swift; sourceTree = "<group>"; };
 		2D7A385923BACE580094BAB2 /* Login.RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.RootView.swift; sourceTree = "<group>"; };
 		2D7A385B23BAD03C0094BAB2 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		2D7A385D23BAD1E00094BAB2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		2D7A386123BAD4AD0094BAB2 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
-		2D7A386423BAD5C40094BAB2 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		2D7A386423BAD5C40094BAB2 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		2DD6B26023B84AD60006D873 /* Adopt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adopt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD6B26323B84AD60006D873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD6B26523B84AD60006D873 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,7 +175,8 @@
 		2D7A386323BAD5B70094BAB2 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
-				2D7A386423BAD5C40094BAB2 /* WelcomeView.swift */,
+				2D7A386423BAD5C40094BAB2 /* Welcome.swift */,
+				2D443B3D23BD456D007BFEEE /* Welcome.IntroView.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -313,13 +316,14 @@
 				2D443B2323BCF5C2007BFEEE /* Login.swift in Sources */,
 				2D7A386223BAD4AD0094BAB2 /* DashboardView.swift in Sources */,
 				2D443B2A23BD3E57007BFEEE /* Forget.RootView.swift in Sources */,
+				2D443B3E23BD456D007BFEEE /* Welcome.IntroView.swift in Sources */,
 				2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */,
 				2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */,
 				2D443B2523BCF792007BFEEE /* Login.Service.swift in Sources */,
 				2D443B2823BD3E4A007BFEEE /* Forget.swift in Sources */,
 				2D49165023BBC3BC005969F3 /* Login.Wrapper.swift in Sources */,
 				2D443B3A23BD4134007BFEEE /* Forget.EmailView.swift in Sources */,
-				2D7A386523BAD5C40094BAB2 /* WelcomeView.swift in Sources */,
+				2D7A386523BAD5C40094BAB2 /* Welcome.swift in Sources */,
 				2DD6B26623B84AD60006D873 /* SceneDelegate.swift in Sources */,
 				2D7A385E23BAD1E00094BAB2 /* RootView.swift in Sources */,
 				2DD6B26823B84AD60006D873 /* ContentView.swift in Sources */,

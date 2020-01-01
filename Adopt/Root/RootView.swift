@@ -19,7 +19,7 @@ struct RootView: View {
                 self.session.logout()
             }).environmentObject(credential))
         } else {
-            return AnyView(WelcomeView())
+            return AnyView(Welcome.RootView())
         }
     }
 
