@@ -27,6 +27,7 @@
 		2D7A385E23BAD1E00094BAB2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385D23BAD1E00094BAB2 /* RootView.swift */; };
 		2D7A386223BAD4AD0094BAB2 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386123BAD4AD0094BAB2 /* Dashboard.swift */; };
 		2D7A386523BAD5C40094BAB2 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386423BAD5C40094BAB2 /* Welcome.swift */; };
+		2DA0D07F23BE57AA0095E24E /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA0D07E23BE57AA0095E24E /* SwipeViewController.swift */; };
 		2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6B26323B84AD60006D873 /* AppDelegate.swift */; };
 		2DD6B26623B84AD60006D873 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6B26523B84AD60006D873 /* SceneDelegate.swift */; };
 		2DD6B26A23B84AD70006D873 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD6B26923B84AD70006D873 /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		2D7A385D23BAD1E00094BAB2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		2D7A386123BAD4AD0094BAB2 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		2D7A386423BAD5C40094BAB2 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
+		2DA0D07E23BE57AA0095E24E /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		2DD6B26023B84AD60006D873 /* Adopt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adopt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD6B26323B84AD60006D873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD6B26523B84AD60006D873 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				2D7A386123BAD4AD0094BAB2 /* Dashboard.swift */,
+				2DA0D07E23BE57AA0095E24E /* SwipeViewController.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				2D443B2523BCF792007BFEEE /* Login.Service.swift in Sources */,
 				2D443B2823BD3E4A007BFEEE /* Forget.swift in Sources */,
 				2D49165023BBC3BC005969F3 /* Login.Wrapper.swift in Sources */,
+				2DA0D07F23BE57AA0095E24E /* SwipeViewController.swift in Sources */,
 				2D443B3A23BD4134007BFEEE /* Forget.EmailView.swift in Sources */,
 				2D7A386523BAD5C40094BAB2 /* Welcome.swift in Sources */,
 				2DD6B26623B84AD60006D873 /* SceneDelegate.swift in Sources */,

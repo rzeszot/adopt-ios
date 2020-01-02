@@ -17,18 +17,33 @@ struct Dashboard {
         var credential: Session.Credential
 
         var body: some View {
-            VStack {
-                Text("Hello, \(credential.email)!")
+            TabView {
+                SwipeWrapper()
+                    .edgesIgnoringSafeArea(.all)
+                    .tag(0)
+                    .tabItem {
+                        Image(systemName: "flame")
+                    }
 
-                Button(action: {
-                    self.dismiss()
-                }, label: {
-                    Text("logout")
-                })
+
+                VStack {
+                    Text("Hello, \(credential.email)!")
+
+                    Button(action: {
+                        self.dismiss()
+                    }, label: {
+                        Text("logout")
+                    })
+                }
+                .tag(1)
+                .tabItem {
+                    Image(systemName: "person.fill")
+                }
             }
+            .edgesIgnoringSafeArea(.top)
         }
-
     }
+
 }
 
 struct Dashboard_RootView_Previews: PreviewProvider {
