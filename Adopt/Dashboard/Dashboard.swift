@@ -26,19 +26,11 @@ struct Dashboard {
                     }
 
 
-                VStack {
-                    Text("Hello, \(credential.email)!")
-
-                    Button(action: {
-                        self.dismiss()
-                    }, label: {
-                        Text("logout")
-                    })
-                }
-                .tag(1)
-                .tabItem {
-                    Image(systemName: "person.fill")
-                }
+                ProfileView(dismiss: dismiss)
+                    .tag(1)
+                    .tabItem {
+                        Image(systemName: "person.fill")
+                    }
             }
             .edgesIgnoringSafeArea(.top)
         }

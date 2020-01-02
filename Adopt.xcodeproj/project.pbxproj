@@ -28,6 +28,7 @@
 		2D7A386223BAD4AD0094BAB2 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386123BAD4AD0094BAB2 /* Dashboard.swift */; };
 		2D7A386523BAD5C40094BAB2 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386423BAD5C40094BAB2 /* Welcome.swift */; };
 		2DA0D07F23BE57AA0095E24E /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA0D07E23BE57AA0095E24E /* SwipeViewController.swift */; };
+		2DA0D08323BE59B60095E24E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA0D08223BE59B60095E24E /* ProfileView.swift */; };
 		2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6B26323B84AD60006D873 /* AppDelegate.swift */; };
 		2DD6B26623B84AD60006D873 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6B26523B84AD60006D873 /* SceneDelegate.swift */; };
 		2DD6B26A23B84AD70006D873 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD6B26923B84AD70006D873 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		2D7A386123BAD4AD0094BAB2 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		2D7A386423BAD5C40094BAB2 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		2DA0D07E23BE57AA0095E24E /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
+		2DA0D08223BE59B60095E24E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2DD6B26023B84AD60006D873 /* Adopt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adopt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD6B26323B84AD60006D873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD6B26523B84AD60006D873 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				2D7A386123BAD4AD0094BAB2 /* Dashboard.swift */,
-				2DA0D07E23BE57AA0095E24E /* SwipeViewController.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -180,6 +181,22 @@
 				2D443B3D23BD456D007BFEEE /* Welcome.IntroView.swift */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		2DA0D08023BE598D0095E24E /* Swipe */ = {
+			isa = PBXGroup;
+			children = (
+				2DA0D07E23BE57AA0095E24E /* SwipeViewController.swift */,
+			);
+			path = Swipe;
+			sourceTree = "<group>";
+		};
+		2DA0D08123BE599B0095E24E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2DA0D08223BE59B60095E24E /* ProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		2DD6B25723B84AD60006D873 = {
@@ -208,6 +225,8 @@
 				2D443B2623BD3E3B007BFEEE /* Forget */,
 				2DD6B27723B84B640006D873 /* Sign up */,
 				2D7A385F23BAD3FA0094BAB2 /* Dashboard */,
+				2DA0D08023BE598D0095E24E /* Swipe */,
+				2DA0D08123BE599B0095E24E /* Profile */,
 				2DD6B26323B84AD60006D873 /* AppDelegate.swift */,
 				2DD6B26523B84AD60006D873 /* SceneDelegate.swift */,
 				2DD6B26923B84AD70006D873 /* Assets.xcassets */,
@@ -322,6 +341,7 @@
 				2D443B2523BCF792007BFEEE /* Login.Service.swift in Sources */,
 				2D443B2823BD3E4A007BFEEE /* Forget.swift in Sources */,
 				2D49165023BBC3BC005969F3 /* Login.Wrapper.swift in Sources */,
+				2DA0D08323BE59B60095E24E /* ProfileView.swift in Sources */,
 				2DA0D07F23BE57AA0095E24E /* SwipeViewController.swift in Sources */,
 				2D443B3A23BD4134007BFEEE /* Forget.EmailView.swift in Sources */,
 				2D7A386523BAD5C40094BAB2 /* Welcome.swift in Sources */,
