@@ -15,12 +15,17 @@ struct RootView: View {
 
     var body: some View {
         if let credential = session.credential {
-            return AnyView(DashboardView(action: {
-                self.session.logout()
-            }).environmentObject(credential))
+            return AnyView(dashboard(with: credential))
         } else {
             return AnyView(Welcome.RootView())
         }
+    }
+
+    func dashboard(with credential: Session.Credential) -> some View {
+        Dashboard.RootView(dismiss: {
+            self.session.logout()
+        })
+        .environmentObject(credential)
     }
 
 }
