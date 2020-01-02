@@ -30,16 +30,16 @@ struct Welcome {
 
         var body: some View {
             IntroView(action: { self.modal = $0 })
-            .sheet(item: $modal, content: { (id: Modal) -> AnyView in
-                switch id {
-                case .login:
-                    return AnyView(self.login)
-                case .register:
-                    return AnyView(SignUpView(action: { data in
-                        self.session.login(Session.Credential(email: data.email,token: data.token))
-                    }))
-                }
-            })
+                .sheet(item: $modal, content: { (id: Modal) -> AnyView in
+                    switch id {
+                    case .login:
+                        return AnyView(self.login)
+                    case .register:
+                        return AnyView(SignUpView(action: { data in
+                            self.session.login(Session.Credential(email: data.email,token: data.token))
+                        }))
+                    }
+                })
         }
 
         var login: some View {
