@@ -39,9 +39,20 @@ class DeckView: UIView {
 
     // MARK: -
 
+    private var workspace: CGRect {
+        bounds.inset(by: contentInsets)
+    }
+
     private var size: CGSize {
-        let content = bounds.inset(by: contentInsets)
-        return CGSize(side: min(content.width, content.height))
+        CGSize(side: min(workspace.width, workspace.height))
+    }
+
+    private var left: CGPoint {
+        center.offsetBy(dx: -size.width - 20, dy: 0)
+    }
+
+    private var right: CGPoint {
+        center.offsetBy(dx: size.width + 20, dy: 0)
     }
 
     // MARK: -
@@ -175,6 +186,27 @@ class DeckView: UIView {
         super.updateConstraints()
     }
 
+    #if DEBUG
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+
+        guard let ctx = UIGraphicsGetCurrentContext() else { return }
+        ctx.saveGState()
+
+        ctx.setStrokeColor(UIColor.red.cgColor)
+        ctx.stroke(workspace)
+
+        ctx.setStrokeColor(UIColor.yellow.cgColor)
+        ctx.stroke(CGRect(origin: left.offsetBy(dx: -size.width/2, dy: -size.height/2), size: size))
+        ctx.stroke(CGRect(origin: right.offsetBy(dx: -size.width/2, dy: -size.height/2), size: size))
+
+        ctx.setStrokeColor(UIColor.green.cgColor)
+        ctx.stroke(CGRect(origin: center.offsetBy(dx: -size.width/2, dy: -size.height/2), size: size))
+
+        ctx.restoreGState()
+    }
+    #endif
+
 }
 
 extension CGSize {
@@ -204,6 +236,10 @@ extension CGPoint {
 
     var normalized: CGPoint {
         CGPoint(x: x / magnitude, y: y / magnitude)
+    }
+
+    func offsetBy(dx: CGFloat, dy: CGFloat) -> CGPoint {
+        CGPoint(x: x + dx, y: y + dy)
     }
 }
 
