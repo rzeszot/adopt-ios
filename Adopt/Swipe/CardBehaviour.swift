@@ -30,9 +30,9 @@ class CardBehaviour: UIDynamicBehavior {
 
     // MARK: -
 
-    private var snap: UISnapBehavior!
-    private var attachment: UIAttachmentBehavior!
-    private var push: UIPushBehavior!
+    var snap: UISnapBehavior!
+    var attachment: UIAttachmentBehavior!
+    var push: UIPushBehavior!
 
     // MARK: -
 

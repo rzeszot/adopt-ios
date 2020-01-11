@@ -35,7 +35,7 @@ class DeckView: UIView {
     // MARK: - Inspectables
 
     @IBInspectable
-    var contentInsets: UIEdgeInsets = .init(top: 50, left: 50, bottom: 150, right: 50)
+    var contentInsets: UIEdgeInsets = .init(top: 100, left: 100, bottom: 150, right: 100)
 
     // MARK: -
 
@@ -130,12 +130,24 @@ class DeckView: UIView {
             let translation = recognizer.translation(in: self)
             let velocity = recognizer.velocity(in: self)
 
-            if translation.x.sign == velocity.x.sign && (velocity.x > 750 || abs(translation.x) > bounds.width * 0.25) {
+            if translation.x.sign == velocity.x.sign && (velocity.x > 750 || abs(translation.x) > bounds.width * 0.18) {
                 let vector = CGVector(point: translation.normalized * max(velocity.x, 750))
 
                 behaviour.state = .swiping
                 behaviour.push(from: location, to: vector)
                 behaviour.deattach()
+
+                behaviour.push.action = {
+                    guard self.animator.items(in: self.bounds).isEmpty else { return }
+                    print("done")
+
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                        self.behaviour.state = .snapping
+                        self.behaviour.unpush()
+                        self.behaviour.deattach()
+                        self.behaviour.snap(to: self.center)
+                    }
+                }
             } else {
                 behaviour.state = .snapping
                 behaviour.snap(to: center)
