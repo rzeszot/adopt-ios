@@ -116,10 +116,20 @@ class DeckView: UIView {
         case .ended, .cancelled, .failed:
             guard case .moving = behaviour.state else { return }
 
-            behaviour.state = .snapping
-            behaviour.snap(to: center)
-            behaviour.deattach()
+            let translation = recognizer.translation(in: self)
+            let velocity = recognizer.velocity(in: self)
 
+            if translation.x.sign == velocity.x.sign && (velocity.x > 750 || abs(translation.x) > bounds.width * 0.25) {
+                let vector = CGVector(point: translation.normalized * max(velocity.x, 750))
+
+                behaviour.state = .swiping
+                behaviour.push(from: location, to: vector)
+                behaviour.deattach()
+            } else {
+                behaviour.state = .snapping
+                behaviour.snap(to: center)
+                behaviour.deattach()
+            }
         default:
             break
         }
@@ -185,4 +195,24 @@ extension NSLayoutConstraint {
         self.isActive = active
         return self
     }
+}
+
+extension CGPoint {
+    var magnitude: CGFloat {
+        sqrt(pow(x, 2) + pow(y, 2))
+    }
+
+    var normalized: CGPoint {
+        CGPoint(x: x / magnitude, y: y / magnitude)
+    }
+}
+
+extension CGVector {
+    init(point: CGPoint) {
+        self.init(dx: point.x, dy: point.y)
+    }
+}
+
+func *(lhs: CGPoint, rhs: CGFloat) -> CGPoint {
+    return CGPoint(x: lhs.x * rhs, y: lhs.y * rhs)
 }

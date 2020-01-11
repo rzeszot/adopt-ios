@@ -12,6 +12,11 @@ class CardBehaviour: UIDynamicBehavior {
 
     // MARK: - Types
 
+    enum Direction {
+        case left
+        case right
+    }
+
     enum State {
         case snapping
         case moving
@@ -27,6 +32,7 @@ class CardBehaviour: UIDynamicBehavior {
 
     private var snap: UISnapBehavior!
     private var attachment: UIAttachmentBehavior!
+    private var push: UIPushBehavior!
 
     // MARK: -
 
@@ -70,6 +76,22 @@ class CardBehaviour: UIDynamicBehavior {
 
     func move(to point: CGPoint) {
         attachment.anchorPoint = point
+    }
+
+    // MARK: - Push
+
+    func push(from point: CGPoint, to direction: CGVector) {
+        push = UIPushBehavior(items: [item], mode: .instantaneous)
+        push.pushDirection = direction
+
+        addChildBehavior(push)
+    }
+
+    func unpush() {
+        guard push != nil else { return }
+
+        removeChildBehavior(push)
+        push = nil
     }
 
 }
