@@ -10,16 +10,66 @@ import UIKit
 
 class CardBehaviour: UIDynamicBehavior {
 
-    private let item: UIDynamicItem
-    private let snap: UISnapBehavior
+    // MARK: - Types
 
-    init(item: UIDynamicItem, snapTo point: CGPoint) {
+    enum State {
+        case snapping
+        case moving
+        case swiping
+    }
+
+    // MARK: - State
+
+    var item: UIDynamicItem
+    var state: State
+
+    // MARK: -
+
+    private var snap: UISnapBehavior!
+    private var attachment: UIAttachmentBehavior!
+
+    // MARK: -
+
+    init(item: UIDynamicItem) {
         self.item = item
-        self.snap = UISnapBehavior(item: item, snapTo: point)
+        state = .snapping
+    }
 
-        super.init()
+    // MARK: - Snap
+
+    func snap(to point: CGPoint) {
+        guard snap == nil else { return }
+
+        snap = UISnapBehavior(item: item, snapTo: point)
+        snap.damping = 0.75
 
         addChildBehavior(snap)
+    }
+
+    func unsnap() {
+        guard snap != nil else { return }
+
+        removeChildBehavior(snap)
+        snap = nil
+    }
+
+    // MARK: - Attachment
+
+    func attach(to point: CGPoint, offset: UIOffset) {
+        attachment = UIAttachmentBehavior(item: item, offsetFromCenter: offset, attachedToAnchor: point)
+
+        addChildBehavior(attachment)
+    }
+
+    func deattach() {
+        guard attachment != nil else { return }
+
+        removeChildBehavior(attachment)
+        attachment = nil
+    }
+
+    func move(to point: CGPoint) {
+        attachment.anchorPoint = point
     }
 
 }

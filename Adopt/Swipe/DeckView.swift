@@ -83,31 +83,44 @@ class DeckView: UIView {
 
     // MARK: - Actions
 
-    private var attachment: UIAttachmentBehavior!
-    private var snap: UISnapBehavior!
+    var behaviour: CardBehaviour!
 
     @objc
     func panAction(_ recognizer: UIPanGestureRecognizer) {
         guard let subview = recognizer.view else { return }
 
+        if behaviour == nil {
+            behaviour = CardBehaviour(item: subview)
+            animator.addBehavior(behaviour)
+        }
+
+        let location = recognizer.location(in: self)
+
         switch recognizer.state {
         case .began:
-            let attachment = UIAttachmentBehavior(item: subview, attachedToAnchor: recognizer.location(in: self))
-            animator.addBehavior(attachment)
-            self.attachment = attachment
+            guard case .snapping = behaviour.state else { return }
+
+            let point = recognizer.location(in: subview)
+            let offset = UIOffset(horizontal: point.x - subview.bounds.midX, vertical: point.y - subview.bounds.midY)
+
+            behaviour.state = .moving
+            behaviour.unsnap()
+            behaviour.attach(to: location, offset: offset)
 
         case .changed:
-            let location = recognizer.location(in: self)
-            attachment.anchorPoint = location
-            break
+            guard case .moving = behaviour.state else { return }
+
+            behaviour.state = .moving
+            behaviour.move(to: location)
 
         case .ended, .cancelled, .failed:
-            animator.removeBehavior(attachment)
-            attachment = nil
+            guard case .moving = behaviour.state else { return }
 
-        case .possible:
-            break
-        @unknown default:
+            behaviour.state = .snapping
+            behaviour.snap(to: center)
+            behaviour.deattach()
+
+        default:
             break
         }
     }
