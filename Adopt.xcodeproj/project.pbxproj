@@ -22,6 +22,9 @@
 		2D443B3E23BD456D007BFEEE /* Welcome.IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B3D23BD456D007BFEEE /* Welcome.IntroView.swift */; };
 		2D49164E23BBC39B005969F3 /* Login.Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49164D23BBC39B005969F3 /* Login.Coordinator.swift */; };
 		2D49165023BBC3BC005969F3 /* Login.Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49164F23BBC3BC005969F3 /* Login.Wrapper.swift */; };
+		2D4F88B823C00DA00017E29F /* DeckViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F88B723C00DA00017E29F /* DeckViewDataSource.swift */; };
+		2D4F88BA23C00DBB0017E29F /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F88B923C00DBB0017E29F /* DeckView.swift */; };
+		2D4F88BC23C01BFA0017E29F /* CardBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F88BB23C01BFA0017E29F /* CardBehaviour.swift */; };
 		2D7A385A23BACE580094BAB2 /* Login.RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385923BACE580094BAB2 /* Login.RootView.swift */; };
 		2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385B23BAD03C0094BAB2 /* Session.swift */; };
 		2D7A385E23BAD1E00094BAB2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385D23BAD1E00094BAB2 /* RootView.swift */; };
@@ -53,6 +56,9 @@
 		2D443B3D23BD456D007BFEEE /* Welcome.IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.IntroView.swift; sourceTree = "<group>"; };
 		2D49164D23BBC39B005969F3 /* Login.Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.Coordinator.swift; sourceTree = "<group>"; };
 		2D49164F23BBC3BC005969F3 /* Login.Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.Wrapper.swift; sourceTree = "<group>"; };
+		2D4F88B723C00DA00017E29F /* DeckViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckViewDataSource.swift; sourceTree = "<group>"; };
+		2D4F88B923C00DBB0017E29F /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
+		2D4F88BB23C01BFA0017E29F /* CardBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBehaviour.swift; sourceTree = "<group>"; };
 		2D7A385923BACE580094BAB2 /* Login.RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.RootView.swift; sourceTree = "<group>"; };
 		2D7A385B23BAD03C0094BAB2 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		2D7A385D23BAD1E00094BAB2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -187,6 +193,9 @@
 			isa = PBXGroup;
 			children = (
 				2DA0D07E23BE57AA0095E24E /* SwipeViewController.swift */,
+				2D4F88B723C00DA00017E29F /* DeckViewDataSource.swift */,
+				2D4F88B923C00DBB0017E29F /* DeckView.swift */,
+				2D4F88BB23C01BFA0017E29F /* CardBehaviour.swift */,
 			);
 			path = Swipe;
 			sourceTree = "<group>";
@@ -338,6 +347,7 @@
 				2D443B3E23BD456D007BFEEE /* Welcome.IntroView.swift in Sources */,
 				2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */,
 				2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */,
+				2D4F88B823C00DA00017E29F /* DeckViewDataSource.swift in Sources */,
 				2D443B2523BCF792007BFEEE /* Login.Service.swift in Sources */,
 				2D443B2823BD3E4A007BFEEE /* Forget.swift in Sources */,
 				2D49165023BBC3BC005969F3 /* Login.Wrapper.swift in Sources */,
@@ -349,6 +359,8 @@
 				2D7A385E23BAD1E00094BAB2 /* RootView.swift in Sources */,
 				2D3FCF5423BB6F47001E3704 /* LoginViewController.swift in Sources */,
 				2D7A385A23BACE580094BAB2 /* Login.RootView.swift in Sources */,
+				2D4F88BC23C01BFA0017E29F /* CardBehaviour.swift in Sources */,
+				2D4F88BA23C00DBB0017E29F /* DeckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
