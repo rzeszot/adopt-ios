@@ -9,18 +9,26 @@
 import SwiftUI
 
 struct RootView: View {
+    
+    // MARK: -
 
     @EnvironmentObject
     var session: Session
+    
+    // MARK: -
 
     var body: some View {
         if let credential = session.credential {
             return AnyView(dashboard(with: credential))
         } else {
-            return AnyView(Welcome.RootView())
+            return AnyView(welcome)
         }
     }
 
+    var welcome: some View {
+        Welcome.RootView()
+    }
+    
     func dashboard(with credential: Session.Credential) -> some View {
         Dashboard.RootView(dismiss: {
             self.session.logout()

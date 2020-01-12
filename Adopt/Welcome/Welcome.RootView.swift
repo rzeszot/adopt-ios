@@ -32,6 +32,7 @@ extension Welcome {
             Login.RootView(dismiss: { self.modal = nil }, finish: { output in
                 self.session.login(Session.Credential(email: output.email, token: output.token))
             })
+            .environmentObject(Login.Service())
         }
         
         private var register: some View {

@@ -37,7 +37,7 @@ extension Welcome {
                     self.action(.register)
                 }, text: {
                     Text("Create New Account")
-                        .foregroundColor(Color(#colorLiteral(red: 0.9058823529, green: 0.08235294118, blue: 0.3803921569, alpha: 1)))
+                        .foregroundColor(Color(#colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)))
                 })
             }
             .padding(.horizontal, 20)
@@ -72,7 +72,8 @@ extension Welcome {
 
                 Text("Adopt")
                     .font(Font.custom("offside-regular", size: 40))
-
+                    .foregroundColor(Color(#colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)))
+                
                 Text("!")
                     .font(Font.custom("offside-regular", size: 40))
                     .foregroundColor(Color(#colorLiteral(red: 0.9058823529, green: 0.08235294118, blue: 0.3803921569, alpha: 1)))

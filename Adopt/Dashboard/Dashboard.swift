@@ -25,7 +25,6 @@ struct Dashboard {
                         Image(systemName: "flame")
                     }
 
-
                 ProfileView(dismiss: dismiss)
                     .tag(1)
                     .tabItem {
