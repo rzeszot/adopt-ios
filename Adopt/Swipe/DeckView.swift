@@ -22,7 +22,7 @@ class DeckView: UIView {
         }
     }
 
-    // MARK: - Attributes helpers
+    // MARK: - Data Source helpers
 
     private var count: Int {
         dataSource?.numberOfCards(in: self) ?? 0
@@ -35,7 +35,7 @@ class DeckView: UIView {
     // MARK: - Inspectables
 
     @IBInspectable
-    var contentInsets: UIEdgeInsets = .init(top: 100, left: 100, bottom: 150, right: 100)
+    var contentInsets: UIEdgeInsets = .init(top: 150, left: 150, bottom: 150, right: 150)
 
     // MARK: -
 
@@ -48,11 +48,11 @@ class DeckView: UIView {
     }
 
     private var left: CGPoint {
-        center.offsetBy(dx: -size.width - 20, dy: 0)
+        center.offsetBy(dx: -(bounds.width + size.width)/2 + 50, dy: 0)
     }
 
     private var right: CGPoint {
-        center.offsetBy(dx: size.width + 20, dy: 0)
+        center.offsetBy(dx: (bounds.width + size.width)/2 - 50, dy: 0)
     }
 
     // MARK: -
@@ -215,6 +215,10 @@ class DeckView: UIView {
         ctx.setStrokeColor(UIColor.green.cgColor)
         ctx.stroke(CGRect(origin: center.offsetBy(dx: -size.width/2, dy: -size.height/2), size: size))
 
+        ctx.setStrokeColor(UIColor.purple.cgColor)
+        ctx.strokeLineSegments(between: [CGPoint(x: 0.18 * bounds.width, y: 0), CGPoint(x: 0.18 * bounds.width, y: bounds.height)])
+        ctx.strokeLineSegments(between: [CGPoint(x: (1-0.18) * bounds.width, y: 0), CGPoint(x: (1-0.18) * bounds.width, y: bounds.height)])
+
         ctx.restoreGState()
     }
     #endif
@@ -264,3 +268,113 @@ extension CGVector {
 func *(lhs: CGPoint, rhs: CGFloat) -> CGPoint {
     return CGPoint(x: lhs.x * rhs, y: lhs.y * rhs)
 }
+
+
+//
+//
+//    // MARK: -
+//
+//        lazy var animator: UIDynamicAnimator =
+//        {
+//            let dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
+//            return dynamicAnimator
+//        }()
+//
+//        lazy var collision: UICollisionBehavior =
+//        {
+//            let collision = UICollisionBehavior(items: [self.orangeView])
+//            collision.translatesReferenceBoundsIntoBoundary = true
+//            return collision
+//        }()
+//
+//        lazy var fieldBehaviors: [UIFieldBehavior] =
+//        {
+//            var fieldBehaviors = [UIFieldBehavior]()
+//            for _ in 0 ..< 2
+//            {
+//                let field = UIFieldBehavior.springField()
+//                field.addItem(self.orangeView)
+//                fieldBehaviors.append(field)
+//            }
+//            return fieldBehaviors
+//        }()
+//
+//        lazy var itemBehavior: UIDynamicItemBehavior =
+//        {
+//            let itemBehavior = UIDynamicItemBehavior(items: [self.orangeView])
+//            // Adjust these values to change the "stickiness" of the view
+//            itemBehavior.density = 0.01
+//            itemBehavior.resistance = 10
+//            itemBehavior.friction = 0.0
+//            itemBehavior.allowsRotation = false
+//            return itemBehavior
+//        }()
+//
+//        lazy var orangeView: UIView =
+//        {
+//            let widthHeight: CGFloat = 40.0
+//            let orangeView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: widthHeight, height: widthHeight))
+//            orangeView.backgroundColor = UIColor.orange
+//            self.view.addSubview(orangeView)
+//            return orangeView
+//        }()
+//
+//        lazy var panGesture: UIPanGestureRecognizer =
+//        {
+//            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(sender:)))
+//            return panGesture
+//        }()
+//
+//        lazy var attachment: UIAttachmentBehavior =
+//        {
+//            let attachment = UIAttachmentBehavior(item: self.orangeView, attachedToAnchor: .zero)
+//            return attachment
+//        }()
+//
+//        override func viewDidLoad()
+//        {
+//            super.viewDidLoad()
+//            animator.addBehavior(collision)
+//            animator.addBehavior(itemBehavior)
+//            for field in fieldBehaviors
+//            {
+//                animator.addBehavior(field)
+//            }
+//
+//            orangeView.addGestureRecognizer(panGesture)
+//        }
+//
+//        override func viewDidLayoutSubviews()
+//        {
+//            super.viewDidLayoutSubviews()
+//
+//            orangeView.center = view.center
+//            animator.updateItem(usingCurrentState: orangeView)
+//
+//            for (index, field) in fieldBehaviors.enumerated()
+//            {
+//                field.position = CGPoint(x: view.bounds
+//                    .midX, y:  view.bounds.height * (0.25 + 0.5 * CGFloat(index)))
+//                field.region = UIRegion(size: CGSize(width: view.bounds.width, height: view.bounds.height * 0.5))
+//            }
+//        }
+//
+//    @objc func handlePan(sender: UIPanGestureRecognizer)
+//        {
+//            let location = sender.location(in: view)
+//            let velocity = sender.velocity(in: view)
+//            switch sender.state
+//            {
+//            case .began:
+//                attachment.anchorPoint = location
+//                animator.addBehavior(attachment)
+//            case .changed:
+//                attachment.anchorPoint = location
+//            case .cancelled, .ended, .failed, .possible:
+//                itemBehavior.addLinearVelocity(velocity, for: self.orangeView)
+//                animator.removeBehavior(attachment)
+//            default:
+//                break
+//            }
+//        }
+////    }
