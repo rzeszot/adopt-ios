@@ -9,23 +9,21 @@ import Foundation
 
 extension Login {
 
-    struct Output {
-        let email: String
-        let token: String
-    }
-
     class Coordinator: LoginViewControllerDelegate {
-        enum Target {
-            case close
-            case forget
-        }
+        
+        // MARK: -
 
         let perform: (Service.Input) -> Void
-        let move: (Target) -> Void
+        
+        let dismiss: () -> Void
+        let forget: () -> Void
 
-        init(perform: @escaping (Service.Input) -> Void, move: @escaping (Target) -> Void) {
+        // MARK: -
+
+        init(perform: @escaping (Service.Input) -> Void, dismiss: @escaping () -> Void, forget: @escaping () -> Void) {
             self.perform = perform
-            self.move = move
+            self.dismiss = dismiss
+            self.forget = forget
         }
 
         // MARK: - LoginViewControllerDelegate
@@ -35,11 +33,12 @@ extension Login {
         }
 
         func loginDidClose(_ vc: LoginViewController) {
-            move(.close)
+            dismiss()
         }
 
         func loginDidForget(_ vc: LoginViewController) {
-            move(.forget)
+            forget()
         }
     }
+
 }

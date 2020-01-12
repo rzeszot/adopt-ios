@@ -10,7 +10,7 @@ import Foundation
 
 extension Login {
 
-    class Service {
+    class Service: ObservableObject {
 
         // MARK: -
 

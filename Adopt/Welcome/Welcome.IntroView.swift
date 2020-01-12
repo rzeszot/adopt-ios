@@ -5,53 +5,89 @@
 //  Copyright © 2020 Damian Rzeszot. All rights reserved.
 //
 
-import AVFoundation
 import SwiftUI
 
 extension Welcome {
+
     struct IntroView: View {
+        
+        // MARK: -
+
         var action: (Modal) -> Void
+
+        // MARK: -
 
         var body: some View {
             VStack(spacing: 10) {
                 Spacer()
 
-                Text("Adopt!")
-                    .font(Font.custom("offside-regular", size: 40))
-                    .padding()
-
-                    .cornerRadius(15.0)
+                LogoView()
 
                 Spacer()
-
-                Button(action: {
+                
+                ActionButton(action: {
                     self.action(.login)
-                }, label: {
-                    HStack {
-                        Spacer()
-                        Text("Log In to Existing Account")
-                            .foregroundColor(Color(.systemBackground))
-                        Spacer()
-                    }
-                    .padding(14)
-                    .background(Color.accentColor)
-                    .cornerRadius(5)
-                })
+                }, text: {
+                    Text("Log In to Existing Account")
+                        .font(Font.custom("Montserrat-SemiBold", size: 16))
+                        .foregroundColor(Color(.systemBackground))
+                }, color: Color(#colorLiteral(red: 0.9058823529, green: 0.08235294118, blue: 0.3803921569, alpha: 1)))
 
-                Button(action: {
+                ActionButton(action: {
                     self.action(.register)
-                }, label: {
-                    HStack {
-                        Spacer()
-                        Text("Create New Account")
-                        Spacer()
-                    }
-                    .padding(14)
+                }, text: {
+                    Text("Create New Account")
+                        .foregroundColor(Color(#colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)))
                 })
             }
             .padding(.horizontal, 20)
         }
     }
+    
+    struct ActionButton: View {
+        var action: () -> Void
+        var text: () -> Text
+        var color: Color? = nil
+
+        var body: some View {
+            Button(action: action, label: {
+                HStack {
+                    Spacer()
+                    text()
+                    Spacer()
+                }
+                .padding(20)
+                .background(color ?? .clear)
+                .cornerRadius(10)
+            })
+        }
+    }
+    
+    struct LogoView: View {
+        var body: some View {
+            HStack(alignment: .center, spacing: 0) {
+                Image("paw")
+                    .foregroundColor(Color(#colorLiteral(red: 0.9058823529, green: 0.08235294118, blue: 0.3803921569, alpha: 1)))
+                    .offset(x: -8, y: 0)
+
+                Text("A")
+                    .foregroundColor(Color(#colorLiteral(red: 0, green: 0.6823529412, blue: 0.937254902, alpha: 1)))
+                Text("d")
+                    .foregroundColor(Color(#colorLiteral(red: 0.9450980392, green: 0.6980392157, blue: 0.1137254902, alpha: 1)))
+                Text("o")
+                    .foregroundColor(Color(#colorLiteral(red: 0, green: 0.6823529412, blue: 0.937254902, alpha: 1)))
+                Text("p")
+                    .foregroundColor(Color(#colorLiteral(red: 0.9450980392, green: 0.6980392157, blue: 0.1137254902, alpha: 1)))
+                Text("t")
+                    .foregroundColor(Color(#colorLiteral(red: 0, green: 0.6823529412, blue: 0.937254902, alpha: 1)))
+
+                Text("!")
+                    .foregroundColor(Color(#colorLiteral(red: 0.9058823529, green: 0.08235294118, blue: 0.3803921569, alpha: 1)))
+            }
+            .font(Font.custom("offside-regular", size: 40))
+        }
+    }
+
 }
 
 struct Welcome_IntroView_Previews: PreviewProvider {

@@ -7,5 +7,12 @@
 //
 
 struct Login {
-
+    enum Modal: String, Identifiable {
+        case forget
+    }
+    
+    struct Output {
+        let email: String
+        let token: String
+    }
 }

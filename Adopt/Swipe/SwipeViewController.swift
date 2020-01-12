@@ -23,7 +23,7 @@ class SwipeViewController: UIViewController, DeckViewDataSource, DeckViewDelegat
         deckView.delegate = self
 
         view = deckView
-        view.backgroundColor = .blue
+        view.backgroundColor = .white
     }
 
     // MARK: - DeckViewDataSource

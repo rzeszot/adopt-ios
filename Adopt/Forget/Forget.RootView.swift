@@ -10,7 +10,7 @@ import SwiftUI
 
 extension Forget {
     struct RootView: View {
-        var back: () -> Void
+        var dismiss: () -> Void
 
         @State
         var code: Bool = false
@@ -19,7 +19,7 @@ extension Forget {
             if code {
                 return AnyView(CodeView())
             } else {
-                return AnyView(EmailView(back: back))
+                return AnyView(EmailView(back: dismiss))
             }
         }
     }
@@ -27,6 +27,6 @@ extension Forget {
 
 struct Forget_RootView_Previews: PreviewProvider {
     static var previews: some View {
-        Forget.RootView(back: {})
+        Forget.RootView(dismiss: {})
     }
 }

@@ -10,8 +10,15 @@ import SwiftUI
 extension Login {
 
     struct Wrapper: UIViewControllerRepresentable {
-        var perform: (Service.Input) -> Void
-        var move: (Coordinator.Target) -> Void
+        
+        // MARK: -
+
+        let perform: (Service.Input) -> Void
+
+        let dismiss: () -> Void
+        let forget: () -> Void
+
+        // MARK: - UIViewControllerRepresentable
 
         func makeUIViewController(context: UIViewControllerRepresentableContext<Wrapper>) -> LoginViewController {
             let vc = LoginViewController()
@@ -24,7 +31,7 @@ extension Login {
         }
 
         func makeCoordinator() -> Coordinator {
-            return Coordinator(perform: perform, move: move)
+            Coordinator(perform: perform, dismiss: dismiss, forget: forget)
         }
     }
 

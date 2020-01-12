@@ -10,15 +10,39 @@ import SwiftUI
 extension Login {
 
     struct RootView: View {
-        var finish: (Output) -> Void
-        var move: (Coordinator.Target) -> Void
 
-        var service: Service = .init()
+        // MARK: -
+
+        @EnvironmentObject
+        var service: Service
+
+        var dismiss: () -> Void
+        var finish: (Output) -> Void
+
+        // MARK: -
+        
+        @State
+        private var modal: Modal?
+        
+        // MARK: -
 
         var body: some View {
-            Wrapper(perform: perform, move: move)
+            Wrapper(perform: perform, dismiss: dismiss, forget: { self.modal = .forget })
                 .edgesIgnoringSafeArea(.all)
+                .sheet(item: $modal, content: subview)
         }
+
+        // MARK: -
+
+        var forget: some View {
+            Forget.RootView(dismiss: { self.modal = nil })
+        }
+        
+        func subview(for modal: Modal) -> some View {
+            forget
+        }
+
+        // MARK: -
 
         func perform(_ input: Service.Input) {
             service.perform(input) { result in
@@ -30,15 +54,15 @@ extension Login {
                     break
                 case .failure:
                     print("failure")
-                    break
                 }
             }
         }
     }
+
 }
 
 struct Login_RootView_Previews: PreviewProvider {
     static var previews: some View {
-        Login.RootView(finish: { _ in }, move: { _ in })
+        Login.RootView(dismiss: {}, finish: { _ in })
     }
 }
