@@ -15,12 +15,14 @@ extension Welcome {
         var body: some View {
             VStack(spacing: 10) {
                 Spacer()
-
-                Text("Adopt!")
-                    .font(Font.custom("offside-regular", size: 40))
-                    .padding()
-
-                    .cornerRadius(15.0)
+                
+                HStack(alignment: .center, spacing: 5) {
+                    Image("paw")
+                        .foregroundColor(Color(#colorLiteral(red: 0.9058823529, green: 0.08235294118, blue: 0.3803921569, alpha: 1)))
+                
+                    Text("Adopt!")
+                        .font(Font.custom("offside-regular", size: 40))
+                }
 
                 Spacer()
 
@@ -30,12 +32,13 @@ extension Welcome {
                     HStack {
                         Spacer()
                         Text("Log In to Existing Account")
+                            .font(Font.custom("Montserrat-SemiBold", size: 16))
                             .foregroundColor(Color(.systemBackground))
                         Spacer()
                     }
-                    .padding(14)
-                    .background(Color.accentColor)
-                    .cornerRadius(5)
+                    .padding(20)
+                    .background(Color(#colorLiteral(red: 0.9058823529, green: 0.08235294118, blue: 0.3803921569, alpha: 1)))
+                    .cornerRadius(10)
                 })
 
                 Button(action: {
@@ -44,9 +47,10 @@ extension Welcome {
                     HStack {
                         Spacer()
                         Text("Create New Account")
+                            .foregroundColor(Color(#colorLiteral(red: 0.9058823529, green: 0.08235294118, blue: 0.3803921569, alpha: 1)))
                         Spacer()
                     }
-                    .padding(14)
+                    .padding(20)
                 })
             }
             .padding(.horizontal, 20)
