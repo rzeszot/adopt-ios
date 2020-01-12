@@ -11,7 +11,8 @@ extension Login {
 
     struct Wrapper: UIViewControllerRepresentable {
         var perform: (Service.Input) -> Void
-        var move: (Coordinator.Target) -> Void
+        var close: () -> Void
+        var forget: () -> Void
 
         func makeUIViewController(context: UIViewControllerRepresentableContext<Wrapper>) -> LoginViewController {
             let vc = LoginViewController()
@@ -24,7 +25,14 @@ extension Login {
         }
 
         func makeCoordinator() -> Coordinator {
-            return Coordinator(perform: perform, move: move)
+            return Coordinator(perform: perform, action: { target in
+                switch target {
+                case .close:
+                    self.close()
+                case .forget:
+                    self.forget()
+                }
+            })
         }
     }
 

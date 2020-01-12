@@ -5,13 +5,17 @@
 //  Copyright © 2020 Damian Rzeszot. All rights reserved.
 //
 
-import AVFoundation
 import SwiftUI
 
 extension Welcome {
 
     struct IntroView: View {
+        
+        // MARK: -
+
         var action: (Modal) -> Void
+
+        // MARK: -
 
         var body: some View {
             VStack(spacing: 10) {
@@ -28,8 +32,7 @@ extension Welcome {
                         .font(Font.custom("Montserrat-SemiBold", size: 16))
                         .foregroundColor(Color(.systemBackground))
                 }, color: Color(#colorLiteral(red: 0.9058823529, green: 0.08235294118, blue: 0.3803921569, alpha: 1)))
-                
-                
+
                 ActionButton(action: {
                     self.action(.register)
                 }, text: {

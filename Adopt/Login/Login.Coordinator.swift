@@ -21,11 +21,11 @@ extension Login {
         }
 
         let perform: (Service.Input) -> Void
-        let move: (Target) -> Void
+        let action: (Target) -> Void
 
-        init(perform: @escaping (Service.Input) -> Void, move: @escaping (Target) -> Void) {
+        init(perform: @escaping (Service.Input) -> Void, action: @escaping (Target) -> Void) {
             self.perform = perform
-            self.move = move
+            self.action = action
         }
 
         // MARK: - LoginViewControllerDelegate
@@ -35,11 +35,11 @@ extension Login {
         }
 
         func loginDidClose(_ vc: LoginViewController) {
-            move(.close)
+            action(.close)
         }
 
         func loginDidForget(_ vc: LoginViewController) {
-            move(.forget)
+            action(.forget)
         }
     }
 }

@@ -29,3 +29,9 @@ struct RootView: View {
     }
 
 }
+
+extension Identifiable where Self: RawRepresentable {
+    var id: RawValue {
+        rawValue
+    }
+}

@@ -7,5 +7,7 @@
 //
 
 struct Login {
-
+    enum Modal: String, Identifiable {
+        case forget
+    }
 }

@@ -73,6 +73,7 @@
 		3CF319CA23CBD3AC00FE08EF /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3CF319A823CBD3AC00FE08EF /* Montserrat-ExtraBold.otf */; };
 		3CF319CB23CBD3AC00FE08EF /* MontserratAlternates-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3CF319A923CBD3AC00FE08EF /* MontserratAlternates-Medium.otf */; };
 		3CF319CF23CBD70700FE08EF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3CF319CE23CBD70700FE08EF /* .gitignore */; };
+		3CF319D123CBE02D00FE08EF /* Welcome.RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF319D023CBE02D00FE08EF /* Welcome.RootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,6 +146,7 @@
 		3CF319A923CBD3AC00FE08EF /* MontserratAlternates-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Medium.otf"; sourceTree = "<group>"; };
 		3CF319CC23CBD3D500FE08EF /* Adopt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Adopt.entitlements; sourceTree = "<group>"; };
 		3CF319CE23CBD70700FE08EF /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		3CF319D023CBE02D00FE08EF /* Welcome.RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.RootView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				2D7A386423BAD5C40094BAB2 /* Welcome.swift */,
+				3CF319D023CBE02D00FE08EF /* Welcome.RootView.swift */,
 				2D443B3D23BD456D007BFEEE /* Welcome.IntroView.swift */,
 			);
 			path = Welcome;
@@ -514,6 +517,7 @@
 				2D443B3A23BD4134007BFEEE /* Forget.EmailView.swift in Sources */,
 				2D7A386523BAD5C40094BAB2 /* Welcome.swift in Sources */,
 				2DD6B26623B84AD60006D873 /* SceneDelegate.swift in Sources */,
+				3CF319D123CBE02D00FE08EF /* Welcome.RootView.swift in Sources */,
 				2D7A385E23BAD1E00094BAB2 /* RootView.swift in Sources */,
 				2D3FCF5423BB6F47001E3704 /* LoginViewController.swift in Sources */,
 				2D7A385A23BACE580094BAB2 /* Login.RootView.swift in Sources */,
