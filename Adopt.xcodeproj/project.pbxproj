@@ -300,7 +300,6 @@
 		2DD6B26223B84AD60006D873 /* Adopt */ = {
 			isa = PBXGroup;
 			children = (
-				3CF319CC23CBD3D500FE08EF /* Adopt.entitlements */,
 				2D443B2B23BD4032007BFEEE /* Resources */,
 				2D7A386023BAD4020094BAB2 /* Root */,
 				2D7A386323BAD5B70094BAB2 /* Welcome */,
@@ -315,6 +314,7 @@
 				2DD6B26923B84AD70006D873 /* Assets.xcassets */,
 				2DD6B26E23B84AD70006D873 /* LaunchScreen.storyboard */,
 				2DD6B27123B84AD70006D873 /* Info.plist */,
+				3CF319CC23CBD3D500FE08EF /* Adopt.entitlements */,
 				2DD6B26B23B84AD70006D873 /* Preview Content */,
 			);
 			path = Adopt;
