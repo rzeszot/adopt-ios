@@ -70,14 +70,21 @@ extension Welcome {
                     .foregroundColor(Color(#colorLiteral(red: 0.9058823529, green: 0.08235294118, blue: 0.3803921569, alpha: 1)))
                     .offset(x: -8, y: 0)
 
-                Text("Adopt")
-                    .font(Font.custom("offside-regular", size: 40))
-                    .foregroundColor(Color(#colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)))
-                
+                Text("A")
+                    .foregroundColor(Color(#colorLiteral(red: 0, green: 0.6823529412, blue: 0.937254902, alpha: 1)))
+                Text("d")
+                    .foregroundColor(Color(#colorLiteral(red: 0.9450980392, green: 0.6980392157, blue: 0.1137254902, alpha: 1)))
+                Text("o")
+                    .foregroundColor(Color(#colorLiteral(red: 0, green: 0.6823529412, blue: 0.937254902, alpha: 1)))
+                Text("p")
+                    .foregroundColor(Color(#colorLiteral(red: 0.9450980392, green: 0.6980392157, blue: 0.1137254902, alpha: 1)))
+                Text("t")
+                    .foregroundColor(Color(#colorLiteral(red: 0, green: 0.6823529412, blue: 0.937254902, alpha: 1)))
+
                 Text("!")
-                    .font(Font.custom("offside-regular", size: 40))
                     .foregroundColor(Color(#colorLiteral(red: 0.9058823529, green: 0.08235294118, blue: 0.3803921569, alpha: 1)))
             }
+            .font(Font.custom("offside-regular", size: 40))
         }
     }
 
