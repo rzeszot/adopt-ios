@@ -47,6 +47,12 @@ class LoginViewController: UIViewController {
     func forgotAction() {
         delegate?.loginDidForget(self)
     }
+    
+    @IBAction
+    func backgroundTap() {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+    }
 
     // MARK: -
 
