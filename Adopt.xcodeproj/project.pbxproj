@@ -665,7 +665,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pro.rzeszot.adopt;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Adopt;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -686,7 +686,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pro.rzeszot.adopt;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Adopt;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
