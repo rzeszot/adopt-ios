@@ -5,6 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>offside-regular.ttf</string>
+		<string>Montserrat-SemiBold.otf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
