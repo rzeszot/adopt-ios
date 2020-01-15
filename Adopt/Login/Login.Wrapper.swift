@@ -16,7 +16,7 @@ extension Login {
         let perform: (Service.Input) -> Void
 
         let dismiss: () -> Void
-        let forget: () -> Void
+        let goto: (Modal) -> Void
 
         // MARK: - UIViewControllerRepresentable
 
@@ -31,7 +31,7 @@ extension Login {
         }
 
         func makeCoordinator() -> Coordinator {
-            Coordinator(perform: perform, dismiss: dismiss, forget: forget)
+            Coordinator(perform: perform, dismiss: dismiss, goto: goto)
         }
     }
 

@@ -29,7 +29,12 @@ extension Welcome {
         }
 
         private var login: some View {
-            Login.RootView(dismiss: { self.modal = nil }, finish: { output in
+            Login.RootView(dismiss: {
+                self.modal = nil
+            }, goto: { modal in
+                guard modal == .register else { return }
+                self.modal = .register
+            }, finish: { output in
                 self.session.login(Session.Credential(email: output.email, token: output.token))
             })
             .environmentObject(Login.Service())

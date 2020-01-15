@@ -16,14 +16,14 @@ extension Login {
         let perform: (Service.Input) -> Void
         
         let dismiss: () -> Void
-        let forget: () -> Void
+        let goto: (Modal) -> Void
 
         // MARK: -
 
-        init(perform: @escaping (Service.Input) -> Void, dismiss: @escaping () -> Void, forget: @escaping () -> Void) {
+        init(perform: @escaping (Service.Input) -> Void, dismiss: @escaping () -> Void, goto: @escaping (Modal) -> Void) {
             self.perform = perform
             self.dismiss = dismiss
-            self.forget = forget
+            self.goto = goto
         }
 
         // MARK: - LoginViewControllerDelegate
@@ -36,8 +36,8 @@ extension Login {
             dismiss()
         }
 
-        func loginDidForget(_ vc: LoginViewController) {
-            forget()
+        func loginDidTapRegister(_ vc: LoginViewController) {
+            goto(.register)
         }
     }
 

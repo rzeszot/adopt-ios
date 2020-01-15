@@ -17,6 +17,7 @@ extension Login {
         var service: Service
 
         var dismiss: () -> Void
+        var goto: (Modal) -> Void
         var finish: (Output) -> Void
 
         // MARK: -
@@ -27,7 +28,14 @@ extension Login {
         // MARK: -
 
         var body: some View {
-            Wrapper(perform: perform, dismiss: dismiss, forget: { self.modal = .forget })
+            Wrapper(perform: perform, dismiss: dismiss, goto: { modal in
+                switch modal {
+                case .register:
+                    self.goto(.register)
+                case .forget:
+                    self.modal = .forget
+                }
+            })
                 .edgesIgnoringSafeArea(.all)
                 .sheet(item: $modal, content: subview)
         }
@@ -63,6 +71,6 @@ extension Login {
 
 struct Login_RootView_Previews: PreviewProvider {
     static var previews: some View {
-        Login.RootView(dismiss: {}, finish: { _ in })
+        Login.RootView(dismiss: {}, goto: { _ in }, finish: { _ in })
     }
 }

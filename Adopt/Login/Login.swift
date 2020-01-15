@@ -9,6 +9,7 @@
 struct Login {
     enum Modal: String, Identifiable {
         case forget
+        case register
     }
     
     struct Output {

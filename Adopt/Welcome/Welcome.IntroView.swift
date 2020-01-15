@@ -62,6 +62,11 @@ extension Welcome {
                 .cornerRadius(10)
             })
         }
+//        LinearGradient(
+//            gradient: Gradient(colors: [.red, .white]),
+//            startPoint: .top,
+//            endPoint: .bottom
+//        )
     }
     
     struct LogoView: View {
