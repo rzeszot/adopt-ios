@@ -74,6 +74,8 @@
 		3CF319CB23CBD3AC00FE08EF /* MontserratAlternates-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3CF319A923CBD3AC00FE08EF /* MontserratAlternates-Medium.otf */; };
 		3CF319CF23CBD70700FE08EF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3CF319CE23CBD70700FE08EF /* .gitignore */; };
 		3CF319D123CBE02D00FE08EF /* Welcome.RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF319D023CBE02D00FE08EF /* Welcome.RootView.swift */; };
+		3CF8D1A523CFCEC900061AF1 /* PasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CF8D1A423CFCEC900061AF1 /* PasswordViewController.xib */; };
+		3CF8D1A723CFCED200061AF1 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8D1A623CFCED200061AF1 /* PasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -147,6 +149,8 @@
 		3CF319CC23CBD3D500FE08EF /* Adopt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Adopt.entitlements; sourceTree = "<group>"; };
 		3CF319CE23CBD70700FE08EF /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3CF319D023CBE02D00FE08EF /* Welcome.RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.RootView.swift; sourceTree = "<group>"; };
+		3CF8D1A423CFCEC900061AF1 /* PasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordViewController.xib; sourceTree = "<group>"; };
+		3CF8D1A623CFCED200061AF1 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,8 +235,10 @@
 				2D49164D23BBC39B005969F3 /* Login.Coordinator.swift */,
 				2D443B2423BCF792007BFEEE /* Login.Service.swift */,
 				2D49164F23BBC3BC005969F3 /* Login.Wrapper.swift */,
-				2D3FCF5323BB6F47001E3704 /* LoginViewController.swift */,
 				2D3FCF5523BB6FF6001E3704 /* LoginViewController.xib */,
+				2D3FCF5323BB6F47001E3704 /* LoginViewController.swift */,
+				3CF8D1A423CFCEC900061AF1 /* PasswordViewController.xib */,
+				3CF8D1A623CFCED200061AF1 /* PasswordViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -475,6 +481,7 @@
 				3CF319C223CBD3AC00FE08EF /* Montserrat-Thin.otf in Resources */,
 				3CF319B823CBD3AC00FE08EF /* MontserratAlternates-ExtraLightItalic.otf in Resources */,
 				3CF319AB23CBD3AC00FE08EF /* Montserrat-MediumItalic.otf in Resources */,
+				3CF8D1A523CFCEC900061AF1 /* PasswordViewController.xib in Resources */,
 				2D443B3523BD403F007BFEEE /* fontlog.txt in Resources */,
 				3CF319C523CBD3AC00FE08EF /* MontserratAlternates-Black.otf in Resources */,
 				2D443B3823BD403F007BFEEE /* offside-regular.ttf in Resources */,
@@ -515,6 +522,7 @@
 				2DA0D08323BE59B60095E24E /* ProfileView.swift in Sources */,
 				2DA0D07F23BE57AA0095E24E /* SwipeViewController.swift in Sources */,
 				2D443B3A23BD4134007BFEEE /* Forget.EmailView.swift in Sources */,
+				3CF8D1A723CFCED200061AF1 /* PasswordViewController.swift in Sources */,
 				2D7A386523BAD5C40094BAB2 /* Welcome.swift in Sources */,
 				2DD6B26623B84AD60006D873 /* SceneDelegate.swift in Sources */,
 				3CF319D123CBE02D00FE08EF /* Welcome.RootView.swift in Sources */,
