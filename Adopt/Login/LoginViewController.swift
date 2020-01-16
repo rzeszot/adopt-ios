@@ -11,7 +11,7 @@ import Combine
 
 
 protocol LoginViewControllerDelegate: class {
-    func login(_ vc: LoginViewController, didLoginWith email: String, and password: String)
+    func login(_ vc: LoginViewController, didLoginWithEmail email: String)
     func loginDidClose(_ vc: LoginViewController)
     func loginDidTapRegister(_ vc: LoginViewController)
 }
@@ -40,6 +40,7 @@ class LoginViewController: UIViewController {
     @IBAction
     func continueAction() {
         emailTextField.resignFirstResponder()
+        delegate?.login(self, didLoginWithEmail: emailTextField.text ?? "")
     }
 
     @IBAction
@@ -117,6 +118,12 @@ class LoginViewController: UIViewController {
             
             UIView.animate(withDuration: 0.3, animations: self.view.layoutIfNeeded)
         }
+
+        #if DEBUG
+        emailTextField.text = "damian.rzeszot@gmail.com"
+        usernameEditingDidBegin()
+        usernameEditingDidChange()
+        #endif
     }
     
     override func viewDidDisappear(_ animated: Bool) {

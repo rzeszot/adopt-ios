@@ -10,7 +10,7 @@ import Foundation
 extension Login {
 
     class Coordinator: LoginViewControllerDelegate {
-        
+
         // MARK: -
 
         let perform: (Service.Input) -> Void
@@ -28,8 +28,8 @@ extension Login {
 
         // MARK: - LoginViewControllerDelegate
 
-        func login(_ vc: LoginViewController, didLoginWith email: String, and password: String) {
-            perform(Service.Input(email: email, password: password))
+        func login(_ vc: LoginViewController, didLoginWithEmail email: String) {
+//             perform(Service.Input(email: email, password: password))
         }
 
         func loginDidClose(_ vc: LoginViewController) {
