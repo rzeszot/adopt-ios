@@ -119,12 +119,6 @@ class LoginViewController: UIViewController {
             
             UIView.animate(withDuration: 0.3, animations: self.view.layoutIfNeeded)
         }
-
-        #if DEBUG
-        emailTextField.text = "damian.rzeszot@gmail.com"
-        usernameEditingDidBegin()
-        usernameEditingDidChange()
-        #endif
     }
     
     override func viewDidDisappear(_ animated: Bool) {

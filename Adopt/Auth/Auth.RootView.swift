@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension Login {
+extension Auth {
 
     struct RootView: View {
 
@@ -69,8 +69,8 @@ extension Login {
 
 }
 
-struct Login_RootView_Previews: PreviewProvider {
+struct Auth_RootView_Previews: PreviewProvider {
     static var previews: some View {
-        Login.RootView(dismiss: {}, goto: { _ in }, finish: { _ in })
+        Auth.RootView(dismiss: {}, goto: { _ in }, finish: { _ in })
     }
 }

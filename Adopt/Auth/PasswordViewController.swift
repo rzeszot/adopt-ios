@@ -38,7 +38,18 @@ class PasswordViewController: UIViewController {
     @IBOutlet
     var bottomPadding: NSLayoutConstraint!
     
+    @IBOutlet
+    var toggleButton: UIButton!
+    
     // MARK: -
+    
+    @IBAction
+    func toggleAction() {
+        passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
+        
+        let image = UIImage(systemName: passwordTextField.isSecureTextEntry ? "eye.slash" : "eye")
+        toggleButton.setImage(image, for: .normal)
+    }
     
     @IBAction
     func backgroundTap() {
@@ -111,16 +122,13 @@ class PasswordViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        toggleAction()
+        
         cancellable = show.merge(with: hide).sink { height in
             self.bottomPadding.constant = height
             
             UIView.animate(withDuration: 0.3, animations: self.view.layoutIfNeeded)
         }
-
-        #if DEBUG
-        passwordEditingDidBegin()
-        passwordEditingDidChange()
-        #endif
     }
     
     override func viewDidDisappear(_ animated: Bool) {

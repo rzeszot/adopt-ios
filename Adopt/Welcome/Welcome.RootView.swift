@@ -29,7 +29,7 @@ extension Welcome {
         }
 
         private var login: some View {
-            Login.RootView(dismiss: {
+            Auth.RootView(dismiss: {
                 self.modal = nil
             }, goto: { modal in
                 guard modal == .register else { return }
@@ -37,7 +37,7 @@ extension Welcome {
             }, finish: { output in
                 self.session.login(Session.Credential(email: output.email, token: output.token))
             })
-            .environmentObject(Login.Service())
+            .environmentObject(Auth.Service())
         }
         
         private var register: some View {
