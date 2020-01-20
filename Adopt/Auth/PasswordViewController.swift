@@ -137,7 +137,17 @@ class PasswordViewController: UIViewController {
             UIView.animate(withDuration: 0.3, animations: self.view.layoutIfNeeded)
         }
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        passwordTextField.becomeFirstResponder()
+    }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        passwordTextField.resignFirstResponder()
+    }
+
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
