@@ -50,6 +50,7 @@ class LoginViewController: UIViewController {
 
     @IBAction
     func registerAction() {
+        emailTextField.resignFirstResponder()
         delegate?.loginDidTapRegister(self)
     }
     

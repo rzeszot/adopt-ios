@@ -8,7 +8,18 @@
 import UIKit
 import Combine
 
+
+protocol PasswordViewControllerDelegate: class {
+    func password(_ vc: PasswordViewController, didLoginWithPassword password: String)
+    func passwordDidBack(_ vc: PasswordViewController)
+}
+
+
 class PasswordViewController: UIViewController {
+    
+    // MARK: -
+    
+    weak var delegate: PasswordViewControllerDelegate?
     
     // MARK: - Outlets
 
@@ -37,11 +48,12 @@ class PasswordViewController: UIViewController {
     @IBAction
     func continueAction() {
         passwordTextField.resignFirstResponder()
+        delegate?.password(self, didLoginWithPassword: passwordTextField.text ?? "")
     }
 
     @IBAction
-    func closeAction() {
-
+    func backAction() {
+        delegate?.passwordDidBack(self)
     }
     
     @IBAction
