@@ -117,6 +117,13 @@ class PasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setButton(enabled: false, animated: false)
+        
+        #if DEBUG
+        passwordEditingDidBegin()
+        passwordTextField.text = "qwerty"
+        passwordEditingDidChange()
+        passwordEditingDidEnd()
+        #endif
     }
     
     override func viewWillAppear(_ animated: Bool) {

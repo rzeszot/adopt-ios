@@ -58,7 +58,7 @@ extension Auth {
         private func transition(from: UIViewController, to: UIViewController) {
             UIView.animate(withDuration: 0.3, animations: {
                 from.view.alpha = 0
-            }, completion: { _ in                
+            }, completion: { _ in
                 from.view.removeFromSuperview()
                 
                 self.inject(to.view, into: self.root.view)
@@ -94,8 +94,9 @@ extension Auth {
         // MARK: - PasswordViewControllerDelegate
         
         func password(_ vc: PasswordViewController, didLoginWithPassword password: String) {
-            state.password = password
-            // TODO: done
+            guard let email = state.email else { return }
+            
+            perform(Service.Input(email: email, password: password))
         }
         
         func passwordDidBack(_ vc: PasswordViewController) {

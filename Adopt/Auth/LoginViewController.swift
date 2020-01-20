@@ -109,6 +109,13 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setButton(enabled: false, animated: false)
+        
+        #if DEBUG
+        usernameEditingDidBegin()
+        emailTextField.text = "damian.rzeszot@gmail.com"
+        usernameEditingDidChange()
+        usernameEditingDidEnd()
+        #endif
     }
     
     override func viewWillAppear(_ animated: Bool) {
