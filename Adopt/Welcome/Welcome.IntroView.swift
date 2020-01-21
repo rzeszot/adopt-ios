@@ -30,7 +30,7 @@ extension Welcome {
                 }, text: {
                     Text("Log In to Existing Account")
                         .font(Font.custom("Montserrat-SemiBold", size: 16))
-                        .foregroundColor(Color(.systemBackground))
+                        .foregroundColor(Color.white)
                 }, color: Color(#colorLiteral(red: 0.9058823529, green: 0.08235294118, blue: 0.3803921569, alpha: 1)))
 
                 ActionButton(action: {
@@ -41,6 +41,7 @@ extension Welcome {
                 })
             }
             .padding(.horizontal, 20)
+            .background(Color.white)
         }
     }
     
@@ -61,6 +62,11 @@ extension Welcome {
                 .cornerRadius(10)
             })
         }
+//        LinearGradient(
+//            gradient: Gradient(colors: [.red, .white]),
+//            startPoint: .top,
+//            endPoint: .bottom
+//        )
     }
     
     struct LogoView: View {

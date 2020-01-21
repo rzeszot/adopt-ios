@@ -1,5 +1,4 @@
 //
-//  Login.Service.swift
 //  Adopt
 //
 //  Created by Damian Rzeszot on 01/01/2020.
@@ -8,7 +7,7 @@
 
 import Foundation
 
-extension Login {
+extension Auth {
 
     class Service: ObservableObject {
 

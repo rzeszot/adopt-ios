@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		2D3FCF5423BB6F47001E3704 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3FCF5323BB6F47001E3704 /* LoginViewController.swift */; };
 		2D3FCF5623BB6FF6001E3704 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D3FCF5523BB6FF6001E3704 /* LoginViewController.xib */; };
-		2D443B2323BCF5C2007BFEEE /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B2223BCF5C2007BFEEE /* Login.swift */; };
-		2D443B2523BCF792007BFEEE /* Login.Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B2423BCF792007BFEEE /* Login.Service.swift */; };
+		2D443B2323BCF5C2007BFEEE /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B2223BCF5C2007BFEEE /* Auth.swift */; };
+		2D443B2523BCF792007BFEEE /* Auth.Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B2423BCF792007BFEEE /* Auth.Service.swift */; };
 		2D443B2823BD3E4A007BFEEE /* Forget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B2723BD3E4A007BFEEE /* Forget.swift */; };
 		2D443B2A23BD3E57007BFEEE /* Forget.RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B2923BD3E57007BFEEE /* Forget.RootView.swift */; };
 		2D443B3523BD403F007BFEEE /* fontlog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B2F23BD403F007BFEEE /* fontlog.txt */; };
@@ -20,12 +20,12 @@
 		2D443B3A23BD4134007BFEEE /* Forget.EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B3923BD4134007BFEEE /* Forget.EmailView.swift */; };
 		2D443B3C23BD418A007BFEEE /* Forget.CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B3B23BD418A007BFEEE /* Forget.CodeView.swift */; };
 		2D443B3E23BD456D007BFEEE /* Welcome.IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B3D23BD456D007BFEEE /* Welcome.IntroView.swift */; };
-		2D49164E23BBC39B005969F3 /* Login.Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49164D23BBC39B005969F3 /* Login.Coordinator.swift */; };
-		2D49165023BBC3BC005969F3 /* Login.Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49164F23BBC3BC005969F3 /* Login.Wrapper.swift */; };
+		2D49164E23BBC39B005969F3 /* Auth.Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49164D23BBC39B005969F3 /* Auth.Coordinator.swift */; };
+		2D49165023BBC3BC005969F3 /* Auth.Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49164F23BBC3BC005969F3 /* Auth.Wrapper.swift */; };
 		2D4F88B823C00DA00017E29F /* DeckViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F88B723C00DA00017E29F /* DeckViewDataSource.swift */; };
 		2D4F88BA23C00DBB0017E29F /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F88B923C00DBB0017E29F /* DeckView.swift */; };
 		2D4F88BC23C01BFA0017E29F /* CardBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F88BB23C01BFA0017E29F /* CardBehaviour.swift */; };
-		2D7A385A23BACE580094BAB2 /* Login.RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385923BACE580094BAB2 /* Login.RootView.swift */; };
+		2D7A385A23BACE580094BAB2 /* Auth.RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385923BACE580094BAB2 /* Auth.RootView.swift */; };
 		2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385B23BAD03C0094BAB2 /* Session.swift */; };
 		2D7A385E23BAD1E00094BAB2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385D23BAD1E00094BAB2 /* RootView.swift */; };
 		2D7A386223BAD4AD0094BAB2 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386123BAD4AD0094BAB2 /* Dashboard.swift */; };
@@ -74,13 +74,15 @@
 		3CF319CB23CBD3AC00FE08EF /* MontserratAlternates-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3CF319A923CBD3AC00FE08EF /* MontserratAlternates-Medium.otf */; };
 		3CF319CF23CBD70700FE08EF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3CF319CE23CBD70700FE08EF /* .gitignore */; };
 		3CF319D123CBE02D00FE08EF /* Welcome.RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF319D023CBE02D00FE08EF /* Welcome.RootView.swift */; };
+		3CF8D1A523CFCEC900061AF1 /* PasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CF8D1A423CFCEC900061AF1 /* PasswordViewController.xib */; };
+		3CF8D1A723CFCED200061AF1 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8D1A623CFCED200061AF1 /* PasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D3FCF5323BB6F47001E3704 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2D3FCF5523BB6FF6001E3704 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		2D443B2223BCF5C2007BFEEE /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		2D443B2423BCF792007BFEEE /* Login.Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.Service.swift; sourceTree = "<group>"; };
+		2D443B2223BCF5C2007BFEEE /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		2D443B2423BCF792007BFEEE /* Auth.Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.Service.swift; sourceTree = "<group>"; };
 		2D443B2723BD3E4A007BFEEE /* Forget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.swift; sourceTree = "<group>"; };
 		2D443B2923BD3E57007BFEEE /* Forget.RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.RootView.swift; sourceTree = "<group>"; };
 		2D443B2F23BD403F007BFEEE /* fontlog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fontlog.txt; sourceTree = "<group>"; };
@@ -90,12 +92,12 @@
 		2D443B3923BD4134007BFEEE /* Forget.EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.EmailView.swift; sourceTree = "<group>"; };
 		2D443B3B23BD418A007BFEEE /* Forget.CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.CodeView.swift; sourceTree = "<group>"; };
 		2D443B3D23BD456D007BFEEE /* Welcome.IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.IntroView.swift; sourceTree = "<group>"; };
-		2D49164D23BBC39B005969F3 /* Login.Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.Coordinator.swift; sourceTree = "<group>"; };
-		2D49164F23BBC3BC005969F3 /* Login.Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.Wrapper.swift; sourceTree = "<group>"; };
+		2D49164D23BBC39B005969F3 /* Auth.Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.Coordinator.swift; sourceTree = "<group>"; };
+		2D49164F23BBC3BC005969F3 /* Auth.Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.Wrapper.swift; sourceTree = "<group>"; };
 		2D4F88B723C00DA00017E29F /* DeckViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckViewDataSource.swift; sourceTree = "<group>"; };
 		2D4F88B923C00DBB0017E29F /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		2D4F88BB23C01BFA0017E29F /* CardBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBehaviour.swift; sourceTree = "<group>"; };
-		2D7A385923BACE580094BAB2 /* Login.RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.RootView.swift; sourceTree = "<group>"; };
+		2D7A385923BACE580094BAB2 /* Auth.RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.RootView.swift; sourceTree = "<group>"; };
 		2D7A385B23BAD03C0094BAB2 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		2D7A385D23BAD1E00094BAB2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		2D7A386123BAD4AD0094BAB2 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
@@ -147,6 +149,8 @@
 		3CF319CC23CBD3D500FE08EF /* Adopt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Adopt.entitlements; sourceTree = "<group>"; };
 		3CF319CE23CBD70700FE08EF /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3CF319D023CBE02D00FE08EF /* Welcome.RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.RootView.swift; sourceTree = "<group>"; };
+		3CF8D1A423CFCEC900061AF1 /* PasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordViewController.xib; sourceTree = "<group>"; };
+		3CF8D1A623CFCED200061AF1 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,18 +227,20 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		2D7A385823BACE3B0094BAB2 /* Login */ = {
+		2D7A385823BACE3B0094BAB2 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				2D443B2223BCF5C2007BFEEE /* Login.swift */,
-				2D7A385923BACE580094BAB2 /* Login.RootView.swift */,
-				2D49164D23BBC39B005969F3 /* Login.Coordinator.swift */,
-				2D443B2423BCF792007BFEEE /* Login.Service.swift */,
-				2D49164F23BBC3BC005969F3 /* Login.Wrapper.swift */,
-				2D3FCF5323BB6F47001E3704 /* LoginViewController.swift */,
+				2D443B2223BCF5C2007BFEEE /* Auth.swift */,
+				2D7A385923BACE580094BAB2 /* Auth.RootView.swift */,
+				2D49164D23BBC39B005969F3 /* Auth.Coordinator.swift */,
+				2D443B2423BCF792007BFEEE /* Auth.Service.swift */,
+				2D49164F23BBC3BC005969F3 /* Auth.Wrapper.swift */,
 				2D3FCF5523BB6FF6001E3704 /* LoginViewController.xib */,
+				2D3FCF5323BB6F47001E3704 /* LoginViewController.swift */,
+				3CF8D1A423CFCEC900061AF1 /* PasswordViewController.xib */,
+				3CF8D1A623CFCED200061AF1 /* PasswordViewController.swift */,
 			);
-			path = Login;
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		2D7A385F23BAD3FA0094BAB2 /* Dashboard */ = {
@@ -306,7 +312,7 @@
 				2D443B2B23BD4032007BFEEE /* Resources */,
 				2D7A386023BAD4020094BAB2 /* Root */,
 				2D7A386323BAD5B70094BAB2 /* Welcome */,
-				2D7A385823BACE3B0094BAB2 /* Login */,
+				2D7A385823BACE3B0094BAB2 /* Auth */,
 				2D443B2623BD3E3B007BFEEE /* Forget */,
 				2DD6B27723B84B640006D873 /* Sign up */,
 				2D7A385F23BAD3FA0094BAB2 /* Dashboard */,
@@ -475,6 +481,7 @@
 				3CF319C223CBD3AC00FE08EF /* Montserrat-Thin.otf in Resources */,
 				3CF319B823CBD3AC00FE08EF /* MontserratAlternates-ExtraLightItalic.otf in Resources */,
 				3CF319AB23CBD3AC00FE08EF /* Montserrat-MediumItalic.otf in Resources */,
+				3CF8D1A523CFCEC900061AF1 /* PasswordViewController.xib in Resources */,
 				2D443B3523BD403F007BFEEE /* fontlog.txt in Resources */,
 				3CF319C523CBD3AC00FE08EF /* MontserratAlternates-Black.otf in Resources */,
 				2D443B3823BD403F007BFEEE /* offside-regular.ttf in Resources */,
@@ -499,28 +506,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D49164E23BBC39B005969F3 /* Login.Coordinator.swift in Sources */,
+				2D49164E23BBC39B005969F3 /* Auth.Coordinator.swift in Sources */,
 				2D443B3C23BD418A007BFEEE /* Forget.CodeView.swift in Sources */,
 				2DD6B27C23B84BF70006D873 /* SignUpView.swift in Sources */,
-				2D443B2323BCF5C2007BFEEE /* Login.swift in Sources */,
+				2D443B2323BCF5C2007BFEEE /* Auth.swift in Sources */,
 				2D7A386223BAD4AD0094BAB2 /* Dashboard.swift in Sources */,
 				2D443B2A23BD3E57007BFEEE /* Forget.RootView.swift in Sources */,
 				2D443B3E23BD456D007BFEEE /* Welcome.IntroView.swift in Sources */,
 				2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */,
 				2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */,
 				2D4F88B823C00DA00017E29F /* DeckViewDataSource.swift in Sources */,
-				2D443B2523BCF792007BFEEE /* Login.Service.swift in Sources */,
+				2D443B2523BCF792007BFEEE /* Auth.Service.swift in Sources */,
 				2D443B2823BD3E4A007BFEEE /* Forget.swift in Sources */,
-				2D49165023BBC3BC005969F3 /* Login.Wrapper.swift in Sources */,
+				2D49165023BBC3BC005969F3 /* Auth.Wrapper.swift in Sources */,
 				2DA0D08323BE59B60095E24E /* ProfileView.swift in Sources */,
 				2DA0D07F23BE57AA0095E24E /* SwipeViewController.swift in Sources */,
 				2D443B3A23BD4134007BFEEE /* Forget.EmailView.swift in Sources */,
+				3CF8D1A723CFCED200061AF1 /* PasswordViewController.swift in Sources */,
 				2D7A386523BAD5C40094BAB2 /* Welcome.swift in Sources */,
 				2DD6B26623B84AD60006D873 /* SceneDelegate.swift in Sources */,
 				3CF319D123CBE02D00FE08EF /* Welcome.RootView.swift in Sources */,
 				2D7A385E23BAD1E00094BAB2 /* RootView.swift in Sources */,
 				2D3FCF5423BB6F47001E3704 /* LoginViewController.swift in Sources */,
-				2D7A385A23BACE580094BAB2 /* Login.RootView.swift in Sources */,
+				2D7A385A23BACE580094BAB2 /* Auth.RootView.swift in Sources */,
 				2D4F88BC23C01BFA0017E29F /* CardBehaviour.swift in Sources */,
 				2D4F88BA23C00DBB0017E29F /* DeckView.swift in Sources */,
 			);
