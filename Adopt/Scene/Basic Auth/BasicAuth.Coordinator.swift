@@ -44,7 +44,7 @@ extension BasicAuth {
                         self?.success(Output(email: email, token: success.token))
                     }
                 case .failure:
-                    print("failure")
+                    self?.password.passwordTextField.shake()
                 }
             }
         }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D2B44982427C44E00BECB25 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D2B44972427C44E00BECB25 /* Settings.storyboard */; };
+		2D2B449B2427C54700BECB25 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B449A2427C54700BECB25 /* SettingsViewController.swift */; };
+		2D2B449F2427C7C800BECB25 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B449E2427C7C800BECB25 /* Bundle.swift */; };
+		2D2B44A32427C82400BECB25 /* Build.swift.sh in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B44A02427C7F700BECB25 /* Build.swift.sh */; };
 		2D2F76AF2427C0F7001F3222 /* BasicAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2F76AE2427C0F7001F3222 /* BasicAuthViewController.swift */; };
 		2D3FCF5423BB6F47001E3704 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3FCF5323BB6F47001E3704 /* LoginViewController.swift */; };
 		2D443B2323BCF5C2007BFEEE /* BasicAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B2223BCF5C2007BFEEE /* BasicAuth.swift */; };
@@ -24,7 +28,7 @@
 		2D4F88BA23C00DBB0017E29F /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F88B923C00DBB0017E29F /* DeckView.swift */; };
 		2D4F88BC23C01BFA0017E29F /* CardBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F88BB23C01BFA0017E29F /* CardBehaviour.swift */; };
 		2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385B23BAD03C0094BAB2 /* Session.swift */; };
-		2D7A386223BAD4AD0094BAB2 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386123BAD4AD0094BAB2 /* Dashboard.swift */; };
+		2D7A386223BAD4AD0094BAB2 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386123BAD4AD0094BAB2 /* Settings.swift */; };
 		2D7A386523BAD5C40094BAB2 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386423BAD5C40094BAB2 /* Welcome.swift */; };
 		2DA0D07F23BE57AA0095E24E /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA0D07E23BE57AA0095E24E /* SwipeViewController.swift */; };
 		2DA0D08323BE59B60095E24E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA0D08223BE59B60095E24E /* ProfileView.swift */; };
@@ -78,7 +82,27 @@
 		3CF8D1A723CFCED200061AF1 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8D1A623CFCED200061AF1 /* PasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		2D2B44A22427C80400BECB25 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.swift.sh";
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+				"${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}",
+			);
+			script = "sh \"${INPUT_FILE_PATH}\" > \"${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}\"\ntouch \"${INPUT_FILE_PATH}\"\n";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
+		2D2B44972427C44E00BECB25 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		2D2B449A2427C54700BECB25 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2D2B449E2427C7C800BECB25 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		2D2B44A02427C7F700BECB25 /* Build.swift.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Build.swift.sh; sourceTree = "<group>"; };
 		2D2F76AE2427C0F7001F3222 /* BasicAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAuthViewController.swift; sourceTree = "<group>"; };
 		2D3FCF5323BB6F47001E3704 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2D443B2223BCF5C2007BFEEE /* BasicAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAuth.swift; sourceTree = "<group>"; };
@@ -96,7 +120,7 @@
 		2D4F88B923C00DBB0017E29F /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		2D4F88BB23C01BFA0017E29F /* CardBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBehaviour.swift; sourceTree = "<group>"; };
 		2D7A385B23BAD03C0094BAB2 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		2D7A386123BAD4AD0094BAB2 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		2D7A386123BAD4AD0094BAB2 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2D7A386423BAD5C40094BAB2 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		2DA0D07E23BE57AA0095E24E /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		2DA0D08223BE59B60095E24E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -165,6 +189,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D2B44992427C53C00BECB25 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2D7A386123BAD4AD0094BAB2 /* Settings.swift */,
+				2D2B44972427C44E00BECB25 /* Settings.storyboard */,
+				2D2B449A2427C54700BECB25 /* SettingsViewController.swift */,
+				2D2B449E2427C7C800BECB25 /* Bundle.swift */,
+				2D2B44A02427C7F700BECB25 /* Build.swift.sh */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		2D443B2623BD3E3B007BFEEE /* Forget */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,14 +277,6 @@
 			path = "Basic Auth";
 			sourceTree = "<group>";
 		};
-		2D7A385F23BAD3FA0094BAB2 /* Dashboard */ = {
-			isa = PBXGroup;
-			children = (
-				2D7A386123BAD4AD0094BAB2 /* Dashboard.swift */,
-			);
-			path = Dashboard;
-			sourceTree = "<group>";
-		};
 		2D7A386023BAD4020094BAB2 /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,7 +321,7 @@
 				2D7A386023BAD4020094BAB2 /* Root */,
 				2D7A386323BAD5B70094BAB2 /* Welcome */,
 				2D7A385823BACE3B0094BAB2 /* Basic Auth */,
-				2D7A385F23BAD3FA0094BAB2 /* Dashboard */,
+				2D2B44992427C53C00BECB25 /* Settings */,
 				2D443B2623BD3E3B007BFEEE /* Forget */,
 				2DD6B27723B84B640006D873 /* Sign up */,
 				2DA0D08023BE598D0095E24E /* Swipe */,
@@ -417,6 +445,7 @@
 				2DBC3B5B2427AB9F0070894C /* Linter */,
 			);
 			buildRules = (
+				2D2B44A22427C80400BECB25 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -466,6 +495,7 @@
 				3CF319B423CBD3AC00FE08EF /* MontserratAlternates-ExtraBold.otf in Resources */,
 				3CF319CA23CBD3AC00FE08EF /* Montserrat-ExtraBold.otf in Resources */,
 				3CF319B123CBD3AC00FE08EF /* MontserratAlternates-Regular.otf in Resources */,
+				2D2B44982427C44E00BECB25 /* Settings.storyboard in Resources */,
 				2D443B3623BD403F007BFEEE /* ofl.txt in Resources */,
 				3CF319BF23CBD3AC00FE08EF /* Montserrat-SemiBoldItalic.otf in Resources */,
 				2DD7A4F32427ADBD0029CC49 /* Welcome.storyboard in Resources */,
@@ -538,11 +568,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D2B44A32427C82400BECB25 /* Build.swift.sh in Sources */,
 				2D443B3C23BD418A007BFEEE /* Forget.CodeView.swift in Sources */,
+				2D2B449F2427C7C800BECB25 /* Bundle.swift in Sources */,
 				2DD6B27C23B84BF70006D873 /* SignUpView.swift in Sources */,
 				2D443B2323BCF5C2007BFEEE /* BasicAuth.swift in Sources */,
 				2DBC3B562427A8280070894C /* RootViewController.swift in Sources */,
-				2D7A386223BAD4AD0094BAB2 /* Dashboard.swift in Sources */,
+				2D7A386223BAD4AD0094BAB2 /* Settings.swift in Sources */,
 				2D443B2A23BD3E57007BFEEE /* Forget.RootView.swift in Sources */,
 				2D443B3E23BD456D007BFEEE /* WelcomeViewController.swift in Sources */,
 				2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */,
@@ -564,6 +596,7 @@
 				2DD7A4F92427B0AA0029CC49 /* SecondaryButton.swift in Sources */,
 				2D4F88BC23C01BFA0017E29F /* CardBehaviour.swift in Sources */,
 				2D4F88BA23C00DBB0017E29F /* DeckView.swift in Sources */,
+				2D2B449B2427C54700BECB25 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,6 +734,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Adopt/Adopt.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 205;
 				DEVELOPMENT_TEAM = 9G47WR9NR2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Adopt/Info.plist;
@@ -708,6 +742,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = pro.rzeszot.adopt;
 				PRODUCT_NAME = Adopt;
 				SWIFT_VERSION = 5.0;
@@ -721,6 +756,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Adopt/Adopt.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 205;
 				DEVELOPMENT_TEAM = 9G47WR9NR2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Adopt/Info.plist;
@@ -728,6 +764,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = pro.rzeszot.adopt;
 				PRODUCT_NAME = Adopt;
 				SWIFT_VERSION = 5.0;
