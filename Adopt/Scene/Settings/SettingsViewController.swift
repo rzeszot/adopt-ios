@@ -30,7 +30,7 @@ class SettingsViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
-        case (0, 0):
+        case (3, 0):
             coordinator.logout()
         default:
             break

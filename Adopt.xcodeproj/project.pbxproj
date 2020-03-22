@@ -15,14 +15,10 @@
 		2D3FCF5423BB6F47001E3704 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3FCF5323BB6F47001E3704 /* LoginViewController.swift */; };
 		2D443B2323BCF5C2007BFEEE /* BasicAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B2223BCF5C2007BFEEE /* BasicAuth.swift */; };
 		2D443B2523BCF792007BFEEE /* BasicAuth.Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B2423BCF792007BFEEE /* BasicAuth.Coordinator.swift */; };
-		2D443B2823BD3E4A007BFEEE /* Forget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B2723BD3E4A007BFEEE /* Forget.swift */; };
-		2D443B2A23BD3E57007BFEEE /* Forget.RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B2923BD3E57007BFEEE /* Forget.RootView.swift */; };
 		2D443B3523BD403F007BFEEE /* fontlog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B2F23BD403F007BFEEE /* fontlog.txt */; };
 		2D443B3623BD403F007BFEEE /* ofl.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B3023BD403F007BFEEE /* ofl.txt */; };
 		2D443B3723BD403F007BFEEE /* offside.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B3223BD403F007BFEEE /* offside.jpg */; };
 		2D443B3823BD403F007BFEEE /* offside-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B3423BD403F007BFEEE /* offside-regular.ttf */; };
-		2D443B3A23BD4134007BFEEE /* Forget.EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B3923BD4134007BFEEE /* Forget.EmailView.swift */; };
-		2D443B3C23BD418A007BFEEE /* Forget.CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B3B23BD418A007BFEEE /* Forget.CodeView.swift */; };
 		2D443B3E23BD456D007BFEEE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B3D23BD456D007BFEEE /* WelcomeViewController.swift */; };
 		2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385B23BAD03C0094BAB2 /* Session.swift */; };
 		2D7A386223BAD4AD0094BAB2 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386123BAD4AD0094BAB2 /* Settings.swift */; };
@@ -32,7 +28,6 @@
 		2DD6B26623B84AD60006D873 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6B26523B84AD60006D873 /* SceneDelegate.swift */; };
 		2DD6B26A23B84AD70006D873 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DD6B26923B84AD70006D873 /* Assets.xcassets */; };
 		2DD6B27023B84AD70006D873 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD6B26E23B84AD70006D873 /* LaunchScreen.storyboard */; };
-		2DD6B27C23B84BF70006D873 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6B27B23B84BF70006D873 /* SignUpView.swift */; };
 		2DD7A4F12427AC690029CC49 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7A4F02427AC690029CC49 /* Root.swift */; };
 		2DD7A4F32427ADBD0029CC49 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD7A4F22427ADBD0029CC49 /* Welcome.storyboard */; };
 		2DD7A4F52427ADD50029CC49 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7A4F42427ADD50029CC49 /* UIStoryboard.swift */; };
@@ -191,15 +186,16 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		2D443B2623BD3E3B007BFEEE /* Forget */ = {
+		2D443B2623BD3E3B007BFEEE /* TODO */ = {
 			isa = PBXGroup;
 			children = (
+				2DD6B27B23B84BF70006D873 /* SignUpView.swift */,
 				2D443B2723BD3E4A007BFEEE /* Forget.swift */,
 				2D443B2923BD3E57007BFEEE /* Forget.RootView.swift */,
 				2D443B3923BD4134007BFEEE /* Forget.EmailView.swift */,
 				2D443B3B23BD418A007BFEEE /* Forget.CodeView.swift */,
 			);
-			path = Forget;
+			path = TODO;
 			sourceTree = "<group>";
 		};
 		2D443B2B23BD4032007BFEEE /* Resources */ = {
@@ -293,8 +289,7 @@
 				2D7A386323BAD5B70094BAB2 /* Welcome */,
 				2D7A385823BACE3B0094BAB2 /* Basic Auth */,
 				2D2B44992427C53C00BECB25 /* Settings */,
-				2D443B2623BD3E3B007BFEEE /* Forget */,
-				2DD6B27723B84B640006D873 /* Sign up */,
+				2D443B2623BD3E3B007BFEEE /* TODO */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -341,14 +336,6 @@
 				3CF319CC23CBD3D500FE08EF /* Adopt.entitlements */,
 			);
 			path = Adopt;
-			sourceTree = "<group>";
-		};
-		2DD6B27723B84B640006D873 /* Sign up */ = {
-			isa = PBXGroup;
-			children = (
-				2DD6B27B23B84BF70006D873 /* SignUpView.swift */,
-			);
-			path = "Sign up";
 			sourceTree = "<group>";
 		};
 		3CF3198723CBD38100FE08EF /* Montserrat */ = {
@@ -538,20 +525,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D2B44A32427C82400BECB25 /* Build.swift.sh in Sources */,
-				2D443B3C23BD418A007BFEEE /* Forget.CodeView.swift in Sources */,
 				2D2B449F2427C7C800BECB25 /* Bundle.swift in Sources */,
-				2DD6B27C23B84BF70006D873 /* SignUpView.swift in Sources */,
 				2D443B2323BCF5C2007BFEEE /* BasicAuth.swift in Sources */,
 				2DBC3B562427A8280070894C /* RootViewController.swift in Sources */,
 				2D7A386223BAD4AD0094BAB2 /* Settings.swift in Sources */,
-				2D443B2A23BD3E57007BFEEE /* Forget.RootView.swift in Sources */,
 				2D443B3E23BD456D007BFEEE /* WelcomeViewController.swift in Sources */,
 				2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */,
 				2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */,
 				2D443B2523BCF792007BFEEE /* BasicAuth.Coordinator.swift in Sources */,
 				2DD7A4F52427ADD50029CC49 /* UIStoryboard.swift in Sources */,
-				2D443B2823BD3E4A007BFEEE /* Forget.swift in Sources */,
-				2D443B3A23BD4134007BFEEE /* Forget.EmailView.swift in Sources */,
 				2DD7A4F72427B0670029CC49 /* PrimaryButton.swift in Sources */,
 				3CF8D1A723CFCED200061AF1 /* PasswordViewController.swift in Sources */,
 				2D7A386523BAD5C40094BAB2 /* Welcome.swift in Sources */,
