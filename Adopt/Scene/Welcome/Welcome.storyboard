@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="offside-regular.ttf">
+            <string>Offside-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="kkr-co-m7B">
+            <objects>
+                <viewController storyboardIdentifier="welcome" id="Wi3-xl-TPU" customClass="WelcomeViewController" customModule="Adopt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dr8-La-O5S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adopt!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMM-vU-2E1">
+                                <rect key="frame" x="143" y="311" width="128.5" height="50.5"/>
+                                <fontDescription key="fontDescription" name="Offside-Regular" family="Offside" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elV-2W-De8" customClass="PrimaryButton" customModule="Adopt" customModuleProvider="target">
+                                <rect key="frame" x="20" y="736" width="374" height="48"/>
+                                <state key="normal" title="Log In to Existing Account"/>
+                                <connections>
+                                    <action selector="loginAction" destination="Wi3-xl-TPU" eventType="touchUpInside" id="Qqw-bQ-NaE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvn-Xe-b95" customClass="SecondaryButton" customModule="Adopt" customModuleProvider="target">
+                                <rect key="frame" x="20" y="794" width="374" height="48"/>
+                                <color key="tintColor" red="0.91820806259999999" green="0.0" blue="0.37410452960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Create New Account"/>
+                                <connections>
+                                    <action selector="registerAction" destination="Wi3-xl-TPU" eventType="touchUpInside" id="qn0-cO-DPb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LPJ-lO-tA2" firstAttribute="bottom" secondItem="hvn-Xe-b95" secondAttribute="bottom" constant="20" id="A4f-uK-6j8"/>
+                            <constraint firstItem="LPJ-lO-tA2" firstAttribute="trailing" secondItem="hvn-Xe-b95" secondAttribute="trailing" constant="20" id="Qcz-ls-FIe"/>
+                            <constraint firstItem="LPJ-lO-tA2" firstAttribute="trailing" secondItem="elV-2W-De8" secondAttribute="trailing" constant="20" id="SQp-yI-0ld"/>
+                            <constraint firstItem="IMM-vU-2E1" firstAttribute="centerY" secondItem="dr8-La-O5S" secondAttribute="centerY" multiplier="3:4" id="SSq-0s-a81"/>
+                            <constraint firstItem="IMM-vU-2E1" firstAttribute="centerX" secondItem="dr8-La-O5S" secondAttribute="centerX" id="XG6-4h-3wZ"/>
+                            <constraint firstItem="hvn-Xe-b95" firstAttribute="leading" secondItem="LPJ-lO-tA2" secondAttribute="leading" constant="20" id="ewV-Km-Efj"/>
+                            <constraint firstItem="hvn-Xe-b95" firstAttribute="top" secondItem="elV-2W-De8" secondAttribute="bottom" constant="10" id="voC-48-o9e"/>
+                            <constraint firstItem="elV-2W-De8" firstAttribute="leading" secondItem="LPJ-lO-tA2" secondAttribute="leading" constant="20" id="yjR-q4-tMQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LPJ-lO-tA2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GIV-Qq-lQf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="255" y="-218"/>
+        </scene>
+    </scenes>
+</document>
