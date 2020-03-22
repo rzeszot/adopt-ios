@@ -9,8 +9,6 @@
 import SwiftUI
 import UIKit
 
-
-
 struct SignUp {
     struct Request: Codable {
         struct User: Codable {
@@ -37,8 +35,6 @@ struct SignUp {
     }
 }
 
-
-
 struct SignUpView: View {
     var action: (SignUp.Data) -> Void
 
@@ -61,7 +57,6 @@ struct SignUpView: View {
                         DispatchQueue.main.async {
                             self.action(SignUp.Data(email: self.email, token: success.token))
                         }
-                        break
                     case .failure:
                         break
                     }
@@ -77,7 +72,7 @@ struct SignUpView: View {
 
         var request = URLRequest(url: URL(string: "https://adopt.rzeszot.pro/api/auth/sign_up")!)
         request.httpMethod = "POST"
-        request.httpBody = try! JSONEncoder().encode(SignUp.Request(user: SignUp.Request.User(email: email, password: password)))
+        request.httpBody = try? JSONEncoder().encode(SignUp.Request(user: SignUp.Request.User(email: email, password: password)))
         request.allHTTPHeaderFields?["Content-Type"] = "application/json"
 
         let session = URLSession.shared
@@ -107,7 +102,6 @@ struct SignUpView: View {
     }
 
 }
-
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {

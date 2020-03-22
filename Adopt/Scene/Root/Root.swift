@@ -23,9 +23,16 @@ extension Root {
         let welcome = Welcome.build(dependency: dependency) { [unowned root] action in
             switch action {
             case .login:
-                let vc = BasicAuth.build(dismiss: {
-                    xxx()
-                })
+                let vc = BasicAuth.build(dependency: BasicAuth.Dependency(service: BasicAuth.Service()),
+                    success: { output in
+                        let vc = Settings.build(logout: {
+                            xxx()
+                        })
+                        root.use(vc)
+                    }, dismiss: {
+                        xxx()
+                    }
+                )
                 root.use(vc)
             case .register:
                 break

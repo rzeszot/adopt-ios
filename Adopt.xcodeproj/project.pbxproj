@@ -24,14 +24,9 @@
 		2D443B3A23BD4134007BFEEE /* Forget.EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B3923BD4134007BFEEE /* Forget.EmailView.swift */; };
 		2D443B3C23BD418A007BFEEE /* Forget.CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B3B23BD418A007BFEEE /* Forget.CodeView.swift */; };
 		2D443B3E23BD456D007BFEEE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B3D23BD456D007BFEEE /* WelcomeViewController.swift */; };
-		2D4F88B823C00DA00017E29F /* DeckViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F88B723C00DA00017E29F /* DeckViewDataSource.swift */; };
-		2D4F88BA23C00DBB0017E29F /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F88B923C00DBB0017E29F /* DeckView.swift */; };
-		2D4F88BC23C01BFA0017E29F /* CardBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F88BB23C01BFA0017E29F /* CardBehaviour.swift */; };
 		2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385B23BAD03C0094BAB2 /* Session.swift */; };
 		2D7A386223BAD4AD0094BAB2 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386123BAD4AD0094BAB2 /* Settings.swift */; };
 		2D7A386523BAD5C40094BAB2 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386423BAD5C40094BAB2 /* Welcome.swift */; };
-		2DA0D07F23BE57AA0095E24E /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA0D07E23BE57AA0095E24E /* SwipeViewController.swift */; };
-		2DA0D08323BE59B60095E24E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA0D08223BE59B60095E24E /* ProfileView.swift */; };
 		2DBC3B562427A8280070894C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBC3B552427A8280070894C /* RootViewController.swift */; };
 		2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6B26323B84AD60006D873 /* AppDelegate.swift */; };
 		2DD6B26623B84AD60006D873 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6B26523B84AD60006D873 /* SceneDelegate.swift */; };
@@ -116,14 +111,9 @@
 		2D443B3923BD4134007BFEEE /* Forget.EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.EmailView.swift; sourceTree = "<group>"; };
 		2D443B3B23BD418A007BFEEE /* Forget.CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.CodeView.swift; sourceTree = "<group>"; };
 		2D443B3D23BD456D007BFEEE /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		2D4F88B723C00DA00017E29F /* DeckViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckViewDataSource.swift; sourceTree = "<group>"; };
-		2D4F88B923C00DBB0017E29F /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
-		2D4F88BB23C01BFA0017E29F /* CardBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBehaviour.swift; sourceTree = "<group>"; };
 		2D7A385B23BAD03C0094BAB2 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		2D7A386123BAD4AD0094BAB2 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2D7A386423BAD5C40094BAB2 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
-		2DA0D07E23BE57AA0095E24E /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
-		2DA0D08223BE59B60095E24E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2DBC3B552427A8280070894C /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		2DBC3B5C2427ABDA0070894C /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
 		2DD6B26023B84AD60006D873 /* Adopt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adopt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -296,25 +286,6 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
-		2DA0D08023BE598D0095E24E /* Swipe */ = {
-			isa = PBXGroup;
-			children = (
-				2DA0D07E23BE57AA0095E24E /* SwipeViewController.swift */,
-				2D4F88B723C00DA00017E29F /* DeckViewDataSource.swift */,
-				2D4F88B923C00DBB0017E29F /* DeckView.swift */,
-				2D4F88BB23C01BFA0017E29F /* CardBehaviour.swift */,
-			);
-			path = Swipe;
-			sourceTree = "<group>";
-		};
-		2DA0D08123BE599B0095E24E /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				2DA0D08223BE59B60095E24E /* ProfileView.swift */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
 		2DBC3B542427A8060070894C /* Scene */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,8 +295,6 @@
 				2D2B44992427C53C00BECB25 /* Settings */,
 				2D443B2623BD3E3B007BFEEE /* Forget */,
 				2DD6B27723B84B640006D873 /* Sign up */,
-				2DA0D08023BE598D0095E24E /* Swipe */,
-				2DA0D08123BE599B0095E24E /* Profile */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -579,12 +548,9 @@
 				2D443B3E23BD456D007BFEEE /* WelcomeViewController.swift in Sources */,
 				2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */,
 				2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */,
-				2D4F88B823C00DA00017E29F /* DeckViewDataSource.swift in Sources */,
 				2D443B2523BCF792007BFEEE /* BasicAuth.Coordinator.swift in Sources */,
 				2DD7A4F52427ADD50029CC49 /* UIStoryboard.swift in Sources */,
 				2D443B2823BD3E4A007BFEEE /* Forget.swift in Sources */,
-				2DA0D08323BE59B60095E24E /* ProfileView.swift in Sources */,
-				2DA0D07F23BE57AA0095E24E /* SwipeViewController.swift in Sources */,
 				2D443B3A23BD4134007BFEEE /* Forget.EmailView.swift in Sources */,
 				2DD7A4F72427B0670029CC49 /* PrimaryButton.swift in Sources */,
 				3CF8D1A723CFCED200061AF1 /* PasswordViewController.swift in Sources */,
@@ -594,8 +560,6 @@
 				2D2F76AF2427C0F7001F3222 /* BasicAuthViewController.swift in Sources */,
 				2D3FCF5423BB6F47001E3704 /* LoginViewController.swift in Sources */,
 				2DD7A4F92427B0AA0029CC49 /* SecondaryButton.swift in Sources */,
-				2D4F88BC23C01BFA0017E29F /* CardBehaviour.swift in Sources */,
-				2D4F88BA23C00DBB0017E29F /* DeckView.swift in Sources */,
 				2D2B449B2427C54700BECB25 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
