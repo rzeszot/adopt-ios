@@ -11,6 +11,7 @@ extension BasicAuth {
         var login: LoginViewController!
         var password: PasswordViewController!
         var service: Service!
+        var session: Session!
 
         var dismiss: (() -> Void)!
         var success: ((Output) -> Void)!

@@ -7,6 +7,8 @@ import UIKit
 struct BasicAuth {
     struct Dependency {
         let service: Service
+        let success: (Output) -> Void
+        let dismiss: () -> Void
     }
 
     struct Output {
@@ -16,15 +18,15 @@ struct BasicAuth {
 }
 
 extension BasicAuth {
-    static func build(dependency: Dependency, success: @escaping (Output) -> Void, dismiss: @escaping () -> Void) -> UIViewController {
+    static func build(dependency: Dependency) -> UIViewController {
         let root = BasicAuthViewController()
         let coordinator = Coordinator()
 
         let login: LoginViewController = UIStoryboard.instantiate(name: "BasicAuth", identifier: "email")
         let password: PasswordViewController = UIStoryboard.instantiate(name: "BasicAuth", identifier: "password")
 
-        coordinator.dismiss = dismiss
-        coordinator.success = success
+        coordinator.dismiss = dependency.dismiss
+        coordinator.success = dependency.success
         coordinator.root = root
         coordinator.login = login
         coordinator.password = password

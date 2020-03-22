@@ -28,5 +28,3 @@ struct Forget_EmailView_Previews: PreviewProvider {
         Forget.EmailView(back: {})
     }
 }
-
-

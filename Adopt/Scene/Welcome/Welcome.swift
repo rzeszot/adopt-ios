@@ -12,13 +12,14 @@ struct Welcome {
 
     struct Dependency {
         let session: Session
+        let action: (Action) -> Void
     }
 
-    static func build(dependency: Dependency, action: @escaping (Action) -> Void) -> UIViewController {
+    static func build(dependency: Dependency) -> UIViewController {
         let root: WelcomeViewController = UIStoryboard.instantiate(name: "Welcome", identifier: "welcome")
 
-        root.login = { action(.login) }
-        root.register = { action(.register) }
+        root.login = { dependency.action(.login) }
+        root.register = { dependency.action(.register) }
 
         return root
     }

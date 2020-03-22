@@ -6,7 +6,7 @@ import UIKit
 
 struct Settings {
     struct Dependency {
-
+        let logout: () -> Void
     }
 
     class Coordinator {
@@ -17,14 +17,14 @@ struct Settings {
         }
     }
 
-    static func build(logout: @escaping () -> Void) -> UIViewController {
+    static func build(dependency: Dependency) -> UIViewController {
         let vc: SettingsViewController = UIStoryboard.instantiate(name: "Settings", identifier: "settings")
         let coordinator = Coordinator()
 
         vc.coordinator = coordinator
 
-        coordinator.dismiss = logout
+        coordinator.dismiss = dependency.logout
 
-        return UINavigationController(rootViewController: vc)
+        return vc
     }
 }

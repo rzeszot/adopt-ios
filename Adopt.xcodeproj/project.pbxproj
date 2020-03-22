@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D002E732427CDC900639347 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D002E722427CDC900639347 /* Dashboard.swift */; };
+		2D002E782427CF3C00639347 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D002E772427CF3C00639347 /* Home.storyboard */; };
+		2D002E7C2427CFB200639347 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D002E7B2427CFB200639347 /* HomeViewController.swift */; };
+		2D002E7E2427CFBE00639347 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D002E7D2427CFBE00639347 /* ProfileViewController.swift */; };
+		2D002E802427D0F700639347 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D002E7F2427D0F700639347 /* Home.swift */; };
+		2D002E822427D11400639347 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D002E812427D11400639347 /* Profile.swift */; };
 		2D2B44982427C44E00BECB25 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D2B44972427C44E00BECB25 /* Settings.storyboard */; };
 		2D2B449B2427C54700BECB25 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B449A2427C54700BECB25 /* SettingsViewController.swift */; };
 		2D2B449F2427C7C800BECB25 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B449E2427C7C800BECB25 /* Bundle.swift */; };
@@ -89,6 +95,12 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
+		2D002E722427CDC900639347 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		2D002E772427CF3C00639347 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		2D002E7B2427CFB200639347 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2D002E7D2427CFBE00639347 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2D002E7F2427D0F700639347 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		2D002E812427D11400639347 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		2D2B44972427C44E00BECB25 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		2D2B449A2427C54700BECB25 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2D2B449E2427C7C800BECB25 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
@@ -174,6 +186,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D002E712427CDBF00639347 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				2D002E722427CDC900639347 /* Dashboard.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		2D002E742427CE1100639347 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2D002E772427CF3C00639347 /* Home.storyboard */,
+				2D002E7A2427CFA400639347 /* Home */,
+				2D002E792427CF9B00639347 /* Profile */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2D002E752427CE1800639347 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		2D002E762427CE2000639347 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		2D002E792427CF9B00639347 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2D002E812427D11400639347 /* Profile.swift */,
+				2D002E7D2427CFBE00639347 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		2D002E7A2427CFA400639347 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2D002E7F2427D0F700639347 /* Home.swift */,
+				2D002E7B2427CFB200639347 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		2D2B44992427C53C00BECB25 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +350,10 @@
 				2D7A386023BAD4020094BAB2 /* Root */,
 				2D7A386323BAD5B70094BAB2 /* Welcome */,
 				2D7A385823BACE3B0094BAB2 /* Basic Auth */,
+				2D002E712427CDBF00639347 /* Dashboard */,
+				2D002E742427CE1100639347 /* Home */,
+				2D002E752427CE1800639347 /* Search */,
+				2D002E762427CE2000639347 /* Notifications */,
 				2D2B44992427C53C00BECB25 /* Settings */,
 				2D443B2623BD3E3B007BFEEE /* TODO */,
 			);
@@ -469,6 +535,7 @@
 				3CF319CB23CBD3AC00FE08EF /* MontserratAlternates-Medium.otf in Resources */,
 				3CF319C423CBD3AC00FE08EF /* Montserrat-Italic.otf in Resources */,
 				3CF319AD23CBD3AC00FE08EF /* MontserratAlternates-ExtraLight.otf in Resources */,
+				2D002E782427CF3C00639347 /* Home.storyboard in Resources */,
 				3CF319BA23CBD3AC00FE08EF /* Montserrat-BlackItalic.otf in Resources */,
 				3CF319C323CBD3AC00FE08EF /* Montserrat-SemiBold.otf in Resources */,
 				3CF319C623CBD3AC00FE08EF /* MontserratAlternates-MediumItalic.otf in Resources */,
@@ -525,15 +592,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D2B44A32427C82400BECB25 /* Build.swift.sh in Sources */,
+				2D002E822427D11400639347 /* Profile.swift in Sources */,
 				2D2B449F2427C7C800BECB25 /* Bundle.swift in Sources */,
+				2D002E732427CDC900639347 /* Dashboard.swift in Sources */,
 				2D443B2323BCF5C2007BFEEE /* BasicAuth.swift in Sources */,
 				2DBC3B562427A8280070894C /* RootViewController.swift in Sources */,
+				2D002E7C2427CFB200639347 /* HomeViewController.swift in Sources */,
+				2D002E7E2427CFBE00639347 /* ProfileViewController.swift in Sources */,
 				2D7A386223BAD4AD0094BAB2 /* Settings.swift in Sources */,
 				2D443B3E23BD456D007BFEEE /* WelcomeViewController.swift in Sources */,
 				2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */,
 				2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */,
 				2D443B2523BCF792007BFEEE /* BasicAuth.Coordinator.swift in Sources */,
 				2DD7A4F52427ADD50029CC49 /* UIStoryboard.swift in Sources */,
+				2D002E802427D0F700639347 /* Home.swift in Sources */,
 				2DD7A4F72427B0670029CC49 /* PrimaryButton.swift in Sources */,
 				3CF8D1A723CFCED200061AF1 /* PasswordViewController.swift in Sources */,
 				2D7A386523BAD5C40094BAB2 /* Welcome.swift in Sources */,
