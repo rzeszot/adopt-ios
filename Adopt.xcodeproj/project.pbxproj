@@ -104,6 +104,7 @@
 		2D7A386423BAD5C40094BAB2 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		2DA0D07E23BE57AA0095E24E /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		2DA0D08223BE59B60095E24E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		2DBC3B5C2427ABDA0070894C /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
 		2DD6B26023B84AD60006D873 /* Adopt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adopt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD6B26323B84AD60006D873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD6B26523B84AD60006D873 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -389,6 +390,7 @@
 		3CF319CD23CBD6EB00FE08EF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2DBC3B5C2427ABDA0070894C /* .github */,
 				3CF319CE23CBD70700FE08EF /* .gitignore */,
 			);
 			name = Tools;
@@ -404,6 +406,7 @@
 				2DD6B25C23B84AD60006D873 /* Sources */,
 				2DD6B25D23B84AD60006D873 /* Frameworks */,
 				2DD6B25E23B84AD60006D873 /* Resources */,
+				2DBC3B5B2427AB9F0070894C /* Linter */,
 			);
 			buildRules = (
 			);
@@ -500,6 +503,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2DBC3B5B2427AB9F0070894C /* Linter */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Linter;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null\nthen\n    swiftlint lint --config .github/swiftlint.yml --reporter xcode\nelse\n    echo \"warning: SwiftLint not installed\"\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2DD6B25C23B84AD60006D873 /* Sources */ = {
