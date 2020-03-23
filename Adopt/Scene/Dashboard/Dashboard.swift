@@ -17,9 +17,7 @@ struct Dashboard {
         let home = Home.build(dependency: .init(logout: dependency.logout))
         vcs.append(UINavigationController(rootViewController: home))
 
-        let search = UIViewController()
-        search.tabBarItem.title = "Search"
-        search.tabBarItem.image = UIImage(systemName: "magnifyingglass")
+        let search = Search.build(dependency: .init())
         vcs.append(UINavigationController(rootViewController: search))
 
         let notifications = UIViewController()

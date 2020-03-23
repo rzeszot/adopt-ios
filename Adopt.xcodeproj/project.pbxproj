@@ -14,6 +14,9 @@
 		2D002E802427D0F700639347 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D002E7F2427D0F700639347 /* Home.swift */; };
 		2D002E822427D11400639347 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D002E812427D11400639347 /* Profile.swift */; };
 		2D19031F24288F4700EFC007 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D19031E24288F4700EFC007 /* ExampleTests.swift */; };
+		2D1903272428949500EFC007 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1903262428949500EFC007 /* Search.swift */; };
+		2D190329242894D900EFC007 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D190328242894D900EFC007 /* Search.storyboard */; };
+		2D19032B242894F000EFC007 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D19032A242894F000EFC007 /* SearchViewController.swift */; };
 		2D2B44982427C44E00BECB25 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D2B44972427C44E00BECB25 /* Settings.storyboard */; };
 		2D2B449B2427C54700BECB25 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B449A2427C54700BECB25 /* SettingsViewController.swift */; };
 		2D2B449F2427C7C800BECB25 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B449E2427C7C800BECB25 /* Bundle.swift */; };
@@ -115,6 +118,9 @@
 		2D19031C24288F4700EFC007 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D19031E24288F4700EFC007 /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		2D19032024288F4700EFC007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D1903262428949500EFC007 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		2D190328242894D900EFC007 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		2D19032A242894F000EFC007 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		2D2B44972427C44E00BECB25 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		2D2B449A2427C54700BECB25 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2D2B449E2427C7C800BECB25 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
@@ -228,6 +234,9 @@
 		2D002E752427CE1800639347 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				2D1903262428949500EFC007 /* Search.swift */,
+				2D190328242894D900EFC007 /* Search.storyboard */,
+				2D19032A242894F000EFC007 /* SearchViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -598,6 +607,7 @@
 				3CF319C423CBD3AC00FE08EF /* Montserrat-Italic.otf in Resources */,
 				3CF319AD23CBD3AC00FE08EF /* MontserratAlternates-ExtraLight.otf in Resources */,
 				2D002E782427CF3C00639347 /* Home.storyboard in Resources */,
+				2D190329242894D900EFC007 /* Search.storyboard in Resources */,
 				3CF319BA23CBD3AC00FE08EF /* Montserrat-BlackItalic.otf in Resources */,
 				3CF319C323CBD3AC00FE08EF /* Montserrat-SemiBold.otf in Resources */,
 				3CF319C623CBD3AC00FE08EF /* MontserratAlternates-MediumItalic.otf in Resources */,
@@ -683,6 +693,8 @@
 				2DD7A4F12427AC690029CC49 /* Root.swift in Sources */,
 				2D2F76AF2427C0F7001F3222 /* BasicAuthViewController.swift in Sources */,
 				2D3FCF5423BB6F47001E3704 /* LoginViewController.swift in Sources */,
+				2D1903272428949500EFC007 /* Search.swift in Sources */,
+				2D19032B242894F000EFC007 /* SearchViewController.swift in Sources */,
 				2DD7A4F92427B0AA0029CC49 /* SecondaryButton.swift in Sources */,
 				2D2B449B2427C54700BECB25 /* SettingsViewController.swift in Sources */,
 			);
