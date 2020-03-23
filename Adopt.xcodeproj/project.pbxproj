@@ -13,6 +13,7 @@
 		2D002E7E2427CFBE00639347 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D002E7D2427CFBE00639347 /* ProfileViewController.swift */; };
 		2D002E802427D0F700639347 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D002E7F2427D0F700639347 /* Home.swift */; };
 		2D002E822427D11400639347 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D002E812427D11400639347 /* Profile.swift */; };
+		2D19031F24288F4700EFC007 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D19031E24288F4700EFC007 /* ExampleTests.swift */; };
 		2D2B44982427C44E00BECB25 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D2B44972427C44E00BECB25 /* Settings.storyboard */; };
 		2D2B449B2427C54700BECB25 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B449A2427C54700BECB25 /* SettingsViewController.swift */; };
 		2D2B449F2427C7C800BECB25 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2B449E2427C7C800BECB25 /* Bundle.swift */; };
@@ -94,6 +95,16 @@
 		};
 /* End PBXBuildRule section */
 
+/* Begin PBXContainerItemProxy section */
+		2D19032124288F4700EFC007 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DD6B25823B84AD60006D873 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2DD6B25F23B84AD60006D873;
+			remoteInfo = Adopt;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2D002E722427CDC900639347 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		2D002E772427CF3C00639347 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -101,6 +112,9 @@
 		2D002E7D2427CFBE00639347 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2D002E7F2427D0F700639347 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2D002E812427D11400639347 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		2D19031C24288F4700EFC007 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D19031E24288F4700EFC007 /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
+		2D19032024288F4700EFC007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D2B44972427C44E00BECB25 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		2D2B449A2427C54700BECB25 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2D2B449E2427C7C800BECB25 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
@@ -176,6 +190,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2D19031924288F4700EFC007 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2DD6B25D23B84AD60006D873 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -234,6 +255,15 @@
 				2D002E7B2427CFB200639347 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		2D19031D24288F4700EFC007 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				2D19031E24288F4700EFC007 /* ExampleTests.swift */,
+				2D19032024288F4700EFC007 /* Info.plist */,
+			);
+			path = UnitTests;
 			sourceTree = "<group>";
 		};
 		2D2B44992427C53C00BECB25 /* Settings */ = {
@@ -376,6 +406,7 @@
 			children = (
 				3CF319CD23CBD6EB00FE08EF /* Tools */,
 				2DD6B26223B84AD60006D873 /* Adopt */,
+				2D19031D24288F4700EFC007 /* UnitTests */,
 				2DD6B26123B84AD60006D873 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -384,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				2DD6B26023B84AD60006D873 /* Adopt.app */,
+				2D19031C24288F4700EFC007 /* UnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -457,6 +489,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2D19031B24288F4700EFC007 /* UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D19032324288F4700EFC007 /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildPhases = (
+				2D19031824288F4700EFC007 /* Sources */,
+				2D19031924288F4700EFC007 /* Frameworks */,
+				2D19031A24288F4700EFC007 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2D19032224288F4700EFC007 /* PBXTargetDependency */,
+			);
+			name = UnitTests;
+			productName = AdoptTests;
+			productReference = 2D19031C24288F4700EFC007 /* UnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2DD6B25F23B84AD60006D873 /* Adopt */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2DD6B27423B84AD70006D873 /* Build configuration list for PBXNativeTarget "Adopt" */;
@@ -486,6 +536,10 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Damian Rzeszot";
 				TargetAttributes = {
+					2D19031B24288F4700EFC007 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 2DD6B25F23B84AD60006D873;
+					};
 					2DD6B25F23B84AD60006D873 = {
 						CreatedOnToolsVersion = 11.3;
 					};
@@ -505,11 +559,19 @@
 			projectRoot = "";
 			targets = (
 				2DD6B25F23B84AD60006D873 /* Adopt */,
+				2D19031B24288F4700EFC007 /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2D19031A24288F4700EFC007 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2DD6B25E23B84AD60006D873 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -587,6 +649,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2D19031824288F4700EFC007 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D19031F24288F4700EFC007 /* ExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2DD6B25C23B84AD60006D873 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -620,6 +690,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2D19032224288F4700EFC007 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2DD6B25F23B84AD60006D873 /* Adopt */;
+			targetProxy = 2D19032124288F4700EFC007 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		2DD6B26E23B84AD70006D873 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -632,6 +710,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2D19032424288F4700EFC007 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9G47WR9NR2;
+				INFOPLIST_FILE = UnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rzeszot.adopt.unit-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Adopt.app/Adopt";
+			};
+			name = Debug;
+		};
+		2D19032524288F4700EFC007 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9G47WR9NR2;
+				INFOPLIST_FILE = UnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rzeszot.adopt.unit-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Adopt.app/Adopt";
+			};
+			name = Release;
+		};
 		2DD6B27223B84AD70006D873 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -793,6 +911,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2D19032324288F4700EFC007 /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D19032424288F4700EFC007 /* Debug */,
+				2D19032524288F4700EFC007 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2DD6B25B23B84AD60006D873 /* Build configuration list for PBXProject "Adopt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
