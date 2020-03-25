@@ -9,6 +9,7 @@ protocol LoginViewControllerDelegate: class {
     func login(_ vc: LoginViewController, didLoginWithEmail email: String)
     func loginDidClose(_ vc: LoginViewController)
     func loginDidTapRegister(_ vc: LoginViewController)
+    func loginDidTapForget(_ vc: LoginViewController)
 }
 
 class LoginViewController: UIViewController {
@@ -56,6 +57,12 @@ class LoginViewController: UIViewController {
     @IBAction
     func backgroundTap() {
         emailTextField.resignFirstResponder()
+    }
+
+    @IBAction
+    func forgetAction() {
+        emailTextField.resignFirstResponder()
+        delegate?.loginDidTapForget(self)
     }
 
     // MARK: -

@@ -12,6 +12,7 @@ extension BasicAuth {
         var password: PasswordViewController!
         var service: Service!
 
+        var forget: (() -> Void)!
         var dismiss: (() -> Void)!
         var register: (() -> Void)!
         var success: ((Output) -> Void)!
@@ -31,6 +32,10 @@ extension BasicAuth {
 
         func loginDidTapRegister(_ vc: LoginViewController) {
             register()
+        }
+
+        func loginDidTapForget(_ vc: LoginViewController) {
+            forget()
         }
 
         // MARK: - PasswordViewControllerDelegate

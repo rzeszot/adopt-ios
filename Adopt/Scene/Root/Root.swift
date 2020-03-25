@@ -50,6 +50,14 @@ extension Root {
             route(welcome(dependency: dependency, guest: guest, route: route))
         }, register: {
             route(register(dependency: dependency, guest: guest, route: route))
+        }, forget: {
+            route(forget(dependency: dependency, guest: guest, route: route))
+        }))
+    }
+
+    private static func forget(dependency: Dependency, guest: Session.Guest, route: @escaping (UIViewController) -> Void) -> UIViewController {
+        Forget.build(dependency: Forget.Dependency(guest: guest, dismiss: {
+            route(welcome(dependency: dependency, guest: guest, route: route))
         }))
     }
 
