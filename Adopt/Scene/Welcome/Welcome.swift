@@ -11,7 +11,7 @@ struct Welcome {
     }
 
     struct Dependency {
-        let session: Session
+        let guest: Session.Guest
         let action: (Action) -> Void
     }
 

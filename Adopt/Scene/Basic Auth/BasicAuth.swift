@@ -6,7 +6,6 @@ import UIKit
 
 struct BasicAuth {
     struct Dependency {
-        let session: Session
         let service: Service
         let success: (Output) -> Void
         let dismiss: () -> Void
@@ -32,7 +31,6 @@ extension BasicAuth {
         coordinator.login = login
         coordinator.password = password
         coordinator.service = dependency.service
-        coordinator.session = dependency.session
 
         login.delegate = coordinator
 

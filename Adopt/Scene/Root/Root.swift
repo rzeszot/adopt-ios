@@ -6,7 +6,12 @@ import UIKit
 
 struct Root {
     struct Dependency {
-        let session: Session
+        enum Actor {
+            case guest(Session.Guest)
+            case user(Session.User)
+        }
+
+        let actor: Actor
     }
 }
 
@@ -14,10 +19,11 @@ extension Root {
     static func build(dependency: Dependency) -> UIViewController {
         let root = RootViewController()
 
-        if let credentials = dependency.session.credentials {
-            root.use(dashboard(dependency: dependency, credentials: credentials, route: root.use))
-        } else {
-            root.use(welcome(dependency: dependency, route: root.use))
+        switch dependency.actor {
+        case .user(let user):
+            root.use(dashboard(dependency: dependency, user: user, route: root.use))
+        case .guest(let guest):
+            root.use(welcome(dependency: dependency, guest: guest, route: root.use))
         }
 
         return root
@@ -25,27 +31,26 @@ extension Root {
 
     // MARK: -
 
-    private static func welcome(dependency: Dependency, route: @escaping (UIViewController) -> Void) -> UIViewController {
-        Welcome.build(dependency: Welcome.Dependency(session: dependency.session, action: { action in
+    private static func welcome(dependency: Dependency, guest: Session.Guest, route: @escaping (UIViewController) -> Void) -> UIViewController {
+        Welcome.build(dependency: Welcome.Dependency(guest: guest, action: { action in
             guard case .login = action else { return }
-            route(login(dependency: dependency, route: route))
+            route(login(dependency: dependency, guest: guest, route: route))
         }))
     }
 
-    private static func login(dependency: Dependency, route: @escaping (UIViewController) -> Void) -> UIViewController {
-        BasicAuth.build(dependency: BasicAuth.Dependency(session: dependency.session, service: BasicAuth.Service(), success: { output in
-            let credential = Session.Credentials(email: output.email, token: output.token)
-            dependency.session.login(credential)
-            route(dashboard(dependency: dependency, credentials: credential, route: route))
+    private static func login(dependency: Dependency, guest: Session.Guest, route: @escaping (UIViewController) -> Void) -> UIViewController {
+        BasicAuth.build(dependency: BasicAuth.Dependency(service: BasicAuth.Service(), success: { output in
+            let user = guest.login(Session.Credential(email: output.email, token: output.token))
+            route(dashboard(dependency: dependency, user: user, route: route))
         }, dismiss: {
-            route(welcome(dependency: dependency, route: route))
+            route(welcome(dependency: dependency, guest: guest, route: route))
         }))
     }
 
-    private static func dashboard(dependency: Dependency, credentials: Session.Credentials, route: @escaping (UIViewController) -> Void) -> UIViewController {
-        Dashboard.build(dependency: Dashboard.Dependency(logout: {
-            route(welcome(dependency: dependency, route: route))
-        }, credentials: dependency.session.credentials!))
+    private static func dashboard(dependency: Dependency, user: Session.User, route: @escaping (UIViewController) -> Void) -> UIViewController {
+        Dashboard.build(dependency: Dashboard.Dependency(user: user, logout: {
+            route(welcome(dependency: dependency, guest: user.logout(), route: route))
+        }))
     }
 
 }

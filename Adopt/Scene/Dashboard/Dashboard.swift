@@ -6,8 +6,8 @@ import UIKit
 
 struct Dashboard {
     struct Dependency {
+        let user: Session.User
         let logout: () -> Void
-        let credentials: Session.Credentials
     }
 
     static func build(dependency: Dependency) -> UIViewController {
