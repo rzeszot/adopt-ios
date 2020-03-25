@@ -6,6 +6,30 @@ import UIKit
 
 class AnimalDetailsViewController: UIViewController, UICollectionViewDataSource {
 
+    // MARK: - Outlets
+
+    @IBOutlet
+    var favouriteButton: UIButton!
+
+    // MARK: - Actions
+
+    @IBAction
+    func favouriteAction() {
+        favouriteButton.isSelected = !favouriteButton.isSelected
+    }
+
+    @IBAction
+    func shareAction() {
+        let url: URL = "https://adopt.rzeszot.pro/animal/12345"
+        let vc = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        vc.popoverPresentationController?.sourceView = favouriteButton
+        vc.completionWithItemsHandler = { type, completed, returned, error in
+            print("\(type), \(completed), \(returned), \(error)")
+        }
+
+        present(vc, animated: true)
+    }
+
     // MARK: - UICollectionViewDataSource
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

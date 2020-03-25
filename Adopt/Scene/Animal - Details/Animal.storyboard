@@ -44,13 +44,6 @@
                                                     <color key="titleColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxZ-xi-XgL">
-                                                <rect key="frame" x="20" y="430" width="374" height="376.5"/>
-                                                <mutableString key="text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</mutableString>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O4m-gi-VyG">
                                                 <rect key="frame" x="0.0" y="340" width="414" height="70"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -105,6 +98,31 @@
                                                     <outlet property="dataSource" destination="Y9X-JV-vma" id="J6X-ic-29D"/>
                                                 </connections>
                                             </collectionView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxZ-xi-XgL">
+                                                <rect key="frame" x="20" y="430" width="374" height="376.5"/>
+                                                <mutableString key="text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</mutableString>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ber-32-3pa">
+                                                <rect key="frame" x="334" y="203" width="60" height="60"/>
+                                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="tc1-ei-CxO"/>
+                                                    <constraint firstAttribute="width" secondItem="ber-32-3pa" secondAttribute="height" id="uFw-Jc-dpq"/>
+                                                </constraints>
+                                                <state key="normal" image="heart" catalog="system"/>
+                                                <state key="selected" image="heart.fill" catalog="system"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="favouriteAction" destination="Y9X-JV-vma" eventType="touchUpInside" id="rwt-vm-9zh"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -116,7 +134,9 @@
                                             <constraint firstItem="bts-rS-ADW" firstAttribute="leading" secondItem="J7f-An-ONn" secondAttribute="leading" id="NzB-ak-IDB"/>
                                             <constraint firstAttribute="bottom" secondItem="xxZ-xi-XgL" secondAttribute="bottom" constant="140" id="RHL-8x-bJL"/>
                                             <constraint firstItem="xxZ-xi-XgL" firstAttribute="left" secondItem="J7f-An-ONn" secondAttribute="leftMargin" id="Xsu-H6-pTN"/>
+                                            <constraint firstAttribute="trailing" secondItem="ber-32-3pa" secondAttribute="trailing" constant="20" id="a4C-Mf-Oy7"/>
                                             <constraint firstItem="xxZ-xi-XgL" firstAttribute="top" secondItem="O4m-gi-VyG" secondAttribute="bottom" constant="20" id="fVt-QK-uTQ"/>
+                                            <constraint firstItem="ber-32-3pa" firstAttribute="centerY" secondItem="bts-rS-ADW" secondAttribute="bottom" id="gbW-P0-1tk"/>
                                             <constraint firstAttribute="right" secondItem="O4m-gi-VyG" secondAttribute="right" id="h8Y-ov-PdU"/>
                                             <constraint firstItem="O4m-gi-VyG" firstAttribute="top" secondItem="IBc-ou-Xn1" secondAttribute="bottom" constant="20" id="ipJ-Mz-QcZ"/>
                                             <constraint firstAttribute="trailing" secondItem="bts-rS-ADW" secondAttribute="trailing" id="kvD-Xx-gFS"/>
@@ -181,9 +201,16 @@
                         <viewLayoutGuide key="safeArea" id="11E-M4-tI9"/>
                     </view>
                     <navigationItem key="navigationItem" id="8lU-EO-xTU">
-                        <barButtonItem key="rightBarButtonItem" image="heart" catalog="system" id="5Hc-IQ-gLR"/>
+                        <barButtonItem key="rightBarButtonItem" image="square.and.arrow.up" catalog="system" id="Fu3-vv-uHY">
+                            <connections>
+                                <action selector="shareAction" destination="Y9X-JV-vma" id="aBe-Dg-oLC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="favouriteButton" destination="ber-32-3pa" id="B67-S7-6u7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZT4-RV-zSR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -192,5 +219,7 @@
     </scenes>
     <resources>
         <image name="heart" catalog="system" width="64" height="54"/>
+        <image name="heart.fill" catalog="system" width="64" height="54"/>
+        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
     </resources>
 </document>
