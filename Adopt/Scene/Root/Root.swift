@@ -33,8 +33,12 @@ extension Root {
 
     private static func welcome(dependency: Dependency, guest: Session.Guest, route: @escaping (UIViewController) -> Void) -> UIViewController {
         Welcome.build(dependency: Welcome.Dependency(guest: guest, action: { action in
-            guard case .login = action else { return }
-            route(login(dependency: dependency, guest: guest, route: route))
+            switch action {
+            case .login:
+                route(login(dependency: dependency, guest: guest, route: route))
+            case .register:
+                route(register(dependency: dependency, guest: guest, route: route))
+            }
         }))
     }
 
@@ -43,6 +47,14 @@ extension Root {
             let user = guest.login(Session.Credential(email: output.email, token: output.token))
             route(dashboard(dependency: dependency, user: user, route: route))
         }, dismiss: {
+            route(welcome(dependency: dependency, guest: guest, route: route))
+        }, register: {
+            route(register(dependency: dependency, guest: guest, route: route))
+        }))
+    }
+
+    private static func register(dependency: Dependency, guest: Session.Guest, route: @escaping (UIViewController) -> Void) -> UIViewController {
+        Register.build(dependency: Register.Dependency(guest: guest, dismiss: {
             route(welcome(dependency: dependency, guest: guest, route: route))
         }))
     }

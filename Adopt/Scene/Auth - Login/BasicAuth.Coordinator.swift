@@ -13,6 +13,7 @@ extension BasicAuth {
         var service: Service!
 
         var dismiss: (() -> Void)!
+        var register: (() -> Void)!
         var success: ((Output) -> Void)!
 
         private var email: String?
@@ -29,7 +30,7 @@ extension BasicAuth {
         }
 
         func loginDidTapRegister(_ vc: LoginViewController) {
-
+            register()
         }
 
         // MARK: - PasswordViewControllerDelegate

@@ -9,6 +9,7 @@ struct BasicAuth {
         let service: Service
         let success: (Output) -> Void
         let dismiss: () -> Void
+        let register: () -> Void
     }
 
     struct Output {
@@ -25,6 +26,7 @@ extension BasicAuth {
         let login: LoginViewController = UIStoryboard.instantiate(name: "BasicAuth", identifier: "email")
         let password: PasswordViewController = UIStoryboard.instantiate(name: "BasicAuth", identifier: "password")
 
+        coordinator.register = dependency.register
         coordinator.dismiss = dependency.dismiss
         coordinator.success = dependency.success
         coordinator.root = root

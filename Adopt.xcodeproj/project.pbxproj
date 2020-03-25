@@ -30,6 +30,8 @@
 		2D443B3723BD403F007BFEEE /* offside.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B3223BD403F007BFEEE /* offside.jpg */; };
 		2D443B3823BD403F007BFEEE /* offside-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B3423BD403F007BFEEE /* offside-regular.ttf */; };
 		2D443B3E23BD456D007BFEEE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B3D23BD456D007BFEEE /* WelcomeViewController.swift */; };
+		2D531EBB242C09D90001F507 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EBA242C09D90001F507 /* RegisterViewController.swift */; };
+		2D531EBD242C09F10001F507 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EBC242C09F10001F507 /* Register.swift */; };
 		2D5F026D2428E88D00760CB2 /* BasicAuth.Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F026C2428E88D00760CB2 /* BasicAuth.Service.swift */; };
 		2D5F02702428E96000760CB2 /* SettingsAppearanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F026F2428E96000760CB2 /* SettingsAppearanceViewController.swift */; };
 		2D5F02722428E9AE00760CB2 /* SettingsAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F02712428E9AE00760CB2 /* SettingsAppearance.swift */; };
@@ -143,6 +145,8 @@
 		2D443B3923BD4134007BFEEE /* Forget.EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.EmailView.swift; sourceTree = "<group>"; };
 		2D443B3B23BD418A007BFEEE /* Forget.CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.CodeView.swift; sourceTree = "<group>"; };
 		2D443B3D23BD456D007BFEEE /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		2D531EBA242C09D90001F507 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		2D531EBC242C09F10001F507 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		2D5F026C2428E88D00760CB2 /* BasicAuth.Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAuth.Service.swift; sourceTree = "<group>"; };
 		2D5F026F2428E96000760CB2 /* SettingsAppearanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppearanceViewController.swift; sourceTree = "<group>"; };
 		2D5F02712428E9AE00760CB2 /* SettingsAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppearance.swift; sourceTree = "<group>"; };
@@ -362,6 +366,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		2D531EB9242C09C80001F507 /* Auth - Register */ = {
+			isa = PBXGroup;
+			children = (
+				2D531EBC242C09F10001F507 /* Register.swift */,
+				2D531EBA242C09D90001F507 /* RegisterViewController.swift */,
+			);
+			path = "Auth - Register";
+			sourceTree = "<group>";
+		};
 		2D5F026E2428E94E00760CB2 /* Settings - Appearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,7 +384,7 @@
 			path = "Settings - Appearance";
 			sourceTree = "<group>";
 		};
-		2D7A385823BACE3B0094BAB2 /* Basic Auth */ = {
+		2D7A385823BACE3B0094BAB2 /* Auth - Login */ = {
 			isa = PBXGroup;
 			children = (
 				2D443B2223BCF5C2007BFEEE /* BasicAuth.swift */,
@@ -382,7 +395,7 @@
 				2D3FCF5323BB6F47001E3704 /* LoginViewController.swift */,
 				3CF8D1A623CFCED200061AF1 /* PasswordViewController.swift */,
 			);
-			path = "Basic Auth";
+			path = "Auth - Login";
 			sourceTree = "<group>";
 		};
 		2D7A386023BAD4020094BAB2 /* Root */ = {
@@ -409,7 +422,8 @@
 			children = (
 				2D7A386023BAD4020094BAB2 /* Root */,
 				2D7A386323BAD5B70094BAB2 /* Welcome */,
-				2D7A385823BACE3B0094BAB2 /* Basic Auth */,
+				2D531EB9242C09C80001F507 /* Auth - Register */,
+				2D7A385823BACE3B0094BAB2 /* Auth - Login */,
 				2D002E712427CDBF00639347 /* Dashboard */,
 				2D002E742427CE1100639347 /* Home */,
 				2D002E752427CE1800639347 /* Search */,
@@ -709,6 +723,7 @@
 				2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */,
 				2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */,
 				2D443B2523BCF792007BFEEE /* BasicAuth.Coordinator.swift in Sources */,
+				2D531EBD242C09F10001F507 /* Register.swift in Sources */,
 				2DD7A4F52427ADD50029CC49 /* UIStoryboard.swift in Sources */,
 				2D002E802427D0F700639347 /* Home.swift in Sources */,
 				2DD7A4F72427B0670029CC49 /* PrimaryButton.swift in Sources */,
@@ -716,6 +731,7 @@
 				2D5F026D2428E88D00760CB2 /* BasicAuth.Service.swift in Sources */,
 				2D7A386523BAD5C40094BAB2 /* Welcome.swift in Sources */,
 				2DD6B26623B84AD60006D873 /* SceneDelegate.swift in Sources */,
+				2D531EBB242C09D90001F507 /* RegisterViewController.swift in Sources */,
 				2D832E26242BDDDE00584A4D /* Specification.swift in Sources */,
 				2DD7A4F12427AC690029CC49 /* Root.swift in Sources */,
 				2D2F76AF2427C0F7001F3222 /* BasicAuthViewController.swift in Sources */,
