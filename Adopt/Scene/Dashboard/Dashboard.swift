@@ -15,17 +15,25 @@ struct Dashboard {
         var vcs: [UIViewController] = []
 
         let home = Home.build(dependency: .init(logout: dependency.logout))
-        vcs.append(UINavigationController(rootViewController: home))
+        vcs.append(home.nav())
 
         let search = Search.build(dependency: .init())
-        vcs.append(UINavigationController(rootViewController: search))
+        vcs.append(search.nav())
 
         let notifications = UIViewController()
         notifications.tabBarItem.title = "Notifications"
         notifications.tabBarItem.image = UIImage(systemName: "bell")
-        vcs.append(UINavigationController(rootViewController: notifications))
+        vcs.append(notifications.nav())
 
         root.setViewControllers(vcs, animated: false)
         return root
+    }
+}
+
+private extension UIViewController {
+    func nav() -> UIViewController {
+        let nav = UINavigationController(rootViewController: self)
+        nav.navigationBar.prefersLargeTitles = true
+        return nav
     }
 }
