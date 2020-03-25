@@ -19,6 +19,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="ucV-w2-B1l"/>
                     <navigationItem key="navigationItem" title="Home" id="jZr-OC-lzx">
+                        <barButtonItem key="backBarButtonItem" title=" " id="8NF-Yi-UWK"/>
                         <barButtonItem key="leftBarButtonItem" image="person.fill" catalog="system" id="VaT-Zq-G32">
                             <connections>
                                 <action selector="profileAction" destination="qnk-4D-GHt" id="6sI-Fe-bqX"/>
@@ -43,6 +44,7 @@
                         <viewLayoutGuide key="safeArea" id="zPP-cq-8ru"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="4Ck-fs-SKB">
+                        <barButtonItem key="backBarButtonItem" title=" " id="WRs-5B-tyX"/>
                         <barButtonItem key="rightBarButtonItem" image="gear" catalog="system" id="x6F-q6-GK2">
                             <connections>
                                 <action selector="settingsAction" destination="d94-BY-jwD" id="ixC-9O-KdW"/>

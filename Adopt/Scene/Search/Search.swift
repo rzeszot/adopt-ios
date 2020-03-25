@@ -12,6 +12,11 @@ struct Search {
     static func build(dependency: Dependency) -> UIViewController {
         let root: SearchViewController = UIStoryboard.instantiate(name: "Search", identifier: "search")
 
+        let search = UISearchController()
+        search.searchResultsUpdater = root
+        search.obscuresBackgroundDuringPresentation = false
+        root.navigationItem.searchController = search
+
         return root
     }
 }

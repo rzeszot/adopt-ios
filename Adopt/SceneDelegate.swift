@@ -9,8 +9,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options: UIScene.ConnectionOptions) {
-        let session = Session()
-        let vc = Root.build(session: session)
+        let vc = Root.build(dependency: .init(session: Session()))
 
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
@@ -20,10 +19,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
 
-}
-
-private extension Root {
-    static func build(session: Session) -> UIViewController {
-        build(dependency: Dependency(session: session))
-    }
 }
