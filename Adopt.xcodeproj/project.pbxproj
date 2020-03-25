@@ -34,6 +34,9 @@
 		2D531EBD242C09F10001F507 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EBC242C09F10001F507 /* Register.swift */; };
 		2D531EC0242C0DA10001F507 /* Forget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EBF242C0DA10001F507 /* Forget.swift */; };
 		2D531EC2242C0DBF0001F507 /* ForgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EC1242C0DBF0001F507 /* ForgetViewController.swift */; };
+		2D531EC5242C11390001F507 /* AnimalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EC4242C11390001F507 /* AnimalDetailsViewController.swift */; };
+		2D531EC7242C114A0001F507 /* AnimalDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EC6242C114A0001F507 /* AnimalDetails.swift */; };
+		2D531EC9242C118D0001F507 /* Animal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D531EC8242C118D0001F507 /* Animal.storyboard */; };
 		2D5F026D2428E88D00760CB2 /* BasicAuth.Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F026C2428E88D00760CB2 /* BasicAuth.Service.swift */; };
 		2D5F02702428E96000760CB2 /* SettingsAppearanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F026F2428E96000760CB2 /* SettingsAppearanceViewController.swift */; };
 		2D5F02722428E9AE00760CB2 /* SettingsAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F02712428E9AE00760CB2 /* SettingsAppearance.swift */; };
@@ -151,6 +154,9 @@
 		2D531EBC242C09F10001F507 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		2D531EBF242C0DA10001F507 /* Forget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.swift; sourceTree = "<group>"; };
 		2D531EC1242C0DBF0001F507 /* ForgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetViewController.swift; sourceTree = "<group>"; };
+		2D531EC4242C11390001F507 /* AnimalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailsViewController.swift; sourceTree = "<group>"; };
+		2D531EC6242C114A0001F507 /* AnimalDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetails.swift; sourceTree = "<group>"; };
+		2D531EC8242C118D0001F507 /* Animal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Animal.storyboard; sourceTree = "<group>"; };
 		2D5F026C2428E88D00760CB2 /* BasicAuth.Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAuth.Service.swift; sourceTree = "<group>"; };
 		2D5F026F2428E96000760CB2 /* SettingsAppearanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppearanceViewController.swift; sourceTree = "<group>"; };
 		2D5F02712428E9AE00760CB2 /* SettingsAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppearance.swift; sourceTree = "<group>"; };
@@ -388,6 +394,16 @@
 			path = "Auth - Forget";
 			sourceTree = "<group>";
 		};
+		2D531EC3242C11220001F507 /* Animal - Details */ = {
+			isa = PBXGroup;
+			children = (
+				2D531EC6242C114A0001F507 /* AnimalDetails.swift */,
+				2D531EC4242C11390001F507 /* AnimalDetailsViewController.swift */,
+				2D531EC8242C118D0001F507 /* Animal.storyboard */,
+			);
+			path = "Animal - Details";
+			sourceTree = "<group>";
+		};
 		2D5F026E2428E94E00760CB2 /* Settings - Appearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +457,7 @@
 				2D002E712427CDBF00639347 /* Dashboard */,
 				2D002E742427CE1100639347 /* Home */,
 				2D002E752427CE1800639347 /* Search */,
+				2D531EC3242C11220001F507 /* Animal - Details */,
 				2D002E762427CE2000639347 /* Notifications */,
 				2D2B44992427C53C00BECB25 /* Settings */,
 				2D5F026E2428E94E00760CB2 /* Settings - Appearance */,
@@ -644,6 +661,7 @@
 				3CF319BF23CBD3AC00FE08EF /* Montserrat-SemiBoldItalic.otf in Resources */,
 				2DD7A4F32427ADBD0029CC49 /* Welcome.storyboard in Resources */,
 				2DD6B27023B84AD70006D873 /* LaunchScreen.storyboard in Resources */,
+				2D531EC9242C118D0001F507 /* Animal.storyboard in Resources */,
 				3CF319B023CBD3AC00FE08EF /* Montserrat-ExtraLight.otf in Resources */,
 				2DD6B26A23B84AD70006D873 /* Assets.xcassets in Resources */,
 				3CF319CF23CBD70700FE08EF /* .gitignore in Resources */,
@@ -737,6 +755,7 @@
 				2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */,
 				2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */,
 				2D531EC0242C0DA10001F507 /* Forget.swift in Sources */,
+				2D531EC5242C11390001F507 /* AnimalDetailsViewController.swift in Sources */,
 				2D443B2523BCF792007BFEEE /* BasicAuth.Coordinator.swift in Sources */,
 				2D531EBD242C09F10001F507 /* Register.swift in Sources */,
 				2DD7A4F52427ADD50029CC49 /* UIStoryboard.swift in Sources */,
@@ -748,6 +767,7 @@
 				2DD6B26623B84AD60006D873 /* SceneDelegate.swift in Sources */,
 				2D531EBB242C09D90001F507 /* RegisterViewController.swift in Sources */,
 				2D832E26242BDDDE00584A4D /* Specification.swift in Sources */,
+				2D531EC7242C114A0001F507 /* AnimalDetails.swift in Sources */,
 				2DD7A4F12427AC690029CC49 /* Root.swift in Sources */,
 				2D2F76AF2427C0F7001F3222 /* BasicAuthViewController.swift in Sources */,
 				2D3FCF5423BB6F47001E3704 /* LoginViewController.swift in Sources */,
