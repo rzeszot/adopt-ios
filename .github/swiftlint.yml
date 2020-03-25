@@ -13,8 +13,8 @@ line_length:
   warning: 120
 
 nesting:
-  type_level: 3
-  statement_level: 4
+  type_level: 4
+  statement_level: 5
 
 file_length:
   warning: 500
