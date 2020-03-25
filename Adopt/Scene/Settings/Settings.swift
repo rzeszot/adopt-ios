@@ -7,10 +7,12 @@ import UIKit
 struct Settings {
     struct Dependency {
         let logout: () -> Void
+        let appearance: () -> Void
     }
 
     class Coordinator {
         var dismiss: (() -> Void)!
+        var appearance: (() -> Void)!
 
         func logout() {
             dismiss()
@@ -24,6 +26,7 @@ struct Settings {
         vc.coordinator = coordinator
 
         coordinator.dismiss = dependency.logout
+        coordinator.appearance = dependency.appearance
 
         return vc
     }

@@ -31,9 +31,13 @@
 		2D443B3823BD403F007BFEEE /* offside-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B3423BD403F007BFEEE /* offside-regular.ttf */; };
 		2D443B3E23BD456D007BFEEE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B3D23BD456D007BFEEE /* WelcomeViewController.swift */; };
 		2D5F026D2428E88D00760CB2 /* BasicAuth.Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F026C2428E88D00760CB2 /* BasicAuth.Service.swift */; };
+		2D5F02702428E96000760CB2 /* SettingsAppearanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F026F2428E96000760CB2 /* SettingsAppearanceViewController.swift */; };
+		2D5F02722428E9AE00760CB2 /* SettingsAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F02712428E9AE00760CB2 /* SettingsAppearance.swift */; };
 		2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385B23BAD03C0094BAB2 /* Session.swift */; };
 		2D7A386223BAD4AD0094BAB2 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386123BAD4AD0094BAB2 /* Settings.swift */; };
 		2D7A386523BAD5C40094BAB2 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386423BAD5C40094BAB2 /* Welcome.swift */; };
+		2D832E24242BC12900584A4D /* SpecificationTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D832E23242BC12900584A4D /* SpecificationTestCase.swift */; };
+		2D832E26242BDDDE00584A4D /* Specification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D832E25242BDDDE00584A4D /* Specification.swift */; };
 		2DBC3B562427A8280070894C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBC3B552427A8280070894C /* RootViewController.swift */; };
 		2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6B26323B84AD60006D873 /* AppDelegate.swift */; };
 		2DD6B26623B84AD60006D873 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6B26523B84AD60006D873 /* SceneDelegate.swift */; };
@@ -140,6 +144,8 @@
 		2D443B3B23BD418A007BFEEE /* Forget.CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.CodeView.swift; sourceTree = "<group>"; };
 		2D443B3D23BD456D007BFEEE /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		2D5F026C2428E88D00760CB2 /* BasicAuth.Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAuth.Service.swift; sourceTree = "<group>"; };
+		2D5F026F2428E96000760CB2 /* SettingsAppearanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppearanceViewController.swift; sourceTree = "<group>"; };
+		2D5F02712428E9AE00760CB2 /* SettingsAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppearance.swift; sourceTree = "<group>"; };
 		2D7A385B23BAD03C0094BAB2 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		2D7A386123BAD4AD0094BAB2 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2D7A386423BAD5C40094BAB2 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
@@ -356,6 +362,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		2D5F026E2428E94E00760CB2 /* Settings - Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				2D5F02712428E9AE00760CB2 /* SettingsAppearance.swift */,
+				2D5F026F2428E96000760CB2 /* SettingsAppearanceViewController.swift */,
+			);
+			path = "Settings - Appearance";
+			sourceTree = "<group>";
+		};
 		2D7A385823BACE3B0094BAB2 /* Basic Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +415,7 @@
 				2D002E752427CE1800639347 /* Search */,
 				2D002E762427CE2000639347 /* Notifications */,
 				2D2B44992427C53C00BECB25 /* Settings */,
+				2D5F026E2428E94E00760CB2 /* Settings - Appearance */,
 				2D443B2623BD3E3B007BFEEE /* TODO */,
 			);
 			path = Scene;
@@ -686,6 +702,7 @@
 				2D443B2323BCF5C2007BFEEE /* BasicAuth.swift in Sources */,
 				2DBC3B562427A8280070894C /* RootViewController.swift in Sources */,
 				2D002E7C2427CFB200639347 /* HomeViewController.swift in Sources */,
+				2D5F02722428E9AE00760CB2 /* SettingsAppearance.swift in Sources */,
 				2D002E7E2427CFBE00639347 /* ProfileViewController.swift in Sources */,
 				2D7A386223BAD4AD0094BAB2 /* Settings.swift in Sources */,
 				2D443B3E23BD456D007BFEEE /* WelcomeViewController.swift in Sources */,
@@ -705,6 +722,7 @@
 				2D3FCF5423BB6F47001E3704 /* LoginViewController.swift in Sources */,
 				2D1903272428949500EFC007 /* Search.swift in Sources */,
 				2D19032B242894F000EFC007 /* SearchViewController.swift in Sources */,
+				2D5F02702428E96000760CB2 /* SettingsAppearanceViewController.swift in Sources */,
 				2DD7A4F92427B0AA0029CC49 /* SecondaryButton.swift in Sources */,
 				2D2B449B2427C54700BECB25 /* SettingsViewController.swift in Sources */,
 			);

@@ -13,7 +13,17 @@ struct Profile {
         let root: ProfileViewController = UIStoryboard.instantiate(name: "Home", identifier: "profile")
 
         root.settings = { [unowned root] in
-            let vc = Settings.build(dependency: .init(logout: dependency.logout))
+            var xxx = {}
+
+            let vc = Settings.build(dependency: .init(logout: dependency.logout, appearance: {
+                xxx()
+            }))
+
+            xxx = { [unowned vc] in
+                let appearance = SettingsAppearance.build()
+                vc.show(appearance, sender: nil)
+            }
+
             root.show(vc, sender: nil)
         }
 
