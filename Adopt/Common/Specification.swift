@@ -12,20 +12,24 @@ protocol Spec {
 // MARK: -
 
 struct AnySpec<T>: Spec {
-    let satisfy: (T) -> Bool
+    private let satisfier: (T) -> Bool
 
-    init(satisfy: @escaping (T) -> Bool) {
-        self.satisfy = satisfy
+    init<U: Spec>(spec: U) where T == U.T {
+        self.satisfier = spec.satisfied(by:)
+    }
+
+    init(satisfier: @escaping (T) -> Bool) {
+        self.satisfier = satisfier
     }
 
     func satisfied(by value: T) -> Bool {
-        satisfy(value)
+        satisfier(value)
     }
 }
 
 extension Spec {
     func erasured() -> AnySpec<T> {
-        return AnySpec(satisfy: satisfied(by:))
+        return AnySpec(spec: self)
     }
 }
 
