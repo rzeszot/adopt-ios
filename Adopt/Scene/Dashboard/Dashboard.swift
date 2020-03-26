@@ -17,13 +17,15 @@ struct Dashboard {
         let home = Home.build(dependency: .init(logout: dependency.logout))
         vcs.append(home.nav())
 
-        let search = Search.build(dependency: .init())
-        vcs.append(search.nav())
-
         let notifications = UIViewController()
+        notifications.view.backgroundColor = .systemBackground
         notifications.tabBarItem.title = "Notifications"
         notifications.tabBarItem.image = UIImage(systemName: "bell")
+        notifications.tabBarItem.selectedImage = UIImage(systemName: "bell.fill")
         vcs.append(notifications.nav())
+
+        let profile = Profile.build(dependency: Profile.Dependency(logout: dependency.logout))
+        vcs.append(profile.nav())
 
         root.setViewControllers(vcs, animated: false)
         return root

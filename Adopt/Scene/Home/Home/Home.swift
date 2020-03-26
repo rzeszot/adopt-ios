@@ -11,10 +11,18 @@ struct Home {
     }
 
     static func build(dependency: Dependency) -> UIViewController {
-        let root: HomeViewController = UIStoryboard.instantiate(name: "Home", identifier: "home")
+//        let root: HomeViewController = UIStoryboard.instantiate(name: "Home", identifier: "home")
+//
 
-        root.profile = { [unowned root] in
-            let vc = Profile.build(dependency: .init(logout: dependency.logout))
+
+        var xxx = {}
+
+        let root = AnimalList.build(dependency: AnimalList.Dependency(details: {
+            xxx()
+        }))
+
+        xxx = { [unowned root] in
+            let vc = AnimalDetails.build()
             root.show(vc, sender: nil)
         }
 

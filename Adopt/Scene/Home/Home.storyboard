@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,11 +20,6 @@
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="ucV-w2-B1l"/>
                     <navigationItem key="navigationItem" title="Home" id="jZr-OC-lzx">
                         <barButtonItem key="backBarButtonItem" title=" " id="8NF-Yi-UWK"/>
-                        <barButtonItem key="leftBarButtonItem" image="person.fill" catalog="system" id="VaT-Zq-G32">
-                            <connections>
-                                <action selector="profileAction" destination="qnk-4D-GHt" id="6sI-Fe-bqX"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -43,6 +38,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="zPP-cq-8ru"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person.fill" id="T4u-4R-Ny3"/>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Profile" id="4Ck-fs-SKB">
                         <barButtonItem key="backBarButtonItem" title=" " id="WRs-5B-tyX"/>
                         <barButtonItem key="rightBarButtonItem" image="gear" catalog="system" id="x6F-q6-GK2">
@@ -60,8 +57,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gear" catalog="system" width="64" height="58"/>
-        <image name="house" catalog="system" width="64" height="54"/>
-        <image name="person.fill" catalog="system" width="64" height="60"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
     </resources>
 </document>

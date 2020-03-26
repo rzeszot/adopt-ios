@@ -45,6 +45,8 @@
 		2D7A386523BAD5C40094BAB2 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386423BAD5C40094BAB2 /* Welcome.swift */; };
 		2D832E24242BC12900584A4D /* SpecificationTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D832E23242BC12900584A4D /* SpecificationTestCase.swift */; };
 		2D832E26242BDDDE00584A4D /* Specification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D832E25242BDDDE00584A4D /* Specification.swift */; };
+		2D84874F242CC58F00110856 /* AnimalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84874E242CC58F00110856 /* AnimalList.swift */; };
+		2D848751242CC5C200110856 /* AnimalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D848750242CC5C200110856 /* AnimalListViewController.swift */; };
 		2DBC3B562427A8280070894C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBC3B552427A8280070894C /* RootViewController.swift */; };
 		2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6B26323B84AD60006D873 /* AppDelegate.swift */; };
 		2DD6B26623B84AD60006D873 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6B26523B84AD60006D873 /* SceneDelegate.swift */; };
@@ -165,6 +167,8 @@
 		2D7A386423BAD5C40094BAB2 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		2D832E23242BC12900584A4D /* SpecificationTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificationTestCase.swift; sourceTree = "<group>"; };
 		2D832E25242BDDDE00584A4D /* Specification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specification.swift; sourceTree = "<group>"; };
+		2D84874E242CC58F00110856 /* AnimalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalList.swift; sourceTree = "<group>"; };
+		2D848750242CC5C200110856 /* AnimalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListViewController.swift; sourceTree = "<group>"; };
 		2DBC3B552427A8280070894C /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		2DBC3B5C2427ABDA0070894C /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
 		2DD6B26023B84AD60006D873 /* Adopt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adopt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -399,7 +403,6 @@
 			children = (
 				2D531EC6242C114A0001F507 /* AnimalDetails.swift */,
 				2D531EC4242C11390001F507 /* AnimalDetailsViewController.swift */,
-				2D531EC8242C118D0001F507 /* Animal.storyboard */,
 			);
 			path = "Animal - Details";
 			sourceTree = "<group>";
@@ -446,6 +449,25 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		2D84874D242CC58000110856 /* Animal - List */ = {
+			isa = PBXGroup;
+			children = (
+				2D84874E242CC58F00110856 /* AnimalList.swift */,
+				2D848750242CC5C200110856 /* AnimalListViewController.swift */,
+			);
+			path = "Animal - List";
+			sourceTree = "<group>";
+		};
+		2D848752242CC5D600110856 /* Animal */ = {
+			isa = PBXGroup;
+			children = (
+				2D531EC8242C118D0001F507 /* Animal.storyboard */,
+				2D84874D242CC58000110856 /* Animal - List */,
+				2D531EC3242C11220001F507 /* Animal - Details */,
+			);
+			path = Animal;
+			sourceTree = "<group>";
+		};
 		2DBC3B542427A8060070894C /* Scene */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,7 +479,7 @@
 				2D002E712427CDBF00639347 /* Dashboard */,
 				2D002E742427CE1100639347 /* Home */,
 				2D002E752427CE1800639347 /* Search */,
-				2D531EC3242C11220001F507 /* Animal - Details */,
+				2D848752242CC5D600110856 /* Animal */,
 				2D002E762427CE2000639347 /* Notifications */,
 				2D2B44992427C53C00BECB25 /* Settings */,
 				2D5F026E2428E94E00760CB2 /* Settings - Appearance */,
@@ -748,6 +770,7 @@
 				2D443B2323BCF5C2007BFEEE /* BasicAuth.swift in Sources */,
 				2DBC3B562427A8280070894C /* RootViewController.swift in Sources */,
 				2D002E7C2427CFB200639347 /* HomeViewController.swift in Sources */,
+				2D84874F242CC58F00110856 /* AnimalList.swift in Sources */,
 				2D5F02722428E9AE00760CB2 /* SettingsAppearance.swift in Sources */,
 				2D002E7E2427CFBE00639347 /* ProfileViewController.swift in Sources */,
 				2D7A386223BAD4AD0094BAB2 /* Settings.swift in Sources */,
@@ -756,6 +779,7 @@
 				2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */,
 				2D531EC0242C0DA10001F507 /* Forget.swift in Sources */,
 				2D531EC5242C11390001F507 /* AnimalDetailsViewController.swift in Sources */,
+				2D848751242CC5C200110856 /* AnimalListViewController.swift in Sources */,
 				2D443B2523BCF792007BFEEE /* BasicAuth.Coordinator.swift in Sources */,
 				2D531EBD242C09F10001F507 /* Register.swift in Sources */,
 				2DD7A4F52427ADD50029CC49 /* UIStoryboard.swift in Sources */,

@@ -24,10 +24,17 @@ class AnimalDetailsViewController: UIViewController, UICollectionViewDataSource 
         let vc = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         vc.popoverPresentationController?.sourceView = favouriteButton
         vc.completionWithItemsHandler = { type, completed, returned, error in
-            print("\(type), \(completed), \(returned), \(error)")
+            print("\(String(describing: type)), \(completed), \(String(describing: returned)), \(String(describing: error))")
         }
 
         present(vc, animated: true)
+    }
+
+    // MARK: -
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.title = "Marley"
     }
 
     // MARK: - UICollectionViewDataSource

@@ -9,9 +9,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options: UIScene.ConnectionOptions) {
-//        let vc = Root.build(dependency: Root.Dependency(actor: .guest(Session.Guest())))
-
-        let vc = UINavigationController(rootViewController: AnimalDetails.build())
+        let vc = Root.build(dependency: Root.Dependency(actor: .user(Session.User(credential: Session.Credential(email: "damian.rzeszot@gmail.com", token: "12345")))))
 
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)

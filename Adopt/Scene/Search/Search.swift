@@ -9,14 +9,14 @@ struct Search {
 
     }
 
-    static func build(dependency: Dependency) -> UIViewController {
-        let root: SearchViewController = UIStoryboard.instantiate(name: "Search", identifier: "search")
+    static func build(dependency: Dependency) -> UISearchController {
+        let result: SearchViewController = UIStoryboard.instantiate(name: "Search", identifier: "search")
+        result.view.backgroundColor = .red
 
-        let search = UISearchController()
-        search.searchResultsUpdater = root
-        search.obscuresBackgroundDuringPresentation = false
-        root.navigationItem.searchController = search
+        let search = UISearchController(searchResultsController: result)
+        search.searchResultsUpdater = result
+        search.showsSearchResultsController = true
 
-        return root
+        return search
     }
 }
