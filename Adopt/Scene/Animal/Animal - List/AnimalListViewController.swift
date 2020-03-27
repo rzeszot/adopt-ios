@@ -3,7 +3,6 @@
 //
 
 import UIKit
-import Faker
 
 class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISearchResultsUpdating {
 
@@ -97,7 +96,7 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
                 Category(name: "Hamsters"),
                 Category(name: "Hamsters")
             ])
-            animals = Animals(items: (0..<20).map { _ in Animal(name: Faker.creature.dog.name) })
+            animals = Animals(items: (0..<20).map { _ in Animal(name: "xxxxxx") })
         }
     }
 

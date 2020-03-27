@@ -9,7 +9,7 @@ on:
       - '**/*.swift'
 
 env:
-  swiftlint_config: .github/swiftlint.yml
+  swiftlint_config: .github/linter/swiftlint.yml
 
 jobs:
   lint:
