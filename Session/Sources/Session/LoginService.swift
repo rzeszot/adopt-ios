@@ -48,18 +48,11 @@ public struct LoginService {
 
 }
 
-
-
 //https://www.instagram.com/accounts/emailsignup/
 //https://www.instagram.com/accounts/login/?source=auth_switcher
 //https://www.instagram.com/accounts/password/reset/
 //https://www.instagram.com/accounts/emailsignup/
 
-//
-//
-////
-////  Copyright © 2020 Damian Rzeszot. All rights reserved.
-////
 //
 //import Foundation
 //
