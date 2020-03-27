@@ -6,8 +6,12 @@ import XCTest
 
 class ExampleTests: XCTestCase {
 
-    func testExample() {
+    func testTrue() {
         XCTAssertTrue(true)
+    }
+
+    func testFalse() {
+        XCTAssertFalse(false)
     }
 
 }

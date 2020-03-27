@@ -1,3 +1,8 @@
+#
+#  files:
+#    - .github/config/swiftlint.yml
+#
+
 name: Lint
 
 on:
