@@ -14,7 +14,6 @@ struct Home {
 //        let root: HomeViewController = UIStoryboard.instantiate(name: "Home", identifier: "home")
 //
 
-
         var xxx = {}
 
         let root = AnimalList.build(dependency: AnimalList.Dependency(details: {

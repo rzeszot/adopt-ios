@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Faker",
+        "repositoryURL": "git@github.com:rzeszot-pro/faker-swift.git",
+        "state": {
+          "branch": "master",
+          "revision": "66b8b388e8d154abb3a64feaef1c1a6771c369c7",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

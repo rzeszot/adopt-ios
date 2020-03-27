@@ -65,13 +65,12 @@ extension BasicAuth {
 
 }
 
-extension URL: ExpressibleByStringLiteral {
-
-    // MARK: - ExpressibleByStringLiteral
+extension URL: ExpressibleByStringLiteral, ExpressibleByStringInterpolation {
 
     public init(stringLiteral value: String) {
         self = URL(string: value)!
     }
+
 }
 
 extension URLRequest {

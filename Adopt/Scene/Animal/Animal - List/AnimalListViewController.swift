@@ -3,6 +3,7 @@
 //
 
 import UIKit
+import Faker
 
 class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISearchResultsUpdating {
 
@@ -35,7 +36,7 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
 
             case 1:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "animal", for: indexPath)
-                (cell as? AnimalCell)?.titleLabel.text = self.model.animals.items[indexPath.row].name
+                (cell as? AnimalListEntryCell)?.configure(item: self.model.animals.items[indexPath.row])
                 return cell
 
             default:
@@ -45,7 +46,7 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
 
         source.supplementaryViewProvider = { (collectionView, kind, indexPath) -> UICollectionReusableView? in
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
-            (header as? HeaderView)?.titleLabel.text = ["Categories", "Animals"][indexPath.section]
+            (header as? AnimalListHeaderView)?.titleLabel.text = ["Kategoria", "Najnowsze"][indexPath.section]
             return header
         }
 
@@ -74,6 +75,7 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
 
         struct Animal {
             let id: UUID = .init()
+            let thumbnail: URL = "https://placekitten.com/400/300?image=\((1...16).randomElement()!)"
             let name: String
         }
 
@@ -95,25 +97,7 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
                 Category(name: "Hamsters"),
                 Category(name: "Hamsters")
             ])
-            animals = Animals(items: [
-                Animal(name: "Kitten 1"),
-                Animal(name: "Kitten 2"),
-                Animal(name: "Kitten 3"),
-                Animal(name: "Kitten 4"),
-                Animal(name: "Kitten 5"),
-                Animal(name: "Kitten 6"),
-                Animal(name: "Kitten 7"),
-                Animal(name: "Kitten 8"),
-                Animal(name: "Kitten 9"),
-                Animal(name: "Kitten 10"),
-                Animal(name: "Kitten 11"),
-                Animal(name: "Kitten 12"),
-                Animal(name: "Kitten 13"),
-                Animal(name: "Kitten 14"),
-                Animal(name: "Kitten 15"),
-                Animal(name: "Kitten 16"),
-                Animal(name: "Kitten 17")
-            ])
+            animals = Animals(items: (0..<20).map { _ in Animal(name: Faker.creature.dog.name) })
         }
     }
 
@@ -183,46 +167,9 @@ private extension NSCollectionLayoutSection {
     }
 }
 
-extension NSCollectionLayoutBoundarySupplementaryItem {
+private extension NSCollectionLayoutBoundarySupplementaryItem {
     static var header: NSCollectionLayoutBoundarySupplementaryItem {
         let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(50))
         return NSCollectionLayoutBoundarySupplementaryItem(layoutSize: size, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
     }
-}
-
-class CategoryCell: UICollectionViewCell {
-
-    @IBOutlet
-    var titleLabel: UILabel!
-
-    override func didMoveToSuperview() {
-        super.didMoveToSuperview()
-
-        contentView.layer.borderColor = UIColor.separator.cgColor
-        contentView.layer.borderWidth = 1
-        contentView.layer.cornerRadius = 10
-    }
-
-}
-
-class AnimalCell: UICollectionViewCell {
-
-    @IBOutlet
-    var titleLabel: UILabel!
-
-    override func didMoveToSuperview() {
-        super.didMoveToSuperview()
-
-        contentView.layer.borderColor = UIColor.separator.cgColor
-        contentView.layer.borderWidth = 1
-        contentView.layer.cornerRadius = 10
-    }
-
-}
-
-class HeaderView: UICollectionReusableView {
-
-    @IBOutlet
-    var titleLabel: UILabel!
-
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,6 +30,13 @@
 		2D443B3723BD403F007BFEEE /* offside.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B3223BD403F007BFEEE /* offside.jpg */; };
 		2D443B3823BD403F007BFEEE /* offside-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D443B3423BD403F007BFEEE /* offside-regular.ttf */; };
 		2D443B3E23BD456D007BFEEE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D443B3D23BD456D007BFEEE /* WelcomeViewController.swift */; };
+		2D4F0F0A242D61E1006C75BB /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F09242D61E1006C75BB /* SearchHeaderView.swift */; };
+		2D4F0F0C242D6396006C75BB /* SearchHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F0B242D6396006C75BB /* SearchHistoryCell.swift */; };
+		2D4F0F0E242D63A9006C75BB /* SearchRecentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F0D242D63A9006C75BB /* SearchRecentCell.swift */; };
+		2D4F0F13242D736B006C75BB /* Faker in Frameworks */ = {isa = PBXBuildFile; productRef = 2D4F0F12242D736B006C75BB /* Faker */; };
+		2D4F0F15242D7605006C75BB /* AnimalListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F14242D7605006C75BB /* AnimalListHeaderView.swift */; };
+		2D4F0F17242D768C006C75BB /* AnimalListEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F16242D768C006C75BB /* AnimalListEntryCell.swift */; };
+		2D4F0F19242D7D78006C75BB /* AnimalListCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F18242D7D78006C75BB /* AnimalListCategoryCell.swift */; };
 		2D531EBB242C09D90001F507 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EBA242C09D90001F507 /* RegisterViewController.swift */; };
 		2D531EBD242C09F10001F507 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EBC242C09F10001F507 /* Register.swift */; };
 		2D531EC0242C0DA10001F507 /* Forget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EBF242C0DA10001F507 /* Forget.swift */; };
@@ -152,6 +159,12 @@
 		2D443B3923BD4134007BFEEE /* Forget.EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.EmailView.swift; sourceTree = "<group>"; };
 		2D443B3B23BD418A007BFEEE /* Forget.CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.CodeView.swift; sourceTree = "<group>"; };
 		2D443B3D23BD456D007BFEEE /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		2D4F0F09242D61E1006C75BB /* SearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeaderView.swift; sourceTree = "<group>"; };
+		2D4F0F0B242D6396006C75BB /* SearchHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryCell.swift; sourceTree = "<group>"; };
+		2D4F0F0D242D63A9006C75BB /* SearchRecentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecentCell.swift; sourceTree = "<group>"; };
+		2D4F0F14242D7605006C75BB /* AnimalListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListHeaderView.swift; sourceTree = "<group>"; };
+		2D4F0F16242D768C006C75BB /* AnimalListEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListEntryCell.swift; sourceTree = "<group>"; };
+		2D4F0F18242D7D78006C75BB /* AnimalListCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListCategoryCell.swift; sourceTree = "<group>"; };
 		2D531EBA242C09D90001F507 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2D531EBC242C09F10001F507 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		2D531EBF242C0DA10001F507 /* Forget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.swift; sourceTree = "<group>"; };
@@ -235,6 +248,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D4F0F13242D736B006C75BB /* Faker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +279,9 @@
 				2D1903262428949500EFC007 /* Search.swift */,
 				2D190328242894D900EFC007 /* Search.storyboard */,
 				2D19032A242894F000EFC007 /* SearchViewController.swift */,
+				2D4F0F0D242D63A9006C75BB /* SearchRecentCell.swift */,
+				2D4F0F0B242D6396006C75BB /* SearchHistoryCell.swift */,
+				2D4F0F09242D61E1006C75BB /* SearchHeaderView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -454,6 +471,9 @@
 			children = (
 				2D84874E242CC58F00110856 /* AnimalList.swift */,
 				2D848750242CC5C200110856 /* AnimalListViewController.swift */,
+				2D4F0F18242D7D78006C75BB /* AnimalListCategoryCell.swift */,
+				2D4F0F16242D768C006C75BB /* AnimalListEntryCell.swift */,
+				2D4F0F14242D7605006C75BB /* AnimalListHeaderView.swift */,
 			);
 			path = "Animal - List";
 			sourceTree = "<group>";
@@ -621,6 +641,9 @@
 			dependencies = (
 			);
 			name = Adopt;
+			packageProductDependencies = (
+				2D4F0F12242D736B006C75BB /* Faker */,
+			);
 			productName = Adopt;
 			productReference = 2DD6B26023B84AD60006D873 /* Adopt.app */;
 			productType = "com.apple.product-type.application";
@@ -653,6 +676,9 @@
 				Base,
 			);
 			mainGroup = 2DD6B25723B84AD60006D873;
+			packageReferences = (
+				2D4F0F11242D736B006C75BB /* XCRemoteSwiftPackageReference "faker-swift" */,
+			);
 			productRefGroup = 2DD6B26123B84AD60006D873 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -765,14 +791,20 @@
 			files = (
 				2D2B44A32427C82400BECB25 /* Build.swift.sh in Sources */,
 				2D002E822427D11400639347 /* Profile.swift in Sources */,
+				2D4F0F0C242D6396006C75BB /* SearchHistoryCell.swift in Sources */,
+				2D4F0F15242D7605006C75BB /* AnimalListHeaderView.swift in Sources */,
 				2D2B449F2427C7C800BECB25 /* Bundle.swift in Sources */,
 				2D002E732427CDC900639347 /* Dashboard.swift in Sources */,
+				2D4F0F17242D768C006C75BB /* AnimalListEntryCell.swift in Sources */,
 				2D443B2323BCF5C2007BFEEE /* BasicAuth.swift in Sources */,
+				2D4F0F0A242D61E1006C75BB /* SearchHeaderView.swift in Sources */,
 				2DBC3B562427A8280070894C /* RootViewController.swift in Sources */,
 				2D002E7C2427CFB200639347 /* HomeViewController.swift in Sources */,
+				2D4F0F19242D7D78006C75BB /* AnimalListCategoryCell.swift in Sources */,
 				2D84874F242CC58F00110856 /* AnimalList.swift in Sources */,
 				2D5F02722428E9AE00760CB2 /* SettingsAppearance.swift in Sources */,
 				2D002E7E2427CFBE00639347 /* ProfileViewController.swift in Sources */,
+				2D4F0F0E242D63A9006C75BB /* SearchRecentCell.swift in Sources */,
 				2D7A386223BAD4AD0094BAB2 /* Settings.swift in Sources */,
 				2D443B3E23BD456D007BFEEE /* WelcomeViewController.swift in Sources */,
 				2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */,
@@ -1055,6 +1087,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2D4F0F11242D736B006C75BB /* XCRemoteSwiftPackageReference "faker-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:rzeszot-pro/faker-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2D4F0F12242D736B006C75BB /* Faker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D4F0F11242D736B006C75BB /* XCRemoteSwiftPackageReference "faker-swift" */;
+			productName = Faker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2DD6B25823B84AD60006D873 /* Project object */;
 }

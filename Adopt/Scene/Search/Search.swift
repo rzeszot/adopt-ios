@@ -11,7 +11,7 @@ struct Search {
 
     static func build(dependency: Dependency) -> UISearchController {
         let result: SearchViewController = UIStoryboard.instantiate(name: "Search", identifier: "search")
-        result.view.backgroundColor = .red
+        result.view.backgroundColor = .systemBackground
 
         let search = UISearchController(searchResultsController: result)
         search.searchResultsUpdater = result
