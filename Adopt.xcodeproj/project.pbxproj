@@ -43,6 +43,8 @@
 		2D531EC5242C11390001F507 /* AnimalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EC4242C11390001F507 /* AnimalDetailsViewController.swift */; };
 		2D531EC7242C114A0001F507 /* AnimalDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EC6242C114A0001F507 /* AnimalDetails.swift */; };
 		2D531EC9242C118D0001F507 /* Animal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D531EC8242C118D0001F507 /* Animal.storyboard */; };
+		2D5E2190242EB27300573DB5 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5E218F242EB27300573DB5 /* AuthenticationServices.framework */; };
+		2D5E2192242EB27800573DB5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5E2191242EB27800573DB5 /* MapKit.framework */; };
 		2D5F026D2428E88D00760CB2 /* BasicAuth.Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F026C2428E88D00760CB2 /* BasicAuth.Service.swift */; };
 		2D5F02702428E96000760CB2 /* SettingsAppearanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F026F2428E96000760CB2 /* SettingsAppearanceViewController.swift */; };
 		2D5F02722428E9AE00760CB2 /* SettingsAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5F02712428E9AE00760CB2 /* SettingsAppearance.swift */; };
@@ -171,6 +173,8 @@
 		2D531EC4242C11390001F507 /* AnimalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailsViewController.swift; sourceTree = "<group>"; };
 		2D531EC6242C114A0001F507 /* AnimalDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetails.swift; sourceTree = "<group>"; };
 		2D531EC8242C118D0001F507 /* Animal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Animal.storyboard; sourceTree = "<group>"; };
+		2D5E218F242EB27300573DB5 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		2D5E2191242EB27800573DB5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2D5F026C2428E88D00760CB2 /* BasicAuth.Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAuth.Service.swift; sourceTree = "<group>"; };
 		2D5F026F2428E96000760CB2 /* SettingsAppearanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppearanceViewController.swift; sourceTree = "<group>"; };
 		2D5F02712428E9AE00760CB2 /* SettingsAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppearance.swift; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D5E2192242EB27800573DB5 /* MapKit.framework in Frameworks */,
+				2D5E2190242EB27300573DB5 /* AuthenticationServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +428,15 @@
 			path = "Animal - Details";
 			sourceTree = "<group>";
 		};
+		2D5E218E242EB27300573DB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D5E2191242EB27800573DB5 /* MapKit.framework */,
+				2D5E218F242EB27300573DB5 /* AuthenticationServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2D5F026E2428E94E00760CB2 /* Settings - Appearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,6 +540,7 @@
 				2DD6B26223B84AD60006D873 /* Adopt */,
 				2D19031D24288F4700EFC007 /* UnitTests */,
 				2DD6B26123B84AD60006D873 /* Products */,
+				2D5E218E242EB27300573DB5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1035,7 +1051,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Adopt/Adopt.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 205;
 				DEVELOPMENT_TEAM = 9G47WR9NR2;
 				ENABLE_PREVIEWS = YES;
@@ -1047,6 +1064,7 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = pro.rzeszot.adopt;
 				PRODUCT_NAME = Adopt;
+				PROVISIONING_PROFILE_SPECIFIER = Adopt;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
