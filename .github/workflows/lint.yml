@@ -1,0 +1,25 @@
+name: Lint
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - '.github/swiftlint.yml'
+      - '**/*.swift'
+
+env:
+  swiftlint_config: .github/swiftlint.yml
+
+jobs:
+  lint:
+    runs-on: macos-latest
+    timeout-minutes: 1
+    name: Linter
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: swiftlint
+        run: |
+          brew install swiftlint
+          swiftlint lint --config "$swiftlint_config" --reporter github-actions-logging

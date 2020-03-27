@@ -43,7 +43,7 @@ extension Root {
     }
 
     private static func login(dependency: Dependency, guest: Session.Guest, route: @escaping (UIViewController) -> Void) -> UIViewController {
-        BasicAuth.build(dependency: BasicAuth.Dependency(service: BasicAuth.Service(), success: { output in
+        BasicAuth.build(dependency: BasicAuth.Dependency(service: .localhost, success: { output in
             let user = guest.login(Session.Credential(email: output.email, token: output.token))
             route(dashboard(dependency: dependency, user: user, route: route))
         }, dismiss: {

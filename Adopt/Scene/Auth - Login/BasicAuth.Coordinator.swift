@@ -10,7 +10,7 @@ extension BasicAuth {
         var root: BasicAuthViewController!
         var login: LoginViewController!
         var password: PasswordViewController!
-        var service: Service!
+        var service: Auth!
 
         var forget: (() -> Void)!
         var dismiss: (() -> Void)!
@@ -43,7 +43,7 @@ extension BasicAuth {
         func password(_ vc: PasswordViewController, didLoginWithPassword password: String) {
             guard let email = email else { return }
 
-            service.perform(BasicAuth.Service.Input(email: email, password: password)) { [weak self] result in
+            service.perform(email: email, password: password) { [weak self] result in
                 switch result {
                 case .success(let success):
                     DispatchQueue.main.async {

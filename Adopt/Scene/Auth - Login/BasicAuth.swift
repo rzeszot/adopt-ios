@@ -6,7 +6,7 @@ import UIKit
 
 struct BasicAuth {
     struct Dependency {
-        let service: Service
+        let service: Auth
         let success: (Output) -> Void
         let dismiss: () -> Void
         let register: () -> Void
