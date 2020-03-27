@@ -100,7 +100,6 @@
 		3CF319C923CBD3AC00FE08EF /* Montserrat-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3CF319A723CBD3AC00FE08EF /* Montserrat-ThinItalic.otf */; };
 		3CF319CA23CBD3AC00FE08EF /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3CF319A823CBD3AC00FE08EF /* Montserrat-ExtraBold.otf */; };
 		3CF319CB23CBD3AC00FE08EF /* MontserratAlternates-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3CF319A923CBD3AC00FE08EF /* MontserratAlternates-Medium.otf */; };
-		3CF319CF23CBD70700FE08EF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3CF319CE23CBD70700FE08EF /* .gitignore */; };
 		3CF8D1A723CFCED200061AF1 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8D1A623CFCED200061AF1 /* PasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -186,7 +185,6 @@
 		2D84874E242CC58F00110856 /* AnimalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalList.swift; sourceTree = "<group>"; };
 		2D848750242CC5C200110856 /* AnimalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListViewController.swift; sourceTree = "<group>"; };
 		2DBC3B552427A8280070894C /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		2DBC3B5C2427ABDA0070894C /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .github; sourceTree = "<group>"; };
 		2DD6B26023B84AD60006D873 /* Adopt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adopt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD6B26323B84AD60006D873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD6B26523B84AD60006D873 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -235,7 +233,6 @@
 		3CF319A823CBD3AC00FE08EF /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
 		3CF319A923CBD3AC00FE08EF /* MontserratAlternates-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Medium.otf"; sourceTree = "<group>"; };
 		3CF319CC23CBD3D500FE08EF /* Adopt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Adopt.entitlements; sourceTree = "<group>"; };
-		3CF319CE23CBD70700FE08EF /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3CF8D1A623CFCED200061AF1 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -536,7 +533,6 @@
 		2DD6B25723B84AD60006D873 = {
 			isa = PBXGroup;
 			children = (
-				3CF319CD23CBD6EB00FE08EF /* Tools */,
 				2DD6B26223B84AD60006D873 /* Adopt */,
 				2D19031D24288F4700EFC007 /* UnitTests */,
 				2DD6B26123B84AD60006D873 /* Products */,
@@ -608,15 +604,6 @@
 				3CF3199923CBD3AB00FE08EF /* MontserratAlternates-SemiBoldItalic.otf */,
 			);
 			path = Montserrat;
-			sourceTree = "<group>";
-		};
-		3CF319CD23CBD6EB00FE08EF /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				2DBC3B5C2427ABDA0070894C /* .github */,
-				3CF319CE23CBD70700FE08EF /* .gitignore */,
-			);
-			name = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -724,7 +711,6 @@
 				2D531EC9242C118D0001F507 /* Animal.storyboard in Resources */,
 				3CF319B023CBD3AC00FE08EF /* Montserrat-ExtraLight.otf in Resources */,
 				2DD6B26A23B84AD70006D873 /* Assets.xcassets in Resources */,
-				3CF319CF23CBD70700FE08EF /* .gitignore in Resources */,
 				2DD7A4FB2427B3840029CC49 /* BasicAuth.storyboard in Resources */,
 				3CF319BE23CBD3AC00FE08EF /* Montserrat-ExtraLightItalic.otf in Resources */,
 				3CF319B323CBD3AC00FE08EF /* Montserrat-Medium.otf in Resources */,
