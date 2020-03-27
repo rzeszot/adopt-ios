@@ -1,0 +1,32 @@
+name: Test
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - '**/*.swift'
+
+env:
+  SCHEME: ${{ secrets.XCODE_SCHEME }}
+
+jobs:
+  unit:
+    runs-on: macos-latest
+    timeout-minutes: 3
+    name: Unit test
+    strategy:
+      matrix:
+        xcode:
+          - /Applications/Xcode_11.3.1.app
+          - /Applications/Xcode_11.4_beta.app
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Test
+        env:
+          DEVELOPER_DIR: ${{ matrix.xcode }}
+          model: iPhone 11 Pro
+          os: 13.3
+        run: |
+          xcodebuild clean test -scheme "$scheme" -destination "platform=iOS Simulator,name=$model,OS=$os" | sed -E "s#`pwd`/(.*):([0-9]+): (error|warning): (.*)#::\3 file=\1,line=\2::\4#" && exit ${PIPESTATUS[0]}
