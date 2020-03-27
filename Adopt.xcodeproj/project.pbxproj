@@ -766,7 +766,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null\nthen\n    swiftlint lint --config .github/linter/swiftlint.yml --reporter xcode\nelse\n    echo \"warning: SwiftLint not installed\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null\nthen\n    swiftlint lint --config .github/config/swiftlint.yml --reporter xcode\nelse\n    echo \"warning: SwiftLint not installed\"\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
