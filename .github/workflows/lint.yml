@@ -21,4 +21,4 @@ jobs:
           brew install swiftlint
       - name: Run linter
         run: |
-          swiftlint lint --config ".github/config/swiftlint.yml" --reporter github-actions-logging
+          swiftlint lint --strict --config ".github/config/swiftlint.yml" --reporter github-actions-logging
