@@ -4,7 +4,6 @@
 
 import UIKit
 import Combine
-import Faker
 
 class SearchViewController: UIViewController, UICollectionViewDelegate, UISearchResultsUpdating, SearchHeaderViewDelegate {
 
@@ -93,8 +92,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UISearch
         let history: History
 
         init() {
-            recent = Recent(items: (0...10).map { _ in Recent.Item(name: Faker.creature.dog.name) })
-            history = History(items: (0...10).map { _ in History.Item(name: Faker.creature.dog.name) })
+            recent = Recent(items: (0...10).map { _ in Recent.Item(name: "xxxxxx") })
+            history = History(items: (0...10).map { _ in History.Item(name: "xxxxxx") })
         }
     }
 

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,7 +33,6 @@
 		2D4F0F0A242D61E1006C75BB /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F09242D61E1006C75BB /* SearchHeaderView.swift */; };
 		2D4F0F0C242D6396006C75BB /* SearchHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F0B242D6396006C75BB /* SearchHistoryCell.swift */; };
 		2D4F0F0E242D63A9006C75BB /* SearchRecentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F0D242D63A9006C75BB /* SearchRecentCell.swift */; };
-		2D4F0F13242D736B006C75BB /* Faker in Frameworks */ = {isa = PBXBuildFile; productRef = 2D4F0F12242D736B006C75BB /* Faker */; };
 		2D4F0F15242D7605006C75BB /* AnimalListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F14242D7605006C75BB /* AnimalListHeaderView.swift */; };
 		2D4F0F17242D768C006C75BB /* AnimalListEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F16242D768C006C75BB /* AnimalListEntryCell.swift */; };
 		2D4F0F19242D7D78006C75BB /* AnimalListCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F18242D7D78006C75BB /* AnimalListCategoryCell.swift */; };
@@ -248,7 +247,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D4F0F13242D736B006C75BB /* Faker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,7 +640,6 @@
 			);
 			name = Adopt;
 			packageProductDependencies = (
-				2D4F0F12242D736B006C75BB /* Faker */,
 			);
 			productName = Adopt;
 			productReference = 2DD6B26023B84AD60006D873 /* Adopt.app */;
@@ -677,7 +674,6 @@
 			);
 			mainGroup = 2DD6B25723B84AD60006D873;
 			packageReferences = (
-				2D4F0F11242D736B006C75BB /* XCRemoteSwiftPackageReference "faker-swift" */,
 			);
 			productRefGroup = 2DD6B26123B84AD60006D873 /* Products */;
 			projectDirPath = "";
@@ -770,7 +766,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null\nthen\n    swiftlint lint --config .github/swiftlint.yml --reporter xcode\nelse\n    echo \"warning: SwiftLint not installed\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null\nthen\n    swiftlint lint --config .github/config/swiftlint.yml --reporter xcode\nelse\n    echo \"warning: SwiftLint not installed\"\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1087,25 +1083,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		2D4F0F11242D736B006C75BB /* XCRemoteSwiftPackageReference "faker-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:rzeszot-pro/faker-swift.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		2D4F0F12242D736B006C75BB /* Faker */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2D4F0F11242D736B006C75BB /* XCRemoteSwiftPackageReference "faker-swift" */;
-			productName = Faker;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2DD6B25823B84AD60006D873 /* Project object */;
 }
