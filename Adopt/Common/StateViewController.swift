@@ -34,7 +34,7 @@ open class StateViewController<T>: UIViewController {
 
     // MARK: -
 
-    final func change(_ state: State<T>, animated: Bool = false) {
+    public func change(_ state: State<T>, animated: Bool = false) {
         let new = transform(state)
 
         if let old = children.first {

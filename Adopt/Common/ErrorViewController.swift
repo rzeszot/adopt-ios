@@ -6,13 +6,19 @@ import UIKit
 
 public class ErrorViewController: UIViewController {
 
+    // MARK: -
+
+    private var error: Error?
+
     convenience init(error: Error?) {
         self.init()
+        self.error = error
     }
 
     // MARK: -
 
     var titleLabel: UILabel!
+    var subtitleLabel: UILabel!
     var imageView: UIImageView!
 
     public override func loadView() {
@@ -29,6 +35,18 @@ public class ErrorViewController: UIViewController {
         titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
         titleLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30).isActive = true
         titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+
+        subtitleLabel = UILabel()
+        subtitleLabel.font = .preferredFont(forTextStyle: .subheadline)
+        subtitleLabel.text = error?.localizedDescription ?? "(unknown)"
+        subtitleLabel.textAlignment = .center
+        subtitleLabel.textColor = .secondaryLabel
+
+        view.addSubview(subtitleLabel)
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subtitleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
+        subtitleLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30).isActive = true
+        subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5).isActive = true
 
         imageView = UIImageView(image: UIImage(systemName: "exclamationmark.triangle.fill"))
         imageView.tintColor = UIColor.systemYellow
