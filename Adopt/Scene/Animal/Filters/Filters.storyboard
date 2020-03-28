@@ -9,6 +9,25 @@
     </dependencies>
     <scenes>
         <!--Filters-->
+        <scene sceneID="LOW-pt-0Q7">
+            <objects>
+                <viewController storyboardIdentifier="root" id="HhT-f8-grP" customClass="FiltersContainerViewController" customModule="Adopt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QS3-wu-CIc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="mm9-qG-jKR"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Filters" id="myB-je-QJ6">
+                        <barButtonItem key="leftBarButtonItem" image="xmark" catalog="system" id="NSw-JS-pKx"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sGX-PT-K4P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1250" y="75"/>
+        </scene>
+        <!--Filters View Controller-->
         <scene sceneID="ui7-w5-azv">
             <objects>
                 <viewController storyboardIdentifier="filters" id="ICA-h8-XGU" customClass="FiltersViewController" customModule="Adopt" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,7 +40,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="vvB-iC-adf"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Ybs-He-Fal"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VMX-TD-gTg" customClass="AlignedCollectionViewFlowLayout" customModule="Adopt" customModuleProvider="target">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VMX-TD-gTg" customClass="FiltersCollectionViewFlowLayout" customModule="Adopt" customModuleProvider="target">
                                     <size key="itemSize" width="150" height="54"/>
                                     <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -134,9 +153,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tkS-Kj-vRq"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Filters" id="myB-je-QJ6">
-                        <barButtonItem key="leftBarButtonItem" image="xmark" catalog="system" id="NSw-JS-pKx"/>
-                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="Xya-k4-li7" id="Cxg-bo-IUH"/>
@@ -145,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8LZ-Do-LzU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55.072463768115945" y="88.392857142857139"/>
+            <point key="canvasLocation" x="-494" y="75"/>
         </scene>
     </scenes>
     <resources>
