@@ -1,7 +1,6 @@
 import XCTest
 @testable import Session
 
-
 final class LoginServiceTests: XCTestCase {
 
     private var session: MockURLSession!
