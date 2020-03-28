@@ -9,6 +9,12 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
     // MARK: -
 
     var details: (() -> Void)!
+    var filter: (() -> Void)!
+
+    @IBAction
+    func filterAction() {
+        filter()
+    }
 
     // MARK: -
 

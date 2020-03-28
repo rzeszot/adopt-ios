@@ -21,6 +21,7 @@ jobs:
     timeout-minutes: 1
     name: Unit test Session
     strategy:
+      fail-fast: false
       matrix:
         package:
           - Session
