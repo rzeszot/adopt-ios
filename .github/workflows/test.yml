@@ -15,17 +15,24 @@ on:
 #    paths:
 #      - '**/*.swift'
 
-env:
-  SCHEME: Adopt
-
 jobs:
-  unit:
+  session:
     runs-on: macos-latest
-    timeout-minutes: 3
-    name: Unit test
+    timeout-minutes: 1
+    name: Unit test Session
+    strategy:
+      matrix:
+        package:
+          - Session
+          - Specification
     steps:
       - name: Checkout
         uses: actions/checkout@master
-      - name: Test
+      - name: Test Session
+        env:
+          package: ${{ matrix.package }}
         run: |
-          xcodebuild clean test -scheme "$SCHEME" -destination "platform=iOS Simulator,name=iPhone 11 Pro,OS=13.3" | sed -E "s#`pwd`/(.*):([0-9]+): (error|warning): (.*)#::\3 file=\1,line=\2::\4#" && exit ${PIPESTATUS[0]}
+          cd $package && swift test | sed -E "s#`pwd`/(.*):([0-9]+): (error|warning): (.*)#::\3 file=\1,line=\2::\4#" && exit ${PIPESTATUS[0]}
+
+
+

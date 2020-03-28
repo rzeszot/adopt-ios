@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "group:"
+      name = "Tools">
+      <FileRef
+         location = "group:.github">
+      </FileRef>
+      <FileRef
+         location = "group:.gitignore">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:Session">
+   </FileRef>
+   <FileRef
+      location = "group:Specification">
+   </FileRef>
    <FileRef
       location = "group:Adopt.xcodeproj">
    </FileRef>
