@@ -20,15 +20,19 @@ jobs:
     runs-on: macos-latest
     timeout-minutes: 1
     name: Unit test Session
+    strategy:
+      matrix:
+        package:
+          - Session
+          - Specification
     steps:
       - name: Checkout
         uses: actions/checkout@master
       - name: Test Session
+        env:
+          package: ${{ matrix.package }}
         run: |
-          cd Session && swift test | sed -E "s#`pwd`/(.*):([0-9]+): (error|warning): (.*)#::\3 file=\1,line=\2::\4#" && exit ${PIPESTATUS[0]}
-      - name: Test Specification
-        run: |
-          cd Specification && swift test | sed -E "s#`pwd`/(.*):([0-9]+): (error|warning): (.*)#::\3 file=\1,line=\2::\4#" && exit ${PIPESTATUS[0]}
+          cd $package && swift test | sed -E "s#`pwd`/(.*):([0-9]+): (error|warning): (.*)#::\3 file=\1,line=\2::\4#" && exit ${PIPESTATUS[0]}
 
 
 
