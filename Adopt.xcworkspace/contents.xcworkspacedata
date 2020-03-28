@@ -15,6 +15,9 @@
       location = "group:Session">
    </FileRef>
    <FileRef
+      location = "group:Specification">
+   </FileRef>
+   <FileRef
       location = "group:Adopt.xcodeproj">
    </FileRef>
 </Workspace>
