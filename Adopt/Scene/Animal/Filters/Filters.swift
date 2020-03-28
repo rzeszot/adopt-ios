@@ -5,8 +5,13 @@
 import UIKit
 
 struct Filters {
-    static func build() -> UIViewController {
+    struct Dependency {
+        let dismiss: () -> Void
+    }
+
+    static func build(dependency: Dependency) -> UIViewController {
         let root = FiltersContainerViewController()
+        root.dismiss = dependency.dismiss
         return root
     }
 }

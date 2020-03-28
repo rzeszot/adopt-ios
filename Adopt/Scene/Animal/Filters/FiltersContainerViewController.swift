@@ -6,6 +6,13 @@ import UIKit
 
 class FiltersContainerViewController: StateViewController<FiltersModel> {
 
+    var dismiss: (() -> Void)!
+
+    @objc
+    func dismissAction() {
+        dismiss()
+    }
+
     override func transform(_ state: State<FiltersModel>) -> UIViewController {
         if case .data(let model) = state {
             let vc: FiltersViewController = UIStoryboard.instantiate(name: "Filters", identifier: "filters")
@@ -18,10 +25,13 @@ class FiltersContainerViewController: StateViewController<FiltersModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
+        navigationItem.title = "Filters"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(dismissAction))
 
         change(.loading)
 
-        let service = FiltersService(url: .localhost)
+        let service = FiltersService(url: .heroku)
         service.fetch(completion: DispatchQueue.main.wrap { result in
             switch result {
             case .success(let success):
@@ -57,6 +67,9 @@ extension FiltersModel.Group.Item {
 
 private extension URL {
     static var localhost: URL {
-        return "http://localhost:4567/filters"
+        "http://localhost:4567/filters"
+    }
+    static var heroku: URL {
+        "https://adopt-api.herokuapp.com/filters"
     }
 }

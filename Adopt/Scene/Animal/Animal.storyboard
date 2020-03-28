@@ -179,6 +179,11 @@
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house.fill" id="ibC-ui-Faq"/>
                     <navigationItem key="navigationItem" title="Adopt!" largeTitleDisplayMode="always" id="WfC-y9-OHg">
                         <barButtonItem key="backBarButtonItem" title=" " id="pnh-pT-l1o"/>
+                        <barButtonItem key="rightBarButtonItem" image="line.horizontal.3.decrease" catalog="system" id="PHU-We-tJX">
+                            <connections>
+                                <action selector="filterAction" destination="98L-f6-2rx" id="bho-Mu-KjQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -397,6 +402,7 @@
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="house" catalog="system" width="128" height="110"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="line.horizontal.3.decrease" catalog="system" width="128" height="73"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
 </document>

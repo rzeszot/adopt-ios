@@ -11,18 +11,25 @@ struct Home {
     }
 
     static func build(dependency: Dependency) -> UIViewController {
-//        let root: HomeViewController = UIStoryboard.instantiate(name: "Home", identifier: "home")
-//
-
-        var xxx = {}
+        var details = {}
+        var filter = {}
 
         let root = AnimalList.build(dependency: AnimalList.Dependency(details: {
-            xxx()
+            details()
+        }, filter: {
+            filter()
         }))
 
-        xxx = { [unowned root] in
+        details = { [unowned root] in
             let vc = AnimalDetails.build()
             root.show(vc, sender: nil)
+        }
+
+        filter = { [unowned root] in
+            let vc = UINavigationController(rootViewController: Filters.build(dependency: .init(dismiss: {
+                root.dismiss(animated: true)
+            })))
+            root.present(vc, animated: true)
         }
 
         return root

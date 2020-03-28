@@ -29,6 +29,7 @@ public class ErrorViewController: UIViewController {
         titleLabel.font = .preferredFont(forTextStyle: .headline)
         titleLabel.text = "Something went wrong"
         titleLabel.textAlignment = .center
+        titleLabel.numberOfLines = 0
 
         view.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -41,6 +42,7 @@ public class ErrorViewController: UIViewController {
         subtitleLabel.text = error?.localizedDescription ?? "(unknown)"
         subtitleLabel.textAlignment = .center
         subtitleLabel.textColor = .secondaryLabel
+        subtitleLabel.numberOfLines = 0
 
         view.addSubview(subtitleLabel)
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
