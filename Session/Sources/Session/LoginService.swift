@@ -8,23 +8,72 @@ public struct LoginService {
 
     // MARK: -
 
+    public struct Success: Decodable {
+        let token: String
+    }
+
+    public enum Failure: Error {
+        case invalid
+        case error(Error)
+        case unknown
+    }
+
+    public typealias Output = Result<Success, Failure>
+
+    // MARK: -
+
+    let url: URL
+    let session: URLSession
+
+    public init(url: URL, session: URLSession = .shared) {
+        self.url = url
+        self.session = session
+    }
+
+    // MARK: -
+
+    public func perform(email: String, password: String, completion: @escaping (Output) -> Void) {
+        let input = Input(email: email, password: password)
+
+        let complete = { result in
+            DispatchQueue.main.async {
+                completion(result)
+            }
+        }
+
+        let task = session.dataTask(with: request(for: input)) { data, response, error in
+            if let data = data, let response = response as? HTTPURLResponse {
+                let decoder = JSONDecoder()
+
+                do {
+                    switch response.statusCode {
+                    case 200: // OK
+                        let success = try decoder.decode(Success.self, from: data)
+                        complete(.success(success))
+                    case 401: // Unauthorized
+                        complete(.failure(.invalid))
+                    default:
+                        complete(.failure(.unknown))
+                    }
+                } catch {
+                    complete(.failure(.error(error)))
+                }
+            } else if let error = error {
+                complete(.failure(.error(error)))
+            } else {
+                complete(.failure(.unknown))
+            }
+        }
+
+        task.resume()
+    }
+
+    // MARK: -
+
     struct Input: Encodable {
         let email: String
         let password: String
     }
-
-    // MARK: -
-
-    public let url: URL
-    public let session: URLSession = .shared
-
-    // MARK: -
-
-    public func perform(email: String, password: String, completion: @escaping () -> Void) {
-
-    }
-
-    // MARK: -
 
     func request(for input: Input) -> URLRequest {
         var request = URLRequest(url: url)
@@ -40,83 +89,12 @@ public struct LoginService {
         do {
             request.httpBody = try encoder.encode(input)
         } catch {
-
+            #if DEBUG
+                print("FATAL: encoding Input \(error)")
+            #endif
         }
 
         return request
     }
 
 }
-
-//https://www.instagram.com/accounts/emailsignup/
-//https://www.instagram.com/accounts/login/?source=auth_switcher
-//https://www.instagram.com/accounts/password/reset/
-//https://www.instagram.com/accounts/emailsignup/
-
-//
-//import Foundation
-//
-//struct Auth {
-//
-
-//
-//    typealias Result = Swift.Result<Success, Failure>
-//
-//    struct Success: Decodable {
-//        let token: String
-//    }
-//
-//    enum Failure: Error {
-//        case invalid
-//        case parsing(Error)
-//        case unknown
-//    }
-//
-//    let url: URL
-//    let session: URLSession = .shared
-//
-//    func perform(email: String, password: String, completion: @escaping (Result) -> Void) {
-//        var request = URLRequest(url: url, timeoutInterval: 10)
-//        request.httpMethod = "POST"
-//
-
-//
-//        let task = session.dataTask(with: request) { data, _, _ in
-//            let result: Result
-//
-//            if let data = data {
-//                do {
-//                    let decoder = JSONDecoder()
-//                    let success = try decoder.decode(Success.self, from: data)
-//
-//                    result = .success(success)
-//                } catch {
-//                    result = .failure(.parsing(error))
-//                }
-//            } else {
-//                result = .failure(.unknown)
-//            }
-//
-//            DispatchQueue.main.async {
-//                completion(result)
-//            }
-//        }
-//
-//        task.resume()
-//    }
-//
-//}
-//
-//extension Auth {
-//    static var localhost: Auth {
-//        return Auth(url: "http://localhost:3000/auth/login")
-//    }
-//}
-//
-//extension URL: ExpressibleByStringLiteral, ExpressibleByStringInterpolation {
-//
-//    public init(stringLiteral value: String) {
-//        self = URL(string: value)!
-//    }
-//
-//}
