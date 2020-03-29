@@ -78,6 +78,12 @@ class FiltersViewController: UIViewController, UICollectionViewDataSource, UICol
 
     // MARK: - UICollectionViewDelegate
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = model[indexPath]
+
+        print("select \(item)")
+    }
+
 }
 
 private extension FiltersModel {

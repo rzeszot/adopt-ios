@@ -48,7 +48,7 @@ class StartService {
         let complete = DispatchQueue.main.wrap(completion)
         let request = URLRequest(url: url)
 
-        print("Filters | fetch")
+        print("Start | fetch")
 
         let task = session.dataTask(with: request) { data, response, error in
             if let data = data, let response = response as? HTTPURLResponse {

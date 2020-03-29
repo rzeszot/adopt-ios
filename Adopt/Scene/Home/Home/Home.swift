@@ -40,8 +40,9 @@ class AnimalsContainerViewController: StateViewController<CategoriesModel> {
                     let filters = Filters.build(dependency: Filters.Dependency(id: category.id, dismiss: {
                         self.dismiss(animated: true)
                     }))
-
-                    vc.present(UINavigationController(rootViewController: filters), animated: true)
+                    let nav = UINavigationController(rootViewController: filters)
+                    nav.navigationBar.prefersLargeTitles = true
+                    vc.present(nav, animated: true)
                 }
 
                 self.show(vc, sender: nil)
