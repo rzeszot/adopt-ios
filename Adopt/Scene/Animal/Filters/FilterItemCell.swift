@@ -22,6 +22,7 @@ class FilterItemCell: UICollectionViewCell {
     override var isSelected: Bool {
         didSet {
             backgroundColor = isSelected ? tintColor : .secondarySystemBackground
+            titleLabel.textColor = isSelected ? .white : .label
         }
     }
 

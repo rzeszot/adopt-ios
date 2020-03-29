@@ -4,24 +4,11 @@
 
 import UIKit
 
-class FiltersDiffableDataSource: UICollectionViewDiffableDataSource<String, String> {
+class FiltersViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, FilterHeaderViewDelegate {
 
-    convenience init(model: FiltersModel, collectionView: UICollectionView) {
-        self.init(collectionView: collectionView) { (collectionView, indexPath, _) -> UICollectionViewCell? in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath)
-            (cell as? FilterItemCell)?.configure(item: model.groups[indexPath.section].items[indexPath.row])
-            return cell
-        }
+    // MARK: -
 
-        supplementaryViewProvider = { (collectionView, kind, indexPath) -> UICollectionReusableView? in
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
-            (header as? FilterHeaderView)?.configure(item: model.groups[indexPath.section].meta)
-            return header
-        }
-    }
-}
-
-class FiltersViewController: UIViewController, UICollectionViewDelegate {
+    var model: FiltersModel!
 
     // MARK: -
 
@@ -33,28 +20,12 @@ class FiltersViewController: UIViewController, UICollectionViewDelegate {
 
     // MARK: -
 
-    var model: FiltersModel!
-
-    var source: UICollectionViewDiffableDataSource<String, String>!
+    @IBAction
+    func applyAction() {
+        print("apply")
+    }
 
     // MARK: -
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        source = FiltersDiffableDataSource(model: model, collectionView: collectionView)
-
-        collectionView.dataSource = source
-
-        var snapshot = NSDiffableDataSourceSnapshot<String, String>()
-
-        for (index, group) in model.groups.enumerated() {
-            snapshot.appendSections(["group-\(index)"])
-            snapshot.appendItems(group.items.map { $0.id })
-        }
-
-        source.apply(snapshot, animatingDifferences: false, completion: nil)
-    }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -65,6 +36,62 @@ class FiltersViewController: UIViewController, UICollectionViewDelegate {
         collectionView.verticalScrollIndicatorInsets.bottom = padding
     }
 
+    // MARK: - UICollectionViewDataSource
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        model.groups.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        model.groups[section].items.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath)
+        if let cell = cell as? FilterItemCell {
+            cell.configure(item: model[indexPath])
+        }
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard kind == UICollectionView.elementKindSectionHeader else { fatalError() }
+
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
+
+        if let header = header as? FilterHeaderView {
+            header.configure(item: model[indexPath.section])
+            header.tag = indexPath.section
+            header.delegate = self
+        }
+
+        return header
+    }
+
+    // MARK: - FilterHeaderViewDelegate
+
+    func filterHeaderViewDidTapClear(_ view: FilterHeaderView) {
+        let group = model[view.tag]
+
+        print("clear \(group)")
+    }
+
     // MARK: - UICollectionViewDelegate
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = model[indexPath]
+
+        print("select \(item)")
+    }
+
+}
+
+private extension FiltersModel {
+    subscript(_ indexPath: IndexPath) -> Group.Item {
+        groups[indexPath.section].items[indexPath.row]
+    }
+
+    subscript(_ index: Int) -> Group.Meta {
+        groups[index].meta
+    }
 }

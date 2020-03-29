@@ -37,6 +37,13 @@
 		2D4F0F15242D7605006C75BB /* AnimalListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F14242D7605006C75BB /* AnimalListHeaderView.swift */; };
 		2D4F0F17242D768C006C75BB /* AnimalListEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F16242D768C006C75BB /* AnimalListEntryCell.swift */; };
 		2D4F0F19242D7D78006C75BB /* AnimalListCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F18242D7D78006C75BB /* AnimalListCategoryCell.swift */; };
+		2D4FA0252430CA9200CBFE65 /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 2D4FA0242430CA9200CBFE65 /* Cache */; };
+		2D4FA02A2430E03900CBFE65 /* StartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA0292430E03900CBFE65 /* StartService.swift */; };
+		2D4FA02C2430E0A000CBFE65 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA02B2430E0A000CBFE65 /* Categories.swift */; };
+		2D4FA02E2430E0AB00CBFE65 /* Categories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D4FA02D2430E0AB00CBFE65 /* Categories.storyboard */; };
+		2D4FA0302430E0BB00CBFE65 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA02F2430E0BB00CBFE65 /* CategoriesViewController.swift */; };
+		2D4FA0322430E0FE00CBFE65 /* CategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA0312430E0FE00CBFE65 /* CategoriesModel.swift */; };
+		2D4FA0342430E48B00CBFE65 /* AnimalsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA0332430E48B00CBFE65 /* AnimalsListModel.swift */; };
 		2D531EBB242C09D90001F507 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EBA242C09D90001F507 /* RegisterViewController.swift */; };
 		2D531EBD242C09F10001F507 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EBC242C09F10001F507 /* Register.swift */; };
 		2D531EC0242C0DA10001F507 /* Forget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EBF242C0DA10001F507 /* Forget.swift */; };
@@ -178,6 +185,12 @@
 		2D4F0F14242D7605006C75BB /* AnimalListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListHeaderView.swift; sourceTree = "<group>"; };
 		2D4F0F16242D768C006C75BB /* AnimalListEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListEntryCell.swift; sourceTree = "<group>"; };
 		2D4F0F18242D7D78006C75BB /* AnimalListCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListCategoryCell.swift; sourceTree = "<group>"; };
+		2D4FA0292430E03900CBFE65 /* StartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartService.swift; sourceTree = "<group>"; };
+		2D4FA02B2430E0A000CBFE65 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		2D4FA02D2430E0AB00CBFE65 /* Categories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Categories.storyboard; sourceTree = "<group>"; };
+		2D4FA02F2430E0BB00CBFE65 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		2D4FA0312430E0FE00CBFE65 /* CategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModel.swift; sourceTree = "<group>"; };
+		2D4FA0332430E48B00CBFE65 /* AnimalsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsListModel.swift; sourceTree = "<group>"; };
 		2D531EBA242C09D90001F507 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2D531EBC242C09F10001F507 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		2D531EBF242C0DA10001F507 /* Forget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.swift; sourceTree = "<group>"; };
@@ -272,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D932DD4242EE57600D0A762 /* Session in Frameworks */,
+				2D4FA0252430CA9200CBFE65 /* Cache in Frameworks */,
 				2D5E2192242EB27800573DB5 /* MapKit.framework in Frameworks */,
 				2D5E2190242EB27300573DB5 /* AuthenticationServices.framework in Frameworks */,
 			);
@@ -421,6 +435,18 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		2D4FA0282430E02200CBFE65 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				2D4FA02B2430E0A000CBFE65 /* Categories.swift */,
+				2D4FA0312430E0FE00CBFE65 /* CategoriesModel.swift */,
+				2D4FA0292430E03900CBFE65 /* StartService.swift */,
+				2D4FA02F2430E0BB00CBFE65 /* CategoriesViewController.swift */,
+				2D4FA02D2430E0AB00CBFE65 /* Categories.storyboard */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		2D531EB9242C09C80001F507 /* Auth - Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,6 +530,7 @@
 			children = (
 				2D84874E242CC58F00110856 /* AnimalList.swift */,
 				2D848750242CC5C200110856 /* AnimalListViewController.swift */,
+				2D4FA0332430E48B00CBFE65 /* AnimalsListModel.swift */,
 				2D4F0F18242D7D78006C75BB /* AnimalListCategoryCell.swift */,
 				2D4F0F16242D768C006C75BB /* AnimalListEntryCell.swift */,
 				2D4F0F14242D7605006C75BB /* AnimalListHeaderView.swift */,
@@ -514,6 +541,7 @@
 		2D848752242CC5D600110856 /* Animal */ = {
 			isa = PBXGroup;
 			children = (
+				2D4FA0282430E02200CBFE65 /* Categories */,
 				2D95D874242F811B0082D650 /* Filters */,
 				2D531EC8242C118D0001F507 /* Animal.storyboard */,
 				2D84874D242CC58000110856 /* Animal - List */,
@@ -687,6 +715,7 @@
 			name = Adopt;
 			packageProductDependencies = (
 				2D932DD3242EE57600D0A762 /* Session */,
+				2D4FA0242430CA9200CBFE65 /* Cache */,
 			);
 			productName = Adopt;
 			productReference = 2DD6B26023B84AD60006D873 /* Adopt.app */;
@@ -778,6 +807,7 @@
 				3CF319B823CBD3AC00FE08EF /* MontserratAlternates-ExtraLightItalic.otf in Resources */,
 				3CF319AB23CBD3AC00FE08EF /* Montserrat-MediumItalic.otf in Resources */,
 				2D443B3523BD403F007BFEEE /* fontlog.txt in Resources */,
+				2D4FA02E2430E0AB00CBFE65 /* Categories.storyboard in Resources */,
 				3CF319C523CBD3AC00FE08EF /* MontserratAlternates-Black.otf in Resources */,
 				2D443B3823BD403F007BFEEE /* offside-regular.ttf in Resources */,
 				3CF319C923CBD3AC00FE08EF /* Montserrat-ThinItalic.otf in Resources */,
@@ -840,6 +870,7 @@
 				2D002E732427CDC900639347 /* Dashboard.swift in Sources */,
 				2DE3038B2430011F00A58166 /* ErrorViewController.swift in Sources */,
 				2D95D87A242F822E0082D650 /* Filters.swift in Sources */,
+				2D4FA02A2430E03900CBFE65 /* StartService.swift in Sources */,
 				2D95D888242FDB4B0082D650 /* FiltersCollectionViewFlowLayout.swift in Sources */,
 				2D4F0F17242D768C006C75BB /* AnimalListEntryCell.swift in Sources */,
 				2D443B2323BCF5C2007BFEEE /* BasicAuth.swift in Sources */,
@@ -850,6 +881,7 @@
 				2D002E7C2427CFB200639347 /* HomeViewController.swift in Sources */,
 				2D4F0F19242D7D78006C75BB /* AnimalListCategoryCell.swift in Sources */,
 				2D84874F242CC58F00110856 /* AnimalList.swift in Sources */,
+				2D4FA0322430E0FE00CBFE65 /* CategoriesModel.swift in Sources */,
 				2D5F02722428E9AE00760CB2 /* SettingsAppearance.swift in Sources */,
 				2D002E7E2427CFBE00639347 /* ProfileViewController.swift in Sources */,
 				2D4F0F0E242D63A9006C75BB /* SearchRecentCell.swift in Sources */,
@@ -864,6 +896,7 @@
 				2D443B2523BCF792007BFEEE /* BasicAuth.Coordinator.swift in Sources */,
 				2D531EBD242C09F10001F507 /* Register.swift in Sources */,
 				2DD7A4F52427ADD50029CC49 /* UIStoryboard.swift in Sources */,
+				2D4FA0302430E0BB00CBFE65 /* CategoriesViewController.swift in Sources */,
 				2D002E802427D0F700639347 /* Home.swift in Sources */,
 				2DD7A4F72427B0670029CC49 /* PrimaryButton.swift in Sources */,
 				3CF8D1A723CFCED200061AF1 /* PasswordViewController.swift in Sources */,
@@ -875,8 +908,10 @@
 				2D531EBB242C09D90001F507 /* RegisterViewController.swift in Sources */,
 				2D95D884242FC04D0082D650 /* FilterItemCell.swift in Sources */,
 				2D10A89C242FEBB00065A420 /* FiltersContainerViewController.swift in Sources */,
+				2D4FA0342430E48B00CBFE65 /* AnimalsListModel.swift in Sources */,
 				2D531EC7242C114A0001F507 /* AnimalDetails.swift in Sources */,
 				2DD7A4F12427AC690029CC49 /* Root.swift in Sources */,
+				2D4FA02C2430E0A000CBFE65 /* Categories.swift in Sources */,
 				2D2F76AF2427C0F7001F3222 /* BasicAuthViewController.swift in Sources */,
 				2D3FCF5423BB6F47001E3704 /* LoginViewController.swift in Sources */,
 				2D1903272428949500EFC007 /* Search.swift in Sources */,
@@ -1144,6 +1179,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2D4FA0242430CA9200CBFE65 /* Cache */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Cache;
+		};
 		2D932DD3242EE57600D0A762 /* Session */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Session;

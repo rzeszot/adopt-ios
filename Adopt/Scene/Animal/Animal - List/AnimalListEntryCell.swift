@@ -39,7 +39,7 @@ class AnimalListEntryCell: UICollectionViewCell {
 
     // MARK: -
 
-    typealias Item = AnimalListViewController.Model.Animal
+    typealias Item = AnimalsListModel.Animal
 
     private var source: URL?
 

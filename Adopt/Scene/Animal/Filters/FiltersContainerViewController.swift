@@ -6,6 +6,7 @@ import UIKit
 
 class FiltersContainerViewController: StateViewController<FiltersModel> {
 
+    var service: FiltersService!
     var dismiss: (() -> Void)!
 
     @objc
@@ -29,17 +30,20 @@ class FiltersContainerViewController: StateViewController<FiltersModel> {
         navigationItem.title = "Filters"
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(dismissAction))
 
-        change(.loading)
+        if let success = service.load() {
+            self.change(.data(FiltersModel(success)))
+        } else {
+            change(.loading)
 
-        let service = FiltersService(url: .heroku)
-        service.fetch(completion: DispatchQueue.main.wrap { result in
-            switch result {
-            case .success(let success):
-                self.change(.data(FiltersModel(success)))
-            case .failure(let error):
-                self.change(.error(error))
-            }
-        })
+            service.fetch(completion: DispatchQueue.main.wrap { result in
+                switch result {
+                case .success(let success):
+                    self.change(.data(FiltersModel(success)))
+                case .failure(let error):
+                    self.change(.error(error))
+                }
+            })
+        }
     }
 
 }
@@ -62,14 +66,5 @@ extension FiltersModel.Group.Item {
         id = result.id
         name = result.name
         active = result.active ?? false
-    }
-}
-
-private extension URL {
-    static var localhost: URL {
-        "http://localhost:4567/filters"
-    }
-    static var heroku: URL {
-        "https://adopt-api.herokuapp.com/filters"
     }
 }

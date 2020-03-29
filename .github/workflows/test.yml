@@ -12,18 +12,19 @@ on:
   pull_request:
     branches:
       - master
-#    paths:
-#      - '**/*.swift'
+    paths:
+      - '**/*.swift'
 
 jobs:
   session:
     runs-on: macos-latest
-    timeout-minutes: 1
+    timeout-minutes: 2
     name: Unit test Session
     strategy:
       fail-fast: false
       matrix:
         package:
+          - Cache
           - Session
           - Specification
     steps:
