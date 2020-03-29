@@ -4,12 +4,27 @@
 
 import UIKit
 
+protocol FilterHeaderViewDelegate: class {
+    func filterHeaderViewDidTapClear(_ view: FilterHeaderView)
+}
+
 class FilterHeaderView: UICollectionReusableView {
+
+    // MARK: -
+
+    weak var delegate: FilterHeaderViewDelegate?
 
     // MARK: -
 
     @IBOutlet
     var titleLabel: UILabel!
+
+    // MARK: -
+
+    @IBAction
+    func clearAction() {
+        delegate?.filterHeaderViewDidTapClear(self)
+    }
 
     // MARK: -
 

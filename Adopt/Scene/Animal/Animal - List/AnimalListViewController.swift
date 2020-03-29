@@ -9,12 +9,6 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
     // MARK: -
 
     var details: (() -> Void)!
-    var filter: (() -> Void)!
-
-    @IBAction
-    func filterAction() {
-        filter()
-    }
 
     // MARK: -
 
@@ -23,7 +17,7 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
 
     // MARK: -
 
-    var model: Model = .init()
+    var model: AnimalsListModel!
     var source: UICollectionViewDiffableDataSource<String, String>!
 
     // MARK: -
@@ -66,46 +60,6 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
         collectionView.dataSource = source
     }
 
-    // MARK: -
-
-    struct Model {
-        struct Category {
-            let id: UUID = .init()
-            let name: String
-        }
-
-        struct Categories {
-            let items: [Category]
-        }
-
-        struct Animal {
-            let id: UUID = .init()
-            let thumbnail: URL = "https://placekitten.com/400/300?image=\((1...16).randomElement()!)"
-            let name: String
-        }
-
-        struct Animals {
-            let items: [Animal]
-        }
-
-        let categories: Categories
-        let animals: Animals
-
-        init() {
-            categories = Categories(items: [
-                Category(name: "Dogs"),
-                Category(name: "Cats"),
-                Category(name: "Bunnies"),
-                Category(name: "Hamsters"),
-                Category(name: "Hamsters"),
-                Category(name: "Hamsters"),
-                Category(name: "Hamsters"),
-                Category(name: "Hamsters")
-            ])
-            animals = Animals(items: (0..<20).map { _ in Animal(name: "xxxxxx") })
-        }
-    }
-
     // MARK: - UICollectionViewDelegate
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -122,7 +76,7 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
 }
 
 private extension UICollectionViewCompositionalLayout {
-    static func create(for model: AnimalListViewController.Model) -> UICollectionViewCompositionalLayout {
+    static func create(for model: AnimalsListModel) -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { (section, _) -> NSCollectionLayoutSection? in
             switch section {
             case 0:
