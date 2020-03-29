@@ -53,7 +53,7 @@ open class StateViewController<T>: UIViewController {
 
         vc.willMove(toParent: nil)
 
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: animated ? 0.2 : 0, animations: {
             vc.view.alpha = 0
         }, completion: { _ in
             vc.view.removeFromSuperview()
@@ -79,7 +79,7 @@ open class StateViewController<T>: UIViewController {
 
         vc.view.alpha = 0
 
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: animated ? 0.2 : 0, animations: {
             vc.view.alpha = 1
         }, completion: { _ in
             vc.didMove(toParent: self)

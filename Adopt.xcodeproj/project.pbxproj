@@ -37,6 +37,7 @@
 		2D4F0F15242D7605006C75BB /* AnimalListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F14242D7605006C75BB /* AnimalListHeaderView.swift */; };
 		2D4F0F17242D768C006C75BB /* AnimalListEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F16242D768C006C75BB /* AnimalListEntryCell.swift */; };
 		2D4F0F19242D7D78006C75BB /* AnimalListCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F18242D7D78006C75BB /* AnimalListCategoryCell.swift */; };
+		2D4FA0252430CA9200CBFE65 /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 2D4FA0242430CA9200CBFE65 /* Cache */; };
 		2D531EBB242C09D90001F507 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EBA242C09D90001F507 /* RegisterViewController.swift */; };
 		2D531EBD242C09F10001F507 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EBC242C09F10001F507 /* Register.swift */; };
 		2D531EC0242C0DA10001F507 /* Forget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EBF242C0DA10001F507 /* Forget.swift */; };
@@ -272,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D932DD4242EE57600D0A762 /* Session in Frameworks */,
+				2D4FA0252430CA9200CBFE65 /* Cache in Frameworks */,
 				2D5E2192242EB27800573DB5 /* MapKit.framework in Frameworks */,
 				2D5E2190242EB27300573DB5 /* AuthenticationServices.framework in Frameworks */,
 			);
@@ -687,6 +689,7 @@
 			name = Adopt;
 			packageProductDependencies = (
 				2D932DD3242EE57600D0A762 /* Session */,
+				2D4FA0242430CA9200CBFE65 /* Cache */,
 			);
 			productName = Adopt;
 			productReference = 2DD6B26023B84AD60006D873 /* Adopt.app */;
@@ -1144,6 +1147,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2D4FA0242430CA9200CBFE65 /* Cache */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Cache;
+		};
 		2D932DD3242EE57600D0A762 /* Session */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Session;

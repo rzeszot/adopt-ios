@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import Cache
 
 class FiltersService {
 
@@ -34,17 +35,27 @@ class FiltersService {
 
     let url: URL
     let session: URLSession
+    let cache: Cache<URL, Success>?
 
-    init(url: URL, session: URLSession = .shared) {
+    init(url: URL, session: URLSession = .shared, cache: Cache<URL, FiltersService.Success>? = nil) {
         self.url = url
         self.session = session
+        self.cache = cache
+    }
+
+    // MARK: -
+
+    func load() -> Success? {
+        cache?[url]
     }
 
     // MARK: -
 
     func fetch(completion: @escaping (Output) -> Void) {
-        let request = URLRequest(url: url)
         let complete = DispatchQueue.main.wrap(completion)
+        let request = URLRequest(url: url)
+
+        print("Filters | fetch")
 
         let task = session.dataTask(with: request) { data, response, error in
             if let data = data, let response = response as? HTTPURLResponse {
@@ -53,6 +64,7 @@ class FiltersService {
                     switch response.statusCode {
                     case 200: // OK
                         let success = try decoder.decode(Success.self, from: data)
+                        self.cache?[self.url] = success
                         complete(.success(success))
                     default:
                         complete(.failure(.unknown))

@@ -24,6 +24,7 @@ jobs:
       fail-fast: false
       matrix:
         package:
+          - Cache
           - Session
           - Specification
     steps:
