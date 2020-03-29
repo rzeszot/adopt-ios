@@ -8,6 +8,7 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
 
     // MARK: -
 
+    var category: ((CategoriesModel.Category) -> Void)!
     var details: (() -> Void)!
 
     // MARK: -
@@ -63,7 +64,13 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
     // MARK: - UICollectionViewDelegate
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        details()
+        if indexPath.section == 0 {
+            let xxx = model.categories.items[indexPath.row]
+
+            category(CategoriesModel.Category(id: xxx.id.uuidString, name: xxx.name))
+        } else {
+            details()
+        }
     }
 
     // MARK: - UISearchResultsUpdating

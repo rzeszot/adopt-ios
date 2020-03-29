@@ -13,6 +13,9 @@ struct Home {
     static func build(dependency: Dependency) -> UIViewController {
         let root = AnimalsContainerViewController()
         root.service = CategoriesService(url: .heroku)
+        root.tabBarItem.title = "Home"
+        root.tabBarItem.image = UIImage(systemName: "house")
+        root.tabBarItem.selectedImage = UIImage(systemName: "house.fill")
         return root
     }
 }
@@ -25,6 +28,14 @@ class AnimalsContainerViewController: StateViewController<CategoriesModel> {
         if case .data(let model) = state {
             return AnimalList.build(dependency: AnimalList.Dependency(categories: model, details: { [unowned self] in
                 let vc = AnimalDetails.build()
+                self.show(vc, sender: nil)
+            }, category: { [unowned self] category in
+                let vc = Categories.build(dependency: Categories.Dependency(category: category, filter: {
+                    let vc = Filters.build(dependency: Filters.Dependency(dismiss: {
+                        self.dismiss(animated: true)
+                    }))
+                    self.present(UINavigationController(rootViewController: vc), animated: true)
+                }))
                 self.show(vc, sender: nil)
             }))
         } else {
