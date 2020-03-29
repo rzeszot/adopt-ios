@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		2D002E7E2427CFBE00639347 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D002E7D2427CFBE00639347 /* ProfileViewController.swift */; };
 		2D002E802427D0F700639347 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D002E7F2427D0F700639347 /* Home.swift */; };
 		2D002E822427D11400639347 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D002E812427D11400639347 /* Profile.swift */; };
+		2D08E4A124310C1F00A5E7BB /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 2D08E4A024310C1F00A5E7BB /* Cache */; };
+		2D08E4A324310C2200A5E7BB /* Session in Frameworks */ = {isa = PBXBuildFile; productRef = 2D08E4A224310C2200A5E7BB /* Session */; };
 		2D10A89C242FEBB00065A420 /* FiltersContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D10A89B242FEBB00065A420 /* FiltersContainerViewController.swift */; };
 		2D19031F24288F4700EFC007 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D19031E24288F4700EFC007 /* ExampleTests.swift */; };
 		2D1903272428949500EFC007 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1903262428949500EFC007 /* Search.swift */; };
@@ -33,7 +35,6 @@
 		2D4F0F15242D7605006C75BB /* AnimalListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F14242D7605006C75BB /* AnimalListHeaderView.swift */; };
 		2D4F0F17242D768C006C75BB /* AnimalListEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F16242D768C006C75BB /* AnimalListEntryCell.swift */; };
 		2D4F0F19242D7D78006C75BB /* AnimalListCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F18242D7D78006C75BB /* AnimalListCategoryCell.swift */; };
-		2D4FA0252430CA9200CBFE65 /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 2D4FA0242430CA9200CBFE65 /* Cache */; };
 		2D4FA02A2430E03900CBFE65 /* StartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA0292430E03900CBFE65 /* StartService.swift */; };
 		2D4FA02C2430E0A000CBFE65 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA02B2430E0A000CBFE65 /* Categories.swift */; };
 		2D4FA02E2430E0AB00CBFE65 /* Categories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D4FA02D2430E0AB00CBFE65 /* Categories.storyboard */; };
@@ -57,7 +58,6 @@
 		2D7A386523BAD5C40094BAB2 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386423BAD5C40094BAB2 /* Welcome.swift */; };
 		2D84874F242CC58F00110856 /* AnimalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84874E242CC58F00110856 /* AnimalList.swift */; };
 		2D848751242CC5C200110856 /* AnimalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D848750242CC5C200110856 /* AnimalListViewController.swift */; };
-		2D932DD4242EE57600D0A762 /* Session in Frameworks */ = {isa = PBXBuildFile; productRef = 2D932DD3242EE57600D0A762 /* Session */; };
 		2D95D876242F81280082D650 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D95D875242F81280082D650 /* FiltersViewController.swift */; };
 		2D95D87A242F822E0082D650 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D95D879242F822E0082D650 /* Filters.swift */; };
 		2D95D87C242F83660082D650 /* Filters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D95D87B242F83660082D650 /* Filters.storyboard */; };
@@ -208,10 +208,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D932DD4242EE57600D0A762 /* Session in Frameworks */,
-				2D4FA0252430CA9200CBFE65 /* Cache in Frameworks */,
+				2D08E4A124310C1F00A5E7BB /* Cache in Frameworks */,
 				2D5E2192242EB27800573DB5 /* MapKit.framework in Frameworks */,
 				2D5E2190242EB27300573DB5 /* AuthenticationServices.framework in Frameworks */,
+				2D08E4A324310C2200A5E7BB /* Session in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,10 +540,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2DD6B27423B84AD70006D873 /* Build configuration list for PBXNativeTarget "Adopt" */;
 			buildPhases = (
+				2DBC3B5B2427AB9F0070894C /* Linter */,
 				2DD6B25C23B84AD60006D873 /* Sources */,
 				2DD6B25D23B84AD60006D873 /* Frameworks */,
 				2DD6B25E23B84AD60006D873 /* Resources */,
-				2DBC3B5B2427AB9F0070894C /* Linter */,
 			);
 			buildRules = (
 				2D2B44A22427C80400BECB25 /* PBXBuildRule */,
@@ -552,8 +552,8 @@
 			);
 			name = Adopt;
 			packageProductDependencies = (
-				2D932DD3242EE57600D0A762 /* Session */,
-				2D4FA0242430CA9200CBFE65 /* Cache */,
+				2D08E4A024310C1F00A5E7BB /* Cache */,
+				2D08E4A224310C2200A5E7BB /* Session */,
 			);
 			productName = Adopt;
 			productReference = 2DD6B26023B84AD60006D873 /* Adopt.app */;
@@ -579,7 +579,7 @@
 				};
 			};
 			buildConfigurationList = 2DD6B25B23B84AD60006D873 /* Build configuration list for PBXProject "Adopt" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -979,11 +979,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2D4FA0242430CA9200CBFE65 /* Cache */ = {
+		2D08E4A024310C1F00A5E7BB /* Cache */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Cache;
 		};
-		2D932DD3242EE57600D0A762 /* Session */ = {
+		2D08E4A224310C2200A5E7BB /* Session */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Session;
 		};

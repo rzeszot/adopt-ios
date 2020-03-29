@@ -3,7 +3,8 @@
 #    - .github/config/swiftlint.yml
 #    - .github/appstore/profile.mobileprovision
 #  env:
-#   scheme
+#    - workspace
+#    - scheme
 #
 
 name: Test
@@ -16,6 +17,7 @@ on:
 #      - '**/*.swift'
 
 env:
+  workspace: Adopt.xcworkspace
   scheme: Adopt
 
 jobs:
@@ -27,11 +29,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
       - name: Test
-        env:
-          model: iPhone 11 Pro
-          os: 13.3
         run: |
-          xcodebuild clean test -scheme "$scheme" -destination "platform=iOS Simulator,name=$model,OS=$os" | sed -E "s#`pwd`/(.*):([0-9]+): (error|warning): (.*)#::\3 file=\1,line=\2::\4#" && exit ${PIPESTATUS[0]}
+          xcodebuild clean test -workspace $workspace -scheme $scheme -destination "platform=iOS Simulator,name=iPhone 11 Pro,OS=13.3" | sed -E "s#`pwd`/(.*):([0-9]+): (error|warning): (.*)#::\3 file=\1,line=\2::\4#" && exit ${PIPESTATUS[0]}
       - name: Codecov
         run: |
           bash <(curl -s https://codecov.io/bash)
