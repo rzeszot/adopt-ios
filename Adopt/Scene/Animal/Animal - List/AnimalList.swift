@@ -32,6 +32,7 @@ private extension AnimalsListModel.Categories {
 
 private extension AnimalsListModel.Category {
     init(_ value: CategoriesModel.Category) {
-        self.name = value.name
+        id = value.id
+        name = value.name
     }
 }

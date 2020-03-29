@@ -6,7 +6,7 @@ import Foundation
 
 struct AnimalsListModel {
     struct Category {
-        let id: UUID = .init()
+        let id: String
         let name: String
     }
 

@@ -5,6 +5,6 @@
 import Foundation
 
 struct CategoriesModel {
-    typealias Category = CategoriesService.Success.Category
+    typealias Category = StartService.Success.Category
     let categories: [Category]
 }

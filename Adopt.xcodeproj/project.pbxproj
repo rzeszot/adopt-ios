@@ -38,7 +38,7 @@
 		2D4F0F17242D768C006C75BB /* AnimalListEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F16242D768C006C75BB /* AnimalListEntryCell.swift */; };
 		2D4F0F19242D7D78006C75BB /* AnimalListCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F18242D7D78006C75BB /* AnimalListCategoryCell.swift */; };
 		2D4FA0252430CA9200CBFE65 /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 2D4FA0242430CA9200CBFE65 /* Cache */; };
-		2D4FA02A2430E03900CBFE65 /* CategoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA0292430E03900CBFE65 /* CategoriesService.swift */; };
+		2D4FA02A2430E03900CBFE65 /* StartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA0292430E03900CBFE65 /* StartService.swift */; };
 		2D4FA02C2430E0A000CBFE65 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA02B2430E0A000CBFE65 /* Categories.swift */; };
 		2D4FA02E2430E0AB00CBFE65 /* Categories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D4FA02D2430E0AB00CBFE65 /* Categories.storyboard */; };
 		2D4FA0302430E0BB00CBFE65 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA02F2430E0BB00CBFE65 /* CategoriesViewController.swift */; };
@@ -185,7 +185,7 @@
 		2D4F0F14242D7605006C75BB /* AnimalListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListHeaderView.swift; sourceTree = "<group>"; };
 		2D4F0F16242D768C006C75BB /* AnimalListEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListEntryCell.swift; sourceTree = "<group>"; };
 		2D4F0F18242D7D78006C75BB /* AnimalListCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListCategoryCell.swift; sourceTree = "<group>"; };
-		2D4FA0292430E03900CBFE65 /* CategoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesService.swift; sourceTree = "<group>"; };
+		2D4FA0292430E03900CBFE65 /* StartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartService.swift; sourceTree = "<group>"; };
 		2D4FA02B2430E0A000CBFE65 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		2D4FA02D2430E0AB00CBFE65 /* Categories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Categories.storyboard; sourceTree = "<group>"; };
 		2D4FA02F2430E0BB00CBFE65 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -440,7 +440,7 @@
 			children = (
 				2D4FA02B2430E0A000CBFE65 /* Categories.swift */,
 				2D4FA0312430E0FE00CBFE65 /* CategoriesModel.swift */,
-				2D4FA0292430E03900CBFE65 /* CategoriesService.swift */,
+				2D4FA0292430E03900CBFE65 /* StartService.swift */,
 				2D4FA02F2430E0BB00CBFE65 /* CategoriesViewController.swift */,
 				2D4FA02D2430E0AB00CBFE65 /* Categories.storyboard */,
 			);
@@ -870,7 +870,7 @@
 				2D002E732427CDC900639347 /* Dashboard.swift in Sources */,
 				2DE3038B2430011F00A58166 /* ErrorViewController.swift in Sources */,
 				2D95D87A242F822E0082D650 /* Filters.swift in Sources */,
-				2D4FA02A2430E03900CBFE65 /* CategoriesService.swift in Sources */,
+				2D4FA02A2430E03900CBFE65 /* StartService.swift in Sources */,
 				2D95D888242FDB4B0082D650 /* FiltersCollectionViewFlowLayout.swift in Sources */,
 				2D4F0F17242D768C006C75BB /* AnimalListEntryCell.swift in Sources */,
 				2D443B2323BCF5C2007BFEEE /* BasicAuth.swift in Sources */,

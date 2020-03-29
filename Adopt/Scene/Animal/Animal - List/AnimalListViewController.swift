@@ -52,7 +52,7 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
 
         var snapshot = NSDiffableDataSourceSnapshot<String, String>()
         snapshot.appendSections(["categories"])
-        snapshot.appendItems(model.categories.items.map { $0.id.uuidString })
+        snapshot.appendItems(model.categories.items.map { $0.id })
         snapshot.appendSections(["animals"])
         snapshot.appendItems(model.animals.items.map { $0.id.uuidString })
         source.apply(snapshot)
@@ -67,7 +67,7 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
         if indexPath.section == 0 {
             let xxx = model.categories.items[indexPath.row]
 
-            category(CategoriesModel.Category(id: xxx.id.uuidString, name: xxx.name))
+            category(CategoriesModel.Category(id: xxx.id, name: xxx.name))
         } else {
             details()
         }

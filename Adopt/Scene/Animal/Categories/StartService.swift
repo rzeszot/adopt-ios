@@ -5,7 +5,7 @@
 import Foundation
 import Cache
 
-class CategoriesService {
+class StartService {
 
     // MARK: -
 

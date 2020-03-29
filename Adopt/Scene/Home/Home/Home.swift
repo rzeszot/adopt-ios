@@ -12,7 +12,7 @@ struct Home {
 
     static func build(dependency: Dependency) -> UIViewController {
         let root = AnimalsContainerViewController()
-        root.service = CategoriesService(url: .heroku)
+        root.service = StartService(url: .heroku)
         root.tabBarItem.title = "Home"
         root.tabBarItem.image = UIImage(systemName: "house")
         root.tabBarItem.selectedImage = UIImage(systemName: "house.fill")
@@ -22,7 +22,7 @@ struct Home {
 
 class AnimalsContainerViewController: StateViewController<CategoriesModel> {
 
-    var service: CategoriesService!
+    var service: StartService!
 
     override func transform(_ state: State<CategoriesModel>) -> UIViewController {
         if case .data(let model) = state {
@@ -30,12 +30,20 @@ class AnimalsContainerViewController: StateViewController<CategoriesModel> {
                 let vc = AnimalDetails.build()
                 self.show(vc, sender: nil)
             }, category: { [unowned self] category in
+                var xxx = {}
+
                 let vc = Categories.build(dependency: Categories.Dependency(category: category, filter: {
-                    let vc = Filters.build(dependency: Filters.Dependency(dismiss: {
+                    xxx()
+                }))
+
+                xxx = { [unowned vc] in
+                    let filters = Filters.build(dependency: Filters.Dependency(id: category.id, dismiss: {
                         self.dismiss(animated: true)
                     }))
-                    self.present(UINavigationController(rootViewController: vc), animated: true)
-                }))
+
+                    vc.present(UINavigationController(rootViewController: filters), animated: true)
+                }
+
                 self.show(vc, sender: nil)
             }))
         } else {
@@ -67,7 +75,7 @@ class AnimalsContainerViewController: StateViewController<CategoriesModel> {
 }
 
 private extension CategoriesModel {
-    init(_ success: CategoriesService.Success) {
+    init(_ success: StartService.Success) {
         self.categories = success.categories
     }
 }
@@ -77,6 +85,6 @@ private extension URL {
         "http://localhost:4567/categories"
     }
     static var heroku: URL {
-        "https://adopt-api.herokuapp.com/categories"
+        "https://adopt-api.herokuapp.com/start"
     }
 }

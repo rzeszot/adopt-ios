@@ -7,6 +7,7 @@ import Cache
 
 struct Filters {
     struct Dependency {
+        let id: String
         let dismiss: () -> Void
     }
 
@@ -14,17 +15,14 @@ struct Filters {
 
     static func build(dependency: Dependency) -> UIViewController {
         let root = FiltersContainerViewController()
-        root.service = FiltersService(url: .heroku, cache: cache)
+        root.service = FiltersService(url: .heroku(for: dependency.id), cache: cache)
         root.dismiss = dependency.dismiss
         return root
     }
 }
 
 private extension URL {
-    static var localhost: URL {
-        "http://localhost:4567/filters"
-    }
-    static var heroku: URL {
-        "https://adopt-api.herokuapp.com/filters"
+    static func heroku(for id: String) -> URL {
+        "https://adopt-api.herokuapp.com/category/\(id)/filters"
     }
 }
