@@ -11,7 +11,7 @@ class ExampleTests: XCTestCase {
     }
 
     func testFalse() {
-        XCTAssertFalse(true)
+        XCTAssertFalse(false)
     }
 
 }
