@@ -5,6 +5,8 @@
 #  env:
 #    - workspace
 #    - scheme
+#  secrets:
+#    - CODECOV_TOKEN
 #
 
 name: Test
@@ -23,7 +25,7 @@ env:
 jobs:
   app:
     runs-on: macos-latest
-    timeout-minutes: 2
+    timeout-minutes: 5
     name: Unit test app
     steps:
       - name: Checkout
@@ -32,6 +34,8 @@ jobs:
         run: |
           xcodebuild clean test -workspace $workspace -scheme $scheme -destination "platform=iOS Simulator,name=iPhone 11 Pro,OS=13.3" | sed -E "s#`pwd`/(.*):([0-9]+): (error|warning): (.*)#::\3 file=\1,line=\2::\4#" && exit ${PIPESTATUS[0]}
       - name: Codecov
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: |
           bash <(curl -s https://codecov.io/bash)
 
