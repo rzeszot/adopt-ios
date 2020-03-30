@@ -4,11 +4,11 @@
 
 import UIKit
 
-class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISearchResultsUpdating {
+class RecentViewController: UIViewController, UICollectionViewDelegate, UISearchResultsUpdating {
 
     // MARK: -
 
-    var category: ((CategoriesModel.Category) -> Void)!
+    var category: ((Recent.Category) -> Void)!
     var details: (() -> Void)!
 
     // MARK: -
@@ -18,7 +18,7 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
 
     // MARK: -
 
-    var model: AnimalsListModel!
+    var model: Recent.Model!
     var source: UICollectionViewDiffableDataSource<String, String>!
 
     // MARK: -
@@ -31,12 +31,13 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
             switch indexPath.section {
             case 0:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "category", for: indexPath)
-                (cell as? CategoryCell)?.titleLabel.text = self.model.categories.categories[indexPath.row].name
+                (cell as? CategoryCell)?.titleLabel.text = self.model.categories[indexPath.row].name
+                (cell as? CategoryCell)?.subtitleLabel.text = String(self.model.categories[indexPath.row].count)
                 return cell
 
             case 1:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "animal", for: indexPath)
-                (cell as? AnimalListEntryCell)?.configure(item: self.model.animals[indexPath.row])
+                (cell as? RecentEntryCell)?.configure(item: self.model.animals[indexPath.row])
                 return cell
 
             default:
@@ -46,13 +47,13 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
 
         source.supplementaryViewProvider = { (collectionView, kind, indexPath) -> UICollectionReusableView? in
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
-            (header as? AnimalListHeaderView)?.titleLabel.text = ["Kategoria", "Najnowsze"][indexPath.section]
+            (header as? RecentHeaderView)?.titleLabel.text = ["Kategoria", "Najnowsze"][indexPath.section]
             return header
         }
 
         var snapshot = NSDiffableDataSourceSnapshot<String, String>()
         snapshot.appendSections(["categories"])
-        snapshot.appendItems(model.categories.categories.map { $0.id })
+        snapshot.appendItems(model.categories.map { $0.id })
         snapshot.appendSections(["animals"])
         snapshot.appendItems(model.animals.map { $0.id })
         source.apply(snapshot)
@@ -65,9 +66,8 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            let xxx = model.categories.categories[indexPath.row]
-
-            category(CategoriesModel.Category(id: xxx.id, name: xxx.name))
+            let xxx = model.categories[indexPath.row]
+            category(xxx)
         } else {
             details()
         }
@@ -83,7 +83,7 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
 }
 
 private extension UICollectionViewCompositionalLayout {
-    static func create(for model: AnimalsListModel) -> UICollectionViewCompositionalLayout {
+    static func create(for model: Recent.Model) -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { (section, _) -> NSCollectionLayoutSection? in
             switch section {
             case 0:

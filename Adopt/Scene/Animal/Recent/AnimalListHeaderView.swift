@@ -4,7 +4,7 @@
 
 import UIKit
 
-class AnimalListHeaderView: UICollectionReusableView {
+class RecentHeaderView: UICollectionReusableView {
 
     @IBOutlet
     var titleLabel: UILabel!

@@ -66,12 +66,6 @@ struct Auth {
 
 }
 
-extension Auth {
-    static var localhost: Auth {
-        return Auth(url: "http://localhost:3000/auth/login")
-    }
-}
-
 extension URL: ExpressibleByStringLiteral, ExpressibleByStringInterpolation {
 
     public init(stringLiteral value: String) {

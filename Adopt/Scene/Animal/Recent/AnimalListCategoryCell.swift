@@ -9,6 +9,9 @@ class CategoryCell: UICollectionViewCell {
     @IBOutlet
     var titleLabel: UILabel!
 
+    @IBOutlet
+    var subtitleLabel: UILabel!
+
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
 

@@ -13,7 +13,7 @@ class FilterItemCell: UICollectionViewCell {
 
     // MARK: -
 
-    func configure(item: FiltersModel.Group.Item) {
+    func configure(item: Filters.Model.Group.Item) {
         titleLabel.text = item.name
     }
 

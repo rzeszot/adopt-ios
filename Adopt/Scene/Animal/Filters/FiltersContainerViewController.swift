@@ -4,9 +4,9 @@
 
 import UIKit
 
-class FiltersContainerViewController: StateViewController<FiltersModel> {
+class FiltersContainerViewController: StateViewController<Filters.Model> {
 
-    var service: FiltersService!
+    var service: Filters.Service!
     var dismiss: (() -> Void)!
 
     @objc
@@ -14,7 +14,7 @@ class FiltersContainerViewController: StateViewController<FiltersModel> {
         dismiss()
     }
 
-    override func transform(_ state: State<FiltersModel>) -> UIViewController {
+    override func transform(_ state: State<Filters.Model>) -> UIViewController {
         if case .data(let model) = state {
             let vc: FiltersViewController = UIStoryboard.instantiate(name: "Filters", identifier: "filters")
             vc.model = model
@@ -31,14 +31,14 @@ class FiltersContainerViewController: StateViewController<FiltersModel> {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(dismissAction))
 
         if let success = service.load() {
-            self.change(.data(FiltersModel(success)))
+            self.change(.data(Filters.Model(success)))
         } else {
             change(.loading)
 
             service.fetch(completion: DispatchQueue.main.wrap { result in
                 switch result {
                 case .success(let success):
-                    self.change(.data(FiltersModel(success)))
+                    self.change(.data(Filters.Model(success)))
                 case .failure(let error):
                     self.change(.error(error))
                 }
@@ -46,25 +46,4 @@ class FiltersContainerViewController: StateViewController<FiltersModel> {
         }
     }
 
-}
-
-extension FiltersModel {
-    init(_ result: FiltersService.Success) {
-        groups = result.filters.map(Group.init)
-    }
-}
-
-extension FiltersModel.Group {
-    init(_ result: FiltersService.Success.Filter) {
-        meta = Meta(id: result.id, name: result.name)
-        items = result.items.map(Item.init)
-    }
-}
-
-extension FiltersModel.Group.Item {
-    init(_ result: FiltersService.Success.Filter.Item) {
-        id = result.id
-        name = result.name
-        active = result.active ?? false
-    }
 }

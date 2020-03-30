@@ -5,24 +5,9 @@
 import Foundation
 import Cache
 
-class FiltersService {
+class GenericFetcher<Success: Decodable> {
 
     // MARK: -
-
-    struct Success: Decodable {
-        struct Filter: Decodable {
-            struct Item: Decodable {
-                let id: String
-                let name: String
-                let active: Bool?
-            }
-
-            let id: String
-            let name: String
-            let items: [Item]
-        }
-        let filters: [Filter]
-    }
 
     enum Failure: Error {
         case error(Error)
@@ -37,7 +22,7 @@ class FiltersService {
     let session: URLSession
     let cache: Cache<URL, Success>?
 
-    init(url: URL, session: URLSession = .shared, cache: Cache<URL, FiltersService.Success>? = nil) {
+    init(url: URL, session: URLSession = .shared, cache: Cache<URL, Success>? = nil) {
         self.url = url
         self.session = session
         self.cache = cache
@@ -55,7 +40,7 @@ class FiltersService {
         let complete = DispatchQueue.main.wrap(completion)
         let request = URLRequest(url: url)
 
-        print("Filters | fetch \(url)")
+        print("fetch \(url)")
 
         let task = session.dataTask(with: request) { data, response, error in
             if let data = data, let response = response as? HTTPURLResponse {

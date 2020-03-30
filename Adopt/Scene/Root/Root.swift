@@ -43,7 +43,7 @@ extension Root {
     }
 
     private static func login(dependency: Dependency, guest: Session.Guest, route: @escaping (UIViewController) -> Void) -> UIViewController {
-        BasicAuth.build(dependency: BasicAuth.Dependency(service: .localhost, success: { output in
+        BasicAuth.build(dependency: BasicAuth.Dependency(service: .login, success: { output in
             let user = guest.login(Session.Credential(email: output.email, token: output.token))
             route(dashboard(dependency: dependency, user: user, route: route))
         }, dismiss: {
@@ -73,4 +73,16 @@ extension Root {
         }))
     }
 
+}
+
+extension Auth {
+    static var login: Auth {
+        return Auth(url: .login)
+    }
+}
+
+extension URL {
+    static var login: URL {
+        "https://adopt-api.herokuapp.com/auth/login"
+    }
 }

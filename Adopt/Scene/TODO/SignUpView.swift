@@ -66,7 +66,7 @@ struct SignUpView: View {
     func register(completion: @escaping (SignUp.Response) -> Void) {
         print("sign up | loading")
 
-        var request = URLRequest(url: URL(string: "https://adopt.rzeszot.pro/api/auth/sign_up")!)
+        var request = URLRequest(url: .register)
         request.httpMethod = "POST"
         request.httpBody = try? JSONEncoder().encode(SignUp.Request(user: SignUp.Request.User(email: email, password: password)))
         request.allHTTPHeaderFields?["Content-Type"] = "application/json"
@@ -99,8 +99,8 @@ struct SignUpView: View {
 
 }
 
-struct SignUpView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignUpView(action: { _ in })
+extension URL {
+    static var register: URL {
+        "https://adopt.rzeszot.pro/api/auth/sign_up"
     }
 }

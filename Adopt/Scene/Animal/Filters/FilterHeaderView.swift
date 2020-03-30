@@ -28,7 +28,7 @@ class FilterHeaderView: UICollectionReusableView {
 
     // MARK: -
 
-    func configure(item: FiltersModel.Group.Meta) {
+    func configure(item: Filters.Model.Group.Meta) {
         titleLabel.text = item.name
     }
 

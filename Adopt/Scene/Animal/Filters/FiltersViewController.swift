@@ -8,7 +8,7 @@ class FiltersViewController: UIViewController, UICollectionViewDataSource, UICol
 
     // MARK: -
 
-    var model: FiltersModel!
+    var model: Filters.Model!
 
     // MARK: -
 
@@ -86,7 +86,7 @@ class FiltersViewController: UIViewController, UICollectionViewDataSource, UICol
 
 }
 
-private extension FiltersModel {
+private extension Filters.Model {
     subscript(_ indexPath: IndexPath) -> Group.Item {
         groups[indexPath.section].items[indexPath.row]
     }

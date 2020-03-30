@@ -4,7 +4,7 @@
 
 import UIKit
 
-class AnimalDetailsViewController: UIViewController, UICollectionViewDataSource {
+class DetailsViewController: UIViewController, UICollectionViewDataSource {
 
     // MARK: - Outlets
 

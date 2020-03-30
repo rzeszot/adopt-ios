@@ -16,7 +16,10 @@
 		2D08E4A124310C1F00A5E7BB /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 2D08E4A024310C1F00A5E7BB /* Cache */; };
 		2D08E4A324310C2200A5E7BB /* Session in Frameworks */ = {isa = PBXBuildFile; productRef = 2D08E4A224310C2200A5E7BB /* Session */; };
 		2D10A89C242FEBB00065A420 /* FiltersContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D10A89B242FEBB00065A420 /* FiltersContainerViewController.swift */; };
-		2D144ADE24327721002EF3FD /* AnimalsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D144ADD24327721002EF3FD /* AnimalsService.swift */; };
+		2D144AE024327F83002EF3FD /* GenericFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D144ADF24327F83002EF3FD /* GenericFetcher.swift */; };
+		2D144AE32432808A002EF3FD /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D144AE22432808A002EF3FD /* Category.swift */; };
+		2D144AE5243281FD002EF3FD /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D144AE4243281FD002EF3FD /* Start.swift */; };
+		2D144AE824329498002EF3FD /* CreatureContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D144AE724329498002EF3FD /* CreatureContainerViewController.swift */; };
 		2D19031F24288F4700EFC007 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D19031E24288F4700EFC007 /* ExampleTests.swift */; };
 		2D1903272428949500EFC007 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1903262428949500EFC007 /* Search.swift */; };
 		2D190329242894D900EFC007 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D190328242894D900EFC007 /* Search.storyboard */; };
@@ -36,18 +39,15 @@
 		2D4F0F15242D7605006C75BB /* AnimalListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F14242D7605006C75BB /* AnimalListHeaderView.swift */; };
 		2D4F0F17242D768C006C75BB /* AnimalListEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F16242D768C006C75BB /* AnimalListEntryCell.swift */; };
 		2D4F0F19242D7D78006C75BB /* AnimalListCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F18242D7D78006C75BB /* AnimalListCategoryCell.swift */; };
-		2D4FA02A2430E03900CBFE65 /* StartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA0292430E03900CBFE65 /* StartService.swift */; };
-		2D4FA02C2430E0A000CBFE65 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA02B2430E0A000CBFE65 /* Categories.swift */; };
-		2D4FA02E2430E0AB00CBFE65 /* Categories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D4FA02D2430E0AB00CBFE65 /* Categories.storyboard */; };
-		2D4FA0302430E0BB00CBFE65 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA02F2430E0BB00CBFE65 /* CategoriesViewController.swift */; };
-		2D4FA0322430E0FE00CBFE65 /* CategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA0312430E0FE00CBFE65 /* CategoriesModel.swift */; };
-		2D4FA0342430E48B00CBFE65 /* AnimalsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA0332430E48B00CBFE65 /* AnimalsListModel.swift */; };
+		2D4FA02C2430E0A000CBFE65 /* Creature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA02B2430E0A000CBFE65 /* Creature.swift */; };
+		2D4FA02E2430E0AB00CBFE65 /* Creature.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D4FA02D2430E0AB00CBFE65 /* Creature.storyboard */; };
+		2D4FA0302430E0BB00CBFE65 /* CreatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA02F2430E0BB00CBFE65 /* CreatureViewController.swift */; };
 		2D531EBB242C09D90001F507 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EBA242C09D90001F507 /* RegisterViewController.swift */; };
 		2D531EBD242C09F10001F507 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EBC242C09F10001F507 /* Register.swift */; };
 		2D531EC0242C0DA10001F507 /* Forget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EBF242C0DA10001F507 /* Forget.swift */; };
 		2D531EC2242C0DBF0001F507 /* ForgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EC1242C0DBF0001F507 /* ForgetViewController.swift */; };
-		2D531EC5242C11390001F507 /* AnimalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EC4242C11390001F507 /* AnimalDetailsViewController.swift */; };
-		2D531EC7242C114A0001F507 /* AnimalDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EC6242C114A0001F507 /* AnimalDetails.swift */; };
+		2D531EC5242C11390001F507 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EC4242C11390001F507 /* DetailsViewController.swift */; };
+		2D531EC7242C114A0001F507 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D531EC6242C114A0001F507 /* Details.swift */; };
 		2D531EC9242C118D0001F507 /* Animal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D531EC8242C118D0001F507 /* Animal.storyboard */; };
 		2D5E2190242EB27300573DB5 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5E218F242EB27300573DB5 /* AuthenticationServices.framework */; };
 		2D5E2192242EB27800573DB5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5E2191242EB27800573DB5 /* MapKit.framework */; };
@@ -57,13 +57,11 @@
 		2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A385B23BAD03C0094BAB2 /* Session.swift */; };
 		2D7A386223BAD4AD0094BAB2 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386123BAD4AD0094BAB2 /* Settings.swift */; };
 		2D7A386523BAD5C40094BAB2 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A386423BAD5C40094BAB2 /* Welcome.swift */; };
-		2D84874F242CC58F00110856 /* AnimalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84874E242CC58F00110856 /* AnimalList.swift */; };
-		2D848751242CC5C200110856 /* AnimalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D848750242CC5C200110856 /* AnimalListViewController.swift */; };
+		2D84874F242CC58F00110856 /* Recent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84874E242CC58F00110856 /* Recent.swift */; };
+		2D848751242CC5C200110856 /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D848750242CC5C200110856 /* RecentViewController.swift */; };
 		2D95D876242F81280082D650 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D95D875242F81280082D650 /* FiltersViewController.swift */; };
 		2D95D87A242F822E0082D650 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D95D879242F822E0082D650 /* Filters.swift */; };
 		2D95D87C242F83660082D650 /* Filters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D95D87B242F83660082D650 /* Filters.storyboard */; };
-		2D95D87E242FB8450082D650 /* FiltersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D95D87D242FB8450082D650 /* FiltersModel.swift */; };
-		2D95D880242FBACF0082D650 /* FiltersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D95D87F242FBACF0082D650 /* FiltersService.swift */; };
 		2D95D884242FC04D0082D650 /* FilterItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D95D883242FC04D0082D650 /* FilterItemCell.swift */; };
 		2D95D886242FC05F0082D650 /* FilterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D95D885242FC05F0082D650 /* FilterHeaderView.swift */; };
 		2D95D888242FDB4B0082D650 /* FiltersCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D95D887242FDB4B0082D650 /* FiltersCollectionViewFlowLayout.swift */; };
@@ -119,7 +117,10 @@
 		2D002E7F2427D0F700639347 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2D002E812427D11400639347 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		2D10A89B242FEBB00065A420 /* FiltersContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersContainerViewController.swift; sourceTree = "<group>"; };
-		2D144ADD24327721002EF3FD /* AnimalsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsService.swift; sourceTree = "<group>"; };
+		2D144ADF24327F83002EF3FD /* GenericFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericFetcher.swift; sourceTree = "<group>"; };
+		2D144AE22432808A002EF3FD /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		2D144AE4243281FD002EF3FD /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
+		2D144AE724329498002EF3FD /* CreatureContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureContainerViewController.swift; sourceTree = "<group>"; };
 		2D19031C24288F4700EFC007 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D19031E24288F4700EFC007 /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		2D19032024288F4700EFC007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -145,18 +146,15 @@
 		2D4F0F14242D7605006C75BB /* AnimalListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListHeaderView.swift; sourceTree = "<group>"; };
 		2D4F0F16242D768C006C75BB /* AnimalListEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListEntryCell.swift; sourceTree = "<group>"; };
 		2D4F0F18242D7D78006C75BB /* AnimalListCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListCategoryCell.swift; sourceTree = "<group>"; };
-		2D4FA0292430E03900CBFE65 /* StartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartService.swift; sourceTree = "<group>"; };
-		2D4FA02B2430E0A000CBFE65 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
-		2D4FA02D2430E0AB00CBFE65 /* Categories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Categories.storyboard; sourceTree = "<group>"; };
-		2D4FA02F2430E0BB00CBFE65 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
-		2D4FA0312430E0FE00CBFE65 /* CategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModel.swift; sourceTree = "<group>"; };
-		2D4FA0332430E48B00CBFE65 /* AnimalsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsListModel.swift; sourceTree = "<group>"; };
+		2D4FA02B2430E0A000CBFE65 /* Creature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creature.swift; sourceTree = "<group>"; };
+		2D4FA02D2430E0AB00CBFE65 /* Creature.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Creature.storyboard; sourceTree = "<group>"; };
+		2D4FA02F2430E0BB00CBFE65 /* CreatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureViewController.swift; sourceTree = "<group>"; };
 		2D531EBA242C09D90001F507 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2D531EBC242C09F10001F507 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		2D531EBF242C0DA10001F507 /* Forget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget.swift; sourceTree = "<group>"; };
 		2D531EC1242C0DBF0001F507 /* ForgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetViewController.swift; sourceTree = "<group>"; };
-		2D531EC4242C11390001F507 /* AnimalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailsViewController.swift; sourceTree = "<group>"; };
-		2D531EC6242C114A0001F507 /* AnimalDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetails.swift; sourceTree = "<group>"; };
+		2D531EC4242C11390001F507 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		2D531EC6242C114A0001F507 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		2D531EC8242C118D0001F507 /* Animal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Animal.storyboard; sourceTree = "<group>"; };
 		2D5E218F242EB27300573DB5 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		2D5E2191242EB27800573DB5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -166,13 +164,11 @@
 		2D7A385B23BAD03C0094BAB2 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		2D7A386123BAD4AD0094BAB2 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2D7A386423BAD5C40094BAB2 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
-		2D84874E242CC58F00110856 /* AnimalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalList.swift; sourceTree = "<group>"; };
-		2D848750242CC5C200110856 /* AnimalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListViewController.swift; sourceTree = "<group>"; };
+		2D84874E242CC58F00110856 /* Recent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recent.swift; sourceTree = "<group>"; };
+		2D848750242CC5C200110856 /* RecentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentViewController.swift; sourceTree = "<group>"; };
 		2D95D875242F81280082D650 /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		2D95D879242F822E0082D650 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		2D95D87B242F83660082D650 /* Filters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filters.storyboard; sourceTree = "<group>"; };
-		2D95D87D242FB8450082D650 /* FiltersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersModel.swift; sourceTree = "<group>"; };
-		2D95D87F242FBACF0082D650 /* FiltersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersService.swift; sourceTree = "<group>"; };
 		2D95D883242FC04D0082D650 /* FilterItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterItemCell.swift; sourceTree = "<group>"; };
 		2D95D885242FC05F0082D650 /* FilterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeaderView.swift; sourceTree = "<group>"; };
 		2D95D887242FDB4B0082D650 /* FiltersCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -276,6 +272,22 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		2D144AE12432807B002EF3FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D144AE22432808A002EF3FD /* Category.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2D144AE62432839D002EF3FD /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				2D144AE4243281FD002EF3FD /* Start.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
 		2D19031D24288F4700EFC007 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,16 +328,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		2D4FA0282430E02200CBFE65 /* Categories */ = {
+		2D4FA0282430E02200CBFE65 /* Creature */ = {
 			isa = PBXGroup;
 			children = (
-				2D4FA02B2430E0A000CBFE65 /* Categories.swift */,
-				2D4FA0312430E0FE00CBFE65 /* CategoriesModel.swift */,
-				2D4FA0292430E03900CBFE65 /* StartService.swift */,
-				2D4FA02F2430E0BB00CBFE65 /* CategoriesViewController.swift */,
-				2D4FA02D2430E0AB00CBFE65 /* Categories.storyboard */,
+				2D4FA02B2430E0A000CBFE65 /* Creature.swift */,
+				2D144AE724329498002EF3FD /* CreatureContainerViewController.swift */,
+				2D4FA02F2430E0BB00CBFE65 /* CreatureViewController.swift */,
+				2D4FA02D2430E0AB00CBFE65 /* Creature.storyboard */,
 			);
-			path = Categories;
+			path = Creature;
 			sourceTree = "<group>";
 		};
 		2D531EB9242C09C80001F507 /* Auth - Register */ = {
@@ -346,13 +357,13 @@
 			path = "Auth - Forget";
 			sourceTree = "<group>";
 		};
-		2D531EC3242C11220001F507 /* Animal - Details */ = {
+		2D531EC3242C11220001F507 /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				2D531EC6242C114A0001F507 /* AnimalDetails.swift */,
-				2D531EC4242C11390001F507 /* AnimalDetailsViewController.swift */,
+				2D531EC6242C114A0001F507 /* Details.swift */,
+				2D531EC4242C11390001F507 /* DetailsViewController.swift */,
 			);
-			path = "Animal - Details";
+			path = Details;
 			sourceTree = "<group>";
 		};
 		2D5E218E242EB27300573DB5 /* Frameworks */ = {
@@ -406,28 +417,27 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
-		2D84874D242CC58000110856 /* Animal - List */ = {
+		2D84874D242CC58000110856 /* Recent */ = {
 			isa = PBXGroup;
 			children = (
-				2D84874E242CC58F00110856 /* AnimalList.swift */,
-				2D848750242CC5C200110856 /* AnimalListViewController.swift */,
-				2D4FA0332430E48B00CBFE65 /* AnimalsListModel.swift */,
+				2D84874E242CC58F00110856 /* Recent.swift */,
+				2D848750242CC5C200110856 /* RecentViewController.swift */,
 				2D4F0F18242D7D78006C75BB /* AnimalListCategoryCell.swift */,
 				2D4F0F16242D768C006C75BB /* AnimalListEntryCell.swift */,
 				2D4F0F14242D7605006C75BB /* AnimalListHeaderView.swift */,
 			);
-			path = "Animal - List";
+			path = Recent;
 			sourceTree = "<group>";
 		};
 		2D848752242CC5D600110856 /* Animal */ = {
 			isa = PBXGroup;
 			children = (
-				2D4FA0282430E02200CBFE65 /* Categories */,
+				2D144AE62432839D002EF3FD /* Start */,
+				2D4FA0282430E02200CBFE65 /* Creature */,
 				2D95D874242F811B0082D650 /* Filters */,
+				2D84874D242CC58000110856 /* Recent */,
+				2D531EC3242C11220001F507 /* Details */,
 				2D531EC8242C118D0001F507 /* Animal.storyboard */,
-				2D84874D242CC58000110856 /* Animal - List */,
-				2D531EC3242C11220001F507 /* Animal - Details */,
-				2D144ADD24327721002EF3FD /* AnimalsService.swift */,
 			);
 			path = Animal;
 			sourceTree = "<group>";
@@ -436,8 +446,6 @@
 			isa = PBXGroup;
 			children = (
 				2D95D879242F822E0082D650 /* Filters.swift */,
-				2D95D87D242FB8450082D650 /* FiltersModel.swift */,
-				2D95D87F242FBACF0082D650 /* FiltersService.swift */,
 				2D10A89B242FEBB00065A420 /* FiltersContainerViewController.swift */,
 				2D95D875242F81280082D650 /* FiltersViewController.swift */,
 				2D95D887242FDB4B0082D650 /* FiltersCollectionViewFlowLayout.swift */,
@@ -471,6 +479,7 @@
 		2DBC3B572427A8E60070894C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2D144ADF24327F83002EF3FD /* GenericFetcher.swift */,
 				2DE303872430011F00A58166 /* EmptyViewController.swift */,
 				2DE303852430011F00A58166 /* ErrorViewController.swift */,
 				2DE303882430011F00A58166 /* LoadingViewController.swift */,
@@ -507,6 +516,7 @@
 			children = (
 				2D443B2B23BD4032007BFEEE /* Resources */,
 				2DBC3B572427A8E60070894C /* Common */,
+				2D144AE12432807B002EF3FD /* Model */,
 				2DBC3B542427A8060070894C /* Scene */,
 				2DD6B26323B84AD60006D873 /* AppDelegate.swift */,
 				2DD6B26523B84AD60006D873 /* SceneDelegate.swift */,
@@ -623,7 +633,7 @@
 				2D95D87C242F83660082D650 /* Filters.storyboard in Resources */,
 				2D002E782427CF3C00639347 /* Home.storyboard in Resources */,
 				2D190329242894D900EFC007 /* Search.storyboard in Resources */,
-				2D4FA02E2430E0AB00CBFE65 /* Categories.storyboard in Resources */,
+				2D4FA02E2430E0AB00CBFE65 /* Creature.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,7 +675,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D2B44A32427C82400BECB25 /* Build.swift.sh in Sources */,
-				2D95D87E242FB8450082D650 /* FiltersModel.swift in Sources */,
 				2D002E822427D11400639347 /* Profile.swift in Sources */,
 				2D4F0F0C242D6396006C75BB /* SearchHistoryCell.swift in Sources */,
 				2D4F0F15242D7605006C75BB /* AnimalListHeaderView.swift in Sources */,
@@ -673,7 +682,6 @@
 				2D002E732427CDC900639347 /* Dashboard.swift in Sources */,
 				2DE3038B2430011F00A58166 /* ErrorViewController.swift in Sources */,
 				2D95D87A242F822E0082D650 /* Filters.swift in Sources */,
-				2D4FA02A2430E03900CBFE65 /* StartService.swift in Sources */,
 				2D95D888242FDB4B0082D650 /* FiltersCollectionViewFlowLayout.swift in Sources */,
 				2D4F0F17242D768C006C75BB /* AnimalListEntryCell.swift in Sources */,
 				2D443B2323BCF5C2007BFEEE /* BasicAuth.swift in Sources */,
@@ -683,27 +691,27 @@
 				2DBC3B562427A8280070894C /* RootViewController.swift in Sources */,
 				2D002E7C2427CFB200639347 /* HomeViewController.swift in Sources */,
 				2D4F0F19242D7D78006C75BB /* AnimalListCategoryCell.swift in Sources */,
-				2D84874F242CC58F00110856 /* AnimalList.swift in Sources */,
-				2D4FA0322430E0FE00CBFE65 /* CategoriesModel.swift in Sources */,
+				2D84874F242CC58F00110856 /* Recent.swift in Sources */,
 				2D5F02722428E9AE00760CB2 /* SettingsAppearance.swift in Sources */,
 				2D002E7E2427CFBE00639347 /* ProfileViewController.swift in Sources */,
 				2D4F0F0E242D63A9006C75BB /* SearchRecentCell.swift in Sources */,
 				2D7A386223BAD4AD0094BAB2 /* Settings.swift in Sources */,
 				2D443B3E23BD456D007BFEEE /* WelcomeViewController.swift in Sources */,
 				2DD6B26423B84AD60006D873 /* AppDelegate.swift in Sources */,
-				2D95D880242FBACF0082D650 /* FiltersService.swift in Sources */,
 				2D7A385C23BAD03C0094BAB2 /* Session.swift in Sources */,
+				2D144AE824329498002EF3FD /* CreatureContainerViewController.swift in Sources */,
 				2D531EC0242C0DA10001F507 /* Forget.swift in Sources */,
-				2D531EC5242C11390001F507 /* AnimalDetailsViewController.swift in Sources */,
-				2D848751242CC5C200110856 /* AnimalListViewController.swift in Sources */,
+				2D531EC5242C11390001F507 /* DetailsViewController.swift in Sources */,
+				2D848751242CC5C200110856 /* RecentViewController.swift in Sources */,
 				2D443B2523BCF792007BFEEE /* BasicAuth.Coordinator.swift in Sources */,
+				2D144AE024327F83002EF3FD /* GenericFetcher.swift in Sources */,
 				2D531EBD242C09F10001F507 /* Register.swift in Sources */,
 				2DD7A4F52427ADD50029CC49 /* UIStoryboard.swift in Sources */,
-				2D4FA0302430E0BB00CBFE65 /* CategoriesViewController.swift in Sources */,
+				2D4FA0302430E0BB00CBFE65 /* CreatureViewController.swift in Sources */,
 				2D002E802427D0F700639347 /* Home.swift in Sources */,
-				2D144ADE24327721002EF3FD /* AnimalsService.swift in Sources */,
 				2DD7A4F72427B0670029CC49 /* PrimaryButton.swift in Sources */,
 				3CF8D1A723CFCED200061AF1 /* PasswordViewController.swift in Sources */,
+				2D144AE32432808A002EF3FD /* Category.swift in Sources */,
 				2D5F026D2428E88D00760CB2 /* BasicAuth.Service.swift in Sources */,
 				2DE3038C2430011F00A58166 /* EmptyViewController.swift in Sources */,
 				2DE3038A2430011F00A58166 /* StateViewController.swift in Sources */,
@@ -712,10 +720,10 @@
 				2D531EBB242C09D90001F507 /* RegisterViewController.swift in Sources */,
 				2D95D884242FC04D0082D650 /* FilterItemCell.swift in Sources */,
 				2D10A89C242FEBB00065A420 /* FiltersContainerViewController.swift in Sources */,
-				2D4FA0342430E48B00CBFE65 /* AnimalsListModel.swift in Sources */,
-				2D531EC7242C114A0001F507 /* AnimalDetails.swift in Sources */,
+				2D531EC7242C114A0001F507 /* Details.swift in Sources */,
+				2D144AE5243281FD002EF3FD /* Start.swift in Sources */,
 				2DD7A4F12427AC690029CC49 /* Root.swift in Sources */,
-				2D4FA02C2430E0A000CBFE65 /* Categories.swift in Sources */,
+				2D4FA02C2430E0A000CBFE65 /* Creature.swift in Sources */,
 				2D2F76AF2427C0F7001F3222 /* BasicAuthViewController.swift in Sources */,
 				2D3FCF5423BB6F47001E3704 /* LoginViewController.swift in Sources */,
 				2D1903272428949500EFC007 /* Search.swift in Sources */,
