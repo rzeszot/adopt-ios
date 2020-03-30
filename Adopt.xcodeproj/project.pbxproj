@@ -16,6 +16,7 @@
 		2D08E4A124310C1F00A5E7BB /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 2D08E4A024310C1F00A5E7BB /* Cache */; };
 		2D08E4A324310C2200A5E7BB /* Session in Frameworks */ = {isa = PBXBuildFile; productRef = 2D08E4A224310C2200A5E7BB /* Session */; };
 		2D10A89C242FEBB00065A420 /* FiltersContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D10A89B242FEBB00065A420 /* FiltersContainerViewController.swift */; };
+		2D144ADE24327721002EF3FD /* AnimalsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D144ADD24327721002EF3FD /* AnimalsService.swift */; };
 		2D19031F24288F4700EFC007 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D19031E24288F4700EFC007 /* ExampleTests.swift */; };
 		2D1903272428949500EFC007 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1903262428949500EFC007 /* Search.swift */; };
 		2D190329242894D900EFC007 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D190328242894D900EFC007 /* Search.storyboard */; };
@@ -118,6 +119,7 @@
 		2D002E7F2427D0F700639347 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2D002E812427D11400639347 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		2D10A89B242FEBB00065A420 /* FiltersContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersContainerViewController.swift; sourceTree = "<group>"; };
+		2D144ADD24327721002EF3FD /* AnimalsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsService.swift; sourceTree = "<group>"; };
 		2D19031C24288F4700EFC007 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D19031E24288F4700EFC007 /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		2D19032024288F4700EFC007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 				2D531EC8242C118D0001F507 /* Animal.storyboard */,
 				2D84874D242CC58000110856 /* Animal - List */,
 				2D531EC3242C11220001F507 /* Animal - Details */,
+				2D144ADD24327721002EF3FD /* AnimalsService.swift */,
 			);
 			path = Animal;
 			sourceTree = "<group>";
@@ -698,6 +701,7 @@
 				2DD7A4F52427ADD50029CC49 /* UIStoryboard.swift in Sources */,
 				2D4FA0302430E0BB00CBFE65 /* CategoriesViewController.swift in Sources */,
 				2D002E802427D0F700639347 /* Home.swift in Sources */,
+				2D144ADE24327721002EF3FD /* AnimalsService.swift in Sources */,
 				2DD7A4F72427B0670029CC49 /* PrimaryButton.swift in Sources */,
 				3CF8D1A723CFCED200061AF1 /* PasswordViewController.swift in Sources */,
 				2D5F026D2428E88D00760CB2 /* BasicAuth.Service.swift in Sources */,

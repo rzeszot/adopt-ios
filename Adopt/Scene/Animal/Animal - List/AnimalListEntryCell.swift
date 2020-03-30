@@ -46,20 +46,24 @@ class AnimalListEntryCell: UICollectionViewCell {
     func configure(item: Item) {
         titleLabel.text = item.name
 
-        source = item.thumbnail
+//        source = item.thumbnail
 
-        let session = URLSession.shared
-        let task = session.dataTask(with: item.thumbnail) { [weak self] data, _, _ in
-            guard let data = data else { return }
-            guard let image = UIImage(data: data) else { return }
+        if let source = source {
+            let session = URLSession.shared
+            let task = session.dataTask(with: source) { [weak self] data, _, _ in
+                guard let data = data else { return }
+                guard let image = UIImage(data: data) else { return }
 
-            DispatchQueue.main.async {
-                if self?.source == item.thumbnail {
-                    self?.imageView.image = image
+                DispatchQueue.main.async {
+                    if self?.source == item.thumbnail {
+                        self?.imageView.image = image
+                    }
                 }
             }
+            task.resume()
+        } else {
+            imageView.image = nil
         }
-        task.resume()
     }
 
 }

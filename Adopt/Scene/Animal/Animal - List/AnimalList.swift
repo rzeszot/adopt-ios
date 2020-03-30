@@ -7,13 +7,15 @@ import UIKit
 struct AnimalList {
     struct Dependency {
         let categories: CategoriesModel
+        let animals: AnimalsListModel
+
         let details: () -> Void
         let category: (CategoriesModel.Category) -> Void
     }
 
     static func build(dependency: Dependency) -> UIViewController {
         let root: AnimalListViewController = UIStoryboard.instantiate(name: "Animal", identifier: "list")
-        root.model = AnimalsListModel(categories: AnimalsListModel.Categories(dependency.categories))
+        root.model = dependency.animals
         root.details = dependency.details
         root.category = dependency.category
 
@@ -24,15 +26,15 @@ struct AnimalList {
     }
 }
 
-private extension AnimalsListModel.Categories {
-    init(_ categories: CategoriesModel) {
-        self.items = categories.categories.map(AnimalsListModel.Category.init)
-    }
-}
-
-private extension AnimalsListModel.Category {
-    init(_ value: CategoriesModel.Category) {
-        id = value.id
-        name = value.name
-    }
-}
+//private extension AnimalsListModel {
+//    init(_ categories: CategoriesModel) {
+//        self.items = categories.categories.map(AnimalsListModel.Category.init)
+//    }
+//}
+//
+//private extension AnimalsListModel.Category {
+//    init(_ value: CategoriesModel.Category) {
+//        id = value.id
+//        name = value.name
+//    }
+//}

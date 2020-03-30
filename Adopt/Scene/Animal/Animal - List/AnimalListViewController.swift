@@ -31,12 +31,12 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
             switch indexPath.section {
             case 0:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "category", for: indexPath)
-                (cell as? CategoryCell)?.titleLabel.text = self.model.categories.items[indexPath.row].name
+                (cell as? CategoryCell)?.titleLabel.text = self.model.categories.categories[indexPath.row].name
                 return cell
 
             case 1:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "animal", for: indexPath)
-                (cell as? AnimalListEntryCell)?.configure(item: self.model.animals.items[indexPath.row])
+                (cell as? AnimalListEntryCell)?.configure(item: self.model.animals[indexPath.row])
                 return cell
 
             default:
@@ -52,9 +52,9 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
 
         var snapshot = NSDiffableDataSourceSnapshot<String, String>()
         snapshot.appendSections(["categories"])
-        snapshot.appendItems(model.categories.items.map { $0.id })
+        snapshot.appendItems(model.categories.categories.map { $0.id })
         snapshot.appendSections(["animals"])
-        snapshot.appendItems(model.animals.items.map { $0.id.uuidString })
+        snapshot.appendItems(model.animals.map { $0.id })
         source.apply(snapshot)
 
         collectionView.collectionViewLayout = UICollectionViewCompositionalLayout.create(for: model)
@@ -65,7 +65,7 @@ class AnimalListViewController: UIViewController, UICollectionViewDelegate, UISe
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            let xxx = model.categories.items[indexPath.row]
+            let xxx = model.categories.categories[indexPath.row]
 
             category(CategoriesModel.Category(id: xxx.id, name: xxx.name))
         } else {

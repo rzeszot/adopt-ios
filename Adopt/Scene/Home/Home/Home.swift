@@ -4,6 +4,11 @@
 
 import UIKit
 
+struct StartModel {
+    let categories: CategoriesModel
+    let animals: AnimalsListModel
+}
+
 struct Home {
     struct Dependency {
         let logout: () -> Void
@@ -20,13 +25,13 @@ struct Home {
     }
 }
 
-class AnimalsContainerViewController: StateViewController<CategoriesModel> {
+class AnimalsContainerViewController: StateViewController<StartModel> {
 
     var service: StartService!
 
-    override func transform(_ state: State<CategoriesModel>) -> UIViewController {
+    override func transform(_ state: State<StartModel>) -> UIViewController {
         if case .data(let model) = state {
-            return AnimalList.build(dependency: AnimalList.Dependency(categories: model, details: { [unowned self] in
+            return AnimalList.build(dependency: AnimalList.Dependency(categories: model.categories, animals: model.animals, details: { [unowned self] in
                 let vc = AnimalDetails.build()
                 self.show(vc, sender: nil)
             }, category: { [unowned self] category in
@@ -59,14 +64,14 @@ class AnimalsContainerViewController: StateViewController<CategoriesModel> {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
 
         if let success = service.load() {
-            self.change(.data(CategoriesModel(success)))
+            self.change(.data(StartModel(success)))
         } else {
             change(.loading)
 
             service.fetch(completion: DispatchQueue.main.wrap { result in
                 switch result {
                 case .success(let success):
-                    self.change(.data(CategoriesModel(success)))
+                    self.change(.data(StartModel(success)))
                 case .failure(let error):
                     self.change(.error(error))
                 }
@@ -75,9 +80,18 @@ class AnimalsContainerViewController: StateViewController<CategoriesModel> {
     }
 }
 
-private extension CategoriesModel {
+private extension StartModel {
     init(_ success: StartService.Success) {
-        self.categories = success.categories
+        self.categories = CategoriesModel(categories: success.categories)
+        self.animals = AnimalsListModel(categories: self.categories, animals: success.animals.map(AnimalsListModel.Animal.init))
+    }
+}
+
+private extension AnimalsListModel.Animal {
+    init(_ success: AnimalsService.Success.Animal) {
+        id = success.id
+        name = success.name
+        thumbnail = nil
     }
 }
 

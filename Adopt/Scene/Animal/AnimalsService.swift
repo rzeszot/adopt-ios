@@ -5,17 +5,25 @@
 import Foundation
 import Cache
 
-class StartService {
+class AnimalsService {
 
     // MARK: -
 
     struct Success: Decodable {
-        struct Category: Decodable {
+        struct Animal: Decodable {
+            enum Gender: String, Decodable {
+                case male = "gender-male"
+                case female = "gender-female"
+                case unknown = "gender-unknown"
+            }
+
             let id: String
             let name: String
+            let breed: String?
+            let gender: Gender
+            let content: String
         }
-        let categories: [Category]
-        let animals: [AnimalsService.Success.Animal]
+        let animals: [Animal]
     }
 
     enum Failure: Error {
@@ -49,7 +57,7 @@ class StartService {
         let complete = DispatchQueue.main.wrap(completion)
         let request = URLRequest(url: url)
 
-        print("Start | fetch")
+        print("Filters | fetch \(url)")
 
         let task = session.dataTask(with: request) { data, response, error in
             if let data = data, let response = response as? HTTPURLResponse {
