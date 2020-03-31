@@ -39,10 +39,8 @@ class RecentEntryCell: UICollectionViewCell {
 
     // MARK: -
 
-    typealias Item = Recent.Animal
-
-    func configure(item: Item) {
-        titleLabel.text = item.name
+    func configure(image: UIImage?) {
+        imageView.image = image
     }
 
 }

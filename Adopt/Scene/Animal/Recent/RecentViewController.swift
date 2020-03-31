@@ -139,3 +139,9 @@ private extension NSCollectionLayoutBoundarySupplementaryItem {
         return NSCollectionLayoutBoundarySupplementaryItem(layoutSize: size, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
     }
 }
+
+extension RecentEntryCell {
+    func configure(item: Recent.Animal) {
+        titleLabel.text = item.name
+    }
+}

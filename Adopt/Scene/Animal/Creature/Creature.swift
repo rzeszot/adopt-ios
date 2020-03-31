@@ -34,9 +34,7 @@ struct Creature {
 
             let id: String
             let name: String
-            let breed: String?
-            let gender: Gender
-            let content: String
+            let thumbnail: URL?
         }
         let animals: [Animal]
     }

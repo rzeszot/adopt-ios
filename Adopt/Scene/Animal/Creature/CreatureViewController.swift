@@ -32,11 +32,33 @@ class CreatureViewController: UIViewController, UICollectionViewDataSource, UICo
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        (cell as? RecentEntryCell)?.titleLabel.text = model.animals[indexPath.row].name
+        if let cell = cell as? RecentEntryCell {
+            cell.configure(item: model.animals[indexPath.row])
+        }
         return cell
     }
 
     // MARK: - UICollectionViewDelegate
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let cell = cell as? RecentEntryCell  else { return }
+        cell.imageView.image = nil
+
+        guard let url = model.animals[indexPath.row].thumbnail else { return }
+
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            guard let data = data,
+                let image = UIImage(data: data) else { return }
+
+            DispatchQueue.main.async {
+                (collectionView.cellForItem(at: indexPath) as? RecentEntryCell)?.imageView.image = image
+            }
+        }.resume()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+
+    }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         select()
@@ -68,5 +90,11 @@ private extension NSCollectionLayoutSection {
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
 
         return section
+    }
+}
+
+extension RecentEntryCell {
+    func configure(item: Creature.Animal) {
+        titleLabel.text = item.name
     }
 }
