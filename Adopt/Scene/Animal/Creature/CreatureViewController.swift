@@ -3,6 +3,7 @@
 //
 
 import UIKit
+import Cache
 
 class CreatureViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
@@ -40,20 +41,27 @@ class CreatureViewController: UIViewController, UICollectionViewDataSource, UICo
 
     // MARK: - UICollectionViewDelegate
 
+    let cache = Cache<URL, UIImage>()
+
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let cell = cell as? RecentEntryCell  else { return }
         cell.imageView.image = nil
 
         guard let url = model.animals[indexPath.row].thumbnail else { return }
 
-        URLSession.shared.dataTask(with: url) { data, _, _ in
-            guard let data = data,
-                let image = UIImage(data: data) else { return }
+        if let image = cache[url] {
+            cell.imageView.image = image
+        } else {
+            URLSession.shared.dataTask(with: url) { data, _, _ in
+                guard let data = data,
+                    let image = UIImage(data: data) else { return }
 
-            DispatchQueue.main.async {
-                (collectionView.cellForItem(at: indexPath) as? RecentEntryCell)?.imageView.image = image
-            }
-        }.resume()
+                DispatchQueue.main.async {
+                    self.cache[url] = image
+                    (collectionView.cellForItem(at: indexPath) as? RecentEntryCell)?.imageView.image = image
+                }
+            }.resume()
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
