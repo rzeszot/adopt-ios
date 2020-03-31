@@ -26,7 +26,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="category" id="4WA-Oe-17K" customClass="CategoryCell" customModule="Adopt" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="category" id="4WA-Oe-17K" customClass="RecentCategoryCell" customModule="Adopt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="161" width="200" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DIV-l6-qV5">

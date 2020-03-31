@@ -31,8 +31,8 @@ class RecentViewController: UIViewController, UICollectionViewDelegate, UISearch
             switch indexPath.section {
             case 0:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "category", for: indexPath)
-                (cell as? CategoryCell)?.titleLabel.text = self.model.categories[indexPath.row].name
-                (cell as? CategoryCell)?.subtitleLabel.text = String(self.model.categories[indexPath.row].count)
+                (cell as? RecentCategoryCell)?.titleLabel.text = self.model.categories[indexPath.row].name
+                (cell as? RecentCategoryCell)?.subtitleLabel.text = String(self.model.categories[indexPath.row].count)
                 return cell
 
             case 1:

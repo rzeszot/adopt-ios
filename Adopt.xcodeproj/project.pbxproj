@@ -36,9 +36,9 @@
 		2D4F0F0A242D61E1006C75BB /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F09242D61E1006C75BB /* SearchHeaderView.swift */; };
 		2D4F0F0C242D6396006C75BB /* SearchHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F0B242D6396006C75BB /* SearchHistoryCell.swift */; };
 		2D4F0F0E242D63A9006C75BB /* SearchRecentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F0D242D63A9006C75BB /* SearchRecentCell.swift */; };
-		2D4F0F15242D7605006C75BB /* AnimalListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F14242D7605006C75BB /* AnimalListHeaderView.swift */; };
-		2D4F0F17242D768C006C75BB /* AnimalListEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F16242D768C006C75BB /* AnimalListEntryCell.swift */; };
-		2D4F0F19242D7D78006C75BB /* AnimalListCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F18242D7D78006C75BB /* AnimalListCategoryCell.swift */; };
+		2D4F0F15242D7605006C75BB /* RecentHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F14242D7605006C75BB /* RecentHeaderView.swift */; };
+		2D4F0F17242D768C006C75BB /* RecentEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F16242D768C006C75BB /* RecentEntryCell.swift */; };
+		2D4F0F19242D7D78006C75BB /* RecentCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F0F18242D7D78006C75BB /* RecentCategoryCell.swift */; };
 		2D4FA02C2430E0A000CBFE65 /* Creature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA02B2430E0A000CBFE65 /* Creature.swift */; };
 		2D4FA02E2430E0AB00CBFE65 /* Creature.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D4FA02D2430E0AB00CBFE65 /* Creature.storyboard */; };
 		2D4FA0302430E0BB00CBFE65 /* CreatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4FA02F2430E0BB00CBFE65 /* CreatureViewController.swift */; };
@@ -143,9 +143,9 @@
 		2D4F0F09242D61E1006C75BB /* SearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeaderView.swift; sourceTree = "<group>"; };
 		2D4F0F0B242D6396006C75BB /* SearchHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryCell.swift; sourceTree = "<group>"; };
 		2D4F0F0D242D63A9006C75BB /* SearchRecentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecentCell.swift; sourceTree = "<group>"; };
-		2D4F0F14242D7605006C75BB /* AnimalListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListHeaderView.swift; sourceTree = "<group>"; };
-		2D4F0F16242D768C006C75BB /* AnimalListEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListEntryCell.swift; sourceTree = "<group>"; };
-		2D4F0F18242D7D78006C75BB /* AnimalListCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListCategoryCell.swift; sourceTree = "<group>"; };
+		2D4F0F14242D7605006C75BB /* RecentHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentHeaderView.swift; sourceTree = "<group>"; };
+		2D4F0F16242D768C006C75BB /* RecentEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentEntryCell.swift; sourceTree = "<group>"; };
+		2D4F0F18242D7D78006C75BB /* RecentCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCategoryCell.swift; sourceTree = "<group>"; };
 		2D4FA02B2430E0A000CBFE65 /* Creature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creature.swift; sourceTree = "<group>"; };
 		2D4FA02D2430E0AB00CBFE65 /* Creature.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Creature.storyboard; sourceTree = "<group>"; };
 		2D4FA02F2430E0BB00CBFE65 /* CreatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureViewController.swift; sourceTree = "<group>"; };
@@ -422,9 +422,9 @@
 			children = (
 				2D84874E242CC58F00110856 /* Recent.swift */,
 				2D848750242CC5C200110856 /* RecentViewController.swift */,
-				2D4F0F18242D7D78006C75BB /* AnimalListCategoryCell.swift */,
-				2D4F0F16242D768C006C75BB /* AnimalListEntryCell.swift */,
-				2D4F0F14242D7605006C75BB /* AnimalListHeaderView.swift */,
+				2D4F0F18242D7D78006C75BB /* RecentCategoryCell.swift */,
+				2D4F0F16242D768C006C75BB /* RecentEntryCell.swift */,
+				2D4F0F14242D7605006C75BB /* RecentHeaderView.swift */,
 			);
 			path = Recent;
 			sourceTree = "<group>";
@@ -677,20 +677,20 @@
 				2D2B44A32427C82400BECB25 /* Build.swift.sh in Sources */,
 				2D002E822427D11400639347 /* Profile.swift in Sources */,
 				2D4F0F0C242D6396006C75BB /* SearchHistoryCell.swift in Sources */,
-				2D4F0F15242D7605006C75BB /* AnimalListHeaderView.swift in Sources */,
+				2D4F0F15242D7605006C75BB /* RecentHeaderView.swift in Sources */,
 				2D2B449F2427C7C800BECB25 /* Bundle.swift in Sources */,
 				2D002E732427CDC900639347 /* Dashboard.swift in Sources */,
 				2DE3038B2430011F00A58166 /* ErrorViewController.swift in Sources */,
 				2D95D87A242F822E0082D650 /* Filters.swift in Sources */,
 				2D95D888242FDB4B0082D650 /* FiltersCollectionViewFlowLayout.swift in Sources */,
-				2D4F0F17242D768C006C75BB /* AnimalListEntryCell.swift in Sources */,
+				2D4F0F17242D768C006C75BB /* RecentEntryCell.swift in Sources */,
 				2D443B2323BCF5C2007BFEEE /* BasicAuth.swift in Sources */,
 				2DE303892430011F00A58166 /* LoadingViewController.swift in Sources */,
 				2D95D886242FC05F0082D650 /* FilterHeaderView.swift in Sources */,
 				2D4F0F0A242D61E1006C75BB /* SearchHeaderView.swift in Sources */,
 				2DBC3B562427A8280070894C /* RootViewController.swift in Sources */,
 				2D002E7C2427CFB200639347 /* HomeViewController.swift in Sources */,
-				2D4F0F19242D7D78006C75BB /* AnimalListCategoryCell.swift in Sources */,
+				2D4F0F19242D7D78006C75BB /* RecentCategoryCell.swift in Sources */,
 				2D84874F242CC58F00110856 /* Recent.swift in Sources */,
 				2D5F02722428E9AE00760CB2 /* SettingsAppearance.swift in Sources */,
 				2D002E7E2427CFBE00639347 /* ProfileViewController.swift in Sources */,

@@ -4,7 +4,7 @@
 
 import UIKit
 
-class CategoryCell: UICollectionViewCell {
+class RecentCategoryCell: UICollectionViewCell {
 
     @IBOutlet
     var titleLabel: UILabel!
