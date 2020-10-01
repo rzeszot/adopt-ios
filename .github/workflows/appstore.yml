@@ -1,0 +1,17 @@
+name: Publish to App Store
+
+on: push
+
+jobs:
+  publish:
+    name: Publish on TestFlight
+    runs-on: macos-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Setup Provisioning Profile
+        uses: rzeszot/action-copy-provisioning-profile@master
+        with:
+          path: .github/appstore/Adopt.mobileprovision
