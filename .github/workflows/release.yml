@@ -1,6 +1,9 @@
-name: Publish to App Store
+name: Release
 
-on: push
+on:
+  push:
+    branches:
+      - 'release/**'
 
 env:
   workspace: Adopt.xcworkspace
