@@ -20,8 +20,6 @@ jobs:
 
       - name: Copy Provisioning Profile
         uses: rzeszot/action-copy-provisioning-profile@v2
-        with:
-          path: .github/appstore/Adopt.mobileprovision
 
       - name: Install Certificate
         uses: rzeszot/action-install-certificate@main
