@@ -11,7 +11,7 @@ env:
 
 jobs:
   publish:
-    name: Publish on TestFlight
+    name: Publish on AppStore
     runs-on: macos-latest
     timeout-minutes: 10
     steps:
@@ -29,7 +29,20 @@ jobs:
 
       - name: Update version
         run: |
-          echo ${{ github.ref }}
+          string=`basename ${{ github.ref }}`
+
+          cd $scheme
+
+          if [[ $string == *"+"* ]]; then
+            version=${string%+*}
+            build=${string#*+}
+          else
+            version=$string
+            build=1
+          fi
+
+          agvtool new-marketing-version $version
+          agvtool new-version $build
 
       - name: Archive
         env:
