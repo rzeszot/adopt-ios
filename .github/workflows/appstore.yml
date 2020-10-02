@@ -30,3 +30,13 @@ jobs:
         run: |
           xcodebuild -workspace $workspace -scheme $scheme -resolvePackageDependencies
           xcodebuild -workspace $workspace -scheme $scheme -archivePath build/app.xcarchive archive
+
+          xcodebuild -exportArchive -archivePath build/app.xcarchive -exportPath build/app -exportOptionsPlist .github/appstore/export-options.plist
+
+      - name: Upload to App Store
+        uses: rzeszot/action-upload-to-appstore@main
+        with:
+          ipa_path: build/app/$scheme.ipa
+          appstore_issuer: ${{ secrets.appstore_issuer }}
+          appstore_key_id: ${{ secrets.appstore_key_id }}
+          appstore_key_content: ${{ secrets.appstore_key_content }}
