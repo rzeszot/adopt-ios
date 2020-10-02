@@ -30,6 +30,8 @@ jobs:
           certificate_password: ${{ secrets.certificate_password }}
 
       - name: Archive
+        env:
+          DEVELOPER_DIR: /Applications/Xcode_12.2.app/Contents/Developer
         run: |
           xcodebuild -workspace $workspace -scheme $scheme -resolvePackageDependencies
           xcodebuild -workspace $workspace -scheme $scheme -archivePath build/app.xcarchive archive
