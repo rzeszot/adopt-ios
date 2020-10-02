@@ -27,6 +27,10 @@ jobs:
           certificate_content: ${{ secrets.certificate_content }}
           certificate_password: ${{ secrets.certificate_password }}
 
+      - name: Update version
+        run: |
+          echo ${{ github.ref }}
+
       - name: Archive
         env:
           DEVELOPER_DIR: /Applications/Xcode_12.2.app/Contents/Developer
