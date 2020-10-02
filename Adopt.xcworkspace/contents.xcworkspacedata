@@ -12,6 +12,9 @@
       </FileRef>
    </Group>
    <FileRef
+      location = "group:Adopt/Adopt.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Cache">
    </FileRef>
    <FileRef
@@ -19,8 +22,5 @@
    </FileRef>
    <FileRef
       location = "group:Specification">
-   </FileRef>
-   <FileRef
-      location = "group:Adopt.xcodeproj">
    </FileRef>
 </Workspace>
