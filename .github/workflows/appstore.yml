@@ -2,6 +2,10 @@ name: Publish to App Store
 
 on: push
 
+env:
+  workspace: Adopt.xcworkspace
+  scheme: Adopt
+
 jobs:
   publish:
     name: Publish on TestFlight
@@ -24,7 +28,5 @@ jobs:
 
       - name: Archive
         run: |
-          xcodebuild clean archive -scheme $scheme -archivePath build/app.xcarchive | xcpretty && exit ${PIPESTATUS[0]}
-        env:
-            scheme: Adopt
-
+          xcodebuild -workspace $workspace -scheme $scheme -resolvePackageDependencies
+          xcodebuild -workspace $workspace -scheme $scheme -archivePath build/app.xcarchive archive
