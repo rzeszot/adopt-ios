@@ -16,7 +16,8 @@ class ConversationViewController: UIViewController {
       input.view.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
       input.view.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
       input.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).set(priority: UILayoutPriority(100)),
-      input.view.bottomAnchor.constraint(equalTo: view.awesomeKeyboardLayoutGuide.topAnchor)
+      input.view.bottomAnchor.constraint(equalTo: view.awesomeKeyboardLayoutGuide.topAnchor),
+      input.view.heightAnchor.constraint(lessThanOrEqualToConstant: 150)
     ])
 
     input.didMove(toParent: self)
@@ -24,7 +25,7 @@ class ConversationViewController: UIViewController {
 
   override func loadView() {
     view = UIView()
-    view.backgroundColor = .systemYellow
+    view.backgroundColor = .systemBackground
 
     view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backgroundAction)))
   }
@@ -34,4 +35,3 @@ class ConversationViewController: UIViewController {
   }
 
 }
-

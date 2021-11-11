@@ -2,7 +2,7 @@ import UIKit
 
 public struct Chat {
   public static func build() -> UIViewController {
-    let vc = ListViewController()
+    let vc = ConversationViewController()
 
     return vc
   }
@@ -13,6 +13,3 @@ public struct Chat {
     return root
   }
 }
-
-
-
