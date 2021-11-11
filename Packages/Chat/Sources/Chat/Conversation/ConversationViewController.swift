@@ -1,4 +1,5 @@
 import UIKit
+import AwesomeKeyboardLayoutGuide
 
 class ConversationViewController: UIViewController {
 
@@ -14,12 +15,11 @@ class ConversationViewController: UIViewController {
     NSLayoutConstraint.activate([
       input.view.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
       input.view.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
-      input.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).set(priority: .defaultLow),
-      view.keyboardLayoutGuide.topAnchor.constraint(equalTo: input.view.bottomAnchor)
+      input.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).set(priority: UILayoutPriority(100)),
+      input.view.bottomAnchor.constraint(equalTo: view.awesomeKeyboardLayoutGuide.topAnchor)
     ])
 
     input.didMove(toParent: self)
-
   }
 
   override func loadView() {
@@ -34,3 +34,4 @@ class ConversationViewController: UIViewController {
   }
 
 }
+

@@ -10,7 +10,10 @@ let package = Package(
   products: [
     .library(name: "Chat", targets: ["Chat"])
   ],
+  dependencies: [
+    .package(name: "AwesomeKeyboardLayoutGuide", url: "git@github.com:rzeszot/swift-awesome-keyboard-layout-guide.git", branch: "main")
+  ],
   targets: [
-    .target(name: "Chat")
+    .target(name: "Chat", dependencies: ["AwesomeKeyboardLayoutGuide"])
   ]
 )

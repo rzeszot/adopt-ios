@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AwesomeKeyboardLayoutGuide",
+        "repositoryURL": "git@github.com:rzeszot/swift-awesome-keyboard-layout-guide.git",
+        "state": {
+          "branch": "main",
+          "revision": "3d64ff24c68550fb3bc11259cdbe630a67d1e372",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
