@@ -12,6 +12,7 @@
 		626573A227233BB600BCE47D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 626573A127233BB600BCE47D /* Assets.xcassets */; };
 		626573A527233BB600BCE47D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 626573A327233BB600BCE47D /* LaunchScreen.storyboard */; };
 		62A24FC3273C69B50009136B /* Welcome in Frameworks */ = {isa = PBXBuildFile; productRef = 62A24FC2273C69B50009136B /* Welcome */; };
+		62DF943E273C99F600760582 /* Chat in Frameworks */ = {isa = PBXBuildFile; productRef = 62DF943D273C99F600760582 /* Chat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		626573A427233BB600BCE47D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		626573A627233BB600BCE47D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62A24FC1273C68050009136B /* Welcome */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Welcome; sourceTree = "<group>"; };
+		62DF943C273C99B900760582 /* Chat */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chat; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62DF943E273C99F600760582 /* Chat in Frameworks */,
 				62A24FC3273C69B50009136B /* Welcome in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				62A24FC1273C68050009136B /* Welcome */,
+				62DF943C273C99B900760582 /* Chat */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
@@ -95,11 +99,13 @@
 			buildRules = (
 			);
 			dependencies = (
+				62DF9440273C99FD00760582 /* PBXTargetDependency */,
 				62A24FC5273C69BB0009136B /* PBXTargetDependency */,
 			);
 			name = Adopt;
 			packageProductDependencies = (
 				62A24FC2273C69B50009136B /* Welcome */,
+				62DF943D273C99F600760582 /* Chat */,
 			);
 			productName = spm;
 			productReference = 6265739527233BB500BCE47D /* Adopt.app */;
@@ -166,6 +172,10 @@
 		62A24FC5273C69BB0009136B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 62A24FC4273C69BB0009136B /* Welcome */;
+		};
+		62DF9440273C99FD00760582 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 62DF943F273C99FD00760582 /* Chat */;
 		};
 /* End PBXTargetDependency section */
 
@@ -384,6 +394,14 @@
 		62A24FC4273C69BB0009136B /* Welcome */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Welcome;
+		};
+		62DF943D273C99F600760582 /* Chat */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Chat;
+		};
+		62DF943F273C99FD00760582 /* Chat */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Chat;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
