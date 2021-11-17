@@ -11,8 +11,8 @@
 		6265739B27233BB500BCE47D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265739A27233BB500BCE47D /* SceneDelegate.swift */; };
 		626573A227233BB600BCE47D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 626573A127233BB600BCE47D /* Assets.xcassets */; };
 		626573A527233BB600BCE47D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 626573A327233BB600BCE47D /* LaunchScreen.storyboard */; };
-		62A24FC3273C69B50009136B /* Welcome in Frameworks */ = {isa = PBXBuildFile; productRef = 62A24FC2273C69B50009136B /* Welcome */; };
-		62DF943E273C99F600760582 /* Chat in Frameworks */ = {isa = PBXBuildFile; productRef = 62DF943D273C99F600760582 /* Chat */; };
+		629CCCBC27405471003D0855 /* SignIn in Resources */ = {isa = PBXBuildFile; fileRef = 629CCCBB27405471003D0855 /* SignIn */; };
+		629CCCC427405C94003D0855 /* SignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 629CCCC327405C94003D0855 /* SignIn */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +22,7 @@
 		626573A127233BB600BCE47D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		626573A427233BB600BCE47D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		626573A627233BB600BCE47D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		629CCCBB27405471003D0855 /* SignIn */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SignIn; sourceTree = "<group>"; };
 		62A24FC1273C68050009136B /* Welcome */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Welcome; sourceTree = "<group>"; };
 		62DF943C273C99B900760582 /* Chat */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chat; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -31,8 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62DF943E273C99F600760582 /* Chat in Frameworks */,
-				62A24FC3273C69B50009136B /* Welcome in Frameworks */,
+				629CCCC427405C94003D0855 /* SignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +79,7 @@
 		62CC9D372724C7680000092B /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				629CCCBB27405471003D0855 /* SignIn */,
 				62A24FC1273C68050009136B /* Welcome */,
 				62DF943C273C99B900760582 /* Chat */,
 			);
@@ -99,13 +100,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				62DF9440273C99FD00760582 /* PBXTargetDependency */,
-				62A24FC5273C69BB0009136B /* PBXTargetDependency */,
+				629CCCC227405C90003D0855 /* PBXTargetDependency */,
 			);
 			name = Adopt;
 			packageProductDependencies = (
-				62A24FC2273C69B50009136B /* Welcome */,
-				62DF943D273C99F600760582 /* Chat */,
+				629CCCC327405C94003D0855 /* SignIn */,
 			);
 			productName = spm;
 			productReference = 6265739527233BB500BCE47D /* Adopt.app */;
@@ -149,6 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				629CCCBC27405471003D0855 /* SignIn in Resources */,
 				626573A527233BB600BCE47D /* LaunchScreen.storyboard in Resources */,
 				626573A227233BB600BCE47D /* Assets.xcassets in Resources */,
 			);
@@ -169,13 +169,9 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		62A24FC5273C69BB0009136B /* PBXTargetDependency */ = {
+		629CCCC227405C90003D0855 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = 62A24FC4273C69BB0009136B /* Welcome */;
-		};
-		62DF9440273C99FD00760582 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 62DF943F273C99FD00760582 /* Chat */;
+			productRef = 629CCCC127405C90003D0855 /* SignIn */;
 		};
 /* End PBXTargetDependency section */
 
@@ -387,21 +383,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		62A24FC2273C69B50009136B /* Welcome */ = {
+		629CCCC127405C90003D0855 /* SignIn */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Welcome;
+			productName = SignIn;
 		};
-		62A24FC4273C69BB0009136B /* Welcome */ = {
+		629CCCC327405C94003D0855 /* SignIn */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Welcome;
-		};
-		62DF943D273C99F600760582 /* Chat */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Chat;
-		};
-		62DF943F273C99FD00760582 /* Chat */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Chat;
+			productName = SignIn;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

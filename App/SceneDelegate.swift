@@ -1,6 +1,7 @@
 import UIKit
-import Welcome
-import Chat
+//import Welcome
+//import Chat
+import SignIn
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -9,13 +10,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let scene = (scene as? UIWindowScene) else { return }
 
+    let vc = SignIn.Builder.build(Input())
+
 //    let vc = Welcome.build(Welcome.Input(privacy: {
 //      print("privacy")
 //    }, done: {
 //      print("done")
 //    }))
 
-    let vc = Chat.build()
+//    let vc = Chat.build()
 
     let window = UIWindow(windowScene: scene)
     window.rootViewController = vc

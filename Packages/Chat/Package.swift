@@ -11,7 +11,7 @@ let package = Package(
     .library(name: "Chat", targets: ["Chat"])
   ],
   dependencies: [
-    .package(name: "AwesomeKeyboardLayoutGuide", url: "git@github.com:rzeszot/swift-awesome-keyboard-layout-guide.git", branch: "main")
+    .package(name: "AwesomeKeyboardLayoutGuide", url: "https://github.com/rzeszot/swift-awesome-keyboard-layout-guide.git", branch: "main")
   ],
   targets: [
     .target(name: "Chat", dependencies: ["AwesomeKeyboardLayoutGuide"])

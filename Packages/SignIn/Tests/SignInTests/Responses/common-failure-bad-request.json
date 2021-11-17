@@ -1,0 +1,8 @@
+delay: 0.5
+---
+status: 400
+content-type: application/json
+---
+{
+  "error": "bad_request"
+}
