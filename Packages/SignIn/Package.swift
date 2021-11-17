@@ -11,10 +11,11 @@ let package = Package(
     .library(name: "SignIn", targets: ["SignIn"])
   ],
   dependencies: [
-    .package(name: "Mocky", url: "https://github.com/rzeszot/swift-http-mocky.git", branch: "main")
+    .package(name: "Mocky", url: "https://github.com/rzeszot/swift-http-mocky.git", branch: "main"),
+    .package(path: "Extraction/Unexpected")
   ],
   targets: [
-    .target(name: "SignIn"),
+    .target(name: "SignIn", dependencies: ["Unexpected"]),
     .testTarget(name: "SignInTests", dependencies: ["SignIn", "Mocky"])
   ]
 )
