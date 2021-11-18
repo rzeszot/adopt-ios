@@ -1,0 +1,9 @@
+delay: 0.1
+---
+status: 426
+content-type: application/json
+---
+{
+  "error": "upgrade_required",
+  "url": "https://adopt.rzeszot.pro/update-app/1.0.0"
+}

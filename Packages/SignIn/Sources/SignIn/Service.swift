@@ -1,12 +1,13 @@
 import Foundation
+import Networking
+import Unexpected
 
-class Service {
+protocol Response: Decodable {
+  static var code: Int { get }
+}
 
-  private let session: URLSession
-
-  init(session: URLSession = .shared) {
-    self.session = session
-  }
+struct Service {
+  let session: URLSession
 
   // MARK: -
 
@@ -15,42 +16,102 @@ class Service {
     let password: String
   }
 
-  struct Response: Codable {
+  // MARK: -
+
+  struct SuccessResponse: Response {
+    static var code = 201
+
     let token: String
+
+    enum CodingKeys: String, CodingKey {
+      case token = "access_token"
+    }
   }
 
-  enum Error: Swift.Error {
+  // MARK: -
 
+  struct UpgradeRequiredError: Response, Error {
+    static let code = 426
+    let url: URL
   }
+
+  struct ServiceUnavailable: Response, Error {
+    static let code = 503
+  }
+
+  struct InvalidCredentialsError: Response, Error {
+    static let code = 401
+  }
+
+  // MARK: -
 
   func login(_ payload: Request) -> URLRequest {
-    var request = URLRequest(url: URL(string: "https://adopt.rzeszot.pro/sessions")!)
+    var request = URLRequest(url: "https://adopt.rzeszot.pro/sessions")
     request.httpMethod = "POST"
-    request.httpBody = try? JSONEncoder().encode(payload)
-
+    request.httpBody = try! JSONEncoder().encode(payload)
     return request
   }
 
-  func login(_ payload: Request, completion: @escaping (Result<Response, Swift.Error>) -> Void) {
-    let task = session.dataTask(with: login(payload)) { data, response, error in
+  func login(_ payload: Request, completion: @escaping (Result<SuccessResponse, Error>) -> Void) {
+    let request = login(payload)
+
+    fetch(request) { data, response, error in
       if let error = error {
         completion(.failure(error))
-      } else if let response = response as? HTTPURLResponse {
-        if response.statusCode == 201, let data = data {
-          do {
-            let response = try JSONDecoder().decode(Response.self, from: data)
-            completion(.success(response))
-          } catch {
-            completion(.failure(error))
-          }
-        }
-      } else {
-        fatalError()
+        return
       }
+
+      let responses = self.response(for: response!.statusCode)
+      guard responses.count == 1 else {
+        print("unexpected | found \(responses.count) responses to check for \(request) with status code \(response!.statusCode)")
+        completion(.unexpected)
+        return
+      }
+      let response = responses[0]
+
+      do {
+        let decoder = JSONDecoder()
+        decoder.userInfo[.init(rawValue: "type")!] = response
+        let object = try decoder.decode(Wrapper.self, from: data ?? Data()).response
+
+        completion(.init(catching: {
+          if let success = object as? SuccessResponse {
+            return success
+          } else {
+            throw (object as? Error) ?? UnexpectedError()
+          }
+        }))
+      } catch {
+        completion(.failure(error))
+      }
+    }
+  }
+
+  private func response(for code: Int) -> [Response.Type] {
+    let responses: [Response.Type] = [
+      SuccessResponse.self,
+      UpgradeRequiredError.self,
+      ServiceUnavailable.self,
+      InvalidCredentialsError.self
+    ]
+
+    return responses.filter { $0.code == code }
+  }
+
+  private func fetch(_ request: URLRequest, completion: @escaping (Data?, HTTPURLResponse?, Error?) -> Void) {
+    let task = session.dataTask(with: request) { data, response, error in
+      completion(data, response as? HTTPURLResponse, error)
     }
     task.resume()
   }
 
 }
 
-//    OST  Create  201 (Created), 'Location' header with link to /customers/{id} containing new ID.?
+struct Wrapper: Decodable {
+  let response: Response
+
+  init(from decoder: Decoder) throws {
+    let type = decoder.userInfo[.init(rawValue: "type")!]! as! Response.Type
+    response = try type.init(from: decoder)
+  }
+}
