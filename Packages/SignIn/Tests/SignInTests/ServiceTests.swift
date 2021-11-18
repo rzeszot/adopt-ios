@@ -22,97 +22,83 @@ final class ServiceTests: XCTestCase {
 
   // MARK: -
 
-  func test_success() throws {
-    let exp = expectation(description: "request")
+  func test_request() {
+    let request = sut.login(username: "USERNAME", password: "PASSWORD")
 
-    mocky.post("/session") { env in
-      XCTAssertEqual(env.request.url?.absoluteString, "https://adopt.rzeszot.pro/sessions")
-      let payload = try! env.request.json(type: Service.Request.self)
-      XCTAssertEqual(payload?.login, "neo")
-      XCTAssertEqual(payload?.password, "wheresthewhiterabbit")
-    }
-
-    mocky.post("/session") { env in
-      env.load(from: "login-success.json", bundle: .module)
-    }
-
-    sut.login(.init(login: "neo", password: "wheresthewhiterabbit")) { result in
-      exp.fulfill()
-      guard case .success(let success) = result else { XCTFail(); return }
-
-      XCTAssertEqual(success.token, "ACCESS-TOKEN")
-    }
-
-    wait(for: [exp], timeout: 0.5)
+    XCTAssertEqual(request.url, "https://adopt.rzeszot.pro/sessions")
+    XCTAssertEqual(request.httpMethod, "POST")
+    XCTAssertNotNil(request.httpBody)
+    XCTAssertEqual(request.httpBody, """
+      {
+        "login" : "USERNAME",
+        "password" : "PASSWORD"
+      }
+      """.data(using: .utf8))
   }
 
   // MARK: -
 
-  func test_failure_invalid_credentials() throws {
-    let exp = expectation(description: "request")
+  func test_success() async throws {
+    mocky.post("/session") { env in
+      env.load(from: "login-success.json", bundle: .module)
+    }
 
+    let response = try await sut.perform(username: "USERNAME", password: "PASSWORD")
+    XCTAssertEqual(response.token, "ACCESS-TOKEN")
+  }
+
+  // MARK: -
+
+  func test_failure_invalid_credentials() async throws {
     mocky.post("/session") { env in
       env.load(from: "login-failure-invalid-credentials.json", bundle: .module)
     }
 
-    sut.login(.init(login: "neo", password: "wheresthewhiterabbit")) { result in
-      exp.fulfill()
-      guard case .failure(let error) = result else { XCTFail(); return }
-
+    do {
+      _ = try await sut.perform(username: "USERNAME", password: "PASSWORD")
+      XCTFail()
+    } catch {
       XCTAssertTrue(error is Service.InvalidCredentialsError)
     }
-
-    wait(for: [exp], timeout: 0.5)
   }
 
-  func test_failure_service_unavailable() throws {
-    let exp = expectation(description: "request")
-
+  func test_failure_service_unavailable() async throws {
     mocky.post("/session") { env in
       env.load(from: "common-failure-service-unavailable.json", bundle: .module)
     }
 
-    sut.login(.init(login: "neo", password: "wheresthewhiterabbit")) { result in
-      exp.fulfill()
-      guard case .failure(let error) = result else { XCTFail(); return }
-
+    do {
+      _ = try await sut.perform(username: "USERNAME", password: "PASSWORD")
+      XCTFail()
+    } catch {
       XCTAssertTrue(error is Service.ServiceUnavailable)
     }
-
-    wait(for: [exp], timeout: 0.5)
   }
 
-  func test_failure_update_required() throws {
-    let exp = expectation(description: "request")
-
+  func test_failure_upgrade_required() async throws {
     mocky.post("/session") { env in
       env.load(from: "common-failure-app-update-required.json", bundle: .module)
     }
 
-    sut.login(.init(login: "neo", password: "wheresthewhiterabbit")) { result in
-      exp.fulfill()
-      guard case .failure(let error) = result else { XCTFail(); return }
-
+    do {
+      _ = try await sut.perform(username: "USERNAME", password: "PASSWORD")
+      XCTFail()
+    } catch {
       XCTAssertTrue(error is Service.UpgradeRequiredError)
     }
-
-    wait(for: [exp], timeout: 0.5)
   }
 
-  func test_failure_unexpected() throws {
-    let exp = expectation(description: "request")
-
+  func test_failure_unexpected() async throws {
     mocky.post("/session") { env in
       env.load(from: "common-failure-unexpected.json", bundle: .module)
     }
 
-    sut.login(.init(login: "neo", password: "wheresthewhiterabbit")) { result in
-      exp.fulfill()
-      guard case .failure(let error) = result else { XCTFail(); return }
-
+    do {
+      _ = try await sut.perform(username: "USERNAME", password: "PASSWORD")
+      XCTFail()
+    } catch {
       XCTAssertTrue(error is UnexpectedError)
     }
-
-    wait(for: [exp], timeout: 0.5)
   }
+
 }

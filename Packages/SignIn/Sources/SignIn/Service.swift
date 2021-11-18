@@ -45,49 +45,38 @@ struct Service {
 
   // MARK: -
 
-  func login(_ payload: Request) -> URLRequest {
+  func login(username: String, password: String) -> URLRequest {
+    let encoder = JSONEncoder()
+    encoder.outputFormatting = [.sortedKeys, .prettyPrinted]
+
     var request = URLRequest(url: "https://adopt.rzeszot.pro/sessions")
     request.httpMethod = "POST"
-    request.httpBody = try! JSONEncoder().encode(payload)
+    request.httpBody = try! encoder.encode(Request(login: username, password: password))
     return request
   }
 
-  func login(_ payload: Request, completion: @escaping (Result<SuccessResponse, Error>) -> Void) {
-    let request = login(payload)
+  func perform(username: String, password: String) async throws -> SuccessResponse {
+    let request = login(username: username, password: password)
+    let (data, response) = try await fetch(request)
 
-    fetch(request) { data, response, error in
-      if let error = error {
-        completion(.failure(error))
-        return
-      }
+    guard let type = payload(for: response.statusCode) else {
+      throw UnexpectedError()
+    }
 
-      let responses = self.response(for: response!.statusCode)
-      guard responses.count == 1 else {
-        print("unexpected | found \(responses.count) responses to check for \(request) with status code \(response!.statusCode)")
-        completion(.unexpected)
-        return
-      }
-      let response = responses[0]
+    let decoder = JSONDecoder()
+    decoder.userInfo[.init(rawValue: "type")!] = type
+    let object = try decoder.decode(Wrapper.self, from: data).response
 
-      do {
-        let decoder = JSONDecoder()
-        decoder.userInfo[.init(rawValue: "type")!] = response
-        let object = try decoder.decode(Wrapper.self, from: data ?? Data()).response
-
-        completion(.init(catching: {
-          if let success = object as? SuccessResponse {
-            return success
-          } else {
-            throw (object as? Error) ?? UnexpectedError()
-          }
-        }))
-      } catch {
-        completion(.failure(error))
-      }
+    if let object = object as? SuccessResponse {
+      return object
+    } else if let object = object as? Error {
+      throw object
+    } else {
+      throw UnexpectedError()
     }
   }
 
-  private func response(for code: Int) -> [Response.Type] {
+  private func payload(for code: Int) -> Response.Type? {
     let responses: [Response.Type] = [
       SuccessResponse.self,
       UpgradeRequiredError.self,
@@ -95,14 +84,14 @@ struct Service {
       InvalidCredentialsError.self
     ]
 
-    return responses.filter { $0.code == code }
+    precondition(Set(responses.map { $0.code }).count == responses.count)
+
+    return responses.first { $0.code == code }
   }
 
-  private func fetch(_ request: URLRequest, completion: @escaping (Data?, HTTPURLResponse?, Error?) -> Void) {
-    let task = session.dataTask(with: request) { data, response, error in
-      completion(data, response as? HTTPURLResponse, error)
-    }
-    task.resume()
+  private func fetch(_ request: URLRequest) async throws -> (Data, HTTPURLResponse) {
+    let (data, response) = try await session.data(for: request)
+    return (data, response as! HTTPURLResponse)
   }
 
 }
