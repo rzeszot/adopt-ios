@@ -24,14 +24,9 @@ final class ParserTests: XCTestCase {
     XCTAssertEqual((object as? SuccessResponse)?.number, 42)
   }
 
-  func test_parse_accepted() throws {
-    let object = try sut.parse(response: .status(202), data: Fixture.success.data)
-    XCTAssertTrue(object is AcceptedResponse)
-  }
-
-  func test_parse_internal_server_error() throws {
+  func test_parse_unexpected_code() throws {
     do {
-      _ = try sut.parse(response: .status(500), data: Fixture.success.data)
+      _ = try sut.parse(response: .status(418), data: Fixture.success.data)
       XCTFail()
     } catch {
       XCTAssertTrue(error is UnexpectedError)
@@ -71,8 +66,8 @@ final class ParserTests: XCTestCase {
     XCTAssertNotNil(type)
   }
 
-  func test_type_internal_server_error() {
-    let type = sut.type(for: .status(500))
+  func test_type_unexpected() {
+    let type = sut.type(for: .status(418))
     XCTAssertNil(type)
   }
 

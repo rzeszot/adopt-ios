@@ -58,7 +58,7 @@ final class ServiceTests: XCTestCase {
       _ = try await sut.perform(username: "USERNAME", password: "PASSWORD")
       XCTFail()
     } catch {
-      XCTAssertTrue(error is Service.InvalidCredentialsError)
+      XCTAssertTrue(error is Service.InvalidCredentialsResponse)
     }
   }
 
@@ -71,7 +71,7 @@ final class ServiceTests: XCTestCase {
       _ = try await sut.perform(username: "USERNAME", password: "PASSWORD")
       XCTFail()
     } catch {
-      XCTAssertTrue(error is Service.ServiceUnavailable)
+      XCTAssertTrue(error is Service.ServiceUnavailableResponse)
     }
   }
 
@@ -84,7 +84,7 @@ final class ServiceTests: XCTestCase {
       _ = try await sut.perform(username: "USERNAME", password: "PASSWORD")
       XCTFail()
     } catch {
-      XCTAssertTrue(error is Service.UpgradeRequiredError)
+      XCTAssertTrue(error is Service.UpgradeRequiredResponse)
     }
   }
 

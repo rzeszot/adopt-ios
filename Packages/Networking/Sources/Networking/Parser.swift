@@ -5,14 +5,17 @@ public protocol Response: Decodable {
   static var code: Int { get }
 }
 
-
-public struct Parser {
+public struct Parser: ExpressibleByArrayLiteral {
   public let types: [Response.Type]
   public let decoder: JSONDecoder
 
   public init(types: [Response.Type], decoder: JSONDecoder = .init()) {
     self.types = types
     self.decoder = decoder
+  }
+
+  public init(arrayLiteral elements: Response.Type...) {
+    self.init(types: elements)
   }
 
   // MARK: -
