@@ -31,19 +31,6 @@ struct Service {
     }
   }
 
-  struct UpgradeRequiredResponse: Response, Error {
-    static let code = 426
-    let url: URL
-  }
-
-  struct ServiceUnavailableResponse: Response, Error {
-    static let code = 503
-  }
-
-  struct InvalidCredentialsResponse: Response, Error {
-    static let code = 401
-  }
-
   // MARK: -
 
   func login(username: String, password: String) -> URLRequest {

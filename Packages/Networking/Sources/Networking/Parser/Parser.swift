@@ -1,10 +1,6 @@
 import Foundation
 import Unexpected
 
-public protocol Response: Decodable {
-  static var code: Int { get }
-}
-
 public struct Parser: ExpressibleByArrayLiteral {
   public let types: [Response.Type]
   public let decoder: JSONDecoder
