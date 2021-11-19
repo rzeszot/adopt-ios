@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62095EEF27471E2C002643AC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62095EF127471E2C002643AC /* Localizable.strings */; };
 		6265739927233BB500BCE47D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265739827233BB500BCE47D /* AppDelegate.swift */; };
 		6265739B27233BB500BCE47D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265739A27233BB500BCE47D /* SceneDelegate.swift */; };
 		626573A227233BB600BCE47D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 626573A127233BB600BCE47D /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		62095EF027471E2C002643AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		62145C00274585AF006B0307 /* Unexpected */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Unexpected; sourceTree = "<group>"; };
 		6265739527233BB500BCE47D /* Adopt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adopt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6265739827233BB500BCE47D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				6265739827233BB500BCE47D /* AppDelegate.swift */,
 				6265739A27233BB500BCE47D /* SceneDelegate.swift */,
 				626573A127233BB600BCE47D /* Assets.xcassets */,
+				62095EF127471E2C002643AC /* Localizable.strings */,
 				626573A327233BB600BCE47D /* LaunchScreen.storyboard */,
 				626573A627233BB600BCE47D /* Info.plist */,
 			);
@@ -160,6 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62095EEF27471E2C002643AC /* Localizable.strings in Resources */,
 				629CCCBC27405471003D0855 /* SignIn in Resources */,
 				626573A527233BB600BCE47D /* LaunchScreen.storyboard in Resources */,
 				626573A227233BB600BCE47D /* Assets.xcassets in Resources */,
@@ -188,6 +192,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		62095EF127471E2C002643AC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				62095EF027471E2C002643AC /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		626573A327233BB600BCE47D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

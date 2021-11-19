@@ -1,0 +1,6 @@
+/* Sign in*/
+
+"sign-in.email" = "E-mail";
+"sign-in.password" = "Password";
+"sign-in.remind-action" = "Forgotten password?";
+"sign-in.login-action" = "Log In";
