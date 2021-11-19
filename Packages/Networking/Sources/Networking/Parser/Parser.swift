@@ -6,6 +6,8 @@ public struct Parser: ExpressibleByArrayLiteral {
   public let decoder: JSONDecoder
 
   public init(types: [Response.Type], decoder: JSONDecoder = .init()) {
+    precondition(Set(types.map { $0.code }).count == types.count)
+
     self.types = types
     self.decoder = decoder
   }
