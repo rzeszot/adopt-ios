@@ -1,7 +1,7 @@
 import Foundation
 import Unexpected
 
-public struct Parser: ExpressibleByArrayLiteral {
+public struct Parser {
   public let types: [Response.Type]
   public let decoder: JSONDecoder
 
@@ -10,10 +10,6 @@ public struct Parser: ExpressibleByArrayLiteral {
 
     self.types = types
     self.decoder = decoder
-  }
-
-  public init(arrayLiteral elements: Response.Type...) {
-    self.init(types: elements)
   }
 
   // MARK: -
@@ -46,6 +42,12 @@ public struct Parser: ExpressibleByArrayLiteral {
    decoder.userInfo[.type] = type
 
     return try decoder.decode(Wrapper.self, from: data).response
+  }
+}
+
+extension Parser: ExpressibleByArrayLiteral {
+  public init(arrayLiteral elements: Response.Type...) {
+    self.init(types: elements)
   }
 }
 

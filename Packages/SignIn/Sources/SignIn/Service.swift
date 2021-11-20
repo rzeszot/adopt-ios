@@ -33,28 +33,14 @@ struct Service {
 
   // MARK: -
 
-  func login(username: String, password: String) -> URLRequest {
-    let encoder = JSONEncoder()
-    encoder.outputFormatting = [.sortedKeys, .prettyPrinted]
-
-    var request = URLRequest(url: "https://adopt.rzeszot.pro/sessions")
-    request.httpMethod = "POST"
-    request.httpBody = try! encoder.encode(Request(login: username, password: password))
+  func login(username: String, password: String) throws -> URLRequest {
+    var request = URLRequest.post("https://adopt.rzeszot.pro/sessions")
+    try request.body(json: Request(login: username, password: password))
     return request
   }
 
   func perform(username: String, password: String) async throws -> SuccessResponse {
-    let request = login(username: username, password: password)
-    let (data, response) = try await session.data(for: request)
-    let object = try parser.parse(response: response as! HTTPURLResponse, data: data)
-
-    if let object = object as? SuccessResponse {
-      return object
-    } else if let error = object as? Error {
-      throw error
-    } else {
-      throw UnexpectedError()
-    }
+    try await session.perform(request: login(username: username, password: password), using: parser)
   }
 
 }
