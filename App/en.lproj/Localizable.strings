@@ -1,6 +1,38 @@
-/* Sign in*/
+/* Sign in */
 
 "sign-in.email" = "E-mail";
 "sign-in.password" = "Password";
 "sign-in.remind-action" = "Forgotten password?";
 "sign-in.login-action" = "Log In";
+
+
+
+/* Remind password */
+
+"remind-password.enter-username.hint-title" = "Trouble with logging in?";
+"remind-password.enter-username.hint-subtitle" = "Enter your email address and we'll send you a link to get back into your account.";
+"remind-password.enter-username.username-field" = "Username";
+"remind-password.enter-username.submit-action" = "Submit";
+
+
+"remind-password.change-password.hint-title" = "Create a strong password";
+"remind-password.change-password.hint-subtitle" = "Your password must be more than six characters and include a combination of numbers, letters and special characters.";
+"remind-password.change-password.new-password-field" = "New password";
+"remind-password.change-password.confirmation-password-field" = "New password, again";
+"remind-password.change-password.submit-action" = "Submit";
+
+
+"remind-password.email-sent.hint-title" = "Email sent";
+"remind-password.email-sent.hint-subtitle" = "We've sent an email to <email> with a link to get back into your account.";
+"remind-password.email-sent.submit-action" = "OK";
+
+//Confirm it's you to log in
+//We noticed unusual activity from your account, so we've logged you out.
+//Follow the next steps within 1 day so we can try to get you back into your account before it's disabled.
+//
+//Enter the code that we sent to your number ending in 4565 .
+//Security code
+//Confirm
+//Haven't received a security code? We can
+//resend it
+//If you're unable to receive a security code, use one of your [backup codes]

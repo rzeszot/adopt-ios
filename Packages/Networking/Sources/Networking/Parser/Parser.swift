@@ -5,7 +5,7 @@ public struct Parser {
   public let types: [Response.Type]
   public let decoder: JSONDecoder
 
-  public init(types: [Response.Type], decoder: JSONDecoder = .init()) {
+  public init(types: [Response.Type], decoder: JSONDecoder = .default) {
     precondition(Set(types.map { $0.code }).count == types.count)
 
     self.types = types
@@ -53,4 +53,12 @@ extension Parser: ExpressibleByArrayLiteral {
 
 private extension CodingUserInfoKey {
   static let type = CodingUserInfoKey(rawValue: "type")!
+}
+
+extension JSONDecoder {
+  public static var `default`: JSONDecoder {
+    let decoder = JSONDecoder()
+    decoder.assumesTopLevelDictionary = true
+    return decoder
+  }
 }
