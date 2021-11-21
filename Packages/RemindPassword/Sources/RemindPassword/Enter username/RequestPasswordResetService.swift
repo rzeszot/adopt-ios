@@ -2,7 +2,7 @@ import Foundation
 import Networking
 import Unexpected
 
-struct ResetService {
+struct RequestPasswordResetService {
 
   // MARK: -
 

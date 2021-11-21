@@ -11,8 +11,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let scene = (scene as? UIWindowScene) else { return }
 
-//    let vc = SignIn.Builder.build(Input())
-    let vc = RemindPassword.Builder.build()
+    let vc = SignIn.Builder.build(Input())
+//    let vc = RemindPassword.Builder.reset(Reset(username: "contact@rzeszot.pro"))
 //    let vc = Welcome.build(Welcome.Input(privacy: {
 //      print("privacy")
 //    }, done: {

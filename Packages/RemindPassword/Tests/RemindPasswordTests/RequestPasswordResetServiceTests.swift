@@ -4,13 +4,13 @@ import Networking
 import Unexpected
 @testable import RemindPassword
 
-final class ResetServiceTests: XCTestCase {
+final class RequestPasswordResetServiceTests: XCTestCase {
 
-  var sut: ResetService!
+  var sut: RequestPasswordResetService!
   var mocky: Mocky!
 
   override func setUp() {
-    sut = ResetService(session: .shared)
+    sut = RequestPasswordResetService(session: .shared)
     mocky = Mocky.shared
     mocky.start()
   }
@@ -26,7 +26,7 @@ final class ResetServiceTests: XCTestCase {
   func test_request() throws {
     let request = try sut.request(username: "user@example.org")
 
-    XCTAssertEqual(request.url, "https://adopt.rzeszot.pro/sessions/reset-password")
+    XCTAssertEqual(request.url, "https://adopt.rzeszot.pro/sessions/set-password")
     XCTAssertEqual(request.httpMethod, "POST")
     XCTAssertNotNil(request.httpBody)
     XCTAssertEqual(request.httpBody, """
@@ -38,7 +38,7 @@ final class ResetServiceTests: XCTestCase {
 
   func test_success() async throws {
     mocky.post("/sessions/reset-password") { env in
-      env.load(from: "remind-success.json", subdirectory: "Responses", bundle: .module)
+      env.load(from: "reset-success.json", subdirectory: "Responses", bundle: .module)
     }
 
     do {
@@ -50,13 +50,13 @@ final class ResetServiceTests: XCTestCase {
 
   func test_failure() async throws {
     mocky.post("/sessions/reset-password") { env in
-      env.load(from: "remind-failure.json", subdirectory: "Responses", bundle: .module)
+      env.load(from: "reset-failure.json", subdirectory: "Responses", bundle: .module)
     }
 
     do {
       _ = try await sut.perform(username: "user@example.org")
     } catch {
-      XCTAssertTrue(error is ResetService.FailureResponse)
+      XCTAssertTrue(error is RequestPasswordResetService.FailureResponse)
     }
   }
 

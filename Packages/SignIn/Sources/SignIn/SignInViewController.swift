@@ -4,7 +4,7 @@ func t(_ key: String) -> String {
   return  NSLocalizedString(key, comment: key)
 }
 
-class ViewController: UIViewController {
+class SignInViewController: UIViewController {
 
   // MARK: -
 
@@ -16,8 +16,8 @@ class ViewController: UIViewController {
     print("action | remind")
   }
 
-  @objc func loginAction() {
-    print("action | login")
+  @objc func submitAction() {
+    print("action | submit")
   }
 
   @objc func backgroundAction() {
@@ -54,16 +54,36 @@ class ViewController: UIViewController {
     return root
   }()
 
-  private lazy var wrapperView: UIView = {
-    let root = UIView()
+  private lazy var hintView: HintView = {
+    let root = HintView()
+    root.imageView.image = UIImage(systemName: "suit.heart")
+    root.titleLabel.text = t("sign-in.hint-title")
+    root.setContentCompressionResistancePriority(.required, for: .vertical)
 
     view.addSubview(root)
     root.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       root.leftAnchor.constraint(equalTo: view.leftAnchor, constant: view.layoutMargins.left),
       root.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -view.layoutMargins.right),
+      root.topAnchor.constraint(equalTo: closeButton.bottomAnchor).priority(700),
+      root.topAnchor.constraint(greaterThanOrEqualTo: closeButton.topAnchor)
+    ])
+
+    return root
+  }()
+
+  private lazy var wrapperView: UIView = {
+    let root = UIView()
+    root.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+
+    view.addSubview(root)
+    root.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      root.leftAnchor.constraint(equalTo: view.leftAnchor),
+      root.rightAnchor.constraint(equalTo: view.rightAnchor),
       root.topAnchor.constraint(equalTo: closeButton.bottomAnchor),
-      root.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor)
+      root.bottomAnchor.constraint(lessThanOrEqualTo: view.keyboardLayoutGuide.topAnchor),
+      root.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).priority(999)
     ])
 
     return root
@@ -75,9 +95,11 @@ class ViewController: UIViewController {
     wrapperView.addSubview(root)
     root.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      root.leftAnchor.constraint(equalTo: view.leftAnchor, constant: view.layoutMargins.left),
-      root.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -view.layoutMargins.right),
-      root.centerYAnchor.constraint(equalTo: wrapperView.centerYAnchor)
+      root.leftAnchor.constraint(equalTo: wrapperView.leftAnchor, constant: wrapperView.layoutMargins.left),
+      root.rightAnchor.constraint(equalTo: wrapperView.rightAnchor, constant: -wrapperView.layoutMargins.right),
+      root.centerYAnchor.constraint(equalTo: wrapperView.centerYAnchor).priority(600),
+      root.topAnchor.constraint(greaterThanOrEqualTo: hintView.bottomAnchor, constant: 20),
+      root.bottomAnchor.constraint(lessThanOrEqualTo: submitButton.topAnchor, constant: -20)
     ])
 
     return root
@@ -138,26 +160,26 @@ class ViewController: UIViewController {
     root.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       root.trailingAnchor.constraint(equalTo: credentialsView.trailingAnchor),
-      root.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 10)
+      root.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 10),
+      root.bottomAnchor.constraint(equalTo: credentialsView.bottomAnchor)
     ])
 
     return root
   }()
 
-  private lazy var loginButton: UIButton = {
+  private lazy var submitButton: UIButton = {
     let root = UIButton()
     root.configuration = .borderedProminent()
     root.configuration?.title = t("sign-in.login-action")
-    root.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
+    root.addTarget(self, action: #selector(submitAction), for: .touchUpInside)
 
-    credentialsView.addSubview(root)
+    wrapperView.addSubview(root)
     root.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       root.heightAnchor.constraint(equalToConstant: 50),
-      root.leftAnchor.constraint(equalTo: credentialsView.leftAnchor),
-      root.rightAnchor.constraint(equalTo: credentialsView.rightAnchor),
-      root.topAnchor.constraint(equalTo: remindButton.bottomAnchor, constant: 10),
-      root.bottomAnchor.constraint(equalTo: credentialsView.bottomAnchor)
+      root.leftAnchor.constraint(equalTo: wrapperView.leftAnchor, constant: wrapperView.layoutMargins.left),
+      root.rightAnchor.constraint(equalTo: wrapperView.rightAnchor, constant: -wrapperView.layoutMargins.right),
+      root.bottomAnchor.constraint(equalTo: wrapperView.bottomAnchor, constant: -wrapperView.layoutMargins.bottom),
     ])
 
     return root
@@ -167,15 +189,16 @@ class ViewController: UIViewController {
     view = UIView()
     view.backgroundColor = .systemBackground
     view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backgroundAction)))
-    view.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+    view.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
 
+    _ = hintView
     _ = closeButton
     _ = wrapperView
         _ = credentialsView
             _ = usernameTextField
             _ = passwordTextField
             _ = remindButton
-            _ = loginButton
+        _ = submitButton
   }
 
 }

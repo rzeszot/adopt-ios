@@ -2,6 +2,8 @@ import UIKit
 
 class EnterUsernameViewController: UIViewController {
 
+  var viewModel: EnterUsernameViewModel!
+
   // MARK: -
 
   @objc func closeAction() {
@@ -145,6 +147,11 @@ class EnterUsernameViewController: UIViewController {
         _ = credentialsView
             _ = usernameTextField
         _ = submitButton
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    usernameTextField.text = viewModel.username
   }
 
 }
