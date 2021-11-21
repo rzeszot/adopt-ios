@@ -4,13 +4,13 @@ import Networking
 import Unexpected
 @testable import SignIn
 
-final class ServiceTests: XCTestCase {
+final class AuthorizeServiceTests: XCTestCase {
 
-  var sut: Service!
+  var sut: AuthorizeService!
   var mocky: Mocky!
 
   override func setUp() {
-    sut = Service(session: .shared)
+    sut = AuthorizeService(session: .shared)
     mocky = Mocky.shared
     mocky.start()
   }
@@ -26,13 +26,14 @@ final class ServiceTests: XCTestCase {
   func test_request() throws {
     let request = try sut.login(username: "USERNAME", password: "PASSWORD")
 
-    XCTAssertEqual(request.url, "https://adopt.rzeszot.pro/sessions")
+    XCTAssertEqual(request.url, "https://adopt.rzeszot.pro/auth/token")
     XCTAssertEqual(request.httpMethod, "POST")
     XCTAssertNotNil(request.httpBody)
     XCTAssertEqual(request.httpBody, """
       {
-        "login" : "USERNAME",
-        "password" : "PASSWORD"
+        "grant_type" : "password",
+        "password" : "PASSWORD",
+        "username" : "USERNAME"
       }
       """.data(using: .utf8))
   }
@@ -40,7 +41,7 @@ final class ServiceTests: XCTestCase {
   // MARK: -
 
   func test_success() async throws {
-    mocky.post("/sessions") { env in
+    mocky.post("/auth/token") { env in
       env.load(from: "login-success.json", subdirectory: "Responses", bundle: .module)
     }
 
@@ -51,7 +52,7 @@ final class ServiceTests: XCTestCase {
   // MARK: -
 
   func test_failure_invalid_credentials() async throws {
-    mocky.post("/sessions") { env in
+    mocky.post("/auth/token") { env in
       env.load(from: "login-failure-invalid-credentials.json", subdirectory: "Responses", bundle: .module)
     }
 
@@ -59,38 +60,29 @@ final class ServiceTests: XCTestCase {
       _ = try await sut.perform(username: "USERNAME", password: "PASSWORD")
       XCTFail()
     } catch {
-      XCTAssertTrue(error is InvalidCredentialsResponse)
-    }
-  }
-
-  func test_failure_service_unavailable() async throws {
-    mocky.post("/sessions") { env in
-      env.load(from: "common-failure-service-unavailable.json", subdirectory: "Responses", bundle: .module)
-    }
-
-    do {
-      _ = try await sut.perform(username: "USERNAME", password: "PASSWORD")
-      XCTFail()
-    } catch {
-      XCTAssertTrue(error is ServiceUnavailableResponse)
+      XCTAssertTrue(error is AuthorizeService.InvalidClientResponse)
     }
   }
 
   func test_failure_upgrade_required() async throws {
-    mocky.post("/sessions") { env in
+    mocky.post("/auth/token") { env in
       env.load(from: "common-failure-app-update-required.json", subdirectory: "Responses", bundle: .module)
     }
 
     do {
       _ = try await sut.perform(username: "USERNAME", password: "PASSWORD")
-      XCTFail()
+      XCTFail("did not throw an error")
+    } catch let error as UpgradeRequiredResponse {
+      XCTAssertEqual(error.url, "https://adopt.rzeszot.pro/r/upgrage/2.5.1")
+      XCTAssertEqual(error.version, "2.5.1")
     } catch {
-      XCTAssertTrue(error is UpgradeRequiredResponse)
+      XCTAssertTrue(error is UpgradeRequiredResponse, "(\(error)) is not instance of (\(UpgradeRequiredResponse.self))")
     }
   }
 
+
   func test_failure_unexpected() async throws {
-    mocky.post("/sessions") { env in
+    mocky.post("/auth/token") { env in
       env.load(from: "common-failure-unexpected.json", subdirectory: "Responses", bundle: .module)
     }
 

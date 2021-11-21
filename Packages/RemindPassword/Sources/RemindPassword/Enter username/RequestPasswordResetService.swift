@@ -31,7 +31,7 @@ struct RequestPasswordResetService {
   // MARK: -
 
   func request(username: String) throws -> URLRequest {
-    var request = URLRequest.post("https://adopt.rzeszot.pro/sessions/reset-password")
+    var request = URLRequest.post("https://adopt.rzeszot.pro/account/forgot-password/request")
     try request.body(json: Request(username: username))
     return request
   }

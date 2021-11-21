@@ -26,7 +26,7 @@ final class RequestPasswordResetServiceTests: XCTestCase {
   func test_request() throws {
     let request = try sut.request(username: "user@example.org")
 
-    XCTAssertEqual(request.url, "https://adopt.rzeszot.pro/sessions/set-password")
+    XCTAssertEqual(request.url, "https://adopt.rzeszot.pro/account/forgot-password/request")
     XCTAssertEqual(request.httpMethod, "POST")
     XCTAssertNotNil(request.httpBody)
     XCTAssertEqual(request.httpBody, """
@@ -37,7 +37,7 @@ final class RequestPasswordResetServiceTests: XCTestCase {
   }
 
   func test_success() async throws {
-    mocky.post("/sessions/reset-password") { env in
+    mocky.post("/account/forgot-password/request") { env in
       env.load(from: "reset-success.json", subdirectory: "Responses", bundle: .module)
     }
 
@@ -49,7 +49,7 @@ final class RequestPasswordResetServiceTests: XCTestCase {
   }
 
   func test_failure() async throws {
-    mocky.post("/sessions/reset-password") { env in
+    mocky.post("/account/forgot-password/request") { env in
       env.load(from: "reset-failure.json", subdirectory: "Responses", bundle: .module)
     }
 

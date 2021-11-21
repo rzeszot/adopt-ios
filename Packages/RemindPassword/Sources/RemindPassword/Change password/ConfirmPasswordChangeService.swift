@@ -15,8 +15,9 @@ struct ConfirmPasswordChangeService {
   // MARK: -
 
   struct Request: Encodable {
+    let username: String
     let password: String
-    let token: String
+    let code: String
   }
 
   // MARK: -
@@ -31,13 +32,13 @@ struct ConfirmPasswordChangeService {
 
   // MARK: -
 
-  func request(password: String, token: String) throws -> URLRequest {
-    var request = URLRequest.post("https://adopt.rzeszot.pro/sessions/set-password")
-    try request.body(json: Request(password: password, token: token))
+  func request(username: String, password: String, code: String) throws -> URLRequest {
+    var request = URLRequest.post("https://adopt.rzeszot.pro/account/forgot-password/confirm")
+    try request.body(json: Request(username: username, password: password, code: code))
     return request
   }
 
-  func perform(password: String, token: String) async throws -> SuccessResponse {
-    try await session.perform(request: request(password: password, token: token), using: parser)
+  func perform(username: String, password: String, code: String) async throws -> SuccessResponse {
+    try await session.perform(request: request(username: username, password: password, code: code), using: parser)
   }
 }

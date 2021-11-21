@@ -24,38 +24,39 @@ final class ConfirmPasswordChangeServiceTests: XCTestCase {
   // MARK: -
 
   func test_request() throws {
-    let request = try sut.request(password: "NEW-PASSWORD", token: "TOKEN")
+    let request = try sut.request(username: "USERNAME", password: "NEW-PASSWORD", code: "CODE")
 
-    XCTAssertEqual(request.url, "https://adopt.rzeszot.pro/sessions/set-password")
+    XCTAssertEqual(request.url, "https://adopt.rzeszot.pro/account/forgot-password/confirm")
     XCTAssertEqual(request.httpMethod, "POST")
     XCTAssertNotNil(request.httpBody)
     XCTAssertEqual(request.httpBody, """
       {
+        "code" : "CODE",
         "password" : "NEW-PASSWORD",
-        "token" : "TOKEN"
+        "username" : "USERNAME"
       }
       """.data(using: .utf8))
   }
 
   func test_success() async throws {
-    mocky.post("/sessions/set-password") { env in
+    mocky.post("/account/forgot-password/confirm") { env in
       env.load(from: "confirm-success.json", subdirectory: "Responses", bundle: .module)
     }
 
     do {
-      _ = try await sut.perform(password: "NEW-PASSWORD", token: "TOKEN")
+      _ = try await sut.perform(username: "USERNAME", password: "NEW-PASSWORD", code: "TOKEN")
     } catch {
       XCTFail()
     }
   }
 
   func test_failure() async throws {
-    mocky.post("/sessions/set-password") { env in
+    mocky.post("/account/forgot-password/confirm") { env in
       env.load(from: "confirm-failure.json", subdirectory: "Responses", bundle: .module)
     }
 
     do {
-      _ = try await sut.perform(password: "NEW-PASSWORD", token: "TOKEN")
+      _ = try await sut.perform(username: "USERNAME", password: "NEW-PASSWORD", code: "CODE")
     } catch {
       XCTAssertTrue(error is ConfirmPasswordChangeService.FailureResponse)
     }
