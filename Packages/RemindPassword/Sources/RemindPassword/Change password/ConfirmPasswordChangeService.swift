@@ -32,13 +32,14 @@ struct ConfirmPasswordChangeService {
 
   // MARK: -
 
-  func request(username: String, password: String, code: String) throws -> URLRequest {
+  func build(username: String, password: String, code: String) throws -> URLRequest {
     var request = URLRequest.post("https://adopt.rzeszot.pro/account/forgot-password/confirm")
     try request.body(json: Request(username: username, password: password, code: code))
     return request
   }
 
-  func perform(username: String, password: String, code: String) async throws -> SuccessResponse {
-    try await session.perform(request: request(username: username, password: password, code: code), using: parser)
+  func request(username: String, password: String, code: String) async throws -> SuccessResponse {
+    try await session.perform(request: build(username: username, password: password, code: code), using: parser)
   }
+
 }

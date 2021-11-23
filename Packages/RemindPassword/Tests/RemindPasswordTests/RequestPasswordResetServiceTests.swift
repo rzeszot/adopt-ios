@@ -24,7 +24,7 @@ final class RequestPasswordResetServiceTests: XCTestCase {
   // MARK: -
 
   func test_request() throws {
-    let request = try sut.request(username: "user@example.org")
+    let request = try sut.build(username: "user@example.org")
 
     XCTAssertEqual(request.url, "https://adopt.rzeszot.pro/account/forgot-password/request")
     XCTAssertEqual(request.httpMethod, "POST")
@@ -42,7 +42,7 @@ final class RequestPasswordResetServiceTests: XCTestCase {
     }
 
     do {
-      _ = try await sut.perform(username: "user@example.org")
+      _ = try await sut.request(username: "user@example.org")
     } catch {
       XCTFail()
     }
@@ -54,7 +54,7 @@ final class RequestPasswordResetServiceTests: XCTestCase {
     }
 
     do {
-      _ = try await sut.perform(username: "user@example.org")
+      _ = try await sut.request(username: "user@example.org")
     } catch {
       XCTAssertTrue(error is RequestPasswordResetService.FailureResponse)
     }

@@ -14,10 +14,16 @@ struct AuthorizeService {
   // MARK: -
 
   struct Request: Encodable {
-    let grant_type = "password"
+    let grant = "password"
 
     let username: String
     let password: String
+
+    enum CodingKeys: String, CodingKey {
+      case grant = "grant_type"
+      case username
+      case password
+    }
   }
 
   // MARK: -
@@ -48,14 +54,14 @@ struct AuthorizeService {
 
   // MARK: -
 
-  func login(username: String, password: String) throws -> URLRequest {
+  func build(username: String, password: String) throws -> URLRequest {
     var request = URLRequest.post("https://adopt.rzeszot.pro/auth/token")
     try request.body(json: Request(username: username, password: password))
     return request
   }
 
-  func perform(username: String, password: String) async throws -> SuccessResponse {
-    try await session.perform(request: login(username: username, password: password), using: parser)
+  func request(username: String, password: String) async throws -> SuccessResponse {
+    try await session.perform(request: build(username: username, password: password), using: parser)
   }
 
 }

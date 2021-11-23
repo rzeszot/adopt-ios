@@ -18,6 +18,7 @@
 		629CCCC427405C94003D0855 /* SignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 629CCCC327405C94003D0855 /* SignIn */; };
 		62B56465274D711500928D43 /* .github in Resources */ = {isa = PBXBuildFile; fileRef = 62B56464274D711500928D43 /* .github */; };
 		62BF2D16274D75BC005FD0D2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 62BF2D15274D75BC005FD0D2 /* .gitignore */; };
+		62BF2D18274D9215005FD0D2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 62BF2D17274D9215005FD0D2 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		62A24FC1273C68050009136B /* Welcome */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Welcome; sourceTree = "<group>"; };
 		62B56464274D711500928D43 /* .github */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .github; sourceTree = SOURCE_ROOT; };
 		62BF2D15274D75BC005FD0D2 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		62BF2D17274D9215005FD0D2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		62DF943C273C99B900760582 /* Chat */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chat; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 		62B56463274D6FB200928D43 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				62BF2D17274D9215005FD0D2 /* .swiftlint.yml */,
 				62BF2D15274D75BC005FD0D2 /* .gitignore */,
 				62B56464274D711500928D43 /* .github */,
 			);
@@ -184,6 +187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62BF2D18274D9215005FD0D2 /* .swiftlint.yml in Resources */,
 				62B56465274D711500928D43 /* .github in Resources */,
 				62BF2D16274D75BC005FD0D2 /* .gitignore in Resources */,
 				6286EC4A2748A44D00A367FD /* RemindPassword in Resources */,

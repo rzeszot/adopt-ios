@@ -1,10 +1,7 @@
 import Foundation
 import Networking
-import Unexpected
 
 struct RequestPasswordResetService {
-
-  // MARK: -
 
   let session: URLSession
   let parser: Parser = [
@@ -30,13 +27,14 @@ struct RequestPasswordResetService {
 
   // MARK: -
 
-  func request(username: String) throws -> URLRequest {
+  func build(username: String) throws -> URLRequest {
     var request = URLRequest.post("https://adopt.rzeszot.pro/account/forgot-password/request")
     try request.body(json: Request(username: username))
     return request
   }
 
-  func perform(username: String) async throws -> SuccessResponse {
-    try await session.perform(request: request(username: "username"), using: parser)
+  func request(username: String) async throws -> SuccessResponse {
+    try await session.perform(request: build(username: "username"), using: parser)
   }
+
 }

@@ -24,7 +24,7 @@ final class ConfirmPasswordChangeServiceTests: XCTestCase {
   // MARK: -
 
   func test_request() throws {
-    let request = try sut.request(username: "USERNAME", password: "NEW-PASSWORD", code: "CODE")
+    let request = try sut.build(username: "USERNAME", password: "NEW-PASSWORD", code: "CODE")
 
     XCTAssertEqual(request.url, "https://adopt.rzeszot.pro/account/forgot-password/confirm")
     XCTAssertEqual(request.httpMethod, "POST")
@@ -44,7 +44,7 @@ final class ConfirmPasswordChangeServiceTests: XCTestCase {
     }
 
     do {
-      _ = try await sut.perform(username: "USERNAME", password: "NEW-PASSWORD", code: "TOKEN")
+      _ = try await sut.request(username: "USERNAME", password: "NEW-PASSWORD", code: "TOKEN")
     } catch {
       XCTFail()
     }
@@ -56,7 +56,7 @@ final class ConfirmPasswordChangeServiceTests: XCTestCase {
     }
 
     do {
-      _ = try await sut.perform(username: "USERNAME", password: "NEW-PASSWORD", code: "CODE")
+      _ = try await sut.request(username: "USERNAME", password: "NEW-PASSWORD", code: "CODE")
     } catch {
       XCTAssertTrue(error is ConfirmPasswordChangeService.FailureResponse)
     }

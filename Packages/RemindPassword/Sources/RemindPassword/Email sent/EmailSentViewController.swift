@@ -2,6 +2,8 @@ import UIKit
 
 class EmailSentViewController: UIViewController {
 
+  var viewModel: EmailSentViewModel!
+
   // MARK: -
 
   @objc func closeAction() {
@@ -81,20 +83,10 @@ class EmailSentViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let email = "contact@rzeszot.pro"
     let text = t("remind-password.email-sent.hint-subtitle")
-      .replacingOccurrences(of: "<email>", with: masked(email: email))
+      .replacingOccurrences(of: "<email>", with: viewModel.username)
 
     hintView.subtitleLabel.text = text
-  }
-
-  func masked(email: String) -> String {
-    let chunks = email.split(separator: "@").map { String($0) }
-    return masked(text: chunks[0]) + "@" + chunks[1]
-  }
-
-  func masked(text: String) -> String {
-    text.prefix(1) + String(repeating: "*", count: text.count-2) + text.suffix(1)
   }
 
 }

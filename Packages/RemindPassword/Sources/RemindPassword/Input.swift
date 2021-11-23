@@ -9,9 +9,11 @@ public struct Reset {
 }
 
 public struct Confirm {
-  public let token: String
+  public let username: String
+  public let code: String
 
-  public init(token: String) {
-    self.token = token
+  public init(username: String, code: String) {
+    self.username = username
+    self.code = code
   }
 }

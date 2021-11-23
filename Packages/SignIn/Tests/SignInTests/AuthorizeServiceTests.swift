@@ -24,7 +24,7 @@ final class AuthorizeServiceTests: XCTestCase {
   // MARK: -
 
   func test_request() throws {
-    let request = try sut.login(username: "USERNAME", password: "PASSWORD")
+    let request = try sut.build(username: "USERNAME", password: "PASSWORD")
 
     XCTAssertEqual(request.url, "https://adopt.rzeszot.pro/auth/token")
     XCTAssertEqual(request.httpMethod, "POST")
@@ -45,7 +45,7 @@ final class AuthorizeServiceTests: XCTestCase {
       env.load(from: "login-success.json", subdirectory: "Responses", bundle: .module)
     }
 
-    let response = try await sut.perform(username: "USERNAME", password: "PASSWORD")
+    let response = try await sut.request(username: "USERNAME", password: "PASSWORD")
     XCTAssertEqual(response.token, "ACCESS-TOKEN")
   }
 
@@ -57,7 +57,7 @@ final class AuthorizeServiceTests: XCTestCase {
     }
 
     do {
-      _ = try await sut.perform(username: "USERNAME", password: "PASSWORD")
+      _ = try await sut.request(username: "USERNAME", password: "PASSWORD")
       XCTFail()
     } catch {
       XCTAssertTrue(error is AuthorizeService.InvalidClientResponse)
@@ -70,7 +70,7 @@ final class AuthorizeServiceTests: XCTestCase {
     }
 
     do {
-      _ = try await sut.perform(username: "USERNAME", password: "PASSWORD")
+      _ = try await sut.request(username: "USERNAME", password: "PASSWORD")
       XCTFail("did not throw an error")
     } catch let error as UpgradeRequiredResponse {
       XCTAssertEqual(error.url, "https://adopt.rzeszot.pro/r/upgrage/2.5.1")
@@ -87,7 +87,7 @@ final class AuthorizeServiceTests: XCTestCase {
     }
 
     do {
-      _ = try await sut.perform(username: "USERNAME", password: "PASSWORD")
+      _ = try await sut.request(username: "USERNAME", password: "PASSWORD")
       XCTFail()
     } catch {
       XCTAssertTrue(error is UnexpectedError)
