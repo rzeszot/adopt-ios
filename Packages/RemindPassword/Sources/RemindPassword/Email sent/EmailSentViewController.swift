@@ -4,23 +4,26 @@ class EmailSentViewController: UIViewController {
 
   var viewModel: EmailSentViewModel!
 
+  typealias Output = (back: () -> Void, submit: () -> Void)
+  var output: Output!
+
   // MARK: -
 
-  @objc func closeAction() {
-    print("action | close")
+  @objc func backAction() {
+    output.back()
   }
 
   @objc func submitAction() {
-    print("action | submit")
+    output.submit()
   }
 
   // MARK: -
 
-  private lazy var closeButton: UIButton = {
+  private lazy var backButton: UIButton = {
     let root = UIButton()
-    root.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
+    root.addTarget(self, action: #selector(backAction), for: .touchUpInside)
     root.configuration = .tinted()
-    root.configuration?.image = .init(systemName: "xmark")
+    root.configuration?.image = .init(systemName: "chevron.backward")
 
     view.addSubview(root)
     root.translatesAutoresizingMaskIntoConstraints = false
@@ -45,8 +48,8 @@ class EmailSentViewController: UIViewController {
     NSLayoutConstraint.activate([
       root.leftAnchor.constraint(equalTo: view.leftAnchor, constant: view.layoutMargins.left),
       root.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -view.layoutMargins.right),
-      root.topAnchor.constraint(greaterThanOrEqualTo: closeButton.topAnchor).priority(900),
-      root.topAnchor.constraint(equalTo: closeButton.bottomAnchor).priority(700)
+      root.topAnchor.constraint(greaterThanOrEqualTo: backButton.topAnchor).priority(900),
+      root.topAnchor.constraint(equalTo: backButton.bottomAnchor).priority(700)
     ])
 
     return root
@@ -76,7 +79,7 @@ class EmailSentViewController: UIViewController {
     view.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
 
     _ = hintView
-    _ = closeButton
+    _ = backButton
     _ = submitButton
   }
 

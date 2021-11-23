@@ -4,14 +4,18 @@ class EnterUsernameViewController: UIViewController {
 
   var viewModel: EnterUsernameViewModel!
 
+  typealias Output = (close: () -> Void, submit: (String) -> Void)
+  var output: Output!
+
   // MARK: -
 
   @objc func closeAction() {
-    print("action | close")
+    output.close()
   }
 
   @objc func submitAction() {
-    print("action | submit")
+    let username = usernameTextField.text ?? ""
+    output.submit(username)
   }
 
   @objc func backgroundAction() {
@@ -122,6 +126,7 @@ class EnterUsernameViewController: UIViewController {
     let root = UIButton()
     root.configuration = .borderedProminent()
     root.configuration?.title = t("remind-password.enter-username.submit-action")
+    root.addTarget(self, action: #selector(submitAction), for: .touchUpInside)
 
     wrapperView.addSubview(root)
     root.translatesAutoresizingMaskIntoConstraints = false

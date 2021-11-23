@@ -6,14 +6,18 @@ func t(_ key: String) -> String {
 
 class ChangePasswordViewController: UIViewController {
 
+  typealias Output = (close: () -> Void, submit: (String) -> Void)
+  var output: Output!
+
   // MARK: -
 
   @objc func closeAction() {
-    print("action | close")
+    output.close()
   }
 
   @objc func submitAction() {
-    print("action | submit")
+    let password = firstPasswordTextField.text ?? ""
+    output.submit(password)
   }
 
   @objc func backgroundAction() {
