@@ -4,7 +4,7 @@ func t(_ key: String) -> String {
   return  NSLocalizedString(key, comment: key)
 }
 
-class ChangePasswordViewController: UIViewController {
+final class ChangePasswordViewController: UIViewController {
 
   typealias Output = (close: () -> Void, submit: (String) -> Void)
   var output: Output!
@@ -155,6 +155,7 @@ class ChangePasswordViewController: UIViewController {
     let root = UIButton()
     root.configuration = .borderedProminent()
     root.configuration?.title = t("remind-password.change-password.submit-action")
+    root.addTarget(self, action: #selector(submitAction), for: .touchUpInside)
 
     wrapperView.addSubview(root)
     root.translatesAutoresizingMaskIntoConstraints = false
@@ -180,7 +181,7 @@ class ChangePasswordViewController: UIViewController {
         _ = credentialsView
             _ = firstPasswordTextField
             _ = secondPasswordTextField
-      _ = submitButton
+        _ = submitButton
   }
 
 }
