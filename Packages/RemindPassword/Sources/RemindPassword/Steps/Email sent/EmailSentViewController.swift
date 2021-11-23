@@ -1,20 +1,19 @@
 import UIKit
 
-class EmailSentViewController: UIViewController {
+final class EmailSentViewController: UIViewController {
 
   var viewModel: EmailSentViewModel!
-
-  typealias Output = (back: () -> Void, submit: () -> Void)
-  var output: Output!
+  var back: (() -> Void)!
+  var submit: (() -> Void)!
 
   // MARK: -
 
   @objc func backAction() {
-    output.back()
+    self.back()
   }
 
   @objc func submitAction() {
-    output.submit()
+    self.submit()
   }
 
   // MARK: -
