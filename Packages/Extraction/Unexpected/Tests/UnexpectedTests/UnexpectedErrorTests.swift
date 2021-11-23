@@ -5,10 +5,7 @@ final class UnexpectedErrorTests: XCTestCase {
   func test_result_unexpected_error() {
     let result: Result<Void, Error> = .unexpected
 
-    switch result {
-    case .success:
-      XCTFail()
-    case .failure(let error):
+    XCTAssertThrowsError(try result.get()) { error in
       XCTAssertTrue(error is UnexpectedError)
     }
   }

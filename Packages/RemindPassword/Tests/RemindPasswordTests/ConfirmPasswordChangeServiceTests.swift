@@ -46,7 +46,7 @@ final class ConfirmPasswordChangeServiceTests: XCTestCase {
     do {
       _ = try await sut.request(username: "USERNAME", password: "NEW-PASSWORD", code: "TOKEN")
     } catch {
-      XCTFail()
+      XCTFail("XCTAssertNoThrowAwait")
     }
   }
 

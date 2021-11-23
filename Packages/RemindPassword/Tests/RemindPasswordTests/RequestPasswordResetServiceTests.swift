@@ -44,7 +44,7 @@ final class RequestPasswordResetServiceTests: XCTestCase {
     do {
       _ = try await sut.request(username: "user@example.org")
     } catch {
-      XCTFail()
+      XCTFail("XCTAssertNoThrowAwait")
     }
   }
 

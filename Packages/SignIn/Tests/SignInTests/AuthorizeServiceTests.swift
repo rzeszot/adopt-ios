@@ -58,7 +58,7 @@ final class AuthorizeServiceTests: XCTestCase {
 
     do {
       _ = try await sut.request(username: "USERNAME", password: "PASSWORD")
-      XCTFail()
+      XCTFail("XCTAssertThrowAwait")
     } catch {
       XCTAssertTrue(error is AuthorizeService.InvalidClientResponse)
     }
@@ -80,7 +80,6 @@ final class AuthorizeServiceTests: XCTestCase {
     }
   }
 
-
   func test_failure_unexpected() async throws {
     mocky.post("/auth/token") { env in
       env.load(from: "common-failure-unexpected.json", subdirectory: "Responses", bundle: .module)
@@ -88,7 +87,7 @@ final class AuthorizeServiceTests: XCTestCase {
 
     do {
       _ = try await sut.request(username: "USERNAME", password: "PASSWORD")
-      XCTFail()
+      XCTFail("XCTAssertThrowAwait")
     } catch {
       XCTAssertTrue(error is UnexpectedError)
     }

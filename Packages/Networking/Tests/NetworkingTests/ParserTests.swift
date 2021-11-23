@@ -27,7 +27,7 @@ final class ParserTests: XCTestCase {
   func test_parse_unexpected_code() throws {
     do {
       _ = try sut.parse(response: .status(418), data: Fixture.success.data)
-      XCTFail()
+      XCTFail("XCTAssertThrowAwait")
     } catch {
       XCTAssertTrue(error is UnexpectedError)
     }
@@ -36,7 +36,7 @@ final class ParserTests: XCTestCase {
   func test_parse_decoding_error() throws {
     do {
       _ = try sut.parse(response: .status(200), data: Fixture.shrug.data)
-      XCTFail()
+      XCTFail("XCTAssertThrowAwait")
     } catch {
       XCTAssertTrue(error is DecodingError)
     }
