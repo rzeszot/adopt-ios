@@ -1,6 +1,6 @@
 import UIKit
 
-class EnterUsernameViewController: UIViewController {
+final class EnterUsernameViewController: UIViewController {
 
   var viewModel: EnterUsernameViewModel!
 
