@@ -1,0 +1,56 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  linter:
+    name: Linter
+    runs-on: macos-latest
+    timeout-minutes: 2
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Linter
+      run: |
+        swiftlint lint \
+          --reporter github-actions-logging
+
+  sign_in:
+    name: Sign In - unit tests
+    needs: [linter]
+    runs-on: macos-latest
+    timeout-minutes: 5
+    defaults:
+      run:
+        working-directory: Packages/SignIn
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Unit Tests
+      run: |
+        xcodebuild \
+          -scheme SignIn \
+          -destination 'name=iPhone 13 Pro' \
+          clean test | xcpretty
+
+  remind_password:
+    name: Remind Password - unit tests
+    needs: [linter]
+    runs-on: macos-latest
+    timeout-minutes: 5
+    defaults:
+      run:
+        working-directory: Packages/RemindPassword
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Unit Test
+      run: |
+        xcodebuild \
+          -scheme RemindPassword \
+          -destination 'name=iPhone 13 Pro' \
+          clean test | xcpretty

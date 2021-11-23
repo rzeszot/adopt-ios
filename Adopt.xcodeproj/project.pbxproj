@@ -16,6 +16,8 @@
 		6286EC4C2748A48F00A367FD /* RemindPassword in Frameworks */ = {isa = PBXBuildFile; productRef = 6286EC4B2748A48F00A367FD /* RemindPassword */; };
 		629CCCBC27405471003D0855 /* SignIn in Resources */ = {isa = PBXBuildFile; fileRef = 629CCCBB27405471003D0855 /* SignIn */; };
 		629CCCC427405C94003D0855 /* SignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 629CCCC327405C94003D0855 /* SignIn */; };
+		62B56465274D711500928D43 /* .github in Resources */ = {isa = PBXBuildFile; fileRef = 62B56464274D711500928D43 /* .github */; };
+		62BF2D16274D75BC005FD0D2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 62BF2D15274D75BC005FD0D2 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		6293A9C527459FFD006963CC /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Networking; sourceTree = "<group>"; };
 		629CCCBB27405471003D0855 /* SignIn */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SignIn; sourceTree = "<group>"; };
 		62A24FC1273C68050009136B /* Welcome */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Welcome; sourceTree = "<group>"; };
+		62B56464274D711500928D43 /* .github */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .github; sourceTree = SOURCE_ROOT; };
+		62BF2D15274D75BC005FD0D2 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		62DF943C273C99B900760582 /* Chat */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chat; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,6 +54,7 @@
 		6265738C27233BB500BCE47D = {
 			isa = PBXGroup;
 			children = (
+				62B56463274D6FB200928D43 /* Tools */,
 				62CC9D372724C7680000092B /* Packages */,
 				6265739727233BB500BCE47D /* App */,
 				6265739627233BB500BCE47D /* Products */,
@@ -85,18 +90,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6293A9C327459CA4006963CC /* Extranction */ = {
+		6293A9C327459CA4006963CC /* Extraction */ = {
 			isa = PBXGroup;
 			children = (
 				62145C00274585AF006B0307 /* Unexpected */,
 			);
-			path = Extranction;
+			path = Extraction;
+			sourceTree = "<group>";
+		};
+		62B56463274D6FB200928D43 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				62BF2D15274D75BC005FD0D2 /* .gitignore */,
+				62B56464274D711500928D43 /* .github */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		62CC9D372724C7680000092B /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				6293A9C327459CA4006963CC /* Extranction */,
+				6293A9C327459CA4006963CC /* Extraction */,
 				629CCCBB27405471003D0855 /* SignIn */,
 				6286EC472748891100A367FD /* RemindPassword */,
 				62A24FC1273C68050009136B /* Welcome */,
@@ -170,6 +184,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62B56465274D711500928D43 /* .github in Resources */,
+				62BF2D16274D75BC005FD0D2 /* .gitignore in Resources */,
 				6286EC4A2748A44D00A367FD /* RemindPassword in Resources */,
 				62095EEF27471E2C002643AC /* Localizable.strings in Resources */,
 				629CCCBC27405471003D0855 /* SignIn in Resources */,
