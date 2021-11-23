@@ -16,13 +16,17 @@
 "remind-password.enter-username.submit-action" = "Submit";
 
 
-"remind-password.change-password.hint-title" = "Create a strong password";
+"remind-password.change-password.hint-title" = "Enter your new password";
 "remind-password.change-password.hint-subtitle" = "Your password must be more than six characters and include a combination of numbers, letters and special characters.";
 "remind-password.change-password.new-password-field" = "New password";
-"remind-password.change-password.confirmation-password-field" = "New password, again";
-"remind-password.change-password.submit-action" = "Submit";
+"remind-password.change-password.confirmation-password-field" = "Confirm new password";
+"remind-password.change-password.submit-action" = "Change my password";
 
 
 "remind-password.email-sent.hint-title" = "Email sent";
 "remind-password.email-sent.hint-subtitle" = "We've sent an email to <email> with a link to get back into your account.";
 "remind-password.email-sent.submit-action" = "OK";
+
+"remind-password.password-updated.hint-title" = "Your password has been updated successfully.";
+"remind-password.password-updated.hint-subtitle" = "If you are currently using a device, we can save you the step of typing out your password. Use the button below to automatically sign yourself in.";
+"remind-password.password-updated.continue-action" = "Sign in automatically";

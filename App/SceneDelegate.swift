@@ -1,8 +1,6 @@
 import UIKit
-// import Welcome
-// import Chat
-import SignIn
-import RemindPassword
+import RequestPasswordReset
+import ConfirmPasswordChange
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -11,15 +9,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let scene = (scene as? UIWindowScene) else { return }
 
-//    let vc = SignIn.Builder.build(Input())
-    let vc = RemindPassword.Builder.reset(Reset(username: "contact@rzeszot.pro"))
-//    let vc = Welcome.build(Welcome.Input(privacy: {
-//      print("privacy")
-//    }, done: {
-//      print("done")
+//    let vc = RequestPasswordReset.Builder.request(RequestInput(username: "contact@rzeszot.pro", close: { reason in
+//      print("remind closed with reason: \(reason)")
 //    }))
 
-//    let vc = Chat.build()
+    let vc = ConfirmPasswordChange.Builder.confirm(ConfirmInput(username: "contact@rzeszot.pro", code: "authcode", close: { reason in
+      print("remind closed with reason: \(reason)")
+    }))
 
     let window = UIWindow(windowScene: scene)
     window.rootViewController = vc

@@ -12,13 +12,13 @@
 		6265739B27233BB500BCE47D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265739A27233BB500BCE47D /* SceneDelegate.swift */; };
 		626573A227233BB600BCE47D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 626573A127233BB600BCE47D /* Assets.xcassets */; };
 		626573A527233BB600BCE47D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 626573A327233BB600BCE47D /* LaunchScreen.storyboard */; };
-		6286EC4A2748A44D00A367FD /* RemindPassword in Resources */ = {isa = PBXBuildFile; fileRef = 6286EC472748891100A367FD /* RemindPassword */; };
-		6286EC4C2748A48F00A367FD /* RemindPassword in Frameworks */ = {isa = PBXBuildFile; productRef = 6286EC4B2748A48F00A367FD /* RemindPassword */; };
 		629CCCBC27405471003D0855 /* SignIn in Resources */ = {isa = PBXBuildFile; fileRef = 629CCCBB27405471003D0855 /* SignIn */; };
-		629CCCC427405C94003D0855 /* SignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 629CCCC327405C94003D0855 /* SignIn */; };
 		62B56465274D711500928D43 /* .github in Resources */ = {isa = PBXBuildFile; fileRef = 62B56464274D711500928D43 /* .github */; };
+		62B81A3D274DBA8A00360D52 /* RequestPasswordReset in Frameworks */ = {isa = PBXBuildFile; productRef = 62B81A3C274DBA8A00360D52 /* RequestPasswordReset */; };
 		62BF2D16274D75BC005FD0D2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 62BF2D15274D75BC005FD0D2 /* .gitignore */; };
 		62BF2D18274D9215005FD0D2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 62BF2D17274D9215005FD0D2 /* .swiftlint.yml */; };
+		62D7D683274DBA0800EF181A /* ConfirmPasswordChange in Frameworks */ = {isa = PBXBuildFile; productRef = 62D7D682274DBA0800EF181A /* ConfirmPasswordChange */; };
+		62D7D685274DBA2200EF181A /* SignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 62D7D684274DBA2200EF181A /* SignIn */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,13 +30,14 @@
 		626573A127233BB600BCE47D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		626573A427233BB600BCE47D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		626573A627233BB600BCE47D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6286EC472748891100A367FD /* RemindPassword */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RemindPassword; sourceTree = "<group>"; };
 		6293A9C527459FFD006963CC /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Networking; sourceTree = "<group>"; };
 		629CCCBB27405471003D0855 /* SignIn */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SignIn; sourceTree = "<group>"; };
 		62A24FC1273C68050009136B /* Welcome */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Welcome; sourceTree = "<group>"; };
 		62B56464274D711500928D43 /* .github */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .github; sourceTree = SOURCE_ROOT; };
 		62BF2D15274D75BC005FD0D2 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		62BF2D17274D9215005FD0D2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
+		62BF2D22274DB7BD005FD0D2 /* RequestPasswordReset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RequestPasswordReset; sourceTree = "<group>"; };
+		62BF2D23274DB854005FD0D2 /* ConfirmPasswordChange */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ConfirmPasswordChange; sourceTree = "<group>"; };
 		62DF943C273C99B900760582 /* Chat */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chat; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,8 +46,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6286EC4C2748A48F00A367FD /* RemindPassword in Frameworks */,
-				629CCCC427405C94003D0855 /* SignIn in Frameworks */,
+				62D7D685274DBA2200EF181A /* SignIn in Frameworks */,
+				62D7D683274DBA0800EF181A /* ConfirmPasswordChange in Frameworks */,
+				62B81A3D274DBA8A00360D52 /* RequestPasswordReset in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +58,7 @@
 		6265738C27233BB500BCE47D = {
 			isa = PBXGroup;
 			children = (
-				62B56463274D6FB200928D43 /* Tools */,
+				62BF2D24274DB8D0005FD0D2 /* Tools */,
 				62CC9D372724C7680000092B /* Packages */,
 				6265739727233BB500BCE47D /* App */,
 				6265739627233BB500BCE47D /* Products */,
@@ -92,35 +94,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6293A9C327459CA4006963CC /* Extraction */ = {
+		6293A9C327459CA4006963CC /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				62145C00274585AF006B0307 /* Unexpected */,
 			);
-			path = Extraction;
+			path = Common;
 			sourceTree = "<group>";
 		};
-		62B56463274D6FB200928D43 /* Tools */ = {
+		62BF2D24274DB8D0005FD0D2 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
 				62BF2D17274D9215005FD0D2 /* .swiftlint.yml */,
 				62BF2D15274D75BC005FD0D2 /* .gitignore */,
 				62B56464274D711500928D43 /* .github */,
 			);
-			path = Tools;
+			name = Tools;
 			sourceTree = "<group>";
 		};
 		62CC9D372724C7680000092B /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				6293A9C327459CA4006963CC /* Extraction */,
-				629CCCBB27405471003D0855 /* SignIn */,
-				6286EC472748891100A367FD /* RemindPassword */,
+				62D7D681274DB9C300EF181A /* Account */,
+				6293A9C327459CA4006963CC /* Common */,
 				62A24FC1273C68050009136B /* Welcome */,
 				62DF943C273C99B900760582 /* Chat */,
 				6293A9C527459FFD006963CC /* Networking */,
 			);
 			path = Packages;
+			sourceTree = "<group>";
+		};
+		62D7D681274DB9C300EF181A /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				629CCCBB27405471003D0855 /* SignIn */,
+				62BF2D22274DB7BD005FD0D2 /* RequestPasswordReset */,
+				62BF2D23274DB854005FD0D2 /* ConfirmPasswordChange */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,13 +148,15 @@
 			buildRules = (
 			);
 			dependencies = (
-				6286EC492748A44900A367FD /* PBXTargetDependency */,
+				62BF2D1E274DB566005FD0D2 /* PBXTargetDependency */,
+				62BF2D20274DB566005FD0D2 /* PBXTargetDependency */,
 				629CCCC227405C90003D0855 /* PBXTargetDependency */,
 			);
 			name = Adopt;
 			packageProductDependencies = (
-				629CCCC327405C94003D0855 /* SignIn */,
-				6286EC4B2748A48F00A367FD /* RemindPassword */,
+				62D7D682274DBA0800EF181A /* ConfirmPasswordChange */,
+				62D7D684274DBA2200EF181A /* SignIn */,
+				62B81A3C274DBA8A00360D52 /* RequestPasswordReset */,
 			);
 			productName = spm;
 			productReference = 6265739527233BB500BCE47D /* Adopt.app */;
@@ -190,7 +203,6 @@
 				62BF2D18274D9215005FD0D2 /* .swiftlint.yml in Resources */,
 				62B56465274D711500928D43 /* .github in Resources */,
 				62BF2D16274D75BC005FD0D2 /* .gitignore in Resources */,
-				6286EC4A2748A44D00A367FD /* RemindPassword in Resources */,
 				62095EEF27471E2C002643AC /* Localizable.strings in Resources */,
 				629CCCBC27405471003D0855 /* SignIn in Resources */,
 				626573A527233BB600BCE47D /* LaunchScreen.storyboard in Resources */,
@@ -213,13 +225,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6286EC492748A44900A367FD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 6286EC482748A44900A367FD /* RemindPassword */;
-		};
 		629CCCC227405C90003D0855 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 629CCCC127405C90003D0855 /* SignIn */;
+		};
+		62BF2D1E274DB566005FD0D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 62BF2D1D274DB566005FD0D2 /* ConfirmPasswordChange */;
+		};
+		62BF2D20274DB566005FD0D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 62BF2D1F274DB566005FD0D2 /* RequestPasswordReset */;
 		};
 /* End PBXTargetDependency section */
 
@@ -439,19 +455,27 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6286EC482748A44900A367FD /* RemindPassword */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = RemindPassword;
-		};
-		6286EC4B2748A48F00A367FD /* RemindPassword */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = RemindPassword;
-		};
 		629CCCC127405C90003D0855 /* SignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SignIn;
 		};
-		629CCCC327405C94003D0855 /* SignIn */ = {
+		62B81A3C274DBA8A00360D52 /* RequestPasswordReset */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RequestPasswordReset;
+		};
+		62BF2D1D274DB566005FD0D2 /* ConfirmPasswordChange */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ConfirmPasswordChange;
+		};
+		62BF2D1F274DB566005FD0D2 /* RequestPasswordReset */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RequestPasswordReset;
+		};
+		62D7D682274DBA0800EF181A /* ConfirmPasswordChange */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ConfirmPasswordChange;
+		};
+		62D7D684274DBA2200EF181A /* SignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SignIn;
 		};
