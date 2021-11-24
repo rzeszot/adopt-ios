@@ -19,7 +19,8 @@ jobs:
 
   sign_in:
     name: SignIn - unit tests
-    needs: [linter, check]
+    needs: [check]
+    if: needs.check.outputs.run_sign_in == 'true'
     runs-on: macos-latest
     timeout-minutes: 5
     defaults:
@@ -37,7 +38,8 @@ jobs:
 
   request_password_reset:
     name: RequestPasswordReset - unit tests
-    needs: [linter, check]
+    needs: [check]
+    if: needs.check.outputs.run_request_password_reset == 'true'
     runs-on: macos-latest
     timeout-minutes: 5
     defaults:
@@ -55,7 +57,8 @@ jobs:
 
   confirm_password_change:
     name: ConfirmPasswordChange - unit tests
-    needs: [linter, check]
+    needs: [check]
+    if: needs.check.outputs.run_confirm_password_change == 'true'
     runs-on: macos-latest
     timeout-minutes: 5
     defaults:
@@ -71,20 +74,37 @@ jobs:
             -destination 'name=iPhone 13 Pro' \
             clean test | xcpretty
 
+
   check:
-    name: Check packages
-    outputs:
-      signin: ${{ steps.signin }}
+    name: Check
     runs-on: macos-latest
+    outputs:
+      run_sign_in: ${{ steps.check.outputs.run_sign_in }}
+      run_request_password_reset: ${{ steps.check.outputs.run_request_password_reset }}
+      run_confirm_password_change: ${{ steps.check.outputs.run_confirm_password_change }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Check SignIn
+        with:
+          fetch-depth: 0
+      - name: Quick check
+        id: check
         run: |
-          echo SignIn
-      - name: Check ConfirmPasswordChange
-        run: |
-          echo ConfirmPasswordChange
-      - name: Check RequestPasswordReset
-        run: |
-          echo RequestPasswordReset
+          function check() {
+            git diff --name-only HEAD origin/main | grep Packages/$1 > /dev/null && echo "true" || echo "false"
+          }
+
+          echo "--- files:"
+          git diff --name-only HEAD origin/main
+
+          echo "--- run_sign_in:"
+          check 'Account/SignIn'
+          echo "::set-output name=run_sign_in::`check 'Account/SignIn'`"
+
+          echo "--- run_request_password_reset:"
+          check 'Account/RequestPasswordReset'
+          echo "::set-output name=run_request_password_reset::`check 'Account/RequestPasswordReset'`"
+
+          echo "--- run_confirm_password_change:"
+          check 'Account/ConfirmPasswordChange'
+          echo "::set-output name=run_confirm_password_change::`check 'Account/ConfirmPasswordChange'`"
