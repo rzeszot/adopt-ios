@@ -20,13 +20,13 @@ jobs:
           --reporter github-actions-logging
 
   sign_in:
-    name: Sign In - unit tests
+    name: SignIn - unit tests
     needs: [linter]
     runs-on: macos-latest
     timeout-minutes: 5
     defaults:
       run:
-        working-directory: Packages/SignIn
+        working-directory: Packages/Account/SignIn
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -37,20 +37,38 @@ jobs:
           -destination 'name=iPhone 13 Pro' \
           clean test | xcpretty
 
-  remind_password:
-    name: Remind Password - unit tests
+  request_password_reset:
+    name: RequestPasswordReset - unit tests
     needs: [linter]
     runs-on: macos-latest
     timeout-minutes: 5
     defaults:
       run:
-        working-directory: Packages/RemindPassword
+        working-directory: Packages/Account/RequestPasswordReset
     steps:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Unit Test
       run: |
         xcodebuild \
-          -scheme RemindPassword \
+          -scheme RequestPasswordReset \
+          -destination 'name=iPhone 13 Pro' \
+          clean test | xcpretty
+
+  confirm_password_change:
+    name: ConfirmPasswordChange - unit tests
+    needs: [linter]
+    runs-on: macos-latest
+    timeout-minutes: 5
+    defaults:
+      run:
+        working-directory: Packages/Account/ConfirmPasswordChange
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Unit Test
+      run: |
+        xcodebuild \
+          -scheme ConfirmPasswordChange \
           -destination 'name=iPhone 13 Pro' \
           clean test | xcpretty
