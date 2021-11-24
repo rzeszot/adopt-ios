@@ -1,8 +1,6 @@
 name: Tests
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -12,63 +10,101 @@ jobs:
     runs-on: macos-latest
     timeout-minutes: 2
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Linter
-      run: |
-        swiftlint lint \
-          --reporter github-actions-logging
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Linter
+        run: |
+          swiftlint lint \
+            --reporter github-actions-logging
 
   sign_in:
     name: SignIn - unit tests
-    needs: [linter]
+    needs: [check]
+    if: needs.check.outputs.run_sign_in == 'true'
     runs-on: macos-latest
     timeout-minutes: 5
     defaults:
       run:
         working-directory: Packages/Account/SignIn
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Unit Tests
-      run: |
-        xcodebuild \
-          -scheme SignIn \
-          -destination 'name=iPhone 13 Pro' \
-          clean test | xcpretty
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Unit Tests
+        run: |
+          xcodebuild \
+            -scheme SignIn \
+            -destination 'name=iPhone 13 Pro' \
+            clean test | xcpretty
 
   request_password_reset:
     name: RequestPasswordReset - unit tests
-    needs: [linter]
+    needs: [check]
+    if: needs.check.outputs.run_request_password_reset == 'true'
     runs-on: macos-latest
     timeout-minutes: 5
     defaults:
       run:
         working-directory: Packages/Account/RequestPasswordReset
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Unit Test
-      run: |
-        xcodebuild \
-          -scheme RequestPasswordReset \
-          -destination 'name=iPhone 13 Pro' \
-          clean test | xcpretty
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Unit Test
+        run: |
+          xcodebuild \
+            -scheme RequestPasswordReset \
+            -destination 'name=iPhone 13 Pro' \
+            clean test | xcpretty
 
   confirm_password_change:
     name: ConfirmPasswordChange - unit tests
-    needs: [linter]
+    needs: [check]
+    if: needs.check.outputs.run_confirm_password_change == 'true'
     runs-on: macos-latest
     timeout-minutes: 5
     defaults:
       run:
         working-directory: Packages/Account/ConfirmPasswordChange
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Unit Test
-      run: |
-        xcodebuild \
-          -scheme ConfirmPasswordChange \
-          -destination 'name=iPhone 13 Pro' \
-          clean test | xcpretty
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Unit Test
+        run: |
+          xcodebuild \
+            -scheme ConfirmPasswordChange \
+            -destination 'name=iPhone 13 Pro' \
+            clean test | xcpretty
+
+
+  check:
+    name: Check
+    runs-on: macos-latest
+    outputs:
+      run_sign_in: ${{ steps.check.outputs.run_sign_in }}
+      run_request_password_reset: ${{ steps.check.outputs.run_request_password_reset }}
+      run_confirm_password_change: ${{ steps.check.outputs.run_confirm_password_change }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Quick check
+        id: check
+        run: |
+          function check() {
+            git diff --name-only HEAD origin/main | grep Packages/$1 > /dev/null && echo "true" || echo "false"
+          }
+
+          echo "--- files:"
+          git diff --name-only HEAD origin/main
+
+          echo "--- run_sign_in:"
+          check 'Account/SignIn'
+          echo "::set-output name=run_sign_in::`check 'Account/SignIn'`"
+
+          echo "--- run_request_password_reset:"
+          check 'Account/RequestPasswordReset'
+          echo "::set-output name=run_request_password_reset::`check 'Account/RequestPasswordReset'`"
+
+          echo "--- run_confirm_password_change:"
+          check 'Account/ConfirmPasswordChange'
+          echo "::set-output name=run_confirm_password_change::`check 'Account/ConfirmPasswordChange'`"
