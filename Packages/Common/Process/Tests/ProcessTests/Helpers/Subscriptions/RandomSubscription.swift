@@ -11,3 +11,15 @@ struct RandomSubscription: State {
     }
   }
 }
+
+extension RandomSubscription: SpecificationState {
+  func transitionable(to state: State) -> Bool {
+    state is ActiveSubscription || state is InactiveSubscription
+  }
+}
+
+extension RandomSubscription: CustomStringConvertible {
+  var description: String {
+    "random"
+  }
+}

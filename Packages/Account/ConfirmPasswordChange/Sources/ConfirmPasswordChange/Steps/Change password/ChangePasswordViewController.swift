@@ -2,8 +2,7 @@ import UIKit
 
 final class ChangePasswordViewController: UIViewController {
 
-  typealias Output = (close: () -> Void, submit: (String) -> Void)
-  var output: Output!
+  var output: ChangePasswordOutput!
 
   // MARK: -
 
@@ -13,7 +12,16 @@ final class ChangePasswordViewController: UIViewController {
 
   @objc func submitAction() {
     let password = firstPasswordTextField.text ?? ""
-    output.submit(password)
+
+    Task {
+      firstPasswordTextField.isEnabled = false
+      secondPasswordTextField.isEnabled = false
+      submitButton.isEnabled = false
+      await output.submit(password)
+      firstPasswordTextField.isEnabled = true
+      secondPasswordTextField.isEnabled = true
+      submitButton.isEnabled = true
+    }
   }
 
   @objc func backgroundAction() {
@@ -79,7 +87,7 @@ final class ChangePasswordViewController: UIViewController {
       root.leftAnchor.constraint(equalTo: view.leftAnchor),
       root.rightAnchor.constraint(equalTo: view.rightAnchor),
       root.topAnchor.constraint(equalTo: closeButton.bottomAnchor),
-      root.bottomAnchor.constraint(lessThanOrEqualTo: view.keyboardLayoutGuide.topAnchor),
+//      root.bottomAnchor.constraint(lessThanOrEqualTo: view.keyboardLayoutGuide.topAnchor),
       root.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).priority(999)
     ])
 

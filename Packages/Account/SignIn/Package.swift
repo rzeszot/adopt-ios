@@ -12,8 +12,8 @@ let package = Package(
   ],
   dependencies: [
     .package(name: "Mocky", url: "https://github.com/rzeszot/swift-http-mocky.git", branch: "main"),
-    .package(path: "Networking"),
-    .package(path: "Common/Unexpected")
+    .package(path: "../../Networking"),
+    .package(path: "../../Common/Unexpected")
   ],
   targets: [
     .target(name: "SignIn", dependencies: ["Unexpected", "Networking"]),

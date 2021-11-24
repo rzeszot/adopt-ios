@@ -13,3 +13,15 @@ struct ActiveSubscription: State {
     return PausedSubscription()
   }
 }
+
+extension ActiveSubscription: SpecificationState {
+  func transitionable(to state: State) -> Bool {
+    state is InactiveSubscription || state is PausedSubscription
+  }
+}
+
+extension ActiveSubscription: CustomStringConvertible {
+  var description: String {
+    "active"
+  }
+}

@@ -3,9 +3,7 @@ import UIKit
 final class EnterUsernameViewController: UIViewController {
 
   var viewModel: EnterUsernameViewModel!
-
-  typealias Output = (close: () -> Void, submit: (String) -> Void)
-  var output: Output!
+  var output: EnterUsernameOutput!
 
   // MARK: -
 
@@ -15,7 +13,12 @@ final class EnterUsernameViewController: UIViewController {
 
   @objc func submitAction() {
     let username = usernameTextField.text ?? ""
-    output.submit(username)
+
+    Task {
+      submitButton.isEnabled = false
+      await output.submit(username)
+      submitButton.isEnabled = true
+    }
   }
 
   @objc func backgroundAction() {
@@ -77,7 +80,7 @@ final class EnterUsernameViewController: UIViewController {
       root.leftAnchor.constraint(equalTo: view.leftAnchor),
       root.rightAnchor.constraint(equalTo: view.rightAnchor),
       root.topAnchor.constraint(equalTo: closeButton.bottomAnchor),
-      root.bottomAnchor.constraint(lessThanOrEqualTo: view.keyboardLayoutGuide.topAnchor),
+//      root.bottomAnchor.constraint(lessThanOrEqualTo: view.keyboardLayoutGuide.topAnchor),
       root.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).priority(999)
     ])
 

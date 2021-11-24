@@ -1,7 +1,18 @@
 excluded:
-  - .gbuild
+  - .build
+
+disabled_rules:
+  - force_cast
 
 identifier_name:
   excluded:
     - id
     - vc
+
+nesting:
+  type_level:
+    warning: 2
+    error: 3
+
+line_length:
+  warning: 160

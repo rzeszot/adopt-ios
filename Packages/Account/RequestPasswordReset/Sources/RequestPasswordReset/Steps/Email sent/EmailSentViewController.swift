@@ -3,17 +3,16 @@ import UIKit
 final class EmailSentViewController: UIViewController {
 
   var viewModel: EmailSentViewModel!
-  var back: (() -> Void)!
-  var submit: (() -> Void)!
+  var output: EmailSentOutput!
 
   // MARK: -
 
   @objc func backAction() {
-    self.back()
+    output.back()
   }
 
   @objc func submitAction() {
-    self.submit()
+    output.submit()
   }
 
   // MARK: -

@@ -8,3 +8,15 @@ struct InactiveSubscription: State {
     return ActiveSubscription()
   }
 }
+
+extension InactiveSubscription: SpecificationState {
+  func transitionable(to state: State) -> Bool {
+    state is ActiveSubscription
+  }
+}
+
+extension InactiveSubscription: CustomStringConvertible {
+  var description: String {
+    "inactive"
+  }
+}
