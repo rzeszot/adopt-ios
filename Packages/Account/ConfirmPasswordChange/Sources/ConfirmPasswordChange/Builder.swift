@@ -1,13 +1,13 @@
 import UIKit
 
 public struct Builder {
-  public static func confirm(_ input: ConfirmInput) -> UIViewController {
+  public static func confirm(_ input: Input) -> UIViewController {
     let container = ContainerController()
 
     let change = ChangePasswordViewController()
     change.output = (close: {
       input.close(.cancel)
-    }, submit: { password in
+    }, submit: { _ in
       let updated = PasswordUpdatedViewController()
       updated.output = (close: {
         input.close(.dismiss)
@@ -17,7 +17,6 @@ public struct Builder {
 
       container.use(updated)
     })
-
 
     container.use(change)
 

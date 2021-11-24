@@ -1,6 +1,6 @@
 import Foundation
 
-public struct ConfirmInput {
+public struct Input {
   public enum CloseReason {
     case cancel
     case dismiss

@@ -1,9 +1,9 @@
 import Foundation
 
-public struct RequestInput {
+public struct Input {
   public enum CloseReason {
     case cancel
-    case request
+    case done
   }
 
   let username: String?

@@ -1,7 +1,7 @@
 import UIKit
 
 public struct Builder {
-  public static func request(_ input: RequestInput) -> UIViewController {
+  public static func request(_ input: Input) -> UIViewController {
     let container = ContainerController()
 
     let enter = EnterUsernameViewController()
@@ -15,7 +15,7 @@ public struct Builder {
         container.use(enter)
       }
       sent.submit = {
-        input.close(.request)
+        input.close(.done)
       }
       container.use(sent)
     })
