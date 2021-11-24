@@ -11,12 +11,17 @@ public class ProcessManager {
   public private(set) var current: State!
   private(set) var handlers: [Handler] = []
 
-  public init() {
+  public weak var delegate: ProcessManagerDelegate?
 
+  public init() {
   }
 
   public func start(handler: @escaping () -> State) {
     current = handler()
+
+    DispatchQueue.main.async {
+      self.delegate?.start(state: self.current)
+    }
   }
 
   public func register<S: State, C: Command>(handler: @escaping (S, C) async -> State) throws {
@@ -32,7 +37,13 @@ public class ProcessManager {
 
   public func handle(_ command: Command) async throws {
     let handler = try find(for: command)
+
+    let from = current!
     current = await handler.execute(current, command)
+
+    DispatchQueue.main.async {
+      self.delegate?.change(from: from, to: self.current!, using: command)
+    }
   }
 
   func transition(state: State.Type, command: Command.Type) -> Handler? {
@@ -46,7 +57,7 @@ public class ProcessManager {
       handler.command == type(of: command) && handler.state == type(of: current!)
     }
 
-    guard let found = found.first else { throw InvalidTransitionError() }
+    guard let found = found.first else { throw InvalidTransitionError(source: current, command: command) }
     return found
   }
 
