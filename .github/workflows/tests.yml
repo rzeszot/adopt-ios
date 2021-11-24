@@ -1,8 +1,6 @@
 name: Tests
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -12,63 +10,81 @@ jobs:
     runs-on: macos-latest
     timeout-minutes: 2
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Linter
-      run: |
-        swiftlint lint \
-          --reporter github-actions-logging
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Linter
+        run: |
+          swiftlint lint \
+            --reporter github-actions-logging
 
   sign_in:
     name: SignIn - unit tests
-    needs: [linter]
+    needs: [linter, check]
     runs-on: macos-latest
     timeout-minutes: 5
     defaults:
       run:
         working-directory: Packages/Account/SignIn
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Unit Tests
-      run: |
-        xcodebuild \
-          -scheme SignIn \
-          -destination 'name=iPhone 13 Pro' \
-          clean test | xcpretty
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Unit Tests
+        run: |
+          xcodebuild \
+            -scheme SignIn \
+            -destination 'name=iPhone 13 Pro' \
+            clean test | xcpretty
 
   request_password_reset:
     name: RequestPasswordReset - unit tests
-    needs: [linter]
+    needs: [linter, check]
     runs-on: macos-latest
     timeout-minutes: 5
     defaults:
       run:
         working-directory: Packages/Account/RequestPasswordReset
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Unit Test
-      run: |
-        xcodebuild \
-          -scheme RequestPasswordReset \
-          -destination 'name=iPhone 13 Pro' \
-          clean test | xcpretty
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Unit Test
+        run: |
+          xcodebuild \
+            -scheme RequestPasswordReset \
+            -destination 'name=iPhone 13 Pro' \
+            clean test | xcpretty
 
   confirm_password_change:
     name: ConfirmPasswordChange - unit tests
-    needs: [linter]
+    needs: [linter, check]
     runs-on: macos-latest
     timeout-minutes: 5
     defaults:
       run:
         working-directory: Packages/Account/ConfirmPasswordChange
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Unit Test
-      run: |
-        xcodebuild \
-          -scheme ConfirmPasswordChange \
-          -destination 'name=iPhone 13 Pro' \
-          clean test | xcpretty
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Unit Test
+        run: |
+          xcodebuild \
+            -scheme ConfirmPasswordChange \
+            -destination 'name=iPhone 13 Pro' \
+            clean test | xcpretty
+
+  check:
+    name: Check packages
+    outputs:
+      signin: ${{ steps.signin }}
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Check SignIn
+        run: |
+          echo SignIn
+      - name: Check ConfirmPasswordChange
+        run: |
+          echo ConfirmPasswordChange
+      - name: Check RequestPasswordReset
+        run: |
+          echo RequestPasswordReset
