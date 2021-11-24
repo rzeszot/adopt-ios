@@ -34,7 +34,7 @@ struct RequestPasswordResetService {
   }
 
   func request(username: String) async throws -> SuccessResponse {
-    try await session.perform(request: build(username: "username"), using: parser)
+    try await session.perform(request: build(username: username), using: parser)
   }
 
 }

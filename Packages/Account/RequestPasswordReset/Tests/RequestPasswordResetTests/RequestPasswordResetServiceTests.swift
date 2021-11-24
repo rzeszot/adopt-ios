@@ -38,6 +38,7 @@ final class RequestPasswordResetServiceTests: XCTestCase {
 
   func test_success() async throws {
     mocky.post("/account/forgot-password/request") { env in
+      XCTAssertEqual(env.request.body, Fixture.request.data)
       env.load(from: "reset-success.json", subdirectory: "Responses", bundle: .module)
     }
 
@@ -60,4 +61,12 @@ final class RequestPasswordResetServiceTests: XCTestCase {
     }
   }
 
+}
+
+extension Fixture {
+  static var request: Fixture = """
+    {
+      "username" : "user@example.org"
+    }
+    """
 }
