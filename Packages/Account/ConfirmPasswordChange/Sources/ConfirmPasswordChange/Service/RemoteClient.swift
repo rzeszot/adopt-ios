@@ -1,8 +1,7 @@
 import Foundation
 import Networking
-import Unexpected
 
-struct ConfirmPasswordChangeService {
+struct RemoteClient {
 //
   // MARK: -
 
@@ -42,4 +41,10 @@ struct ConfirmPasswordChangeService {
     try await session.perform(request: build(username: username, password: password, code: code), using: parser)
   }
 
+}
+
+extension RemoteClient: Client {
+  func request(username: String, password: String, code: String) async throws {
+    let _: SuccessResponse = try await request(username: username, password: password, code: code)
+  }
 }

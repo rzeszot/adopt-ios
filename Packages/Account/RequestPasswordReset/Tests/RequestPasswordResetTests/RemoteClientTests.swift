@@ -4,13 +4,13 @@ import Networking
 import Unexpected
 @testable import RequestPasswordReset
 
-final class RequestPasswordResetServiceTests: XCTestCase {
+final class RemoteClientTests: XCTestCase {
 
-  var sut: RequestPasswordResetService!
+  var sut: RemoteClient!
   var mocky: Mocky!
 
   override func setUp() {
-    sut = RequestPasswordResetService(session: .shared)
+    sut = RemoteClient(session: .shared)
     mocky = Mocky.shared
     mocky.start()
   }
@@ -43,7 +43,7 @@ final class RequestPasswordResetServiceTests: XCTestCase {
     }
 
     do {
-      _ = try await sut.request(username: "user@example.org")
+      let _: RemoteClient.SuccessResponse = try await sut.request(username: "user@example.org")
     } catch {
       XCTFail("XCTAssertNoThrowAwait")
     }
@@ -51,13 +51,14 @@ final class RequestPasswordResetServiceTests: XCTestCase {
 
   func test_failure() async throws {
     mocky.post("/account/forgot-password/request") { env in
+      XCTAssertEqual(env.request.body, Fixture.request.data)
       env.load(from: "reset-failure.json", subdirectory: "Responses", bundle: .module)
     }
 
     do {
-      _ = try await sut.request(username: "user@example.org")
+      let _: RemoteClient.SuccessResponse = try await sut.request(username: "user@example.org")
     } catch {
-      XCTAssertTrue(error is RequestPasswordResetService.FailureResponse)
+      XCTAssertTrue(error is RemoteClient.FailureResponse)
     }
   }
 

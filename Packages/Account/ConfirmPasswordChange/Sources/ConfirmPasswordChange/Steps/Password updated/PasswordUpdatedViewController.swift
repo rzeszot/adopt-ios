@@ -3,9 +3,7 @@ import UIKit
 final class PasswordUpdatedViewController: UIViewController {
 
   var viewModel: PasswordUpdatedViewModel!
-
-  typealias Output = (close: () -> Void, done: () -> Void)
-  var output: Output!
+  var output: PasswordUpdatedOutput!
 
   // MARK: -
 
@@ -66,8 +64,7 @@ final class PasswordUpdatedViewController: UIViewController {
       root.leftAnchor.constraint(equalTo: view.leftAnchor),
       root.rightAnchor.constraint(equalTo: view.rightAnchor),
       root.topAnchor.constraint(equalTo: closeButton.bottomAnchor),
-      root.bottomAnchor.constraint(lessThanOrEqualTo: view.keyboardLayoutGuide.topAnchor),
-      root.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).priority(999)
+      root.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
     ])
 
     return root

@@ -4,13 +4,13 @@ import Networking
 import Unexpected
 @testable import ConfirmPasswordChange
 
-final class ConfirmPasswordChangeServiceTests: XCTestCase {
+final class RemoteClientTests: XCTestCase {
 
-  var sut: ConfirmPasswordChangeService!
+  var sut: RemoteClient!
   var mocky: Mocky!
 
   override func setUp() {
-    sut = ConfirmPasswordChangeService(session: .shared)
+    sut = RemoteClient(session: .shared)
     mocky = Mocky.shared
     mocky.start()
   }
@@ -28,23 +28,17 @@ final class ConfirmPasswordChangeServiceTests: XCTestCase {
 
     XCTAssertEqual(request.url, "https://adopt.rzeszot.pro/account/forgot-password/confirm")
     XCTAssertEqual(request.httpMethod, "POST")
-    XCTAssertNotNil(request.httpBody)
-    XCTAssertEqual(request.httpBody, """
-      {
-        "code" : "CODE",
-        "password" : "NEW-PASSWORD",
-        "username" : "USERNAME"
-      }
-      """.data(using: .utf8))
+    XCTAssertEqual(request.httpBody, Fixture.request.data)
   }
 
   func test_success() async throws {
     mocky.post("/account/forgot-password/confirm") { env in
+      XCTAssertEqual(env.request.body, Fixture.request.data)
       env.load(from: "confirm-success.json", subdirectory: "Responses", bundle: .module)
     }
 
     do {
-      _ = try await sut.request(username: "USERNAME", password: "NEW-PASSWORD", code: "TOKEN")
+      let _: RemoteClient.SuccessResponse = try await sut.request(username: "USERNAME", password: "NEW-PASSWORD", code: "CODE")
     } catch {
       XCTFail("XCTAssertNoThrowAwait")
     }
@@ -52,14 +46,26 @@ final class ConfirmPasswordChangeServiceTests: XCTestCase {
 
   func test_failure() async throws {
     mocky.post("/account/forgot-password/confirm") { env in
+      XCTAssertEqual(env.request.body, Fixture.request.data)
       env.load(from: "confirm-failure.json", subdirectory: "Responses", bundle: .module)
     }
 
     do {
-      _ = try await sut.request(username: "USERNAME", password: "NEW-PASSWORD", code: "CODE")
+      let _: RemoteClient.SuccessResponse = try await sut.request(username: "USERNAME", password: "NEW-PASSWORD", code: "CODE")
+      XCTFail("XCTAssertThrowAwait")
     } catch {
-      XCTAssertTrue(error is ConfirmPasswordChangeService.FailureResponse)
+      XCTAssertTrue(error is RemoteClient.FailureResponse)
     }
   }
 
+}
+
+private extension Fixture {
+  static var request: Fixture = """
+    {
+      "code" : "CODE",
+      "password" : "NEW-PASSWORD",
+      "username" : "USERNAME"
+    }
+    """
 }

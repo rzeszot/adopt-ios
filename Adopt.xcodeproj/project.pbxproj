@@ -34,6 +34,7 @@
 		629CCCBB27405471003D0855 /* SignIn */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SignIn; sourceTree = "<group>"; };
 		62A24FC1273C68050009136B /* Welcome */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Welcome; sourceTree = "<group>"; };
 		62B56464274D711500928D43 /* .github */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .github; sourceTree = SOURCE_ROOT; };
+		62B81A3E274EBCBD00360D52 /* Process */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Process; sourceTree = "<group>"; };
 		62BF2D15274D75BC005FD0D2 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		62BF2D17274D9215005FD0D2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		62BF2D22274DB7BD005FD0D2 /* RequestPasswordReset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RequestPasswordReset; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		6293A9C327459CA4006963CC /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				62B81A3E274EBCBD00360D52 /* Process */,
 				62145C00274585AF006B0307 /* Unexpected */,
 			);
 			path = Common;
@@ -115,8 +117,8 @@
 		62CC9D372724C7680000092B /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				62D7D681274DB9C300EF181A /* Account */,
 				6293A9C327459CA4006963CC /* Common */,
+				62D7D681274DB9C300EF181A /* Account */,
 				62A24FC1273C68050009136B /* Welcome */,
 				62DF943C273C99B900760582 /* Chat */,
 				6293A9C527459FFD006963CC /* Networking */,

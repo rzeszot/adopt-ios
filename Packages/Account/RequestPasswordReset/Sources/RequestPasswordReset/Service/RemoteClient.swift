@@ -1,7 +1,7 @@
 import Foundation
 import Networking
 
-struct RequestPasswordResetService {
+struct RemoteClient {
 
   let session: URLSession
   let parser: Parser = [
@@ -37,4 +37,10 @@ struct RequestPasswordResetService {
     try await session.perform(request: build(username: username), using: parser)
   }
 
+}
+
+extension RemoteClient: Client {
+  func request(username: String) async throws {
+    let _: SuccessResponse = try await self.request(username: username)
+  }
 }
