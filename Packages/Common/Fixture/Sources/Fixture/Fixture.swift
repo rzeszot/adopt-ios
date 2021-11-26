@@ -1,15 +1,15 @@
 import Foundation
 
-struct Fixture {
-  let string: String
+public struct Fixture {
+  public let string: String
 
-  var data: Data {
+  public var data: Data {
     string.data(using: .utf8)!
   }
 }
 
 extension Fixture: ExpressibleByStringLiteral {
-  init(stringLiteral value: String) {
+  public init(stringLiteral value: String) {
     string = value
   }
 }
