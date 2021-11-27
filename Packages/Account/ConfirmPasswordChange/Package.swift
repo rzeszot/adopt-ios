@@ -19,7 +19,9 @@ let package = Package(
   ],
   targets: [
     .target(name: "ConfirmPasswordChange", dependencies: ["Unexpected", "Networking", "Process"]),
-    .testTarget(name: "ConfirmPasswordChangeTests", dependencies: ["ConfirmPasswordChange", "Mocky", "Fixture"], resources: [
+    .testTarget(name: "DomainTests", dependencies: ["ConfirmPasswordChange"]),
+    .testTarget(name: "InfrastructureTests", dependencies: ["ConfirmPasswordChange", "Mocky", "Fixture"], resources: [
+      .copy("Requests"),
       .copy("Responses")
     ])
   ]

@@ -3,7 +3,13 @@ import Process
 
 public struct Builder {
   public static func confirm(_ input: Input) -> UIViewController {
-    let state = ChangePasswordState(input)
+    #if DEBUG
+      let client = StubClient()
+    #else
+      let client = RemoteClient(session: .shared)
+    #endif
+
+    let state = ChangePasswordState(username: input.username, code: input.code, client: client)
 
     let container = ContainerController()
     container.output = { state in
@@ -15,12 +21,7 @@ public struct Builder {
   }
 }
 
-extension ChangePasswordState {
-  init(_ input: Input) {
-    self.init(username: input.username, code: input.code, client: StubClient())
-  }
-}
-
+#if DEBUG
 struct StubClient: Client {
   typealias Failure = RemoteClient.FailureResponse
 
@@ -36,3 +37,4 @@ struct StubClient: Client {
     }
   }
 }
+#endif

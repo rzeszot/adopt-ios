@@ -31,10 +31,10 @@ final class RemoteClientTests: XCTestCase {
     XCTAssertEqual(request.httpBody, Fixture.request.data)
   }
 
-  func test_success() async throws {
+  func test_response_success() async throws {
     mocky.post("/account/forgot-password/confirm") { env in
       XCTAssertEqual(env.request.body, Fixture.request.data)
-      env.load(from: "confirm-success.json", subdirectory: "Responses", bundle: .module)
+      env.load(from: "confirm-success.response", subdirectory: "Responses", bundle: .module)
     }
 
     do {
@@ -44,10 +44,10 @@ final class RemoteClientTests: XCTestCase {
     }
   }
 
-  func test_failure() async throws {
+  func test_response_failure() async throws {
     mocky.post("/account/forgot-password/confirm") { env in
       XCTAssertEqual(env.request.body, Fixture.request.data)
-      env.load(from: "confirm-failure.json", subdirectory: "Responses", bundle: .module)
+      env.load(from: "confirm-failure.response", subdirectory: "Responses", bundle: .module)
     }
 
     do {
