@@ -3,7 +3,7 @@ import Process
 
 public struct Builder {
   public static func confirm(_ input: Input) -> UIViewController {
-    let state = ChangePasswordState.stub(username: input.username, code: input.code)
+    let state = ChangePasswordState(input)
 
     let container = ContainerController()
     container.output = { state in
@@ -16,10 +16,11 @@ public struct Builder {
 }
 
 extension ChangePasswordState {
-  static func stub(username: String, code: String) -> ChangePasswordState {
-    ChangePasswordState(username: username, code: code, client: StubClient())
+  init(_ input: Input) {
+    self.init(username: input.username, code: input.code, client: StubClient())
   }
 }
+
 struct StubClient: Client {
   typealias Failure = RemoteClient.FailureResponse
 
