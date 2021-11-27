@@ -2,8 +2,6 @@ import Foundation
 import Networking
 
 struct RemoteClient {
-//
-  // MARK: -
 
   let session: URLSession
   let parser: Parser = [

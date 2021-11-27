@@ -1,16 +1,16 @@
 import Foundation
 
 public protocol SpecificationState: State {
-  func ignore(when state: State) -> Bool
-  func transitionable(to state: State) -> Bool
+  func ignore(when destination: State) -> Bool
+  func transitionable(to destination: State) -> Bool
 }
 
 public extension SpecificationState {
-  func ignore(when state: State) -> Bool {
+  func ignore(when destination: State) -> Bool {
     false
   }
 
-  func transitionable(to state: State) -> Bool {
+  func transitionable(to destination: State) -> Bool {
     true
   }
 }

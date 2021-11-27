@@ -91,7 +91,7 @@ final class PasswordUpdatedViewController: UIViewController {
   override func loadView() {
     view = UIView()
     view.backgroundColor = .systemBackground
-    view.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+    view.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
 
     _ = hintView
     _ = closeButton
