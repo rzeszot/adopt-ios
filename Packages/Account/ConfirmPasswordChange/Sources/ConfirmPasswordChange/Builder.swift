@@ -13,7 +13,6 @@ public struct Builder {
 
     return container
   }
-
 }
 
 extension ChangePasswordState {
