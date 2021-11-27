@@ -9,9 +9,3 @@ extension CloseState: SpecificationState {
     false
   }
 }
-
-extension CloseState: CustomStringConvertible {
-  var description: String {
-    "close"
-  }
-}

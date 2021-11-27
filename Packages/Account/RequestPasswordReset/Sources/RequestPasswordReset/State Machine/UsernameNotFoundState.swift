@@ -32,6 +32,6 @@ extension UsernameNotFoundState: VisualState {
 
 extension UsernameNotFoundState: CustomStringConvertible {
   var description: String {
-    "not found"
+    "!!!user not found!!!"
   }
 }

@@ -19,9 +19,3 @@ extension ActiveSubscription: SpecificationState {
     state is InactiveSubscription || state is PausedSubscription
   }
 }
-
-extension ActiveSubscription: CustomStringConvertible {
-  var description: String {
-    "active"
-  }
-}

@@ -20,11 +20,11 @@ public final class ContainerController: UIViewController {
     let old = state!
     state = new
 
-    print("change [\(old)] -> [\(new)]")
+    print("change \(old) -> \(new)")
 
     if let old = old as? SpecificationState {
       if !old.transitionable(to: new) {
-        print("transition not allowed! [\(old)] -> [\(new)]")
+        print("transition not allowed! \(old) -> \(new)")
       }
 
       if old.ignore(when: new) {

@@ -34,9 +34,3 @@ extension EmailSentState: VisualState {
     return vc
   }
 }
-
-extension EmailSentState: CustomStringConvertible {
-  var description: String {
-    "email sent"
-  }
-}

@@ -42,9 +42,3 @@ extension EnterUsernameState: VisualState {
     return vc
   }
 }
-
-extension EnterUsernameState: CustomStringConvertible {
-  var description: String {
-    "enter username"
-  }
-}

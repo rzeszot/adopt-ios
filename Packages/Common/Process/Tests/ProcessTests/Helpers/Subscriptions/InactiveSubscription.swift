@@ -14,9 +14,3 @@ extension InactiveSubscription: SpecificationState {
     state is ActiveSubscription
   }
 }
-
-extension InactiveSubscription: CustomStringConvertible {
-  var description: String {
-    "inactive"
-  }
-}
