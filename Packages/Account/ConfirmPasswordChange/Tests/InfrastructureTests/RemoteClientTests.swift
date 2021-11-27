@@ -23,17 +23,9 @@ final class RemoteClientTests: XCTestCase {
 
   // MARK: -
 
-  func test_request() throws {
-    let request = try sut.build(username: "USERNAME", password: "NEW-PASSWORD", code: "CODE")
-
-    XCTAssertEqual(request.url, "https://adopt.rzeszot.pro/account/forgot-password/confirm")
-    XCTAssertEqual(request.httpMethod, "POST")
-    XCTAssertEqual(request.httpBody, Fixture.request.data)
-  }
-
   func test_response_success() async throws {
     mocky.post("/account/forgot-password/confirm") { env in
-      XCTAssertEqual(env.request.body, Fixture.request.data)
+      env.request.validate(from: "confirm.request", subdirectory: "Requests", bundle: .module)
       env.load(from: "confirm-success.response", subdirectory: "Responses", bundle: .module)
     }
 
@@ -46,7 +38,7 @@ final class RemoteClientTests: XCTestCase {
 
   func test_response_failure() async throws {
     mocky.post("/account/forgot-password/confirm") { env in
-      XCTAssertEqual(env.request.body, Fixture.request.data)
+      env.request.validate(from: "confirm.request", subdirectory: "Requests", bundle: .module)
       env.load(from: "confirm-failure.response", subdirectory: "Responses", bundle: .module)
     }
 
@@ -60,12 +52,39 @@ final class RemoteClientTests: XCTestCase {
 
 }
 
-private extension Fixture {
-  static var request: Fixture = """
-    {
-      "code" : "CODE",
-      "password" : "NEW-PASSWORD",
-      "username" : "USERNAME"
+extension Request {
+  func validate(from file: String, subdirectory: String, bundle: Bundle) {
+    let url = bundle.url(forResource: file, withExtension: nil, subdirectory: subdirectory)!
+
+    let content = try! String(contentsOf: url)
+    let chunks = content.components(separatedBy: "\n---\n")
+
+    for option in chunks[0].split(separator: "\n") {
+      let parts = option.components(separatedBy: ": ")
+      let key = parts[0]
+      let value = parts[1]
+
+      switch key {
+      case "method":
+        XCTAssertEqual(method, value)
+      case "url":
+        XCTAssertEqual(self.url?.absoluteString, value)
+      default:
+        fatalError("`\(key)` is not supported")
+      }
     }
-    """
+
+    for header in chunks[1].split(separator: "\n") {
+      let parts = header.components(separatedBy: ": ")
+      let key = parts[0]
+      let value = parts[1]
+      let sut = headers[key]
+
+      XCTAssertEqual(sut, value)
+    }
+
+    let data = chunks[2].data(using: .utf8)!
+
+    XCTAssertEqual(body, data.prefix(data.count-1))
+  }
 }
