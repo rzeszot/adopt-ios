@@ -28,7 +28,7 @@ final class FixtureTests: XCTestCase {
     let result = sut.data
 
     // then
-    XCTAssertEqual(result, Data([123,  10,  32,  32,  34,  104,  101,  108,  108,  111,  34,  58,  32,  34,  119,  111,  114,  108,  100,  34,  10,  125]))
+    XCTAssertEqual(result, Data([123, 10, 32, 32, 34, 104, 101, 108, 108, 111, 34, 58, 32, 34, 119, 111, 114, 108, 100, 34, 10, 125]))
   }
 
 }
