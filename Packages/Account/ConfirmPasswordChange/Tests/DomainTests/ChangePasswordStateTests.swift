@@ -18,7 +18,7 @@ final class ChangePasswordStateTests: XCTestCase {
   func test_when_submit_fails_then_state_is_PasswordErrorState() async {
     let sut = ChangePasswordState.sut(response: .failure)
     let result = await sut.submit(password: "NEW-PASSWORD")
-    XCTAssertTrue(result is PasswordErrorState)
+    XCTAssertTrue(result is SubmitErrorState)
   }
 
 }

@@ -61,8 +61,8 @@ final class ChangePasswordViewController: UIViewController {
   private lazy var hintView: HintView = {
     let root = HintView()
     root.imageView.image = UIImage(systemName: "lock.circle")
-    root.titleLabel.text = t("remind-password.change-password.hint-title")
-    root.subtitleLabel.text = t("remind-password.change-password.hint-subtitle")
+    root.titleLabel.text = t("confirm-password-change.change-password.hint-title")
+    root.subtitleLabel.text = t("confirm-password-change.change-password.hint-subtitle")
     root.setContentCompressionResistancePriority(.required, for: .vertical)
 
     view.addSubview(root)
@@ -112,7 +112,7 @@ final class ChangePasswordViewController: UIViewController {
 
   private lazy var firstPasswordTextField: UITextField = {
     let root = TextField()
-    root.placeholder = t("remind-password.change-password.new-password-field")
+    root.placeholder = t("confirm-password-change.change-password.new-password-field")
     root.textContentType = .password
     root.returnKeyType = .next
     root.isSecureTextEntry = true
@@ -134,7 +134,7 @@ final class ChangePasswordViewController: UIViewController {
 
   private lazy var secondPasswordTextField: UITextField = {
     let root = TextField()
-    root.placeholder = t("remind-password.change-password.confirmation-password-field")
+    root.placeholder = t("confirm-password-change.change-password.confirmation-password-field")
     root.textContentType = .password
     root.returnKeyType = .go
     root.isSecureTextEntry = true
@@ -158,7 +158,7 @@ final class ChangePasswordViewController: UIViewController {
   private lazy var submitButton: UIButton = {
     let root = UIButton()
     root.configuration = .borderedProminent()
-    root.configuration?.title = t("remind-password.change-password.submit-action")
+    root.configuration?.title = t("confirm-password-change.change-password.submit-action")
     root.addTarget(self, action: #selector(submitAction), for: .touchUpInside)
 
     wrapperView.addSubview(root)

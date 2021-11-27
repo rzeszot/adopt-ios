@@ -38,8 +38,8 @@ final class PasswordUpdatedViewController: UIViewController {
   private lazy var hintView: HintView = {
     let root = HintView()
     root.imageView.image = UIImage(systemName: "lock.circle")
-    root.titleLabel.text = t("remind-password.password-updated.hint-title")
-    root.subtitleLabel.text = t("remind-password.password-updated.hint-subtitle")
+    root.titleLabel.text = t("confirm-password-change.password-updated.hint-title")
+    root.subtitleLabel.text = t("confirm-password-change.password-updated.hint-subtitle")
     root.setContentCompressionResistancePriority(.required, for: .vertical)
 
     view.addSubview(root)
@@ -73,7 +73,7 @@ final class PasswordUpdatedViewController: UIViewController {
   private lazy var continueButton: UIButton = {
     let root = UIButton()
     root.configuration = .borderedProminent()
-    root.configuration?.title = t("remind-password.password-updated.continue-action")
+    root.configuration?.title = t("confirm-password-change.password-updated.continue-action")
     root.addTarget(self, action: #selector(continueAction), for: .touchUpInside)
 
     wrapperView.addSubview(root)

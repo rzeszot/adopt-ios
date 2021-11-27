@@ -14,7 +14,7 @@ struct ChangePasswordState: State {
       try await request(password: password)
       return PasswordUpdatedState(username: username)
     } catch {
-      return PasswordErrorState(username: username, code: code, client: client)
+      return SubmitErrorState(username: username, code: code, client: client)
     }
   }
 
@@ -25,6 +25,6 @@ struct ChangePasswordState: State {
 
 extension ChangePasswordState: SpecificationState {
   func transitionable(to destination: State) -> Bool {
-    destination is CloseState || destination is PasswordUpdatedState || destination is PasswordErrorState
+    destination is CloseState || destination is PasswordUpdatedState || destination is SubmitErrorState
   }
 }

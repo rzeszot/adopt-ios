@@ -1,6 +1,6 @@
 import Process
 
-struct PasswordErrorState: State {
+struct SubmitErrorState: State {
   let username: String
   let code: String
   let client: Client
@@ -10,7 +10,7 @@ struct PasswordErrorState: State {
   }
 }
 
-extension PasswordErrorState: SpecificationState {
+extension SubmitErrorState: SpecificationState {
   func ignore(when destination: State) -> Bool {
     destination is ChangePasswordState
   }
