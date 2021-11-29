@@ -13,12 +13,15 @@ let package = Package(
   dependencies: [
     .package(name: "Mocky", url: "https://github.com/rzeszot/swift-http-mocky.git", branch: "main"),
     .package(path: "../../Networking"),
+    .package(path: "../../Common/Fixture"),
     .package(path: "../../Common/Process"),
     .package(path: "../../Common/Unexpected")
   ],
   targets: [
     .target(name: "ConfirmPasswordChange", dependencies: ["Unexpected", "Networking", "Process"]),
-    .testTarget(name: "ConfirmPasswordChangeTests", dependencies: ["ConfirmPasswordChange", "Mocky"], resources: [
+    .testTarget(name: "DomainTests", dependencies: ["ConfirmPasswordChange"]),
+    .testTarget(name: "InfrastructureTests", dependencies: ["ConfirmPasswordChange", "Mocky", "Fixture"], resources: [
+      .copy("Requests"),
       .copy("Responses")
     ])
   ]

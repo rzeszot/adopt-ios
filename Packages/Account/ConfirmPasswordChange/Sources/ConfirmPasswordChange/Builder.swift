@@ -3,24 +3,24 @@ import Process
 
 public struct Builder {
   public static func confirm(_ input: Input) -> UIViewController {
-    let state = ChangePasswordState.stub(username: input.username, code: input.code)
-
     let container = ContainerController()
-    container.output = { state in
-      input.close((state as! CloseState).reason)
-    }
-    container.start(state)
+    let factory = Factory(transition: container.use, exit: { state in
+      guard let state = state as? CloseState else { return }
+      input.close(state.reason)
+    })
+
+    container.factory = factory
+
+    factory.register(ChangePasswordCreator(gate: factory), for: ChangePasswordState.self)
+    factory.register(PasswordUpdatedCreator(gate: factory), for: PasswordUpdatedState.self)
+    factory.register(SubmitErrorCreator(gate: factory), for: SubmitErrorState.self)
+
+    factory.transition(to: ChangePasswordState(username: input.username, code: input.code, client: StubClient()))
 
     return container
   }
-
 }
 
-extension ChangePasswordState {
-  static func stub(username: String, code: String) -> ChangePasswordState {
-    ChangePasswordState(username: username, code: code, client: StubClient())
-  }
-}
 struct StubClient: Client {
   typealias Failure = RemoteClient.FailureResponse
 
@@ -35,4 +35,14 @@ struct StubClient: Client {
       }
     }
   }
+}
+
+extension SubmitErrorState: AnimatableState {
+  func animatable(when destination: State) -> Bool {
+    !(destination is ChangePasswordState)
+  }
+}
+
+extension CloseState: ExitState {
+
 }

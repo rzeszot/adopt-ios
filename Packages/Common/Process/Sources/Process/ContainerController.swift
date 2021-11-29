@@ -2,77 +2,70 @@ import UIKit
 
 public final class ContainerController: UIViewController {
 
-  public typealias Output = (ExitState) -> Void
-  public var output: Output!
+  public var factory: Factory!
 
-  var state: State!
+  // MARK: -
 
-  public func start(_ new: VisualState) {
-    precondition(state == nil)
-
-    state = new
-    use(new.build(change: changer))
+  public override func loadView() {
+    view = UIView()
+    view.backgroundColor = .systemBackground
   }
 
-  public func change(_ new: State) {
-    precondition(state != nil)
-
-    let old = state!
-    state = new
-
-    print("change [\(old)] -> [\(new)]")
-
-    if let old = old as? SpecificationState {
-      if !old.transitionable(to: new) {
-        print("transition not allowed! [\(old)] -> [\(new)]")
-      }
-
-      if old.ignore(when: new) {
-        return
-      }
-    }
-
-    if let state = state as? ExitState {
-      output(state)
-    } else if let state = state as? VisualState {
-      let vc = state.build(change: changer)
-
-      if let alert = vc as? UIAlertController {
-        present(alert, animated: true)
-      } else {
-        use(vc)
-      }
+  public func use(_ vc: UIViewController) {
+    if let vc = vc as? UIAlertController {
+      present(vc, animated: true)
     } else {
-      print("wtf \(old) -> \(new)")
-    }
-  }
-
-  private func changer(_ state: State) {
-    DispatchQueue.main.async {
-      self.change(state)
+      Task {
+        if let old = children.first {
+          await hide(vc: old)
+          await show(vc: vc)
+        } else {
+          await show(vc: vc, animated: false)
+        }
+      }
     }
   }
 
   // MARK: -
 
-  private func use(_ new: UIViewController) {
-    if let old = children.first {
-      old.willMove(toParent: nil)
-      old.view.removeFromSuperview()
-      old.removeFromParent()
+  private func hide(vc: UIViewController, animated: Bool = true) async {
+    await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
+      vc.willMove(toParent: nil)
+
+      UIView.animate(withDuration: animated ? 0.2 : 0, animations: {
+        vc.view.alpha = 0
+      }, completion: { _ in
+        vc.view.removeFromSuperview()
+        vc.removeFromParent()
+
+        continuation.resume()
+      })
     }
+  }
 
-    addChild(new)
-    view.addSubview(new.view)
-    new.view.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-      new.view.leftAnchor.constraint(equalTo: view.leftAnchor),
-      new.view.rightAnchor.constraint(equalTo: view.rightAnchor),
-      new.view.topAnchor.constraint(equalTo: view.topAnchor),
-      new.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-    ])
+  private func show(vc: UIViewController, animated: Bool = true) async {
+    await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
+      addChild(vc)
 
-    new.didMove(toParent: self)
+      view.addSubview(vc.view)
+      vc.view.translatesAutoresizingMaskIntoConstraints = false
+      NSLayoutConstraint.activate([
+        vc.view.leftAnchor.constraint(equalTo: view.leftAnchor),
+        vc.view.rightAnchor.constraint(equalTo: view.rightAnchor),
+        vc.view.topAnchor.constraint(equalTo: view.topAnchor),
+        vc.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+      ])
+
+      vc.view.alpha = 0
+
+      UIView.animate(withDuration: animated ? 0.2 : 0, animations: {
+        vc.view.alpha = 1
+      }, completion: { _ in
+        vc.didMove(toParent: self)
+
+        continuation.resume()
+      })
+    }
   }
 
 }

@@ -17,9 +17,3 @@ extension RandomSubscription: SpecificationState {
     state is ActiveSubscription || state is InactiveSubscription
   }
 }
-
-extension RandomSubscription: CustomStringConvertible {
-  var description: String {
-    "random"
-  }
-}

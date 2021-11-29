@@ -1,0 +1,11 @@
+method: POST
+url: https://adopt.rzeszot.pro/account/forgot-password/confirm
+---
+content-type: application/json
+content-length: 79
+---
+{
+  "code" : "CODE",
+  "password" : "NEW-PASSWORD",
+  "username" : "USERNAME"
+}

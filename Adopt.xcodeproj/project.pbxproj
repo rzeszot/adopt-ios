@@ -39,6 +39,7 @@
 		62BF2D17274D9215005FD0D2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		62BF2D22274DB7BD005FD0D2 /* RequestPasswordReset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RequestPasswordReset; sourceTree = "<group>"; };
 		62BF2D23274DB854005FD0D2 /* ConfirmPasswordChange */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ConfirmPasswordChange; sourceTree = "<group>"; };
+		62DCABD42750ECB400CBFF8F /* Fixture */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fixture; sourceTree = "<group>"; };
 		62DF943C273C99B900760582 /* Chat */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chat; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +99,7 @@
 		6293A9C327459CA4006963CC /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				62DCABD42750ECB400CBFF8F /* Fixture */,
 				62B81A3E274EBCBD00360D52 /* Process */,
 				62145C00274585AF006B0307 /* Unexpected */,
 			);
