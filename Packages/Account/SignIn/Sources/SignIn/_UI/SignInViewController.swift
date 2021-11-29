@@ -4,16 +4,24 @@ func t(_ key: String) -> String {
   return  NSLocalizedString(key, comment: key)
 }
 
+struct SignInOutput {
+  let remind: () -> Void
+  let close: () -> Void
+}
+
+
 class SignInViewController: UIViewController {
+
+  var output: SignInOutput!
 
   // MARK: -
 
   @objc func closeAction() {
-    print("action | close")
+    output.close()
   }
 
   @objc func remindAction() {
-    print("action | remind")
+    output.remind()
   }
 
   @objc func submitAction() {

@@ -1,8 +1,7 @@
 import Foundation
 import Networking
-import Unexpected
 
-struct AuthorizeService {
+struct RemoteClient {
 
   let session: URLSession
   let parser: Parser = [
@@ -64,4 +63,10 @@ struct AuthorizeService {
     try await session.perform(request: build(username: username, password: password), using: parser)
   }
 
+}
+
+extension RemoteClient: Client {
+  func request(username: String, password: String) async throws {
+    let _: SuccessResponse = try await request(username: username, password: password)
+  }
 }
