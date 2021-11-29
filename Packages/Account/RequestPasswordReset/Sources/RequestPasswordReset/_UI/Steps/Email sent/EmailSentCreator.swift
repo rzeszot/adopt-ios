@@ -19,4 +19,3 @@ struct EmailSentCreator: Creator {
     return vc
   }
 }
-

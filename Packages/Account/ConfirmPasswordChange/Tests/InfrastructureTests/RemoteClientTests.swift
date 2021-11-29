@@ -52,6 +52,7 @@ final class RemoteClientTests: XCTestCase {
 
 }
 
+// swiftlint:disable force_try
 extension Request {
   func validate(from file: String, subdirectory: String, bundle: Bundle) {
     let url = bundle.url(forResource: file, withExtension: nil, subdirectory: subdirectory)!

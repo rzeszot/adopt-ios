@@ -29,7 +29,7 @@ public final class ContainerController: UIViewController {
   // MARK: -
 
   private func hide(vc: UIViewController, animated: Bool = true) async {
-    await withCheckedContinuation{ (continuation: CheckedContinuation<Void, Never>) in
+    await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
       vc.willMove(toParent: nil)
 
       UIView.animate(withDuration: animated ? 0.2 : 0, animations: {
@@ -44,7 +44,7 @@ public final class ContainerController: UIViewController {
   }
 
   private func show(vc: UIViewController, animated: Bool = true) async {
-    await withCheckedContinuation{ (continuation: CheckedContinuation<Void, Never>) in
+    await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
       addChild(vc)
 
       view.addSubview(vc.view)
