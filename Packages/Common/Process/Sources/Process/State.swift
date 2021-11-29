@@ -5,7 +5,7 @@ public protocol State {
 }
 
 extension DefaultStringInterpolation {
-  public mutating func appendInterpolation(_ state: State) {
+  mutating func appendInterpolation(_ state: State) {
     appendLiteral("\(type(of: state))")
   }
 }

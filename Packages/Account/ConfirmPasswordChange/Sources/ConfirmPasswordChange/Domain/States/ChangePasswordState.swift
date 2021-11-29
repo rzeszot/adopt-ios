@@ -22,9 +22,3 @@ struct ChangePasswordState: State {
     try await client.request(username: username, password: password, code: code)
   }
 }
-
-extension ChangePasswordState: SpecificationState {
-  func transitionable(to destination: State) -> Bool {
-    destination is CloseState || destination is PasswordUpdatedState || destination is SubmitErrorState
-  }
-}

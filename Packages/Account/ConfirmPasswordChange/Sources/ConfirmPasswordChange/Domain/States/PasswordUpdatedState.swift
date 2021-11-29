@@ -11,9 +11,3 @@ struct PasswordUpdatedState: State {
     CloseState(reason: .authorize)
   }
 }
-
-extension PasswordUpdatedState: SpecificationState {
-  func transitionable(to destination: State) -> Bool {
-    destination is CloseState
-  }
-}

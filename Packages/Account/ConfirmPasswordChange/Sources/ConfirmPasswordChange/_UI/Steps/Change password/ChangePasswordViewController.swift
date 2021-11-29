@@ -12,15 +12,10 @@ final class ChangePasswordViewController: UIViewController {
 
   @objc func submitAction() {
     let password = firstPasswordTextField.text ?? ""
-
     Task {
-      firstPasswordTextField.isEnabled = false
-      secondPasswordTextField.isEnabled = false
-      submitButton.isEnabled = false
+      input(enabled: false)
       await output.submit(password)
-      firstPasswordTextField.isEnabled = true
-      secondPasswordTextField.isEnabled = true
-      submitButton.isEnabled = true
+      input(enabled: true)
     }
   }
 
@@ -188,4 +183,16 @@ final class ChangePasswordViewController: UIViewController {
         _ = submitButton
   }
 
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    firstPasswordTextField.text = "the password"
+    secondPasswordTextField.text = "the password"
+  }
+
+  private func input(enabled: Bool) {
+    firstPasswordTextField.isEnabled = enabled
+    secondPasswordTextField.isEnabled = enabled
+    submitButton.isEnabled = enabled
+  }
 }

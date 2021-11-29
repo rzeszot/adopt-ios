@@ -2,14 +2,18 @@ import UIKit
 import Process
 
 struct ChangePasswordCreator: Creator {
-  func build(state: ChangePasswordState, change: @escaping (State) -> Void) -> UIViewController {
+  let gate: Gate
+
+  func build(state: ChangePasswordState) -> UIViewController {
     let vc = ChangePasswordViewController()
+
     vc.output = ChangePasswordOutput(
       close: {
-        change(state.close())
+        gate.transition(to: state.close())
       }, submit: { password async in
-        await change(state.submit(password: password))
+        gate.transition(to: await state.submit(password: password))
       })
+
     return vc
   }
 }
