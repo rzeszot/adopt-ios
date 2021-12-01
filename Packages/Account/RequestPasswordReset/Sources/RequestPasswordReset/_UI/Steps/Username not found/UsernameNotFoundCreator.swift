@@ -7,7 +7,7 @@ struct UsernameNotFoundCreator: Creator {
   func build(state: UsernameNotFoundState) -> UIViewController {
     let alert = UIAlertController(title: "TODO", message: "TODO \(state.username)", preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
-      gate.transition(to: state.ok())
+      gate.dispatch(.ok)
     })
 
     return alert

@@ -3,19 +3,12 @@ import Process
 
 public struct Builder {
   public static func request(_ input: Input) -> UIViewController {
+    let initial = EnterUsernameState(username: input.username, client: StubClient())
+
     let container = ContainerController()
-    let factory = Factory(transition: container.use, exit: { state in
-      guard let state = state as? CloseState else { return }
-      input.close(state.reason)
-    })
+    container.handler = Handler(state: initial)
+    container.close = input.close
 
-    factory.register(EnterUsernameCreator(gate: factory), for: EnterUsernameState.self)
-    factory.register(EmailSentCreator(gate: factory), for: EmailSentState.self)
-    factory.register(UsernameNotFoundCreator(gate: factory), for: UsernameNotFoundState.self)
-
-    factory.transition(to: EnterUsernameState(username: input.username, client: StubClient()))
-
-    container.factory = factory
     return container
   }
 }

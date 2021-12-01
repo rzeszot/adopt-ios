@@ -2,10 +2,6 @@ import UIKit
 
 public final class ContainerController: UIViewController {
 
-  public var factory: Factory!
-
-  // MARK: -
-
   public override func loadView() {
     view = UIView()
     view.backgroundColor = .systemBackground

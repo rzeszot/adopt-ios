@@ -1,5 +1,6 @@
 import XCTest
 import Mocky
+import Fixture
 import Networking
 import Unexpected
 @testable import RequestPasswordReset
@@ -29,11 +30,7 @@ final class RemoteClientTests: XCTestCase {
     XCTAssertEqual(request.url, "https://adopt.rzeszot.pro/account/forgot-password/request")
     XCTAssertEqual(request.httpMethod, "POST")
     XCTAssertNotNil(request.httpBody)
-    XCTAssertEqual(request.httpBody, """
-      {
-        "username" : "user@example.org"
-      }
-      """.data(using: .utf8))
+    XCTAssertEqual(request.httpBody, Fixture.request.data)
   }
 
   func test_success() async throws {

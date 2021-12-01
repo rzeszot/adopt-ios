@@ -1,11 +1,11 @@
 import Process
 
-struct ChangePasswordState: State {
+struct ChangePasswordState: InitialState {
   let username: String
   let code: String
   let client: Client
 
-  func close() -> State {
+  func cancel() -> State {
     CloseState(reason: .cancel)
   }
 

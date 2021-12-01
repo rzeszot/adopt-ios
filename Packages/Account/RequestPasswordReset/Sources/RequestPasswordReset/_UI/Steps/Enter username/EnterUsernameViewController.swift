@@ -1,4 +1,5 @@
 import UIKit
+import Process
 
 final class EnterUsernameViewController: UIViewController {
 
@@ -13,12 +14,7 @@ final class EnterUsernameViewController: UIViewController {
 
   @objc func submitAction() {
     let username = usernameTextField.text ?? ""
-
-    Task {
-      submitButton.isEnabled = false
-      await output.submit(username)
-      submitButton.isEnabled = true
-    }
+    output.submit(username)
   }
 
   @objc func backgroundAction() {

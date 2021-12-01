@@ -4,7 +4,7 @@ struct EnterUsernameState: InitialState {
   let username: String?
   let client: Client
 
-  func close() -> State {
+  func cancel() -> State {
     CloseState(reason: .cancel)
   }
 

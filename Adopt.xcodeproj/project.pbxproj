@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		62095EEF27471E2C002643AC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62095EF127471E2C002643AC /* Localizable.strings */; };
+		6221953F2755621200DB6EBC /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6221953E2755621200DB6EBC /* RootView.swift */; };
+		622195412755635600DB6EBC /* GuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622195402755635600DB6EBC /* GuestView.swift */; };
+		622195432755636400DB6EBC /* AuthorizedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622195422755636400DB6EBC /* AuthorizedView.swift */; };
+		62219547275567CE00DB6EBC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622195462755677A00DB6EBC /* MainView.swift */; };
+		62219549275567EA00DB6EBC /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62219548275567EA00DB6EBC /* SignInView.swift */; };
+		622D42DB2755B51E00F5A181 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622D42DA2755B51E00F5A181 /* SignUpView.swift */; };
+		622D42DD2755B5BF00F5A181 /* ConfirmPasswordResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622D42DC2755B5BF00F5A181 /* ConfirmPasswordResetView.swift */; };
+		622D42DF2755B7A700F5A181 /* RequestPasswordResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622D42DE2755B7A700F5A181 /* RequestPasswordResetView.swift */; };
+		622D42E12755B9C700F5A181 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622D42E02755B9C700F5A181 /* ProfileView.swift */; };
+		622D42E32755B9D500F5A181 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622D42E22755B9D500F5A181 /* DashboardView.swift */; };
+		622D42E52755BAFE00F5A181 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622D42E42755BAFE00F5A181 /* FeedView.swift */; };
+		622D42E72755BBF800F5A181 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622D42E62755BBF800F5A181 /* DetailsView.swift */; };
 		6265739927233BB500BCE47D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265739827233BB500BCE47D /* AppDelegate.swift */; };
 		6265739B27233BB500BCE47D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265739A27233BB500BCE47D /* SceneDelegate.swift */; };
 		626573A227233BB600BCE47D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 626573A127233BB600BCE47D /* Assets.xcassets */; };
@@ -15,17 +27,6 @@
 		629CCCBC27405471003D0855 /* SignIn in Resources */ = {isa = PBXBuildFile; fileRef = 629CCCBB27405471003D0855 /* SignIn */; };
 		62AC403327548B8500BC3FEA /* Welcome in Frameworks */ = {isa = PBXBuildFile; productRef = 62AC403227548B8500BC3FEA /* Welcome */; };
 		62AC403527548E6E00BC3FEA /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC403427548E6E00BC3FEA /* Flow.swift */; };
-		62AC403827548E8100BC3FEA /* RequestPasswordResetFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC403727548E8100BC3FEA /* RequestPasswordResetFlow.swift */; };
-		62AC403A27548E9100BC3FEA /* ConfirmPasswordChangeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC403927548E9100BC3FEA /* ConfirmPasswordChangeFlow.swift */; };
-		62AC403C27548EB800BC3FEA /* WelcomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC403B27548EB800BC3FEA /* WelcomeFlow.swift */; };
-		62AC403E27548F3000BC3FEA /* RootFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC403D27548F3000BC3FEA /* RootFlow.swift */; };
-		62AC40402754905400BC3FEA /* SignInFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC403F2754905400BC3FEA /* SignInFlow.swift */; };
-		62AC40452754952000BC3FEA /* DashboardFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC40442754952000BC3FEA /* DashboardFlow.swift */; };
-		62AC40472754953600BC3FEA /* SettingsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC40462754953600BC3FEA /* SettingsFlow.swift */; };
-		62AC40492754958C00BC3FEA /* MessagesFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC40482754958C00BC3FEA /* MessagesFlow.swift */; };
-		62AC404B275495CB00BC3FEA /* ProfileFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC404A275495CB00BC3FEA /* ProfileFlow.swift */; };
-		62AC404D275495D800BC3FEA /* SearchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC404C275495D800BC3FEA /* SearchFlow.swift */; };
-		62AC4053275496AC00BC3FEA /* AuthFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AC4052275496AC00BC3FEA /* AuthFlow.swift */; };
 		62B56465274D711500928D43 /* .github in Resources */ = {isa = PBXBuildFile; fileRef = 62B56464274D711500928D43 /* .github */; };
 		62B81A3D274DBA8A00360D52 /* RequestPasswordReset in Frameworks */ = {isa = PBXBuildFile; productRef = 62B81A3C274DBA8A00360D52 /* RequestPasswordReset */; };
 		62BF2D16274D75BC005FD0D2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 62BF2D15274D75BC005FD0D2 /* .gitignore */; };
@@ -37,6 +38,18 @@
 /* Begin PBXFileReference section */
 		62095EF027471E2C002643AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		62145C00274585AF006B0307 /* Unexpected */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Unexpected; sourceTree = "<group>"; };
+		6221953E2755621200DB6EBC /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		622195402755635600DB6EBC /* GuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestView.swift; sourceTree = "<group>"; };
+		622195422755636400DB6EBC /* AuthorizedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedView.swift; sourceTree = "<group>"; };
+		622195462755677A00DB6EBC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		62219548275567EA00DB6EBC /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		622D42DA2755B51E00F5A181 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		622D42DC2755B5BF00F5A181 /* ConfirmPasswordResetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordResetView.swift; sourceTree = "<group>"; };
+		622D42DE2755B7A700F5A181 /* RequestPasswordResetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RequestPasswordResetView.swift; path = ../RequestPasswordResetView.swift; sourceTree = "<group>"; };
+		622D42E02755B9C700F5A181 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		622D42E22755B9D500F5A181 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		622D42E42755BAFE00F5A181 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		622D42E62755BBF800F5A181 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		6265739527233BB500BCE47D /* Adopt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adopt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6265739827233BB500BCE47D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6265739A27233BB500BCE47D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,17 +60,6 @@
 		629CCCBB27405471003D0855 /* SignIn */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SignIn; sourceTree = "<group>"; };
 		62A24FC1273C68050009136B /* Welcome */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Welcome; sourceTree = "<group>"; };
 		62AC403427548E6E00BC3FEA /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
-		62AC403727548E8100BC3FEA /* RequestPasswordResetFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPasswordResetFlow.swift; sourceTree = "<group>"; };
-		62AC403927548E9100BC3FEA /* ConfirmPasswordChangeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordChangeFlow.swift; sourceTree = "<group>"; };
-		62AC403B27548EB800BC3FEA /* WelcomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeFlow.swift; sourceTree = "<group>"; };
-		62AC403D27548F3000BC3FEA /* RootFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFlow.swift; sourceTree = "<group>"; };
-		62AC403F2754905400BC3FEA /* SignInFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFlow.swift; sourceTree = "<group>"; };
-		62AC40442754952000BC3FEA /* DashboardFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardFlow.swift; sourceTree = "<group>"; };
-		62AC40462754953600BC3FEA /* SettingsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlow.swift; sourceTree = "<group>"; };
-		62AC40482754958C00BC3FEA /* MessagesFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesFlow.swift; sourceTree = "<group>"; };
-		62AC404A275495CB00BC3FEA /* ProfileFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFlow.swift; sourceTree = "<group>"; };
-		62AC404C275495D800BC3FEA /* SearchFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlow.swift; sourceTree = "<group>"; };
-		62AC4052275496AC00BC3FEA /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
 		62B56464274D711500928D43 /* .github */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .github; sourceTree = SOURCE_ROOT; };
 		62B81A3E274EBCBD00360D52 /* Process */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Process; sourceTree = "<group>"; };
 		62BF2D15274D75BC005FD0D2 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
@@ -83,6 +85,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		622195442755675900DB6EBC /* Authorized */ = {
+			isa = PBXGroup;
+			children = (
+				622D42E82755BC0500F5A181 /* Feed */,
+				622195462755677A00DB6EBC /* MainView.swift */,
+				622D42E22755B9D500F5A181 /* DashboardView.swift */,
+				622D42E42755BAFE00F5A181 /* FeedView.swift */,
+				622D42E02755B9C700F5A181 /* ProfileView.swift */,
+			);
+			path = Authorized;
+			sourceTree = "<group>";
+		};
+		622195452755676500DB6EBC /* Guest */ = {
+			isa = PBXGroup;
+			children = (
+				62219548275567EA00DB6EBC /* SignInView.swift */,
+				622D42DA2755B51E00F5A181 /* SignUpView.swift */,
+				622D42DE2755B7A700F5A181 /* RequestPasswordResetView.swift */,
+				622D42DC2755B5BF00F5A181 /* ConfirmPasswordResetView.swift */,
+			);
+			path = Guest;
+			sourceTree = "<group>";
+		};
+		622D42E82755BC0500F5A181 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				622D42E62755BBF800F5A181 /* DetailsView.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
 		6265738C27233BB500BCE47D = {
 			isa = PBXGroup;
 			children = (
@@ -134,54 +167,16 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		62AC4041275494FD00BC3FEA /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				62AC403F2754905400BC3FEA /* SignInFlow.swift */,
-				62AC403727548E8100BC3FEA /* RequestPasswordResetFlow.swift */,
-			);
-			path = Auth;
-			sourceTree = "<group>";
-		};
-		62AC40432754951600BC3FEA /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				62AC404E275495FC00BC3FEA /* Profile */,
-				62AC40442754952000BC3FEA /* DashboardFlow.swift */,
-				62AC404C275495D800BC3FEA /* SearchFlow.swift */,
-				62AC40482754958C00BC3FEA /* MessagesFlow.swift */,
-				62AC404A275495CB00BC3FEA /* ProfileFlow.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		62AC404E275495FC00BC3FEA /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				62AC40462754953600BC3FEA /* SettingsFlow.swift */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
 		62AC40502754961100BC3FEA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				62AC40512754965400BC3FEA /* Root */,
-				62AC403D27548F3000BC3FEA /* RootFlow.swift */,
+				622195452755676500DB6EBC /* Guest */,
+				622195442755675900DB6EBC /* Authorized */,
+				6221953E2755621200DB6EBC /* RootView.swift */,
+				622195402755635600DB6EBC /* GuestView.swift */,
+				622195422755636400DB6EBC /* AuthorizedView.swift */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		62AC40512754965400BC3FEA /* Root */ = {
-			isa = PBXGroup;
-			children = (
-				62AC4041275494FD00BC3FEA /* Auth */,
-				62AC40432754951600BC3FEA /* Main */,
-				62AC4052275496AC00BC3FEA /* AuthFlow.swift */,
-				62AC403927548E9100BC3FEA /* ConfirmPasswordChangeFlow.swift */,
-				62AC403B27548EB800BC3FEA /* WelcomeFlow.swift */,
-			);
-			path = Root;
 			sourceTree = "<group>";
 		};
 		62BF2D24274DB8D0005FD0D2 /* Tools */ = {
@@ -301,20 +296,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62AC40472754953600BC3FEA /* SettingsFlow.swift in Sources */,
-				62AC404B275495CB00BC3FEA /* ProfileFlow.swift in Sources */,
-				62AC403A27548E9100BC3FEA /* ConfirmPasswordChangeFlow.swift in Sources */,
-				62AC4053275496AC00BC3FEA /* AuthFlow.swift in Sources */,
+				622D42E52755BAFE00F5A181 /* FeedView.swift in Sources */,
+				622D42DB2755B51E00F5A181 /* SignUpView.swift in Sources */,
+				622D42E32755B9D500F5A181 /* DashboardView.swift in Sources */,
+				622D42E12755B9C700F5A181 /* ProfileView.swift in Sources */,
+				622D42DD2755B5BF00F5A181 /* ConfirmPasswordResetView.swift in Sources */,
+				6221953F2755621200DB6EBC /* RootView.swift in Sources */,
+				62219547275567CE00DB6EBC /* MainView.swift in Sources */,
+				622195412755635600DB6EBC /* GuestView.swift in Sources */,
 				62AC403527548E6E00BC3FEA /* Flow.swift in Sources */,
+				622195432755636400DB6EBC /* AuthorizedView.swift in Sources */,
 				6265739927233BB500BCE47D /* AppDelegate.swift in Sources */,
-				62AC40402754905400BC3FEA /* SignInFlow.swift in Sources */,
-				62AC404D275495D800BC3FEA /* SearchFlow.swift in Sources */,
-				62AC403E27548F3000BC3FEA /* RootFlow.swift in Sources */,
+				622D42E72755BBF800F5A181 /* DetailsView.swift in Sources */,
+				622D42DF2755B7A700F5A181 /* RequestPasswordResetView.swift in Sources */,
+				62219549275567EA00DB6EBC /* SignInView.swift in Sources */,
 				6265739B27233BB500BCE47D /* SceneDelegate.swift in Sources */,
-				62AC403C27548EB800BC3FEA /* WelcomeFlow.swift in Sources */,
-				62AC40492754958C00BC3FEA /* MessagesFlow.swift in Sources */,
-				62AC403827548E8100BC3FEA /* RequestPasswordResetFlow.swift in Sources */,
-				62AC40452754952000BC3FEA /* DashboardFlow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

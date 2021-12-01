@@ -10,10 +10,10 @@ struct EmailSentCreator: Creator {
     vc.viewModel = EmailSentViewModel(username: state.username)
     vc.output = EmailSentOutput(
       back: {
-        gate.transition(to: state.back())
+        gate.dispatch(.back)
       },
       submit: {
-        gate.transition(to: state.done())
+        gate.dispatch(.done)
       })
 
     return vc

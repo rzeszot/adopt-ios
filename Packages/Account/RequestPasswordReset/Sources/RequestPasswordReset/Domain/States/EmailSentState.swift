@@ -1,5 +1,4 @@
 import Process
-import UIKit
 
 struct EmailSentState: State {
   let username: String
