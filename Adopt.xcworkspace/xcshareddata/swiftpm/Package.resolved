@@ -2,20 +2,20 @@
   "object": {
     "pins": [
       {
-        "package": "AwesomeKeyboardLayoutGuide",
-        "repositoryURL": "https://github.com/rzeszot/swift-awesome-keyboard-layout-guide.git",
-        "state": {
-          "branch": "main",
-          "revision": "3d64ff24c68550fb3bc11259cdbe630a67d1e372",
-          "version": null
-        }
-      },
-      {
         "package": "Mocky",
         "repositoryURL": "https://github.com/rzeszot/swift-http-mocky.git",
         "state": {
           "branch": "main",
           "revision": "0575f8123d0b257c49608acf59f7ad8db331677b",
+          "version": null
+        }
+      },
+      {
+        "package": "Weak",
+        "repositoryURL": "https://github.com/rzeszot/swift-weak.git",
+        "state": {
+          "branch": "main",
+          "revision": "42094045809dc44708c224d1956cd2bc5c58b858",
           "version": null
         }
       }

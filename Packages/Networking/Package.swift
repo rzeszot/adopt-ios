@@ -11,7 +11,7 @@ let package = Package(
     .library(name: "Networking", targets: ["Networking"])
   ],
   dependencies: [
-    .package(path: "Common/Unexpected")
+    .package(path: "Unexpected")
   ],
   targets: [
     .target(name: "Networking", dependencies: ["Unexpected"]),

@@ -1,2 +1,4 @@
 *.xcuserdatad
 .build
+
+**/.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
