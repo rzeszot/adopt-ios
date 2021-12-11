@@ -8,13 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		62095EEF27471E2C002643AC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62095EF127471E2C002643AC /* Localizable.strings */; };
-		6226E817275C28AD00886839 /* GuestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6226E816275C28AD00886839 /* GuestRouter.swift */; };
-		6226E81B275C28E400886839 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6226E81A275C28E400886839 /* LoginRouter.swift */; };
-		6226E81D275C28E500886839 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6226E81C275C28E500886839 /* RegisterRouter.swift */; };
-		6226E81F275C292000886839 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6226E81E275C292000886839 /* UserRouter.swift */; };
-		6226E821275C2E9D00886839 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6226E820275C2E9D00886839 /* MainRouter.swift */; };
-		6226E823275C2EC200886839 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6226E822275C2EC200886839 /* ProfileRouter.swift */; };
-		6226E825275C2EFF00886839 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6226E824275C2EFF00886839 /* SettingsRouter.swift */; };
 		6226E82A275C2F7100886839 /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = 6226E829275C2F7100886839 /* Settings */; };
 		62529EC7275D98D7007860D7 /* ConfirmPasswordChange in Frameworks */ = {isa = PBXBuildFile; productRef = 62529EC6275D98D7007860D7 /* ConfirmPasswordChange */; };
 		62529EC9275D98DD007860D7 /* RequestPasswordChange in Frameworks */ = {isa = PBXBuildFile; productRef = 62529EC8275D98DD007860D7 /* RequestPasswordChange */; };
@@ -22,6 +15,7 @@
 		6265739B27233BB500BCE47D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265739A27233BB500BCE47D /* SceneDelegate.swift */; };
 		626573A227233BB600BCE47D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 626573A127233BB600BCE47D /* Assets.xcassets */; };
 		626573A527233BB600BCE47D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 626573A327233BB600BCE47D /* LaunchScreen.storyboard */; };
+		6292971B276482580081CAC7 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E770E5275C4C0000F57B3D /* Root.swift */; };
 		6297D5A0275B377400B17CE4 /* Dashboard in Frameworks */ = {isa = PBXBuildFile; productRef = 6297D59F275B377400B17CE4 /* Dashboard */; };
 		6297D5A2275B377400B17CE4 /* Guest in Frameworks */ = {isa = PBXBuildFile; productRef = 6297D5A1275B377400B17CE4 /* Guest */; };
 		6297D5A4275B377400B17CE4 /* Login in Frameworks */ = {isa = PBXBuildFile; productRef = 6297D5A3275B377400B17CE4 /* Login */; };
@@ -32,25 +26,18 @@
 		6297D5AE275B377400B17CE4 /* Root in Frameworks */ = {isa = PBXBuildFile; productRef = 6297D5AD275B377400B17CE4 /* Root */; };
 		6297D5B0275B377400B17CE4 /* User in Frameworks */ = {isa = PBXBuildFile; productRef = 6297D5AF275B377400B17CE4 /* User */; };
 		6297D5B2275B377400B17CE4 /* Welcome in Frameworks */ = {isa = PBXBuildFile; productRef = 6297D5B1275B377400B17CE4 /* Welcome */; };
-		6297D5B8275B6A4C00B17CE4 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6297D5B7275B6A4C00B17CE4 /* RootRouter.swift */; };
-		6297D5BA275B6FAE00B17CE4 /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6297D5B9275B6FAE00B17CE4 /* WelcomeRouter.swift */; };
-		62AB5772275DA1EB00CC1625 /* EnterUsernameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AB5771275DA1EB00CC1625 /* EnterUsernameRouter.swift */; };
-		62AB5774275DA70500CC1625 /* RequestPasswordChangeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AB5773275DA70500CC1625 /* RequestPasswordChangeRouter.swift */; };
-		62AB5777275DA80E00CC1625 /* EmailSentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AB5776275DA80E00CC1625 /* EmailSentRouter.swift */; };
-		62AB577B275DC5A700CC1625 /* ConfirmPasswordChangeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AB577A275DC5A700CC1625 /* ConfirmPasswordChangeRouter.swift */; };
-		62AB577E275DC75100CC1625 /* PasswordUpdatedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AB577D275DC75100CC1625 /* PasswordUpdatedRouter.swift */; };
-		62AB577F275DC75100CC1625 /* ChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AB577C275DC75100CC1625 /* ChangePasswordRouter.swift */; };
-		62D5B6AE27586C0600A6D384 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D5B6AD27586C0500A6D384 /* Root.swift */; };
-		62D82DCC275CE50100C10234 /* PrivacyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D82DCB275CE50100C10234 /* PrivacyRouter.swift */; };
-		62E770E4275C49DC00F57B3D /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E770E3275C49DC00F57B3D /* Routable.swift */; };
-		62E770E6275C4C0000F57B3D /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E770E5275C4C0000F57B3D /* Routing.swift */; };
-		62E770E8275C554600F57B3D /* UIViewController+Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E770E7275C554600F57B3D /* UIViewController+Routable.swift */; };
+		62D5B6AE27586C0600A6D384 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D5B6AD27586C0500A6D384 /* Start.swift */; };
+		62F81D0D2767FDE700371619 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6226E81A275C28E400886839 /* Login.swift */; };
+		62F81D182768127000371619 /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F81D16276811FC00371619 /* Routing.swift */; };
+		62F81D192768127200371619 /* UpstreamRouting+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F81D172768120A00371619 /* UpstreamRouting+UIKit.swift */; };
+		62F81D1A2768127600371619 /* UpstreamRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F81D15276811FC00371619 /* UpstreamRouting.swift */; };
+		62F81D1B2768141000371619 /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6226E816275C28AD00886839 /* Guest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		62095EF027471E2C002643AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		6226E816275C28AD00886839 /* GuestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestRouter.swift; sourceTree = "<group>"; };
-		6226E81A275C28E400886839 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		6226E816275C28AD00886839 /* Guest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
+		6226E81A275C28E400886839 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		6226E81C275C28E500886839 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
 		6226E81E275C292000886839 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 		6226E820275C2E9D00886839 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
@@ -75,7 +62,6 @@
 		6297D576275B33F300B17CE4 /* Guest */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Guest; sourceTree = "<group>"; };
 		6297D577275B33F300B17CE4 /* Dashboard */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Dashboard; sourceTree = "<group>"; };
 		6297D589275B355400B17CE4 /* Privacy */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Privacy; sourceTree = "<group>"; };
-		6297D5B7275B6A4C00B17CE4 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		6297D5B9275B6FAE00B17CE4 /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
 		62AB5771275DA1EB00CC1625 /* EnterUsernameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterUsernameRouter.swift; sourceTree = "<group>"; };
 		62AB5773275DA70500CC1625 /* RequestPasswordChangeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPasswordChangeRouter.swift; sourceTree = "<group>"; };
@@ -86,13 +72,14 @@
 		62B56464274D711500928D43 /* .github */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .github; sourceTree = SOURCE_ROOT; };
 		62BF2D15274D75BC005FD0D2 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		62BF2D17274D9215005FD0D2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
-		62D5B6AD27586C0500A6D384 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
+		62D5B6AD27586C0500A6D384 /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
 		62D82DCB275CE50100C10234 /* PrivacyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyRouter.swift; sourceTree = "<group>"; };
 		62D82DCF275CEECC00C10234 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Networking; sourceTree = "<group>"; };
 		62D82DD0275CEF0500C10234 /* Unexpected */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Unexpected; sourceTree = "<group>"; };
-		62E770E3275C49DC00F57B3D /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
-		62E770E5275C4C0000F57B3D /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
-		62E770E7275C554600F57B3D /* UIViewController+Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Routable.swift"; sourceTree = "<group>"; };
+		62E770E5275C4C0000F57B3D /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
+		62F81D15276811FC00371619 /* UpstreamRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpstreamRouting.swift; sourceTree = "<group>"; };
+		62F81D16276811FC00371619 /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
+		62F81D172768120A00371619 /* UpstreamRouting+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpstreamRouting+UIKit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,17 +128,15 @@
 		6265739727233BB500BCE47D /* App */ = {
 			isa = PBXGroup;
 			children = (
-				62D5B6AD27586C0500A6D384 /* Root.swift */,
-				62E770E5275C4C0000F57B3D /* Routing.swift */,
-				62E770E3275C49DC00F57B3D /* Routable.swift */,
-				62E770E7275C554600F57B3D /* UIViewController+Routable.swift */,
-				6297D5B7275B6A4C00B17CE4 /* RootRouter.swift */,
-				6297D5B9275B6FAE00B17CE4 /* WelcomeRouter.swift */,
-				6226E816275C28AD00886839 /* GuestRouter.swift */,
-				6226E81A275C28E400886839 /* LoginRouter.swift */,
+				62F81D14276811FC00371619 /* Routing */,
+				62D5B6AD27586C0500A6D384 /* Start.swift */,
+				62E770E5275C4C0000F57B3D /* Root.swift */,
+				6226E816275C28AD00886839 /* Guest.swift */,
+				6226E81A275C28E400886839 /* Login.swift */,
 				62AB5779275DC59400CC1625 /* Confirm Password Change */,
 				62AB5775275DA7F900CC1625 /* Request Password Change */,
 				62D82DCB275CE50100C10234 /* PrivacyRouter.swift */,
+				6297D5B9275B6FAE00B17CE4 /* WelcomeRouter.swift */,
 				6226E81C275C28E500886839 /* RegisterRouter.swift */,
 				6226E81E275C292000886839 /* UserRouter.swift */,
 				6226E820275C2E9D00886839 /* MainRouter.swift */,
@@ -234,6 +219,16 @@
 			name = "---";
 			sourceTree = "<group>";
 		};
+		62F81D14276811FC00371619 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				62F81D16276811FC00371619 /* Routing.swift */,
+				62F81D15276811FC00371619 /* UpstreamRouting.swift */,
+				62F81D172768120A00371619 /* UpstreamRouting+UIKit.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -248,6 +243,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				62F81D112768107600371619 /* PBXTargetDependency */,
 				62529ECB275D98E2007860D7 /* PBXTargetDependency */,
 				62529EC5275D98D1007860D7 /* PBXTargetDependency */,
 				6226E828275C2F6C00886839 /* PBXTargetDependency */,
@@ -333,27 +329,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6226E81F275C292000886839 /* UserRouter.swift in Sources */,
-				62AB5772275DA1EB00CC1625 /* EnterUsernameRouter.swift in Sources */,
-				6297D5B8275B6A4C00B17CE4 /* RootRouter.swift in Sources */,
-				62E770E6275C4C0000F57B3D /* Routing.swift in Sources */,
-				62E770E4275C49DC00F57B3D /* Routable.swift in Sources */,
+				6292971B276482580081CAC7 /* Root.swift in Sources */,
+				62F81D182768127000371619 /* Routing.swift in Sources */,
+				62F81D1B2768141000371619 /* Guest.swift in Sources */,
 				6265739927233BB500BCE47D /* AppDelegate.swift in Sources */,
-				6226E81D275C28E500886839 /* RegisterRouter.swift in Sources */,
-				62AB577E275DC75100CC1625 /* PasswordUpdatedRouter.swift in Sources */,
-				6226E825275C2EFF00886839 /* SettingsRouter.swift in Sources */,
-				6226E81B275C28E400886839 /* LoginRouter.swift in Sources */,
-				62D5B6AE27586C0600A6D384 /* Root.swift in Sources */,
-				62AB5777275DA80E00CC1625 /* EmailSentRouter.swift in Sources */,
-				62E770E8275C554600F57B3D /* UIViewController+Routable.swift in Sources */,
-				6297D5BA275B6FAE00B17CE4 /* WelcomeRouter.swift in Sources */,
-				6226E821275C2E9D00886839 /* MainRouter.swift in Sources */,
-				62AB577F275DC75100CC1625 /* ChangePasswordRouter.swift in Sources */,
-				62AB5774275DA70500CC1625 /* RequestPasswordChangeRouter.swift in Sources */,
-				6226E823275C2EC200886839 /* ProfileRouter.swift in Sources */,
-				62AB577B275DC5A700CC1625 /* ConfirmPasswordChangeRouter.swift in Sources */,
-				62D82DCC275CE50100C10234 /* PrivacyRouter.swift in Sources */,
-				6226E817275C28AD00886839 /* GuestRouter.swift in Sources */,
+				62D5B6AE27586C0600A6D384 /* Start.swift in Sources */,
+				62F81D192768127200371619 /* UpstreamRouting+UIKit.swift in Sources */,
+				62F81D1A2768127600371619 /* UpstreamRouting.swift in Sources */,
+				62F81D0D2767FDE700371619 /* Login.swift in Sources */,
 				6265739B27233BB500BCE47D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +395,10 @@
 		6297D59E275B376500B17CE4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = 6297D59D275B376500B17CE4 /* Profile */;
+		};
+		62F81D112768107600371619 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 62F81D102768107600371619 /* Routing */;
 		};
 /* End PBXTargetDependency section */
 
@@ -734,6 +721,10 @@
 		6297D5B1275B377400B17CE4 /* Welcome */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Welcome;
+		};
+		62F81D102768107600371619 /* Routing */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Routing;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

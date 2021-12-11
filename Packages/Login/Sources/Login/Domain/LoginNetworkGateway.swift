@@ -1,5 +1,5 @@
 import Foundation
 
-protocol LoginNetworkGateway {
+public protocol LoginNetworkGateway {
   func perform(_ request: LoginRequest) async throws -> LoginSuccessResponse
 }

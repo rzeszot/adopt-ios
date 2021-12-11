@@ -1,33 +1,5 @@
-import UIKit
-import Weak
+import Foundation
 import Unexpected
-
-public struct LoginFactory {
-  public init() {
-
-  }
-
-  public func build() -> UIViewController {
-//    let gateway = RemoteLoginNetworkGateway(url: "https://adopt.rzeszot.pro/api/auth/login-password", session: .shared)
-    let gateway = LoginNetworkGatewayStub()
-    let vc = LoginViewController()
-    let interactor = LoginInteractor(output: Weak(vc), gateway: gateway)
-
-    vc.interactor = interactor
-
-    return vc
-  }
-}
-
-extension Weak: LoginUseCaseOutput where T: LoginUseCaseOutput {
-  func done(result: LoginResult) {
-    object?.done(result: result)
-  }
-
-  func show(error: LoginError) {
-    object?.show(error: error)
-  }
-}
 
 struct LoginNetworkGatewayStub: LoginNetworkGateway {
   func perform(_ request: LoginRequest) async throws -> LoginSuccessResponse {

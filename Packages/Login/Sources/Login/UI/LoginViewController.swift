@@ -1,25 +1,39 @@
 import UIKit
 
-public final class LoginViewController: UIViewController {
-  
-  var interactor: LoginUseCaseInput!
-  public var output: LoginOutput!
+public class LoginViewController: UIViewController, LoginUseCaseOutput {
+
+  // MARK: -
+
+  var aaa: LoginUseCaseInput!
+  var bbb: TransitionUseCaseInput!
+
+  // MARK: - LoginUseCaseOutput
+
+  public func done(result: LoginSuccess) {
+    print("xxx \(result)")
+
+    bbb.close()
+  }
+
+  public func show(error: LoginFailure) {
+    print("yyy \(error)")
+  }
 
   // MARK: -
 
   @objc func closeAction() {
-    output.close()
+    bbb.close()
   }
 
   @objc func remindAction() {
-    output.remind(usernameTextField.text ?? "")
+    bbb.remind()
   }
 
   @objc func submitAction() {
     let username = usernameTextField.text ?? ""
     let password = passwordTextField.text ?? ""
 
-    interactor.login(username: username, password: password)
+    aaa.login(username: username, password: password)
   }
 
   @objc func backgroundAction() {
@@ -203,14 +217,4 @@ public final class LoginViewController: UIViewController {
         _ = submitButton
   }
 
-}
-
-extension LoginViewController: LoginUseCaseOutput {
-  func done(result: LoginResult) {
-    print("login done \(result)")
-  }
-
-  func show(error: LoginError) {
-    print("login show error \(error)")
-  }
 }

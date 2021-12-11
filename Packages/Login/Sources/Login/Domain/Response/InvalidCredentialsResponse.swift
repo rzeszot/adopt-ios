@@ -1,5 +1,5 @@
 import Networking
 
-struct InvalidCredentialsResponse: Response, Error {
-  static var code: Int = 401
+public struct InvalidCredentialsResponse: Response, Error {
+  public static var code: Int = 401
 }

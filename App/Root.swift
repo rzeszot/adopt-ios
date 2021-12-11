@@ -1,22 +1,33 @@
 import UIKit
 import Root
-import Welcome
-import Guest
-import User
 
-struct CompositionRoot {
-  let router = RootRouter()
+protocol RootRoutable: Routing {
+  func guest()
+  func user()
+  func welcome()
+}
 
-  func start() {
-//    (router as RootRouting).dispatch(ConfirmPasswordResetRoutingCommand())
-    router.welcome()
+extension RootViewController: RootRoutable {
+  func welcome() {
+
   }
 
-  func build() -> UIViewController {
-    router
+  func guest() {
+    let (vc, router) = GuestBuilder().build()
+    router.login()
+    show(vc: vc)
+  }
+
+  func user() {
+
   }
 }
 
-struct ConfirmPasswordResetRoutingCommand: RoutingCommand {
+// MARK: -
 
+struct RootBuilder {
+  func build() -> (UIViewController, RootRoutable) {
+    let vc = RootViewController()
+    return (vc, vc)
+  }
 }
