@@ -23,9 +23,7 @@ public struct LoginFactory {
   private var gateway: LoginNetworkGateway {
     switch input.gateway {
     case .production(let url):
-      return RemoteLoginNetworkGateway(url: url, session: .shared)
-    case .stub:
-      return LoginNetworkGatewayStub()
+      return RemoteLoginNetworkGateway(url: url, session: .ephemeral)
     case .custom(let implementation):
       return implementation
     }
@@ -34,11 +32,11 @@ public struct LoginFactory {
 }
 
 extension Weak: LoginUseCaseOutput where T: LoginUseCaseOutput {
-  public func done(result: LoginSuccess) {
-    object?.done(result: result)
+  public func done(success: LoginSuccess) {
+    object?.done(success: success)
   }
 
-  public func show(error: LoginFailure) {
-    object?.show(error: error)
+  public func show(failure: LoginFailure) {
+    object?.show(failure: failure)
   }
 }

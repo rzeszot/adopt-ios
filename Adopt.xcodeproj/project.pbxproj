@@ -72,6 +72,7 @@
 		62B56464274D711500928D43 /* .github */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .github; sourceTree = SOURCE_ROOT; };
 		62BF2D15274D75BC005FD0D2 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		62BF2D17274D9215005FD0D2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
+		62CEF87727691DF900589EF4 /* Routing */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Routing; sourceTree = "<group>"; };
 		62D5B6AD27586C0500A6D384 /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
 		62D82DCB275CE50100C10234 /* PrivacyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyRouter.swift; sourceTree = "<group>"; };
 		62D82DCF275CEECC00C10234 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Networking; sourceTree = "<group>"; };
@@ -162,20 +163,21 @@
 		6297D4A4275B33CF00B17CE4 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				62CEF87727691DF900589EF4 /* Routing */,
 				6297D570275B33F200B17CE4 /* Root */,
+				6297D576275B33F300B17CE4 /* Guest */,
+				6297D573275B33F200B17CE4 /* Login */,
+				62D82DCE275CEEA000C10234 /* --- */,
 				6297D56F275B33E900B17CE4 /* Welcome */,
 				6297D589275B355400B17CE4 /* Privacy */,
-				6297D576275B33F300B17CE4 /* Guest */,
 				624D5B72275D95600097E0A9 /* Request Password Change */,
 				624D5B71275D954F0097E0A9 /* Confirm Password Change */,
-				6297D573275B33F200B17CE4 /* Login */,
 				6297D572275B33F200B17CE4 /* Register */,
 				6297D571275B33F200B17CE4 /* User */,
 				6297D575275B33F200B17CE4 /* Main */,
 				6297D577275B33F300B17CE4 /* Dashboard */,
 				6297D574275B33F200B17CE4 /* Profile */,
 				6226E826275C2F2000886839 /* Settings */,
-				62D82DCE275CEEA000C10234 /* --- */,
 				62D82DCF275CEECC00C10234 /* Networking */,
 				62D82DD0275CEF0500C10234 /* Unexpected */,
 			);

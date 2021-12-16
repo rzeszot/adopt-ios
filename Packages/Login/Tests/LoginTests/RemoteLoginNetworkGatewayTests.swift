@@ -39,9 +39,7 @@ final class RemoteLoginNetworkGatewayTests: XCTestCase {
   // MARK: -
 
   func test_success() async throws {
-    mocky.post("/api/login") { env in
-      env.load(from: "login-success.json", subdirectory: "Mocky", bundle: .module)
-    }
+    mocky.use("login-success.json")
 
     let response = try await sut.perform(LoginRequest(username: "USERNAME", password: "PASSWORD"))
     XCTAssertEqual(response.token, "ACCESS-TOKEN")
@@ -50,9 +48,7 @@ final class RemoteLoginNetworkGatewayTests: XCTestCase {
   // MARK: -
 
   func test_failure_invalid_credentials() async throws {
-    mocky.post("/api/login") { env in
-      env.load(from: "login-failure-invalid-credentials.json", subdirectory: "Mocky", bundle: .module)
-    }
+    mocky.use("login-failure-invalid-credentials.json")
 
     do {
       _ = try await sut.perform(LoginRequest(username: "USERNAME", password: "PASSWORD"))
@@ -64,9 +60,7 @@ final class RemoteLoginNetworkGatewayTests: XCTestCase {
   }
 
   func test_failure_unexpected() async throws {
-    mocky.post("/api/login") { env in
-      env.load(from: "common-failure-unexpected.json", subdirectory: "Mocky", bundle: .module)
-    }
+    mocky.use("common-failure-unexpected.json")
 
     do {
       _ = try await sut.perform(LoginRequest(username: "USERNAME", password: "PASSWORD"))
@@ -76,4 +70,12 @@ final class RemoteLoginNetworkGatewayTests: XCTestCase {
     }
   }
 
+}
+
+private extension Mocky {
+  func use(_ file: String) {
+    post("/api/login") { env in
+      env.load(from: file, subdirectory: "Mocky", bundle: .module)
+    }
+  }
 }

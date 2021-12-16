@@ -4,5 +4,6 @@ status: 418
 content-type: application/json
 ---
 {
-  "message": "I'm a teapod"
+  "error": "unexpected_failure",
+  "error_description": "I'm a teapod"
 }

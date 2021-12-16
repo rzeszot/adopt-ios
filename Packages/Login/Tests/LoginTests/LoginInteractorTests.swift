@@ -28,13 +28,13 @@ final class LoginInteractorTests: XCTestCase {
   func test_success() async {
     gateway.result = .success(LoginSuccessResponse(token: "TOKEN"))
     await sut.login(username: "USERNAME", password: "PASSWORD")
-    XCTAssertEqual(output.result, .success(LoginResult(token: "TOKEN")))
+    XCTAssertEqual(output.result, .success(LoginSuccess(token: "TOKEN")))
   }
 
   func test_failure_invalid_credentials() async {
     gateway.result = .failure(InvalidCredentialsResponse())
     await sut.login(username: "USERNAME", password: "PASSWORD")
-    XCTAssertEqual(output.result, .failure(.auth))
+    XCTAssertEqual(output.result, .failure(.credentials))
   }
 
   func test_failure_unexpected() async {
@@ -46,14 +46,14 @@ final class LoginInteractorTests: XCTestCase {
 }
 
 private class LoginUseCaseOutputMock: LoginUseCaseOutput {
-  var result: Result<LoginResult, LoginError>?
+  var result: Result<LoginSuccess, LoginFailure>?
 
-  func done(result: LoginResult) {
-    self.result = .success(result)
+  func done(success: LoginSuccess) {
+    result = .success(success)
   }
 
-  func show(error: LoginError) {
-    self.result = .failure(error)
+  func show(failure: LoginFailure) {
+    result = .failure(failure)
   }
 }
 

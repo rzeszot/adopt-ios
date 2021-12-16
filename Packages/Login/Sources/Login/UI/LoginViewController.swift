@@ -9,14 +9,14 @@ public class LoginViewController: UIViewController, LoginUseCaseOutput {
 
   // MARK: - LoginUseCaseOutput
 
-  public func done(result: LoginSuccess) {
-    print("xxx \(result)")
+  public func done(success: LoginSuccess) {
+    print("xxx \(success)")
 
     bbb.close()
   }
 
-  public func show(error: LoginFailure) {
-    print("yyy \(error)")
+  public func show(failure: LoginFailure) {
+    print("yyy \(failure)")
   }
 
   // MARK: -

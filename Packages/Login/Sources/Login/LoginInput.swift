@@ -3,7 +3,6 @@ import Foundation
 public struct LoginInput {
   public enum Gateway {
     case production(URL)
-    case stub
     case custom(LoginNetworkGateway)
   }
 
