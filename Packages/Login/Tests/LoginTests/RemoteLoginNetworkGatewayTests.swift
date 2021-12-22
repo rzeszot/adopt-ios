@@ -1,4 +1,5 @@
 import XCTest
+import XCSnapshots
 import Mocky
 import Unexpected
 @testable import Login
@@ -24,16 +25,7 @@ final class RemoteLoginNetworkGatewayTests: XCTestCase {
 
   func test_build_request() throws {
     let request = try sut.build(LoginRequest(username: "USERNAME", password: "PASSWORD"))
-
-    XCTAssertEqual(request.url, "https://adopt.com/api/login")
-    XCTAssertEqual(request.httpMethod, "POST")
-    XCTAssertEqual(request.value(forHTTPHeaderField: "content-type"), "application/json")
-    XCTAssertEqual(request.httpBody, """
-      {
-        "password" : "PASSWORD",
-        "username" : "USERNAME"
-      }
-      """.data(using: .utf8))
+    XCAssertSnapshot(matching: request, as: .http2)
   }
 
   // MARK: -
