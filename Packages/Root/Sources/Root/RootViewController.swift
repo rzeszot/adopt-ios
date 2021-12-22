@@ -7,27 +7,36 @@ public final class RootViewController: UIViewController {
     view.backgroundColor = .systemBackground
   }
 
-  public func show(vc new: UIViewController) {
+  public func show(vc new: UIViewController, animated: Bool) async {
     if let old = children.first {
-      Task {
-        old.willMove(toParent: nil)
-        addChild(new)
 
-        await fade(out: old.view)
 
-        old.view.removeFromSuperview()
-        old.removeFromParent()
 
-        inject(child: new.view)
-        await fade(in: new.view)
 
-        new.didMove(toParent: self)
-      }
     } else {
       addChild(new)
       inject(child: new.view)
       new.didMove(toParent: self)
     }
+
+//
+//      Task {
+//        old.willMove(toParent: nil)
+//        addChild(new)
+//
+//        await fade(out: old.view)
+//
+//        old.view.removeFromSuperview()
+//        old.removeFromParent()
+//
+//        inject(child: new.view)
+//        await fade(in: new.view)
+//
+//        new.didMove(toParent: self)
+//      }
+//    } else {
+//
+//    }
   }
 
   // MARK: -
