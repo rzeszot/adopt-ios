@@ -8,39 +8,51 @@
 
 /* Begin PBXBuildFile section */
 		62095EEF27471E2C002643AC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62095EF127471E2C002643AC /* Localizable.strings */; };
+		6226E82A275C2F7100886839 /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = 6226E829275C2F7100886839 /* Settings */; };
+		62529EC7275D98D7007860D7 /* ConfirmPasswordChange in Frameworks */ = {isa = PBXBuildFile; productRef = 62529EC6275D98D7007860D7 /* ConfirmPasswordChange */; };
+		62529EC9275D98DD007860D7 /* RequestPasswordChange in Frameworks */ = {isa = PBXBuildFile; productRef = 62529EC8275D98DD007860D7 /* RequestPasswordChange */; };
 		6265739927233BB500BCE47D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265739827233BB500BCE47D /* AppDelegate.swift */; };
 		6265739B27233BB500BCE47D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6265739A27233BB500BCE47D /* SceneDelegate.swift */; };
 		626573A227233BB600BCE47D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 626573A127233BB600BCE47D /* Assets.xcassets */; };
 		626573A527233BB600BCE47D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 626573A327233BB600BCE47D /* LaunchScreen.storyboard */; };
-		629CCCBC27405471003D0855 /* SignIn in Resources */ = {isa = PBXBuildFile; fileRef = 629CCCBB27405471003D0855 /* SignIn */; };
-		62B56465274D711500928D43 /* .github in Resources */ = {isa = PBXBuildFile; fileRef = 62B56464274D711500928D43 /* .github */; };
-		62B81A3D274DBA8A00360D52 /* RequestPasswordReset in Frameworks */ = {isa = PBXBuildFile; productRef = 62B81A3C274DBA8A00360D52 /* RequestPasswordReset */; };
-		62BF2D16274D75BC005FD0D2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 62BF2D15274D75BC005FD0D2 /* .gitignore */; };
-		62BF2D18274D9215005FD0D2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 62BF2D17274D9215005FD0D2 /* .swiftlint.yml */; };
-		62D7D683274DBA0800EF181A /* ConfirmPasswordChange in Frameworks */ = {isa = PBXBuildFile; productRef = 62D7D682274DBA0800EF181A /* ConfirmPasswordChange */; };
-		62D7D685274DBA2200EF181A /* SignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 62D7D684274DBA2200EF181A /* SignIn */; };
+		6297D5A0275B377400B17CE4 /* Dashboard in Frameworks */ = {isa = PBXBuildFile; productRef = 6297D59F275B377400B17CE4 /* Dashboard */; };
+		6297D5A2275B377400B17CE4 /* Guest in Frameworks */ = {isa = PBXBuildFile; productRef = 6297D5A1275B377400B17CE4 /* Guest */; };
+		6297D5A4275B377400B17CE4 /* Login in Frameworks */ = {isa = PBXBuildFile; productRef = 6297D5A3275B377400B17CE4 /* Login */; };
+		6297D5A6275B377400B17CE4 /* Main in Frameworks */ = {isa = PBXBuildFile; productRef = 6297D5A5275B377400B17CE4 /* Main */; };
+		6297D5A8275B377400B17CE4 /* Privacy in Frameworks */ = {isa = PBXBuildFile; productRef = 6297D5A7275B377400B17CE4 /* Privacy */; };
+		6297D5AA275B377400B17CE4 /* Profile in Frameworks */ = {isa = PBXBuildFile; productRef = 6297D5A9275B377400B17CE4 /* Profile */; };
+		6297D5AC275B377400B17CE4 /* Register in Frameworks */ = {isa = PBXBuildFile; productRef = 6297D5AB275B377400B17CE4 /* Register */; };
+		6297D5AE275B377400B17CE4 /* Root in Frameworks */ = {isa = PBXBuildFile; productRef = 6297D5AD275B377400B17CE4 /* Root */; };
+		6297D5B0275B377400B17CE4 /* User in Frameworks */ = {isa = PBXBuildFile; productRef = 6297D5AF275B377400B17CE4 /* User */; };
+		6297D5B2275B377400B17CE4 /* Welcome in Frameworks */ = {isa = PBXBuildFile; productRef = 6297D5B1275B377400B17CE4 /* Welcome */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		62095EF027471E2C002643AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		62145C00274585AF006B0307 /* Unexpected */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Unexpected; sourceTree = "<group>"; };
+		6226E826275C2F2000886839 /* Settings */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Settings; sourceTree = "<group>"; };
+		624D5B71275D954F0097E0A9 /* Confirm Password Change */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Confirm Password Change"; sourceTree = "<group>"; };
+		624D5B72275D95600097E0A9 /* Request Password Change */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Request Password Change"; sourceTree = "<group>"; };
 		6265739527233BB500BCE47D /* Adopt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adopt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6265739827233BB500BCE47D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6265739A27233BB500BCE47D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		626573A127233BB600BCE47D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		626573A427233BB600BCE47D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		626573A627233BB600BCE47D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6293A9C527459FFD006963CC /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Networking; sourceTree = "<group>"; };
-		629CCCBB27405471003D0855 /* SignIn */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SignIn; sourceTree = "<group>"; };
-		62A24FC1273C68050009136B /* Welcome */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Welcome; sourceTree = "<group>"; };
+		6297D56F275B33E900B17CE4 /* Welcome */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Welcome; sourceTree = "<group>"; };
+		6297D570275B33F200B17CE4 /* Root */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Root; sourceTree = "<group>"; };
+		6297D571275B33F200B17CE4 /* User */ = {isa = PBXFileReference; lastKnownFileType = folder; path = User; sourceTree = "<group>"; };
+		6297D572275B33F200B17CE4 /* Register */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Register; sourceTree = "<group>"; };
+		6297D573275B33F200B17CE4 /* Login */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Login; sourceTree = "<group>"; };
+		6297D574275B33F200B17CE4 /* Profile */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Profile; sourceTree = "<group>"; };
+		6297D575275B33F200B17CE4 /* Main */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Main; sourceTree = "<group>"; };
+		6297D576275B33F300B17CE4 /* Guest */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Guest; sourceTree = "<group>"; };
+		6297D577275B33F300B17CE4 /* Dashboard */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Dashboard; sourceTree = "<group>"; };
+		6297D589275B355400B17CE4 /* Privacy */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Privacy; sourceTree = "<group>"; };
 		62B56464274D711500928D43 /* .github */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .github; sourceTree = SOURCE_ROOT; };
-		62B81A3E274EBCBD00360D52 /* Process */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Process; sourceTree = "<group>"; };
 		62BF2D15274D75BC005FD0D2 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		62BF2D17274D9215005FD0D2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
-		62BF2D22274DB7BD005FD0D2 /* RequestPasswordReset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RequestPasswordReset; sourceTree = "<group>"; };
-		62BF2D23274DB854005FD0D2 /* ConfirmPasswordChange */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ConfirmPasswordChange; sourceTree = "<group>"; };
-		62DCABD42750ECB400CBFF8F /* Fixture */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fixture; sourceTree = "<group>"; };
-		62DF943C273C99B900760582 /* Chat */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Chat; sourceTree = "<group>"; };
+		62D82DCF275CEECC00C10234 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Networking; sourceTree = "<group>"; };
+		62D82DD0275CEF0500C10234 /* Unexpected */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Unexpected; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,9 +60,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62D7D685274DBA2200EF181A /* SignIn in Frameworks */,
-				62D7D683274DBA0800EF181A /* ConfirmPasswordChange in Frameworks */,
-				62B81A3D274DBA8A00360D52 /* RequestPasswordReset in Frameworks */,
+				6297D5AE275B377400B17CE4 /* Root in Frameworks */,
+				6297D5AA275B377400B17CE4 /* Profile in Frameworks */,
+				6297D5B0275B377400B17CE4 /* User in Frameworks */,
+				6297D5A4275B377400B17CE4 /* Login in Frameworks */,
+				62529EC7275D98D7007860D7 /* ConfirmPasswordChange in Frameworks */,
+				6297D5AC275B377400B17CE4 /* Register in Frameworks */,
+				6297D5A8275B377400B17CE4 /* Privacy in Frameworks */,
+				6226E82A275C2F7100886839 /* Settings in Frameworks */,
+				6297D5A6275B377400B17CE4 /* Main in Frameworks */,
+				62529EC9275D98DD007860D7 /* RequestPasswordChange in Frameworks */,
+				6297D5B2275B377400B17CE4 /* Welcome in Frameworks */,
+				6297D5A0275B377400B17CE4 /* Dashboard in Frameworks */,
+				6297D5A2275B377400B17CE4 /* Guest in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				62BF2D24274DB8D0005FD0D2 /* Tools */,
-				62CC9D372724C7680000092B /* Packages */,
+				6297D4A4275B33CF00B17CE4 /* Packages */,
 				6265739727233BB500BCE47D /* App */,
 				6265739627233BB500BCE47D /* Products */,
 				626573DD2723412700BCE47D /* Frameworks */,
@@ -79,11 +101,11 @@
 		6265739727233BB500BCE47D /* App */ = {
 			isa = PBXGroup;
 			children = (
-				6265739827233BB500BCE47D /* AppDelegate.swift */,
 				6265739A27233BB500BCE47D /* SceneDelegate.swift */,
+				6265739827233BB500BCE47D /* AppDelegate.swift */,
+				626573A327233BB600BCE47D /* LaunchScreen.storyboard */,
 				626573A127233BB600BCE47D /* Assets.xcassets */,
 				62095EF127471E2C002643AC /* Localizable.strings */,
-				626573A327233BB600BCE47D /* LaunchScreen.storyboard */,
 				626573A627233BB600BCE47D /* Info.plist */,
 			);
 			path = App;
@@ -96,14 +118,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6293A9C327459CA4006963CC /* Common */ = {
+		6297D4A4275B33CF00B17CE4 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				62DCABD42750ECB400CBFF8F /* Fixture */,
-				62B81A3E274EBCBD00360D52 /* Process */,
-				62145C00274585AF006B0307 /* Unexpected */,
+				6297D570275B33F200B17CE4 /* Root */,
+				6297D576275B33F300B17CE4 /* Guest */,
+				6297D573275B33F200B17CE4 /* Login */,
+				62D82DCE275CEEA000C10234 /* --- */,
+				6297D56F275B33E900B17CE4 /* Welcome */,
+				6297D589275B355400B17CE4 /* Privacy */,
+				624D5B72275D95600097E0A9 /* Request Password Change */,
+				624D5B71275D954F0097E0A9 /* Confirm Password Change */,
+				6297D572275B33F200B17CE4 /* Register */,
+				6297D571275B33F200B17CE4 /* User */,
+				6297D575275B33F200B17CE4 /* Main */,
+				6297D577275B33F300B17CE4 /* Dashboard */,
+				6297D574275B33F200B17CE4 /* Profile */,
+				6226E826275C2F2000886839 /* Settings */,
+				62D82DCF275CEECC00C10234 /* Networking */,
+				62D82DD0275CEF0500C10234 /* Unexpected */,
 			);
-			path = Common;
+			path = Packages;
 			sourceTree = "<group>";
 		};
 		62BF2D24274DB8D0005FD0D2 /* Tools */ = {
@@ -116,26 +151,11 @@
 			name = Tools;
 			sourceTree = "<group>";
 		};
-		62CC9D372724C7680000092B /* Packages */ = {
+		62D82DCE275CEEA000C10234 /* --- */ = {
 			isa = PBXGroup;
 			children = (
-				6293A9C327459CA4006963CC /* Common */,
-				62D7D681274DB9C300EF181A /* Account */,
-				62A24FC1273C68050009136B /* Welcome */,
-				62DF943C273C99B900760582 /* Chat */,
-				6293A9C527459FFD006963CC /* Networking */,
 			);
-			path = Packages;
-			sourceTree = "<group>";
-		};
-		62D7D681274DB9C300EF181A /* Account */ = {
-			isa = PBXGroup;
-			children = (
-				629CCCBB27405471003D0855 /* SignIn */,
-				62BF2D22274DB7BD005FD0D2 /* RequestPasswordReset */,
-				62BF2D23274DB854005FD0D2 /* ConfirmPasswordChange */,
-			);
-			path = Account;
+			name = "---";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,15 +172,36 @@
 			buildRules = (
 			);
 			dependencies = (
-				62BF2D1E274DB566005FD0D2 /* PBXTargetDependency */,
-				62BF2D20274DB566005FD0D2 /* PBXTargetDependency */,
-				629CCCC227405C90003D0855 /* PBXTargetDependency */,
+				62F81D112768107600371619 /* PBXTargetDependency */,
+				62529ECB275D98E2007860D7 /* PBXTargetDependency */,
+				62529EC5275D98D1007860D7 /* PBXTargetDependency */,
+				6226E828275C2F6C00886839 /* PBXTargetDependency */,
+				6297D58C275B376500B17CE4 /* PBXTargetDependency */,
+				6297D58E275B376500B17CE4 /* PBXTargetDependency */,
+				6297D590275B376500B17CE4 /* PBXTargetDependency */,
+				6297D592275B376500B17CE4 /* PBXTargetDependency */,
+				6297D594275B376500B17CE4 /* PBXTargetDependency */,
+				6297D596275B376500B17CE4 /* PBXTargetDependency */,
+				6297D598275B376500B17CE4 /* PBXTargetDependency */,
+				6297D59A275B376500B17CE4 /* PBXTargetDependency */,
+				6297D59C275B376500B17CE4 /* PBXTargetDependency */,
+				6297D59E275B376500B17CE4 /* PBXTargetDependency */,
 			);
 			name = Adopt;
 			packageProductDependencies = (
-				62D7D682274DBA0800EF181A /* ConfirmPasswordChange */,
-				62D7D684274DBA2200EF181A /* SignIn */,
-				62B81A3C274DBA8A00360D52 /* RequestPasswordReset */,
+				6297D59F275B377400B17CE4 /* Dashboard */,
+				6297D5A1275B377400B17CE4 /* Guest */,
+				6297D5A3275B377400B17CE4 /* Login */,
+				6297D5A5275B377400B17CE4 /* Main */,
+				6297D5A7275B377400B17CE4 /* Privacy */,
+				6297D5A9275B377400B17CE4 /* Profile */,
+				6297D5AB275B377400B17CE4 /* Register */,
+				6297D5AD275B377400B17CE4 /* Root */,
+				6297D5AF275B377400B17CE4 /* User */,
+				6297D5B1275B377400B17CE4 /* Welcome */,
+				6226E829275C2F7100886839 /* Settings */,
+				62529EC6275D98D7007860D7 /* ConfirmPasswordChange */,
+				62529EC8275D98DD007860D7 /* RequestPasswordChange */,
 			);
 			productName = spm;
 			productReference = 6265739527233BB500BCE47D /* Adopt.app */;
@@ -204,11 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62BF2D18274D9215005FD0D2 /* .swiftlint.yml in Resources */,
-				62B56465274D711500928D43 /* .github in Resources */,
-				62BF2D16274D75BC005FD0D2 /* .gitignore in Resources */,
 				62095EEF27471E2C002643AC /* Localizable.strings in Resources */,
-				629CCCBC27405471003D0855 /* SignIn in Resources */,
 				626573A527233BB600BCE47D /* LaunchScreen.storyboard in Resources */,
 				626573A227233BB600BCE47D /* Assets.xcassets in Resources */,
 			);
@@ -229,17 +266,61 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		629CCCC227405C90003D0855 /* PBXTargetDependency */ = {
+		6226E828275C2F6C00886839 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = 629CCCC127405C90003D0855 /* SignIn */;
+			productRef = 6226E827275C2F6C00886839 /* Settings */;
 		};
-		62BF2D1E274DB566005FD0D2 /* PBXTargetDependency */ = {
+		62529EC5275D98D1007860D7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = 62BF2D1D274DB566005FD0D2 /* ConfirmPasswordChange */;
+			productRef = 62529EC4275D98D1007860D7 /* RequestPasswordChange */;
 		};
-		62BF2D20274DB566005FD0D2 /* PBXTargetDependency */ = {
+		62529ECB275D98E2007860D7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = 62BF2D1F274DB566005FD0D2 /* RequestPasswordReset */;
+			productRef = 62529ECA275D98E2007860D7 /* ConfirmPasswordChange */;
+		};
+		6297D58C275B376500B17CE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 6297D58B275B376500B17CE4 /* Root */;
+		};
+		6297D58E275B376500B17CE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 6297D58D275B376500B17CE4 /* Welcome */;
+		};
+		6297D590275B376500B17CE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 6297D58F275B376500B17CE4 /* Privacy */;
+		};
+		6297D592275B376500B17CE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 6297D591275B376500B17CE4 /* Guest */;
+		};
+		6297D594275B376500B17CE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 6297D593275B376500B17CE4 /* Login */;
+		};
+		6297D596275B376500B17CE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 6297D595275B376500B17CE4 /* Register */;
+		};
+		6297D598275B376500B17CE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 6297D597275B376500B17CE4 /* User */;
+		};
+		6297D59A275B376500B17CE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 6297D599275B376500B17CE4 /* Main */;
+		};
+		6297D59C275B376500B17CE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 6297D59B275B376500B17CE4 /* Dashboard */;
+		};
+		6297D59E275B376500B17CE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 6297D59D275B376500B17CE4 /* Profile */;
+		};
+		62F81D112768107600371619 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 62F81D102768107600371619 /* Routing */;
 		};
 /* End PBXTargetDependency section */
 
@@ -459,29 +540,113 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		629CCCC127405C90003D0855 /* SignIn */ = {
+		6226E827275C2F6C00886839 /* Settings */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = SignIn;
+			productName = Settings;
 		};
-		62B81A3C274DBA8A00360D52 /* RequestPasswordReset */ = {
+		6226E829275C2F7100886839 /* Settings */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = RequestPasswordReset;
+			productName = Settings;
 		};
-		62BF2D1D274DB566005FD0D2 /* ConfirmPasswordChange */ = {
+		62529EC4275D98D1007860D7 /* RequestPasswordChange */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RequestPasswordChange;
+		};
+		62529EC6275D98D7007860D7 /* ConfirmPasswordChange */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ConfirmPasswordChange;
 		};
-		62BF2D1F274DB566005FD0D2 /* RequestPasswordReset */ = {
+		62529EC8275D98DD007860D7 /* RequestPasswordChange */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = RequestPasswordReset;
+			productName = RequestPasswordChange;
 		};
-		62D7D682274DBA0800EF181A /* ConfirmPasswordChange */ = {
+		62529ECA275D98E2007860D7 /* ConfirmPasswordChange */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ConfirmPasswordChange;
 		};
-		62D7D684274DBA2200EF181A /* SignIn */ = {
+		6297D58B275B376500B17CE4 /* Root */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = SignIn;
+			productName = Root;
+		};
+		6297D58D275B376500B17CE4 /* Welcome */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Welcome;
+		};
+		6297D58F275B376500B17CE4 /* Privacy */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Privacy;
+		};
+		6297D591275B376500B17CE4 /* Guest */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Guest;
+		};
+		6297D593275B376500B17CE4 /* Login */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Login;
+		};
+		6297D595275B376500B17CE4 /* Register */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Register;
+		};
+		6297D597275B376500B17CE4 /* User */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = User;
+		};
+		6297D599275B376500B17CE4 /* Main */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Main;
+		};
+		6297D59B275B376500B17CE4 /* Dashboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Dashboard;
+		};
+		6297D59D275B376500B17CE4 /* Profile */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Profile;
+		};
+		6297D59F275B377400B17CE4 /* Dashboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Dashboard;
+		};
+		6297D5A1275B377400B17CE4 /* Guest */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Guest;
+		};
+		6297D5A3275B377400B17CE4 /* Login */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Login;
+		};
+		6297D5A5275B377400B17CE4 /* Main */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Main;
+		};
+		6297D5A7275B377400B17CE4 /* Privacy */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Privacy;
+		};
+		6297D5A9275B377400B17CE4 /* Profile */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Profile;
+		};
+		6297D5AB275B377400B17CE4 /* Register */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Register;
+		};
+		6297D5AD275B377400B17CE4 /* Root */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Root;
+		};
+		6297D5AF275B377400B17CE4 /* User */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = User;
+		};
+		6297D5B1275B377400B17CE4 /* Welcome */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Welcome;
+		};
+		62F81D102768107600371619 /* Routing */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Routing;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,0 +1,10 @@
+:method: POST
+:scheme: https
+:authority: adopt.com
+:path: /api/login
+Content-Type: application/json
+
+{
+  "password" : "PASSWORD",
+  "username" : "USERNAME"
+}

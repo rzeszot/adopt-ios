@@ -1,8 +1,0 @@
-delay: 0.1
----
-status: 418
-content-type: application/json
----
-{
-  "message": "I'm a teapod"
-}
