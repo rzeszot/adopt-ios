@@ -19,6 +19,7 @@ let package = Package(
   targets: [
     .target(name: "Login", dependencies: ["Networking", "Weak"]),
     .testTarget(name: "LoginTests", dependencies: ["Login", "Mocky", "XCSnapshots"], resources: [
+      .copy("_Snapshots"),
       .copy("Mocky")
     ])
   ]
