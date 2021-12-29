@@ -38,6 +38,7 @@
 		626573A127233BB600BCE47D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		626573A427233BB600BCE47D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		626573A627233BB600BCE47D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6269236F277BD26C0044C110 /* Onboarding */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Onboarding; sourceTree = "<group>"; };
 		6297D56F275B33E900B17CE4 /* Welcome */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Welcome; sourceTree = "<group>"; };
 		6297D570275B33F200B17CE4 /* Root */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Root; sourceTree = "<group>"; };
 		6297D571275B33F200B17CE4 /* User */ = {isa = PBXFileReference; lastKnownFileType = folder; path = User; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 		6297D4A4275B33CF00B17CE4 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				6269236F277BD26C0044C110 /* Onboarding */,
 				6297D570275B33F200B17CE4 /* Root */,
 				6297D576275B33F300B17CE4 /* Guest */,
 				6297D573275B33F200B17CE4 /* Login */,
